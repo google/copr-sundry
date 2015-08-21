@@ -26,4 +26,4 @@ code that happens to be owned by Google.
 
 ## List of packages
 
-TODO
+ * rubygem-retriable
