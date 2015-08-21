@@ -26,4 +26,5 @@ code that happens to be owned by Google.
 
 ## List of packages
 
- * rubygem-retriable
+ * rubygem-fog-profitbricks 0.0.3
+ * rubygem-retriable 1.4.1
