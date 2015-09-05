@@ -28,3 +28,4 @@ code that happens to be owned by Google.
 
  * rubygem-fog-profitbricks 0.0.3
  * rubygem-retriable 1.4.1
+ * yum 3.4.3-508
