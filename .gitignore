@@ -1,2 +1,3 @@
 *.swp
 BUILD/*
+RPMS/*
