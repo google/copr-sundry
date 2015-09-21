@@ -1,4 +1,5 @@
 BUILD/*
 RPMS/*
+SRPMS/*
 *.swp
 *.gem
