@@ -1,3 +1,4 @@
-*.swp
 BUILD/*
 RPMS/*
+*.swp
+*.gem
