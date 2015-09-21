@@ -3,3 +3,4 @@ RPMS/*
 SRPMS/*
 *.swp
 *.gem
+*.tar.gz
