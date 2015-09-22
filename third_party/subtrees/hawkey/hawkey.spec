@@ -7,6 +7,8 @@
 %bcond_without python3
 %endif
 
+%define github_version %{name}-%{version}-1
+
 Name:		hawkey
 Version:	0.6.1
 Release:	1%{?snapshot}%{?dist}
@@ -15,7 +17,7 @@ Group:		System Environment/Libraries
 License:	LGPLv2+
 URL:		https://github.com/rpm-software-management/%{name}
 # git clone https://github.com/rpm-software-management/hawkey.git && cd hawkey && tito build --tgz
-Source0:	https://github.com/rpm-software-management/%{name}/archive/%{name}-%{version}.tar.gz
+Source0:    https://github.com/rpm-software-management/%{name}/archive/%{github_version}.tar.gz
 BuildRequires:	libsolv-devel >= %{libsolv_version}
 BuildRequires:	cmake expat-devel rpm-devel zlib-devel check-devel
 Requires:	libsolv%{?_isa} >= %{libsolv_version}
@@ -72,7 +74,7 @@ Python 3 bindings for the hawkey library.
 %endif
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{github_version}
 
 %if %{with python3}
 rm -rf py3

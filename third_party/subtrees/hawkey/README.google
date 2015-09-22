@@ -9,3 +9,4 @@ RPM spec files for hawkey - High-level API for the libsolv library.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Modified Source0 url of spec file to make it downloadable; modified %setup macro accordingly.
