@@ -1,0 +1,10 @@
+URL: http://pkgs.fedoraproject.org/cgit/hawkey.git/
+Version: ae38a1815e9fdf60e7ef7ef450427877d018c83a
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for hawkey - High-level API for the libsolv library.
+
+Local Modifications:
+- Added README.google file.
