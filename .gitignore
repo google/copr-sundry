@@ -1,6 +1,7 @@
 BUILD/*
 RPMS/*
 SRPMS/*
+BUILDROOT/*
 *.swp
 *.gem
 *.tar.gz
