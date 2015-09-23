@@ -1,0 +1,1 @@
+../third_party/submodules/python3/find-provides-without-python-sonames.sh

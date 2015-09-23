@@ -1,0 +1,1 @@
+../third_party/submodules/python3/python3.spec
