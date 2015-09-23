@@ -5,3 +5,4 @@ BUILDROOT/*
 *.swp
 *.gem
 *.tar.gz
+*.tar.xz
