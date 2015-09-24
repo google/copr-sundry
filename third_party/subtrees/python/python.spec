@@ -350,7 +350,7 @@ Patch17: python-2.6.4-distutils-rpath.patch
 # fixed up by mjw and wcohen for 2.6.2, then fixed up by dmalcolm for 2.6.4
 # then rewritten by mjw (attachment 390110 of rhbz 545179), then reformatted
 # for 2.7rc1 by dmalcolm:
-Patch55: 00055-systemtap.patch
+Patch55: python-00055-systemtap.patch
 
 # Upstream as of Python 2.7.4
 #  Patch101: 00101-lib64-regex.patch

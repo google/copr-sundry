@@ -10,3 +10,4 @@ programming language.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- 00055-systemtap.patch renamed to python-00055-systemtap.patch.
