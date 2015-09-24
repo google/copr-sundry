@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/python.git/
+Version: 2881873aa2c9da2f0307a7b2c86eb07b4dcbe0bc
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python - an interpreted, interactive, object-oriented
+programming language.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
