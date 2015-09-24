@@ -1,0 +1,29 @@
+diff -up Python-2.7.3/Lib/test/test_hashlib.py.fix-hashlib-leak Python-2.7.3/Lib/test/test_hashlib.py
+--- Python-2.7.3/Lib/test/test_hashlib.py.fix-hashlib-leak	2013-02-19 14:13:44.000000000 -0500
++++ Python-2.7.3/Lib/test/test_hashlib.py	2013-02-19 14:14:31.319948742 -0500
+@@ -106,12 +106,8 @@ class HashLibTestCase(unittest.TestCase)
+                                                 _algo.islower()]))
+ 
+     def test_unknown_hash(self):
+-        try:
+-            hashlib.new('spam spam spam spam spam')
+-        except ValueError:
+-            pass
+-        else:
+-            self.assertTrue(0 == "hashlib didn't reject bogus hash name")
++        self.assertRaises(ValueError, hashlib.new, 'spam spam spam spam spam')
++        self.assertRaises(TypeError, hashlib.new, 1)
+ 
+     def test_hexdigest(self):
+         for name in self.supported_hash_names:
+diff -up Python-2.7.3/Modules/_hashopenssl.c.fix-hashlib-leak Python-2.7.3/Modules/_hashopenssl.c
+--- Python-2.7.3/Modules/_hashopenssl.c.fix-hashlib-leak	2013-02-19 14:13:44.646951933 -0500
++++ Python-2.7.3/Modules/_hashopenssl.c	2013-02-19 14:13:44.715951929 -0500
+@@ -549,6 +549,7 @@ EVP_new(PyObject *self, PyObject *args,
+     }
+ 
+     if (!PyArg_Parse(name_obj, "s", &name)) {
++        PyBuffer_Release(&view);
+         PyErr_SetString(PyExc_TypeError, "name must be a string");
+         return NULL;
+     }

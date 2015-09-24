@@ -1,0 +1,87 @@
+diff -up Python-2.7.3/Doc/library/asyncore.rst.use-poll-for-multiprocessing-socket-connection Python-2.7.3/Doc/library/asyncore.rst
+--- Python-2.7.3/Doc/library/asyncore.rst.use-poll-for-multiprocessing-socket-connection	2013-02-21 15:21:41.204812979 -0500
++++ Python-2.7.3/Doc/library/asyncore.rst	2013-02-21 15:21:41.211812976 -0500
+@@ -318,13 +318,10 @@ connections and dispatches the incoming
+ 
+         def handle_accept(self):
+             pair = self.accept()
+-            if pair is None:
+-                pass
+-            else:
++            if pair is not None:
+                 sock, addr = pair
+                 print 'Incoming connection from %s' % repr(addr)
+                 handler = EchoHandler(sock)
+ 
+     server = EchoServer('localhost', 8080)
+     asyncore.loop()
+-
+diff -up Python-2.7.3/Lib/multiprocessing/connection.py.use-poll-for-multiprocessing-socket-connection Python-2.7.3/Lib/multiprocessing/connection.py
+diff -up Python-2.7.3/Lib/test/test_multiprocessing.py.use-poll-for-multiprocessing-socket-connection Python-2.7.3/Lib/test/test_multiprocessing.py
+--- Python-2.7.3/Lib/test/test_multiprocessing.py.use-poll-for-multiprocessing-socket-connection	2013-02-21 15:21:41.199812979 -0500
++++ Python-2.7.3/Lib/test/test_multiprocessing.py	2013-02-21 15:21:41.208812978 -0500
+@@ -1452,6 +1452,7 @@ class _TestConnection(BaseTestCase):
+         self.assertTimingAlmostEqual(poll.elapsed, TIMEOUT1)
+ 
+         conn.send(None)
++        time.sleep(.1)
+ 
+         self.assertEqual(poll(TIMEOUT1), True)
+         self.assertTimingAlmostEqual(poll.elapsed, 0)
+diff -up Python-2.7.3/Modules/_multiprocessing/socket_connection.c.use-poll-for-multiprocessing-socket-connection Python-2.7.3/Modules/_multiprocessing/socket_connection.c
+--- Python-2.7.3/Modules/_multiprocessing/socket_connection.c.use-poll-for-multiprocessing-socket-connection	2013-02-21 15:21:41.201812979 -0500
++++ Python-2.7.3/Modules/_multiprocessing/socket_connection.c	2013-02-21 15:21:41.215812978 -0500
+@@ -8,6 +8,10 @@
+ 
+ #include "multiprocessing.h"
+ 
++#if defined(HAVE_POLL) && !defined(HAVE_BROKEN_POLL)
++#  include "poll.h"
++#endif
++
+ #ifdef MS_WINDOWS
+ #  define WRITE(h, buffer, length) send((SOCKET)h, buffer, length, 0)
+ #  define READ(h, buffer, length) recv((SOCKET)h, buffer, length, 0)
+@@ -155,6 +159,34 @@ conn_recv_string(ConnectionObject *conn,
+ static int
+ conn_poll(ConnectionObject *conn, double timeout, PyThreadState *_save)
+ {
++#if defined(HAVE_POLL) && !defined(HAVE_BROKEN_POLL)
++    int res;
++    struct pollfd p;
++
++    p.fd = (int)conn->handle;
++    p.events = POLLIN | POLLPRI;
++    p.revents = 0;
++
++    if (timeout < 0) {
++        res = poll(&p, 1, -1);
++    } else {
++        res = poll(&p, 1, (int)(timeout * 1000 + 0.5));
++    }
++
++    if (res < 0) {
++        return MP_SOCKET_ERROR;
++    } else if (p.revents & (POLLNVAL|POLLERR)) {
++        Py_BLOCK_THREADS
++        PyErr_SetString(PyExc_IOError, "poll() gave POLLNVAL or POLLERR");
++        Py_UNBLOCK_THREADS
++        return MP_EXCEPTION_HAS_BEEN_SET;
++    } else if (p.revents != 0) {
++        return TRUE;
++    } else {
++        assert(res == 0);
++        return FALSE;
++    }
++#else
+     int res;
+     fd_set rfds;
+ 
+@@ -190,6 +222,7 @@ conn_poll(ConnectionObject *conn, double
+         assert(res == 0);
+         return FALSE;
+     }
++#endif
+ }
+ 
+ /*

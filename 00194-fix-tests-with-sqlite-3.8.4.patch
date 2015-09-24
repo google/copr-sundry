@@ -1,0 +1,19 @@
+# HG changeset patch
+# User Benjamin Peterson <benjamin@python.org>
+# Date 1394679112 18000
+# Node ID 1763e27a182d571cc3a428c71085bb86b3d895b5
+# Parent  1d31060f8a5c9695f0b79a738d355d8530e09cc7
+weaken callback count inequality (closes #20901)
+
+diff --git a/Lib/sqlite3/test/hooks.py b/Lib/sqlite3/test/hooks.py
+--- a/Lib/sqlite3/test/hooks.py
++++ b/Lib/sqlite3/test/hooks.py
+@@ -162,7 +162,7 @@ class ProgressTests(unittest.TestCase):
+             create table bar (a, b)
+             """)
+         second_count = len(progress_calls)
+-        self.assertTrue(first_count > second_count)
++        self.assertGreaterEqual(first_count, second_count)
+ 
+     def CheckCancelOperation(self):
+         """
