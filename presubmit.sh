@@ -5,4 +5,4 @@
 
 set -e
 
-rpmlint . -f rpmlint.conf.py
+rpmlint -f rpmlint.conf.py .
