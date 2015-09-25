@@ -46,6 +46,7 @@ gem build %{gem_name}.gemspec
 %gem_install
 
 %install
+rm -Rf %{buildroot}
 mkdir -p %{buildroot}%{gem_dir}
 cp -a .%{gem_dir}/* \
         %{buildroot}%{gem_dir}/
@@ -58,6 +59,9 @@ cp -a .%{gem_dir}/* \
 pushd .%{gem_instdir}
 
 popd
+
+%clean
+rm -Rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
