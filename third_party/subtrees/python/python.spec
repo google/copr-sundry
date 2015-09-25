@@ -834,7 +834,7 @@ Patch181: 00181-allow-arbitrary-timeout-in-condition-wait.patch
 # Python recognizes ffi.h only if it contains "#define LIBFFI_H",
 # but the wrapper doesn't contain that, which makes the build fail
 # We patch this by also accepting "#define ffi_wrapper_h"
-Patch184: 00184-ctypes-should-build-with-libffi-multilib-wrapper.patch
+Patch184: python-00184-ctypes-should-build-with-libffi-multilib-wrapper.patch
 
 # 00185 #
 # Makes urllib2 honor "no_proxy" enviroment variable for "ftp:" URLs

@@ -33,3 +33,5 @@ Local Modifications:
 - 00170-gc-assertions.patch renamed to python-00170-gc-assertions.patch.
 - 00173-workaround-ENOPROTOOPT-in-bind_port.patch renamed to 
   python-00173-workaround-ENOPROTOOPT-in-bind_port.patch.
+- 00184-ctypes-should-build-with-libffi-multilib-wrapper.patch renamed to
+  python-00184-ctypes-should-build-with-libffi-multilib-wrapper.patch.
