@@ -14,6 +14,7 @@ BuildRequires: rubygems-devel
 BuildRequires: ruby >= 1.9.3
 BuildRequires: ruby-irb
 BuildArch: noarch
+BuildRoot: %{buildroot}
 
 %description
 Retriable is an simple DSL to retry failed code blocks with randomized
