@@ -942,7 +942,7 @@ Patch199: 00199-alter-tests-to-reflect-sslv3-disabled.patch
 # This is the generated patch to "configure"; see the description of
 #   %{regenerate_autotooling_patch}
 # above:
-Patch5000: 05000-autotool-intermediates.patch
+Patch5000: python-05000-autotool-intermediates.patch
 
 # ======================================================
 # Additional metadata, and subpackages
