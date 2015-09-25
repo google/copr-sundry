@@ -14,6 +14,7 @@ BuildRequires: rubygems-devel
 BuildRequires: ruby >= 1.9.3
 BuildRequires: ruby-irb
 BuildArch: noarch
+BuildRoot: %{buildroot}
 
 %description
 Retriable is an simple DSL to retry failed code blocks with randomized
@@ -46,6 +47,7 @@ gem build %{gem_name}.gemspec
 %gem_install
 
 %install
+rm -Rf %{buildroot}
 mkdir -p %{buildroot}%{gem_dir}
 cp -a .%{gem_dir}/* \
         %{buildroot}%{gem_dir}/
@@ -58,6 +60,9 @@ cp -a .%{gem_dir}/* \
 pushd .%{gem_instdir}
 
 popd
+
+%clean
+rm -Rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)

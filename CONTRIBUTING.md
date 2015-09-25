@@ -22,8 +22,12 @@ All submissions, including submissions by project members, require review. We
 use Github pull requests for this purpose.
 
 ### Code style & lint
-Please check your spec files using rpmlint. You can use `rpmlint.sh` script for
-this. It require `rpmlint` to be installed in your PATH. You can install it
+Please check your spec files using rpmlint.
+
+Use `rpmlint -f rpmlint.conf.py .` or (better) use provided pre-commit hook.
+Install it with `ln -s ../../hooks/pre-commit .git/hooks/pre-commit`
+
+It requires `rpmlint` to be installed in your PATH. You can install it
 using `yum install rpmlint` or get it from
 [rpm-software-management](https://github.com/rpm-software-management/rpmlint)
 github page.
