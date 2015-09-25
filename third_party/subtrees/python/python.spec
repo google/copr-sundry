@@ -772,7 +772,7 @@ Patch170: python-00170-gc-assertions.patch
 # Workaround for ENOPROTOOPT seen in Koji within
 # test.test_support.bind_port()
 # (rhbz#913732)
-Patch173: 00173-workaround-ENOPROTOOPT-in-bind_port.patch
+Patch173: python-00173-workaround-ENOPROTOOPT-in-bind_port.patch
 
 # 00174 #
 # Workaround for failure to set up prefix/exec_prefix when running

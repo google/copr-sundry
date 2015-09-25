@@ -31,3 +31,5 @@ Local Modifications:
 - 00157-uid-gid-overflows.patch renamed to
   python-00157-uid-gid-overflows.patch.
 - 00170-gc-assertions.patch renamed to python-00170-gc-assertions.patch.
+- 00173-workaround-ENOPROTOOPT-in-bind_port.patch renamed to 
+  python-00173-workaround-ENOPROTOOPT-in-bind_port.patch.
