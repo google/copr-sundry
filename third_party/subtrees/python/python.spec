@@ -656,7 +656,7 @@ Patch153: python-00153-fix-test_gdb-noise.patch
 # Avoid allocating thunks in ctypes unless absolutely necessary, to avoid
 # generating SELinux denials on "import ctypes" and "import uuid" when
 # embedding Python within httpd (rhbz#814391)
-Patch155: 00155-avoid-ctypes-thunks.patch
+Patch155: python-00155-avoid-ctypes-thunks.patch
 
 # 00156 #
 # Recent builds of gdb will only auto-load scripts from certain safe
