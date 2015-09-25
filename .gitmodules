@@ -7,3 +7,6 @@
 [submodule "third_party/submodules/python3"]
 	path = third_party/submodules/python3
 	url = git://pkgs.fedoraproject.org/python3.git
+[submodule "third_party/submodules/gdb"]
+	path = third_party/submodules/gdb
+	url = git://pkgs.fedoraproject.org/gdb.git
