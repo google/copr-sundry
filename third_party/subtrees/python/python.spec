@@ -663,7 +663,7 @@ Patch155: python-00155-avoid-ctypes-thunks.patch
 # locations.  Turn off this protection when running test_gdb in the selftest
 # suite to ensure that it can load our -gdb.py script (rhbz#817072):
 # Not yet sent upstream
-Patch156: 00156-gdb-autoload-safepath.patch
+Patch156: python-00156-gdb-autoload-safepath.patch
 
 # 00157 #
 # Update uid/gid handling throughout the standard library: uid_t and gid_t are
