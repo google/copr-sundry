@@ -377,7 +377,7 @@ Patch104: 00104-lib64-fix-for-test_install.patch
 # Patch the Makefile.pre.in so that the generated Makefile doesn't try to build
 # a libpythonMAJOR.MINOR.a (bug 550692):
 # Downstream only: not appropriate for upstream
-Patch111: 00111-no-static-lib.patch
+Patch111: python-00111-no-static-lib.patch
 
 # 00112 #
 # Patch to support building both optimized vs debug stacks DSO ABIs, sharing

@@ -11,3 +11,4 @@ Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
 - 00055-systemtap.patch renamed to python-00055-systemtap.patch.
+- 00111-no-static-lib.patch renamed to python-00111-no-static-lib.patch
