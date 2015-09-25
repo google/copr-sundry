@@ -13,3 +13,4 @@ Local Modifications:
 - 00055-systemtap.patch renamed to python-00055-systemtap.patch.
 - 00111-no-static-lib.patch renamed to python-00111-no-static-lib.patch
 - 00113-more-configuration-flags.patch renamed to python-00113-more-configuration-flags.patch
+- 00125-less-verbose-COUNT_ALLOCS.patch renamed to python-00125-less-verbose-COUNT_ALLOCS.patch

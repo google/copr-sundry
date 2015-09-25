@@ -482,7 +482,7 @@ Patch121: 00121-add-Modules-to-build-path.patch
 # use the debug build.  Add a "PYTHONDUMPCOUNTS" environment variable which
 # must be set to enable the output on exit
 # Not yet sent upstream
-Patch125: 00125-less-verbose-COUNT_ALLOCS.patch
+Patch125: python-00125-less-verbose-COUNT_ALLOCS.patch
 
 # Upstream as of Python 2.7.5
 #  Patch126: fix-dbm_contains-on-64bit-bigendian.patch
