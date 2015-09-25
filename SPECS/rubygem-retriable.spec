@@ -60,6 +60,7 @@ pushd .%{gem_instdir}
 popd
 
 %files
+%defattr(-,root,root,-)
 %dir %{gem_instdir}
 %exclude %{gem_instdir}/.gitignore
 %exclude %{gem_instdir}/.travis.yml
@@ -70,6 +71,7 @@ popd
 /usr/share/gems/specifications/retriable-1.4.1.gemspec
 
 %files doc
+%defattr(-,root,root,-)
 %doc %{gem_docdir}
 %doc %{gem_instdir}/CHANGELOG.md
 %{gem_instdir}/Gemfile
