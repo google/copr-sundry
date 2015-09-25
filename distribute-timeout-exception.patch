@@ -1,0 +1,21 @@
+Index: distribute-0.6.27/setuptools/tests/server.py
+===================================================================
+--- distribute-0.6.27.orig/setuptools/tests/server.py
++++ distribute-0.6.27/setuptools/tests/server.py
+@@ -1,6 +1,7 @@
+ """Basic http server for tests to simulate PyPI or custom indexes
+ """
+ import urllib2
++import socket
+ import sys
+ import threading
+ import BaseHTTPServer
+@@ -44,7 +45,7 @@ class IndexServer(HTTPServer):
+                 urllib2.urlopen(url, timeout=5)
+             else:
+                 urllib2.urlopen(url)
+-        except urllib2.URLError:
++        except (urllib2.URLError, socket.timeout):
+             # ignore any errors; all that's important is the request
+             pass
+         self.thread.join()
