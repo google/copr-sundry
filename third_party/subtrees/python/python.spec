@@ -760,7 +760,7 @@ Patch169: 00169-avoid-implicit-usage-of-md5-in-multiprocessing.patch
 # hiding the proposed new macros/functions within gcmodule.c to avoid exposing
 # them within the extension API.
 # (rhbz#850013)
-Patch170: 00170-gc-assertions.patch
+Patch170: python-00170-gc-assertions.patch
 
 # Upstream as of Python 2.7.4
 #  Patch171: 00171-raise-correct-exception-when-dev-urandom-is-missing.patch

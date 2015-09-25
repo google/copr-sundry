@@ -30,3 +30,4 @@ Local Modifications:
   python-00156-gdb-autoload-safepath.patch.
 - 00157-uid-gid-overflows.patch renamed to
   python-00157-uid-gid-overflows.patch.
+- 00170-gc-assertions.patch renamed to python-00170-gc-assertions.patch.
