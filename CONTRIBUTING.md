@@ -21,6 +21,13 @@ frustration later on.
 All submissions, including submissions by project members, require review. We
 use Github pull requests for this purpose.
 
+### Code style & lint
+Please check your spec files using rpmlint. You can use `rpmlint.sh` script for
+this. It require `rpmlint` to be installed in your PATH. You can install it
+using `yum install rpmlint` or get it from
+[rpm-software-management](https://github.com/rpm-software-management/rpmlint)
+github page.
+
 ### The small print
 Contributions made by corporations are covered by a different agreement than
 the one above, the Software Grant and Corporate Contributor License Agreement.
