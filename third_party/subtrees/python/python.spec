@@ -532,7 +532,7 @@ Patch131: 00131-disable-tests-in-test_io.patch
 # environment, which we set manually in the appropriate portion of the "check"
 # phase below (and which potentially other python-* rpms could set, to reuse
 # these unittest hooks in their own "check" phases)
-Patch132: 00132-add-rpmbuild-hooks-to-unittest.patch
+Patch132: python-00132-add-rpmbuild-hooks-to-unittest.patch
 
 # 00133 #
 # "dl" is deprecated, and test_dl doesn't work on 64-bit builds:
