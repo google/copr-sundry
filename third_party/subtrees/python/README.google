@@ -15,3 +15,4 @@ Local Modifications:
 - 00113-more-configuration-flags.patch renamed to python-00113-more-configuration-flags.patch
 - 00125-less-verbose-COUNT_ALLOCS.patch renamed to python-00125-less-verbose-COUNT_ALLOCS.patch
 - 00132-add-rpmbuild-hooks-to-unittest.patch renamed to python-00132-add-rpmbuild-hooks-to-unittest.patch
+- 00134-fix-COUNT_ALLOCS-failure-in-test_sys.patch renamed to python-00134-fix-COUNT_ALLOCS-failure-in-test_sys.patch

@@ -541,7 +541,7 @@ Patch133: 00133-skip-test_dl.patch
 # 00134 #
 # Fix a failure in test_sys.py when configured with COUNT_ALLOCS enabled
 # Not yet sent upstream
-Patch134: 00134-fix-COUNT_ALLOCS-failure-in-test_sys.patch
+Patch134: python-00134-fix-COUNT_ALLOCS-failure-in-test_sys.patch
 
 # 00135 #
 # Skip "test_callback_in_cycle_resurrection" in a debug build, where it fails:
