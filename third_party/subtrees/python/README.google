@@ -17,3 +17,4 @@ Local Modifications:
 - 00132-add-rpmbuild-hooks-to-unittest.patch renamed to python-00132-add-rpmbuild-hooks-to-unittest.patch
 - 00134-fix-COUNT_ALLOCS-failure-in-test_sys.patch renamed to python-00134-fix-COUNT_ALLOCS-failure-in-test_sys.patch
 - 00143-tsc-on-ppc.patch renamed to python-00143-tsc-on-ppc.patch
+- 00146-hashlib-fips.patch renamed to python-00146-hashlib-fips.patch

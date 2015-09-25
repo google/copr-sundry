@@ -611,7 +611,7 @@ Patch144: 00144-no-gdbm.patch
 #   of hashlib (for example, md5.py will use _hashlib's implementation of MD5,
 #   if permitted by the FIPS setting)
 # (rhbz#563986)
-Patch146: 00146-hashlib-fips.patch
+Patch146: python-00146-hashlib-fips.patch
 
 # 00147 #
 # Add a sys._debugmallocstats() function
