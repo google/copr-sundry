@@ -12,3 +12,4 @@ Local Modifications:
 - Added LICENSE file.
 - 00055-systemtap.patch renamed to python-00055-systemtap.patch.
 - 00111-no-static-lib.patch renamed to python-00111-no-static-lib.patch
+- 00113-more-configuration-flags.patch renamed to python-00113-more-configuration-flags.patch

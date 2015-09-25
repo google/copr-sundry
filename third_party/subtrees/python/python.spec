@@ -450,7 +450,7 @@ Patch112: python-2.7.3-debug-build.patch
 # so that if they are enabled, they will be in that build's pyconfig.h, so that
 # extension modules will reliably use them
 # Not yet sent upstream
-Patch113: 00113-more-configuration-flags.patch
+Patch113: python-00113-more-configuration-flags.patch
 
 # 00114 #
 # Add flags for statvfs.f_flag to the constant list in posixmodule (i.e. "os")
