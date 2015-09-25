@@ -646,7 +646,7 @@ Patch147: 00147-add-debug-malloc-stats.patch
 # when running test_gdb.py; also cope with change to gdb in F17 onwards in
 # which values are printed as "v@entry" rather than just "v":
 # Not yet sent upstream
-Patch153: 00153-fix-test_gdb-noise.patch
+Patch153: python-00153-fix-test_gdb-noise.patch
 
 # 00154 #
 # python3.spec on f15 has:
