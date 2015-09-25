@@ -28,3 +28,5 @@ Local Modifications:
   python-00155-avoid-ctypes-thunks.patch.
 - 00156-gdb-autoload-safepath.patch renamed to
   python-00156-gdb-autoload-safepath.patch.
+- 00157-uid-gid-overflows.patch renamed to
+  python-00157-uid-gid-overflows.patch.

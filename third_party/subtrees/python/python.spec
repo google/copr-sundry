@@ -679,7 +679,7 @@ Patch156: python-00156-gdb-autoload-safepath.patch
 # Update standard library to use this throughout for uid/gid values, so that
 # very large uid/gid values are round-trippable, and -1 remains usable.
 # (rhbz#697470)
-Patch157: 00157-uid-gid-overflows.patch
+Patch157: python-00157-uid-gid-overflows.patch
 
 # Upstream as of Python 2.7.4
 # Patch158: 00158-fix-hashlib-leak.patch
