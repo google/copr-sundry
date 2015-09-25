@@ -585,7 +585,7 @@ Patch142: 00142-skip-failing-pty-tests-in-rpmbuild.patch
 # Fix the --with-tsc option on ppc64, and rework it on 32-bit ppc to avoid
 # aliasing violations (rhbz#698726)
 # Sent upstream as http://bugs.python.org/issue12872
-Patch143: 00143-tsc-on-ppc.patch
+Patch143: python-00143-tsc-on-ppc.patch
 
 # 00144 #
 # (Optionally) disable the gdbm module:
