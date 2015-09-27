@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-jsonschema.git/
+Version: 16c5a431ff61c24abf5e8bc26e30d2826ae32d64
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-jsonschema  - an implementation of JSON Schema
+validation for Python.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
