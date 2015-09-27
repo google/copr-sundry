@@ -49,7 +49,8 @@ Python 2 bindings for the hawkey library.
 Summary:	Python 3 bindings for the hawkey library
 Group:		Development/Languages
 BuildRequires:	python3-devel
-BuildRequires:	python3-nose
+# TODO: re-enable python3 tests once we have python3-nose.
+#BuildRequires:	python3-nose
 BuildRequires:	python3-sphinx >= 1.1.3-9
 Requires:	%{name}%{?_isa} = %{version}-%{release}
 
@@ -77,7 +78,7 @@ popd
 
 %check
 make ARGS="-V" test
-./py3/tests/python/tests/run_nosetests
+#./py3/tests/python/tests/run_nosetests
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
