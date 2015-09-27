@@ -1,0 +1,1 @@
+../third_party/subtrees/python-jsonschema/python-jsonschema.spec
