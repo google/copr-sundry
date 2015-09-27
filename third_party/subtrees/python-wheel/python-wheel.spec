@@ -1,13 +1,8 @@
 %global pypi_name wheel
-%if 0%{?rhel} > 7 || 0%{?fedora} >= 16
 %bcond_without python3
-%else
-%bcond_with python3
 
 %if 0%{?rhel} < 7
 %global rhel6 1
-%endif
-
 %endif
 
 Name:           python-%{pypi_name}
