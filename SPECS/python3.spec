@@ -1,1 +1,1 @@
-../third_party/submodules/python3/python3.spec
+../third_party/subtrees/python3/python3.spec
