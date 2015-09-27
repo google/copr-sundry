@@ -1,18 +1,9 @@
-%if 0%{?fedora}
+# TODO: rebuild with check.
 %global with_check 0
 
 # This controls whether setuptools is build as a wheel or not,
 # simplifying Python 3.4 bootstraping process
-%if %{fedora} > 20
-%global build_wheel 0
-%endif
-
-%else
-%global with_check 0
-# define some macros for RHEL 6
-%global __python2 %__python
-%global python2_sitelib %python_sitelib
-%endif
+%global build_wheel 1
 
 %global srcname setuptools
 %if 0%{?build_wheel}
@@ -24,7 +15,7 @@
 
 Name:           python-setuptools
 Version:        18.3.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Easily build and distribute Python packages
 
 Group:          Applications/System
@@ -189,6 +180,9 @@ popd
 %{_bindir}/easy_install-3.*
 
 %changelog
+* Sun Sep 27 2015 Vladimir Rusinov <vrusinov@google.com> - 18.3.2-3
+- Rebuild with wheel.
+
 * Wed Sep 23 2015 Robert Kuska <rkuska@redhat.com> - 18.3.2-2
 - Python3.5 rebuild: rebuild without wheel and check phase
 
