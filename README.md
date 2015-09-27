@@ -29,6 +29,7 @@ code that happens to be owned by Google.
  * python 2.7.10 (with python-macros backported to EL7)
  * python-jsonschema & python3-jsonschema 2.4.0
  * python-keyring & python3-keyring 5.0
+ * python-wheel & python3-wheel 0.24.0
  * rubygem-fog-profitbricks 0.0.3
  * rubygem-retriable 1.4.1
  * yum 3.4.3-508
