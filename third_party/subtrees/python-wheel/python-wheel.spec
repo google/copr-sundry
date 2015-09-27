@@ -29,7 +29,7 @@ Requires:       python-argparse
 %if %{with python3}
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
-BuildRequires:  python3-pytest
+#BuildRequires:  python3-pytest
 BuildRequires:  python3-keyring
 BuildRequires:  python3-jsonschema
 %endif # if with_python3
@@ -100,12 +100,13 @@ popd
 rm setup.cfg
 PYTHONPATH=$(pwd) py.test --ignore build %{?rhel6:-k 'not test_keygen'}
 # no test for Python 3, no python3-jsonschema yet
-%if %{with python3}
-pushd %{py3dir}
-rm setup.cfg
-PYTHONPATH=$(pwd) py.test-%{python3_version} --ignore build
-popd
-%endif # with_python3
+# TODO: re-enable python3 tests once we have python3-pytest.
+#%if %{with python3}
+#pushd %{py3dir}
+#rm setup.cfg
+#PYTHONPATH=$(pwd) py.test-%{python3_version} --ignore build
+#popd
+#%endif # with_python3
 
 
 %files
