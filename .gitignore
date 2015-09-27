@@ -1,8 +1,9 @@
+*.swp
 BUILD/*
+BUILDROOT/*
 RPMS/*
 SRPMS/*
-BUILDROOT/*
-*.swp
-*.gem
-*.tar.gz
-*.tar.xz
+SOURCES/*.gem
+SOURCES/*.tar.gz
+SOURCES/*.tar.xz
+SOURCES/*.zip
