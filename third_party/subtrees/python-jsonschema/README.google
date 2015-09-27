@@ -10,3 +10,5 @@ validation for Python.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Unconditionally build python3 version.
+- Temporarily disable tests & python3 test dependencies to simplify boostrap.
