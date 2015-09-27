@@ -10,3 +10,4 @@ passwords safely.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Unconditionally build python3 version.

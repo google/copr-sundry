@@ -1,5 +1,3 @@
-%global with_python3 1
-
 Name:           python-keyring
 Version:        5.0
 Release:        2%{?dist}
@@ -33,7 +31,6 @@ Python keyring lib also provides following build-in keyrings.
 * **CryptedFileKeyring**: a command line interface keyring base on PyCrypto.
 * **UncryptedFileKeyring**: a keyring which leaves passwords directly in file.
 
-%if 0%{?with_python3}
 %package -n     python3-keyring
 Summary:        Python 3 library to access the system keyring service
 BuildRequires:  python3-devel
@@ -58,7 +55,6 @@ Python keyring lib also provides following build-in keyrings.
 * **Win32CryptoKeyring**: for Windows 2k+.
 * **CryptedFileKeyring**: a command line interface keyring base on PyCrypto.
 * **UncryptedFileKeyring**: a keyring which leaves passwords directly in file.
-%endif
 
 %prep
 %setup -qn keyring-%{version}
@@ -69,36 +65,28 @@ sed -i '1{\@^#!/usr/bin/env python@d}' keyring/cli.py
 sed -i -e "\@use_vcs_version@s/^.*$/\tversion = \"%{version}\",/g" \
        -e {/\'hgtools\'/d} setup.py
 
-%if 0%{?with_python3}
 rm -rf %{py3dir}
 cp -a . %{py3dir}
-%endif
 
 %build
 %{__python2} setup.py build
-%if 0%{?with_python3}
 pushd %{py3dir}
 %{__python3} setup.py build
 popd
-%endif
 
 %install
-%if 0%{?with_python3}
 pushd %{py3dir}
 %{__python3} setup.py install -O1 --skip-build --root %{buildroot}
 cp -a %{buildroot}%{_bindir}/keyring %{buildroot}%{_bindir}/keyring-%{python3_version}
 popd
-%endif
 %{__python2} setup.py install -O1 --skip-build --root %{buildroot}
 
 # Failed on Koji due to X environment not available.
 #%check
-#%if 0%{?with_python3}
 #pushd %{py3dir}
 #%{__python3} setup.py ptr
 #nosetests-%{python3_version}
 #popd
-#%endif
 #%{__python2} setup.py ptr
 #nosetests
 
@@ -108,13 +96,11 @@ popd
 %{python2_sitelib}/keyring
 %{python2_sitelib}/keyring-%{version}-py%{python2_version}.egg-info
 
-%if 0%{?with_python3}
 %files -n python3-keyring
 %doc CHANGES.rst README.rst CONTRIBUTORS.txt
 %{_bindir}/keyring-%{python3_version}
 %{python3_sitelib}/keyring-%{version}-py%{python3_version}.egg-info
 %{python3_sitelib}/keyring
-%endif
 
 %changelog
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 5.0-2
