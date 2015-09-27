@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/pyparsing.git/
+Version: ca75ec03998e5a375486163302193270c9168232
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for pyparsing - an object-oriented approach to text processing.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
