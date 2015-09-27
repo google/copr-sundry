@@ -26,8 +26,16 @@ code that happens to be owned by Google.
 
 ## List of packages
 
+### Most notable
+
+ * python3 3.5 backported to CentOS 7 (aka RHEL/EL/EPEL 7) along with many
+   libraries.
+
+### Full list
+
  * pyparsing & python3-pyparsing 2.0.3
  * python 2.7.10 (with python-macros backported to EL7)
+ * python3 3.5.0
  * python-jsonschema & python3-jsonschema 2.4.0
  * python-keyring & python3-keyring 5.0
  * python-pip & python3-pip 7.1.0
