@@ -1,0 +1,8 @@
+diff -uNr keyring-3.1/keyring/cli.py keyring-3.1p/keyring/cli.py
+--- keyring-3.1/keyring/cli.py	2013-11-02 14:07:15.346203614 +0530
++++ keyring-3.1p/keyring/cli.py	2013-11-02 14:07:43.905181182 +0530
+@@ -1,4 +1,3 @@
+-#!/usr/bin/env python
+ """Simple command line interface to get/set password from a keyring"""
+ 
+ from __future__ import print_function
