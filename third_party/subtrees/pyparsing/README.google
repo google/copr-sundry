@@ -9,3 +9,4 @@ RPM spec files for pyparsing - an object-oriented approach to text processing.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Build python3 version unconditionally.
