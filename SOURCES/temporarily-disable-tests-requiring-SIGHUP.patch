@@ -1,1 +1,1 @@
-../third_party/submodules/python3/temporarily-disable-tests-requiring-SIGHUP.patch
+../third_party/subtrees/python3/./temporarily-disable-tests-requiring-SIGHUP.patch

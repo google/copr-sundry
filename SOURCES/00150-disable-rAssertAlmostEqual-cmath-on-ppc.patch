@@ -1,1 +1,1 @@
-../third_party/submodules/python3/00150-disable-rAssertAlmostEqual-cmath-on-ppc.patch
+../third_party/subtrees/python3/./00150-disable-rAssertAlmostEqual-cmath-on-ppc.patch
