@@ -26,6 +26,7 @@ code that happens to be owned by Google.
 
 ## List of packages
 
+ * pyparsing & python3-pyparsing 2.0.3
  * python 2.7.10 (with python-macros backported to EL7)
  * python-jsonschema & python3-jsonschema 2.4.0
  * python-keyring & python3-keyring 5.0
