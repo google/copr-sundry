@@ -1,5 +1,4 @@
 %if (! 0%{?rhel}) || 0%{?rhel} > 7
-%global with_python3 1
 %global build_wheel 1
 %global with_tests 0
 %endif
@@ -10,9 +9,7 @@
 %global srcname pip
 %if 0%{?build_wheel}
 %global python2_wheelname %{srcname}-%{version}-py2.py3-none-any.whl
-%if 0%{?with_python3}
 %global python3_wheelname %python2_wheelname
-%endif
 %endif
 
 %global bashcompdir %(b=$(pkg-config --variable=completionsdir bash-completion 2>/dev/null); echo ${b:-%{_sysconfdir}/bash_completion.d})
@@ -65,7 +62,6 @@ same techniques for finding packages, so packages that were made
 easy_installable should be pip-installable as well.
 
 
-%if 0%{?with_python3}
 %package -n python3-pip
 Summary:        A tool for installing and managing Python3 packages
 Group:          Development/Libraries
@@ -92,7 +88,6 @@ Pip is a replacement for `easy_install
 <http://peak.telecommunity.com/DevCenter/EasyInstall>`_.  It uses mostly the
 same techniques for finding packages, so packages that were made
 easy_installable should be pip-installable as well.
-%endif # with_python3
 
 %prep
 %setup -q -n %{srcname}-%{version}
@@ -104,9 +99,7 @@ tar -xf %{SOURCE1}
 
 %{__sed} -i '1d' pip/__init__.py
 
-%if 0%{?with_python3}
 cp -a . %{py3dir}
-%endif # with_python3
 
 
 %build
@@ -116,7 +109,6 @@ cp -a . %{py3dir}
 %{__python} setup.py build
 %endif
 
-%if 0%{?with_python3}
 pushd %{py3dir}
 %if 0%{?build_wheel}
 %{__python3} setup.py bdist_wheel
@@ -124,13 +116,11 @@ pushd %{py3dir}
 %{__python3} setup.py build
 %endif
 popd
-%endif # with_python3
 
 
 %install
 %{__rm} -rf %{buildroot}
 
-%if 0%{?with_python3}
 pushd %{py3dir}
 %if 0%{?build_wheel}
 pip3 install -I dist/%{python3_wheelname} --root %{buildroot} --strip-file-prefix %{buildroot}
@@ -140,7 +130,6 @@ rm %{buildroot}%{_bindir}/pip
 %else
 %{__python3} setup.py install --skip-build --root %{buildroot}
 %endif
-%endif # with_python3
 
 %if 0%{?build_wheel}
 pip2 install -I dist/%{python2_wheelname} --root %{buildroot} --strip-file-prefix %{buildroot}
@@ -152,11 +141,9 @@ mkdir -p %{buildroot}%{bashcompdir}
 PYTHONPATH=%{buildroot}%{python_sitelib} \
     %{buildroot}%{_bindir}/pip completion --bash \
     > %{buildroot}%{bashcompdir}/pip
-%if 0%{?with_python3}
 PYTHONPATH=%{buildroot}%{python3_sitelib} \
     %{buildroot}%{_bindir}/pip3 completion --bash \
     > %{buildroot}%{bashcompdir}/pip3
-%endif
 pips2=pip
 pips3=pip3
 for pip in %{buildroot}%{_bindir}/pip*; do
@@ -168,21 +155,17 @@ for pip in %{buildroot}%{_bindir}/pip*; do
             ln -s pip %{buildroot}%{bashcompdir}/$pip
 %endif
             ;;
-%if 0%{?with_python3}
         pip3?*)
             pips3="$pips3 $pip"
 %if 0%{?bashcomp2}
             ln -s pip3 %{buildroot}%{bashcompdir}/$pip
-%endif
             ;;
 %endif
     esac
 done
-%if 0%{?with_python3}
 sed -i -e "s/^\\(complete.*\\) pip\$/\\1 $pips3/" \
     -e s/_pip_completion/_pip3_completion/ \
     %{buildroot}%{bashcompdir}/pip3
-%endif
 sed -i -e "s/^\\(complete.*\\) pip\$/\\1 $pips2/" \
     %{buildroot}%{bashcompdir}/pip
 
@@ -210,14 +193,11 @@ popd
 %attr(755,root,root) %{_bindir}/pip2*
 %{python_sitelib}/pip*
 %{bashcompdir}
-%if 0%{?with_python3}
 %exclude %{bashcompdir}/pip3*
-%endif
 %if 0%{?bashcomp2}
 %dir %(dirname %{bashcompdir})
 %endif
 
-%if 0%{?with_python3}
 %files -n python3-pip
 %defattr(-,root,root,-)
 %license LICENSE.txt
@@ -229,7 +209,6 @@ popd
 %if 0%{?bashcomp2}
 %dir %(dirname %{bashcompdir})
 %endif
-%endif # with_python3
 
 %changelog
 * Wed Jul 01 2015 Slavek Kabrda <bkabrda@redhat.com> - 7.1.0-1

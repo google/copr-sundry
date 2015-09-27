@@ -10,3 +10,4 @@ packages.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Modified to build python3 version unconditionally.
