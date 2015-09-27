@@ -21,6 +21,8 @@ BuildRequires:  python2-devel
 BuildRequires:  python-nose
 BuildRequires:  python-mock
 BuildRequires:  python3-devel
+BuildRequires:  python-setuptools
+BuildRequires:  python3-setuptools
 # TODO: uncomment following once tests are re-enabled.
 #BuildRequires:  python3-nose
 #BuildRequires:  python3-mock

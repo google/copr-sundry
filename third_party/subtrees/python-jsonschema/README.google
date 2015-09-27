@@ -11,4 +11,5 @@ Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
 - Unconditionally build python3 version.
-- Temporarily disable tests & python3 test dependencies to simplify boostrap.
+- Temporarily disabled tests & python3 test dependencies to simplify boostrap.
+- Added explicit build requirement for python-setuptools.
