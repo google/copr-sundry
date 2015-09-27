@@ -27,6 +27,7 @@ code that happens to be owned by Google.
 ## List of packages
 
  * python 2.7.10 (with python-macros backported to EL7)
+ * python-jsonschema and python3-jsonschema 2.4.0
  * rubygem-fog-profitbricks 0.0.3
  * rubygem-retriable 1.4.1
  * yum 3.4.3-508
