@@ -1,7 +1,7 @@
 # TODO: re-enable tests.
 %global with_tests 0
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
-%global build_wheel 0
+%global build_wheel 1
 
 %global srcname pip
 %if 0%{?build_wheel}
@@ -16,7 +16,7 @@
 
 Name:           python-%{srcname}
 Version:        7.1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A tool for installing and managing Python packages
 
 Group:          Development/Libraries
@@ -208,6 +208,9 @@ popd
 %endif
 
 %changelog
+* Sun Sep 27 2015 Vladimir Rusinov <vrusinov@google.com> - 7.1.0-2
+- Rebuild with wheel support.
+
 * Wed Jul 01 2015 Slavek Kabrda <bkabrda@redhat.com> - 7.1.0-1
 - Update to 7.1.0
 
