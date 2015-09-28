@@ -39,7 +39,7 @@ Summary:	Python 2 bindings for the hawkey library
 Group:		Development/Languages
 BuildRequires:  python2-devel
 BuildRequires:  python-nose
-BuildRequires:	python-sphinx >= 1.1.3-9
+BuildRequires:	python-sphinx
 Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description -n python-hawkey
@@ -51,7 +51,8 @@ Group:		Development/Languages
 BuildRequires:	python3-devel
 # TODO: re-enable python3 tests once we have python3-nose.
 #BuildRequires:	python3-nose
-BuildRequires:	python3-sphinx >= 1.1.3-9
+# TODO: rebuild with python3 sphinx
+#BuildRequires:	python3-sphinx >= 1.1.3-9
 Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description -n python3-hawkey
@@ -73,7 +74,7 @@ make doc-man
 pushd py3
 %cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DPYTHON_DESIRED:str=3.
 make %{?_smp_mflags}
-make doc-man
+#make doc-man
 popd
 
 %check
@@ -82,6 +83,8 @@ make ARGS="-V" test
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
+mkdir -p py3/doc/
+cp doc/hawkey.3 py3/doc/
 pushd py3
 make install DESTDIR=$RPM_BUILD_ROOT
 popd

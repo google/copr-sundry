@@ -12,3 +12,4 @@ Local Modifications:
 - Modified Source0 url of spec file to make it downloadable; modified %setup macro accordingly.
 - Removed condition to build python3 bindings - they are always built now.
 - Skip python3 tests (for now).
+- Build man page using python2 sphinx.
