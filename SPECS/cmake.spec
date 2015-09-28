@@ -1,0 +1,1 @@
+../third_party/submodules/cmake/cmake.spec
