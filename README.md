@@ -33,6 +33,7 @@ code that happens to be owned by Google.
 
 ### Full list
 
+ * cmake 3.3.2
  * pyparsing & python3-pyparsing 2.0.3
  * python 2.7.10 (with python-macros backported to EL7)
  * python3 3.5.0
