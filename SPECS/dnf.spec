@@ -1,1 +1,1 @@
-../third_party/submodules/dnf/dnf.spec
+../third_party/subtrees/dnf/dnf.spec
