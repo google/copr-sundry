@@ -1,0 +1,132 @@
+From b1c94815be71f01c314dcc26af69a19af50ee9d6 Mon Sep 17 00:00:00 2001
+From: Michal Luscon <mluscon@redhat.com>
+Date: Tue, 22 Sep 2015 14:16:34 +0200
+Subject: [PATCH] Automatic commit of package [dnf] release [1.1.2-2].
+
+add hawkey version requirement
+revert commit #70956
+---
+ dnf.spec              | 11 +++++++----
+ doc/release_notes.rst |  1 -
+ doc/summaries_cache   | 48 ++++++++++++++++++++++++++++++++++++++++++++++++
+ rel-eng/packages/dnf  |  2 +-
+ 4 files changed, 56 insertions(+), 6 deletions(-)
+
+diff --git a/dnf.spec b/dnf.spec
+index 966b312..ad516fa 100644
+--- a/dnf.spec
++++ b/dnf.spec
+@@ -1,4 +1,4 @@
+-%global hawkey_version 0.6.0
++%global hawkey_version 0.6.1
+ %global librepo_version 1.7.16
+ %global libcomps_version 0.1.6
+ %global rpm_version 4.12.0
+@@ -11,13 +11,12 @@
+ 
+ Name:		dnf
+ Version:	1.1.2
+-Release:	1%{?snapshot}%{?dist}
++Release:	2%{?snapshot}%{?dist}
+ Summary:	Package manager forked from Yum, using libsolv as a dependency resolver
+ # For a breakdown of the licensing, see PACKAGE-LICENSING
+ License:	GPLv2+ and GPLv2 and GPL
+ URL:		https://github.com/rpm-software-management/dnf
+-# Into distgit it is always uploaded only -1 release of sources
+-Source0:    https://github.com/rpm-software-management/dnf/archive/%{name}-%{version}-1.tar.gz
++Source0:    https://github.com/rpm-software-management/dnf/archive/%{name}-%{version}.tar.gz
+ BuildArch:  noarch
+ BuildRequires:  cmake
+ BuildRequires:  gettext
+@@ -269,6 +268,10 @@ exit 0
+ %systemd_postun_with_restart dnf-automatic.timer
+ 
+ %changelog
++* Tue Sep 22 2015 Michal Luscon <mluscon@redhat.com> 1.1.2-2
++- add hawkey version requirement
++- revert commit #70956
++
+ * Tue Sep 22 2015 Michal Luscon <mluscon@redhat.com> 1.1.2-1
+ - doc: release notes 1.1.2 (Michal Luscon)
+ - sanitize non Unicode command attributes (RhBug:1262082) (Jan Silhan)
+diff --git a/doc/release_notes.rst b/doc/release_notes.rst
+index b7eac29..a459283 100644
+--- a/doc/release_notes.rst
++++ b/doc/release_notes.rst
+@@ -34,7 +34,6 @@ Bugs fixed in 1.1.2:
+ * :rhbug:`1048433`
+ * :rhbug:`1259650`
+ * :rhbug:`1260198`
+-* :rhbug:`126255`
+ * :rhbug:`1259657`
+ * :rhbug:`1254982`
+ * :rhbug:`1261766`
+diff --git a/doc/summaries_cache b/doc/summaries_cache
+index b8ffe0c..2a50df7 100644
+--- a/doc/summaries_cache
++++ b/doc/summaries_cache
+@@ -1306,5 +1306,53 @@
+     [
+         1210289, 
+         "RFE: Have a way to wait on dnf lock rather than terminate"
++    ], 
++    [
++        1262082, 
++        "'ascii' codec can't decode byte 0xc3 in position 40: ordinal not in range(128)"
++    ], 
++    [
++        1250038, 
++        "[abrt] python-dnf: completion_helper.py:84:run:IndexError: list index out of range"
++    ], 
++    [
++        1048433, 
++        "RFE --downloadonly"
++    ], 
++    [
++        1259650, 
++        "\"dnf provides\" or \"dnf repoquery --whatprovides\" does not support globs"
++    ], 
++    [
++        1260198, 
++        "python-dnf should provide python2-dnf"
++    ], 
++    [
++        1259657, 
++        "No dnf-command() provides for dnf commands"
++    ], 
++    [
++        1254982, 
++        "dnf-automatic generates emails with broken charset"
++    ], 
++    [
++        1261766, 
++        "RFE: way to force no metadata expiration system-wide"
++    ], 
++    [
++        1234491, 
++        "[UX] dnf list installed: show repo id the package was installed from"
++    ], 
++    [
++        1256531, 
++        "dnf install crashes if terminal window is too small"
++    ], 
++    [
++        1261656, 
++        "DNF group update doesn't work"
++    ], 
++    [
++        1258364, 
++        "Some important dnf output goes to STDERR and not to STDOUT"
+     ]
+ ]
+\ No newline at end of file
+diff --git a/rel-eng/packages/dnf b/rel-eng/packages/dnf
+index 2ee0bef..584636d 100644
+--- a/rel-eng/packages/dnf
++++ b/rel-eng/packages/dnf
+@@ -1 +1 @@
+-1.1.2-1 ./
++1.1.2-2 ./
+-- 
+2.4.3
+
