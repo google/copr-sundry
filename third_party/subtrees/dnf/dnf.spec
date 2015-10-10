@@ -2,6 +2,13 @@
 %global librepo_version 1.7.16
 %global libcomps_version 0.1.6
 %global rpm_version 4.12.0
+%if 0%{?fedora} >= 20
+%global with_python3 1
+%else
+# TODO: build with python3 everywhere.
+%global with_python3 0
+%endif
+
 
 %global confdir %{_sysconfdir}/dnf
 
@@ -100,6 +107,7 @@ Obsoletes:  dnf <= 0.6.4
 %description -n python2-dnf
 Python 2 interface to DNF.
 
+%if 0%{with_python3}
 %package -n python3-dnf
 Summary:    Python 3 interface to DNF.
 %{?python_provide:%python_provide python3-dnf}
@@ -127,6 +135,7 @@ Requires:   rpm-python3 >= %{rpm_version}
 Obsoletes:  dnf <= 0.6.4
 %description -n python3-dnf
 Python 3 interface to DNF.
+%endif
 
 %package automatic
 Summary:    Alternative CLI to "dnf upgrade" suitable for automatic, regular execution.
@@ -143,26 +152,32 @@ Alternative CLI to "dnf upgrade" suitable for automatic, regular execution.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%if 0%{with_python3}
 rm -rf py3
 mkdir ../py3
 cp -a . ../py3/
 mv ../py3 ./
+%endif
 
 %build
 %cmake .
 make %{?_smp_mflags}
 make doc-man
+%if 0%{with_python3}
 pushd py3
 %cmake -DPYTHON_DESIRED:str=3 -DWITH_MAN=0 .
 make %{?_smp_mflags}
 popd
+%endif
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
 %find_lang %{name}
+%if 0%{with_python3}
 pushd py3
 make install DESTDIR=$RPM_BUILD_ROOT
 popd
+%endif
 
 mkdir -p $RPM_BUILD_ROOT%{pluginconfpath}
 mkdir -p $RPM_BUILD_ROOT%{py2pluginpath}
@@ -182,9 +197,11 @@ rm $RPM_BUILD_ROOT%{_bindir}/dnf-automatic-3
 
 %check
 make ARGS="-V" test
+%if 0%{with_python3}
 pushd py3
 make ARGS="-V" test
 popd
+%endif
 
 %files -f %{name}.lang
 %doc AUTHORS README.rst COPYING PACKAGE-LICENSING
@@ -226,6 +243,7 @@ popd
 %{python_sitelib}/dnf/
 %dir %{py2pluginpath}
 
+%if 0%{with_python3}
 %files -n python3-dnf
 %doc AUTHORS README.rst COPYING PACKAGE-LICENSING
 %{_bindir}/dnf-3
@@ -233,6 +251,7 @@ popd
 %{python3_sitelib}/dnf/
 %dir %{py3pluginpath}
 %dir %{py3pluginpath}/__pycache__
+%endif
 
 %files automatic
 %doc AUTHORS COPYING PACKAGE-LICENSING

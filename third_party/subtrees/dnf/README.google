@@ -10,3 +10,4 @@ dependency resolver.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Make python3 build optional.
