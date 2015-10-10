@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/librepo.git/
+Version: 3c7e370b7bba1ea7825e6db80d02c79ac7c0f55d
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for librepo - Repodata downloading library.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
