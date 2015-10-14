@@ -1,0 +1,35 @@
+From d20b7d2b00e349610f3cf08d9ff3723cc7c56e32 Mon Sep 17 00:00:00 2001
+From: Florian Festi <ffesti@redhat.com>
+Date: Mon, 7 Sep 2015 11:39:36 +0200
+Subject: [PATCH] Fix rpmrichOpStr to use the new syntax
+
+You need to rebuild all packages using rich deps build with previous versions of rpm as the richdeps are converted to the old syntax.
+---
+ lib/rpmds.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/lib/rpmds.c b/lib/rpmds.c
+index 77733bc..ba6e244 100644
+--- a/lib/rpmds.c
++++ b/lib/rpmds.c
+@@ -1390,13 +1390,13 @@ const char *rpmrichOpStr(rpmrichOp op)
+     if (op == RPMRICHOP_SINGLE)
+ 	return "SINGLE";
+     if (op == RPMRICHOP_AND)
+-	return "&";
++	return "and";
+     if (op == RPMRICHOP_OR)
+-	return "|";
++	return "or";
+     if (op == RPMRICHOP_IF)
+-	return "IF";
++	return "if";
+     if (op == RPMRICHOP_ELSE)
+-	return "ELSE";
++	return "else";
+     return NULL;
+ }
+ 
+-- 
+2.1.0
+
