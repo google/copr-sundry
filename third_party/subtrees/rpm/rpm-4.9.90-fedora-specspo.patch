@@ -1,0 +1,78 @@
+diff --git a/lib/tagexts.c b/lib/tagexts.c
+index dc0e0fb..e0a5d1f 100644
+--- a/lib/tagexts.c
++++ b/lib/tagexts.c
+@@ -478,59 +478,29 @@ static const char * const _macro_i18ndomains = "%{?_i18ndomains}";
+  */
+ static int i18nTag(Header h, rpmTag tag, rpmtd td, headerGetFlags hgflags)
+ {
+-    int rc;
++    int rc = headerGet(h, tag, td, HEADERGET_ALLOC);
+ #if defined(ENABLE_NLS)
+-    char * dstring = rpmExpand(_macro_i18ndomains, NULL);
+-
+-    td->type = RPM_STRING_TYPE;
+-    td->data = NULL;
+-    td->count = 0;
+-
+-    if (dstring && *dstring) {
+-	char *domain, *de;
+-	const char * langval;
+-	char * msgkey;
+-	const char * msgid;
+-
+-	rasprintf(&msgkey, "%s(%s)", headerGetString(h, RPMTAG_NAME), 
+-		  rpmTagGetName(tag));
+-
+-	/* change to en_US for msgkey -> msgid resolution */
+-	langval = getenv(language);
+-	(void) setenv(language, "en_US", 1);
+-        ++_nl_msg_cat_cntr;
++    if (rc) {
++	char *de, *dstring = rpmExpand(_macro_i18ndomains, NULL);
++	const char *domain;
+ 
+-	msgid = NULL;
+ 	for (domain = dstring; domain != NULL; domain = de) {
++	    const char *msgid = td->data;
++	    const char *msg = NULL;
++
+ 	    de = strchr(domain, ':');
+ 	    if (de) *de++ = '\0';
+-	    msgid = dgettext(domain, msgkey);
+-	    if (msgid != msgkey) break;
+-	}
+-
+-	/* restore previous environment for msgid -> msgstr resolution */
+-	if (langval)
+-	    (void) setenv(language, langval, 1);
+-	else
+-	    unsetenv(language);
+-        ++_nl_msg_cat_cntr;
+-
+-	if (domain && msgid) {
+-	    td->data = dgettext(domain, msgid);
+-	    td->data = xstrdup(td->data); /* XXX xstrdup has side effects. */
+-	    td->count = 1;
+-	    td->flags = RPMTD_ALLOCED;
++	    msg = dgettext(domain, td->data);
++	    if (msg != msgid) {
++		free(td->data);
++		td->data = xstrdup(msg);
++		break;
++	    }
+ 	}
+-	dstring = _free(dstring);
+-	free(msgkey);
+-	if (td->data)
+-	    return 1;
++	free(dstring);
+     }
+-
+-    free(dstring);
+ #endif
+ 
+-    rc = headerGet(h, tag, td, HEADERGET_ALLOC);
+     return rc;
+ }
+ 
