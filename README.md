@@ -43,6 +43,7 @@ code that happens to be owned by Google.
  * python-pip & python3-pip 7.1.0
  * python-setuptools & python3-setuptools 18.3.2
  * python-wheel & python3-wheel 0.24.0
+ * rpm 4.13.0-rc1
  * rubygem-fog-profitbricks 0.0.3
  * rubygem-retriable 1.4.1
  * yum 3.4.3-508
