@@ -10,8 +10,13 @@
 %bcond_with sanitizer
 # build with libarchive? (needed for rpm2archive)
 %bcond_without libarchive
+%if 0%{?fedora} > 19
 # build with libimaevm.so
 %bcond_without libimaevm
+%else
+# TODO: build with libimaevm on EL as well.
+%bcond_with libimaevm
+%endif
 
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 

@@ -9,3 +9,4 @@ RPM spec files for rpm - The RPM package management system.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Build without libimaevm on EL.
