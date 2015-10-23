@@ -26,6 +26,25 @@ code that happens to be owned by Google.
 
 ## List of packages
 
+### Most notable
+
+ * python3 3.5 backported to CentOS 7 (aka RHEL/EL/EPEL 7) along with many
+   libraries.
+
+### Full list
+
+ * cmake 3.3.2
+ * dnf 1.1.2
+ * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
+ * pyparsing & python3-pyparsing 2.0.3
+ * python 2.7.10 (with python-macros backported to EL7)
+ * python3 3.5.0
+ * python-jsonschema & python3-jsonschema 2.4.0
+ * python-keyring & python3-keyring 5.0
+ * python-pip & python3-pip 7.1.0
+ * python-setuptools & python3-setuptools 18.3.2
+ * python-wheel & python3-wheel 0.24.0
+ * rpm 4.13.0-rc1
  * rubygem-fog-profitbricks 0.0.3
  * rubygem-retriable 1.4.1
  * yum 3.4.3-508

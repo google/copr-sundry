@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-keyring.git/
+Version: 7e94a74157d461ad3acd18805de770a5f517aab0
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-keyring - Python 2 library to store and access
+passwords safely.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Unconditionally build python3 version.

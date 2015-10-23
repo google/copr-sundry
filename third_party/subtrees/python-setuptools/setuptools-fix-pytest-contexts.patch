@@ -1,0 +1,20 @@
+# HG changeset patch
+# User Slavek Kabrda <slavek.kabrda@gmail.com>
+# Date 1420796448 0
+# Branch bkabrda/access-osenvironkey-not-osenvironkey-1420796445843
+# Node ID 8bd7c902d33a41d6ab9f9c03fc75d3c5ccb2582d
+# Parent  b7ff4497056b8b940b6b5c0b313988f54c4e9cd3
+Access os.environ[key], not os.environ['key']
+
+diff --git a/setuptools/tests/contexts.py b/setuptools/tests/contexts.py
+--- a/setuptools/tests/contexts.py
++++ b/setuptools/tests/contexts.py
+@@ -27,7 +27,7 @@
+     to clear the values.
+     """
+     saved = dict(
+-        (key, os.environ['key'])
++        (key, os.environ[key])
+         for key in replacements
+         if key in os.environ
+     )

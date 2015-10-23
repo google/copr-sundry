@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/rpm.git/
+Version: 26ad4d87176cf26e0a8105b32887f4bbe47290b4
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for rpm - The RPM package management system.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build without libimaevm on EL.

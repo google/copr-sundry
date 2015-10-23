@@ -1,0 +1,39 @@
+URL: http://pkgs.fedoraproject.org/cgit/python.git/
+Version: 2881873aa2c9da2f0307a7b2c86eb07b4dcbe0bc
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python - an interpreted, interactive, object-oriented
+programming language.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- 00055-systemtap.patch renamed to python-00055-systemtap.patch.
+- 00111-no-static-lib.patch renamed to python-00111-no-static-lib.patch.
+- 00113-more-configuration-flags.patch renamed to
+  python-00113-more-configuration-flags.patch.
+- 00125-less-verbose-COUNT_ALLOCS.patch renamed to
+  python-00125-less-verbose-COUNT_ALLOCS.patch.
+- 00132-add-rpmbuild-hooks-to-unittest.patch renamed to
+  python-00132-add-rpmbuild-hooks-to-unittest.patch.
+- 00134-fix-COUNT_ALLOCS-failure-in-test_sys.patch renamed to
+  python-00134-fix-COUNT_ALLOCS-failure-in-test_sys.patch.
+- 00143-tsc-on-ppc.patch renamed to python-00143-tsc-on-ppc.patch.
+- 00146-hashlib-fips.patch renamed to python-00146-hashlib-fips.patch.
+- 00153-fix-test_gdb-noise.patch renamed to
+  python-00153-fix-test_gdb-noise.patch.
+- 00155-avoid-ctypes-thunks.patch renamed to
+  python-00155-avoid-ctypes-thunks.patch.
+- 00156-gdb-autoload-safepath.patch renamed to
+  python-00156-gdb-autoload-safepath.patch.
+- 00157-uid-gid-overflows.patch renamed to
+  python-00157-uid-gid-overflows.patch.
+- 00170-gc-assertions.patch renamed to python-00170-gc-assertions.patch.
+- 00173-workaround-ENOPROTOOPT-in-bind_port.patch renamed to 
+  python-00173-workaround-ENOPROTOOPT-in-bind_port.patch.
+- 00184-ctypes-should-build-with-libffi-multilib-wrapper.patch renamed to
+  python-00184-ctypes-should-build-with-libffi-multilib-wrapper.patch.
+- 05000-autotool-intermediates.patch renamed to
+  python-05000-autotool-intermediates.patch.

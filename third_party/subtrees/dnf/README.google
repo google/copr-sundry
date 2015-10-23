@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/dnf.git/
+Version: 4c11232b6033571d1c96b016bec7678f6e3de06a
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for dnf - Package manager forked from Yum, using libsolv as a
+dependency resolver.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Make python3 build optional.

@@ -1,0 +1,1 @@
+../third_party/subtrees/libcomps/libcomps.spec

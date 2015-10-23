@@ -1,0 +1,1 @@
+../third_party/subtrees/python-setuptools/python-setuptools.spec

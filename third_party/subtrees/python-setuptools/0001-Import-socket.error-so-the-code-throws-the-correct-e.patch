@@ -1,0 +1,24 @@
+From 78a4d637f1db446d06f68929d76e76acd7121628 Mon Sep 17 00:00:00 2001
+From: Toshio Kuratomi <toshio@fedoraproject.org>
+Date: Mon, 28 Oct 2013 10:54:34 -0700
+Subject: [PATCH] Import socket.error so the code throws the correct exception
+
+---
+ setuptools/ssl_support.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/setuptools/ssl_support.py b/setuptools/ssl_support.py
+index 2aec655..479b0d2 100644
+--- a/setuptools/ssl_support.py
++++ b/setuptools/ssl_support.py
+@@ -44,6 +44,7 @@ is_available = ssl is not None and object not in (HTTPSHandler, HTTPSConnection)
+ try:
+     from socket import create_connection
+ except ImportError:
++    from socket import error
+     _GLOBAL_DEFAULT_TIMEOUT = getattr(socket, '_GLOBAL_DEFAULT_TIMEOUT', object())
+     def create_connection(address, timeout=_GLOBAL_DEFAULT_TIMEOUT,
+                           source_address=None):
+-- 
+1.8.3.1
+

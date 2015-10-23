@@ -1,0 +1,15 @@
+diff -up Python-2.7.8/Modules/_ssl.c.orig Python-2.7.8/Modules/_ssl.c
+--- Python-2.7.8/Modules/_ssl.c.orig	2014-07-17 14:17:32.584362667 +0200
++++ Python-2.7.8/Modules/_ssl.c	2014-07-17 14:17:38.215405930 +0200
+@@ -312,8 +312,10 @@ newPySSLObject(PySocketSockObject *Sock,
+     else if (proto_version == PY_SSL_VERSION_SSL2)
+         self->ctx = SSL_CTX_new(SSLv2_method()); /* Set up context */
+ #endif
+-    else if (proto_version == PY_SSL_VERSION_SSL23)
++    else if (proto_version == PY_SSL_VERSION_SSL23) {
+         self->ctx = SSL_CTX_new(SSLv23_method()); /* Set up context */
++        self->ctx->options &= ~(SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3);
++    }
+     PySSL_END_ALLOW_THREADS
+ 
+     if (self->ctx == NULL) {
