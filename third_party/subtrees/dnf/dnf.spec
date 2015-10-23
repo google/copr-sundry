@@ -192,7 +192,9 @@ rm $RPM_BUILD_ROOT%{_bindir}/dnf-automatic-2
 %else
 ln -sr $RPM_BUILD_ROOT%{_bindir}/dnf-2 $RPM_BUILD_ROOT%{_bindir}/dnf
 mv $RPM_BUILD_ROOT%{_bindir}/dnf-automatic-2 $RPM_BUILD_ROOT%{_bindir}/dnf-automatic
+%if 0%{with_python3}
 rm $RPM_BUILD_ROOT%{_bindir}/dnf-automatic-3
+%endif
 %endif
 
 %check
