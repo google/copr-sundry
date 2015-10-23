@@ -1,0 +1,1 @@
+../third_party/submodules/perl-Fedora-VSP/perl-Fedora-VSP.spec
