@@ -16,3 +16,6 @@
 [submodule "third_party/submodules/perl"]
 	path = third_party/submodules/perl
 	url = git://pkgs.fedoraproject.org/perl.git
+[submodule "third_party/submodules/perl-Fedora-VSP"]
+	path = third_party/submodules/perl-Fedora-VSP
+	url = git://pkgs.fedoraproject.org/perl-Fedora-VSP.git
