@@ -22,3 +22,6 @@
 [submodule "third_party/submodules/deltarpm"]
 	path = third_party/submodules/deltarpm
 	url = git://pkgs.fedoraproject.org/deltarpm.git
+[submodule "third_party/submodules/os-prober"]
+	path = third_party/submodules/os-prober
+	url = git://pkgs.fedoraproject.org/os-prober.git
