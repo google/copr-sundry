@@ -1,0 +1,1 @@
+../third_party/submodules/deltarpm/deltarpm.spec

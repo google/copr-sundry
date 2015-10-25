@@ -7,3 +7,4 @@ SOURCES/*.gem
 SOURCES/*.tar.gz
 SOURCES/*.tar.xz
 SOURCES/*.zip
+SOURCES/*.bz2
