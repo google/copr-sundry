@@ -9,3 +9,5 @@ addFilter('third_party/submodules/')
 
 # Ignore all lint warnings in yum.spec - symlink from submodules.
 addFilter('SPECS/yum.spec')
+# Python3 is mostly third-party and has lots of warnings.
+addFilter('SPECS/python3.spec')
