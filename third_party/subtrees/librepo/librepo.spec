@@ -19,7 +19,7 @@ Summary:        Repodata downloading library
 Group:          System Environment/Libraries
 License:        LGPLv2+
 URL:            https://github.com/Tojaj/librepo
-Source0:        https://github.com/rpm-software-management/librepo/archive/librepo-%{version}.tar.gz
+Source0:        https://github.com/rpm-software-management/librepo/archive/librepo-%{version}.zip
 
 BuildRequires:  check-devel
 BuildRequires:  cmake
