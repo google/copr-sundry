@@ -25,3 +25,6 @@
 [submodule "third_party/submodules/os-prober"]
 	path = third_party/submodules/os-prober
 	url = git://pkgs.fedoraproject.org/os-prober.git
+[submodule "third_party/submodules/nginx"]
+	path = third_party/submodules/nginx
+	url = git://pkgs.fedoraproject.org/nginx.git
