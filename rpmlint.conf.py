@@ -11,6 +11,7 @@ addFilter('SPECS/gdb.spec')
 addFilter('SPECS/yum.spec')
 
 # Python is mostly third-party and has lots of warnings.
+addFilter('SPECS/python.spec')
 addFilter('SPECS/python3.spec')
 addFilter('third_party/subtrees/python/python.spec')
 addFilter('third_party/subtrees/python3/python3.spec')
