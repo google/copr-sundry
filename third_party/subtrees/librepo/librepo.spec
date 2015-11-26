@@ -22,7 +22,7 @@ URL:            https://github.com/Tojaj/librepo
 # Use the following commands to generate the tarball:
 #  git clone https://github.com/Tojaj/librepo.git
 #  cd librepo
-#  utils/make_tarball.sh %{gitrev}
+#  utils/make_tarball.sh %%{gitrev}
 Source0:        librepo-%{gitrev}.tar.xz
 
 BuildRequires:  check-devel
