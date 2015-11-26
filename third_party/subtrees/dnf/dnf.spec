@@ -716,7 +716,7 @@ exit 0
 - cosmetic: doc: removed duplicated word (Jan Silhan)
 - doc: described unavailable package corner case with skip_if_unavailable option (RhBug:1119030) (Jan Silhan)
 - log: replaced size with maxsize directive (RhBug:1177394) (Jan Silhan)
-- spec: fixed %ghost log file names (Jan Silhan)
+- spec: fixed %%ghost log file names (Jan Silhan)
 
 * Mon Dec 8 2014 Jan Silhan <jsilhan@redhat.com> - 0.6.3-2
 - logging: reverted naming from a6dde81
