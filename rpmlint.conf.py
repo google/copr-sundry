@@ -8,6 +8,7 @@ setOption("BadnessThreshold", 42)
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
 addFilter('SPECS/gdb.spec')
+addFilter('SPECS/libcomps.spec')
 addFilter('SPECS/yum.spec')
 
 # Python is mostly third-party and has lots of warnings.
