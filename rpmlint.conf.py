@@ -21,3 +21,6 @@ addFilter('third_party/subtrees/python3/python3.spec')
 # RPM is special, let's ignore warnings from it.
 addFilter('SPECS/rpm.spec')
 addFilter('third_party/subtrees/rpm/rpm.spec')
+
+# DNF have a lot of weird stuff:
+addFilter('dnf.spec.*libdir-macro-in-noarch-package')
