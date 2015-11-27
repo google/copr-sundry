@@ -10,4 +10,3 @@ Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
 - Build python3 version on all distros by default.
-- Disable python3 tests (for now).

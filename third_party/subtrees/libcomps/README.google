@@ -9,3 +9,4 @@ RPM spec files for libcomps - Comps XML file manipulation library.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Removed some comments to fix lint issues.

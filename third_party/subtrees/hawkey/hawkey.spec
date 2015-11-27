@@ -2,7 +2,7 @@
 
 %define github_version %{name}-%{version}-1
 
-Name:		hawkey
+Name:       hawkey
 Version:	0.6.1
 Release:	2%{?snapshot}%{?dist}
 Summary:	Library providing simplified C and Python API to libsolv

@@ -52,7 +52,7 @@ Provides: python-distribute = %{version}-%{release}
 Obsoletes: python-distribute < 0.6.36-2
 
 # Declare that we provide the py2 version of setuptools
-Provides:  python2-setuptools
+Provides:  python2-setuptools = %{version}-%{release}
 
 
 %description

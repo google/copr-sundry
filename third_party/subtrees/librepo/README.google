@@ -9,3 +9,5 @@ RPM spec files for librepo - Repodata downloading library.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Point url to github release.
+- Fix macro-in-comment lint warnings.

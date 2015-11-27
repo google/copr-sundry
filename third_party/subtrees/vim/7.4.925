@@ -1,0 +1,180 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.925
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.925
+Problem:    User may yank or put using the register being recorded in.
+Solution:   Add the recording register in the message. (Christian Brabandt,
+            closes #470)
+Files:      runtime/doc/options.txt, runtime/doc/repeat.txt, src/ops.c,
+            src/option.h, src/screen.c
+
+
+*** ../vim-7.4.924/runtime/doc/options.txt	2015-11-10 19:41:30.519462341 +0100
+--- runtime/doc/options.txt	2015-11-19 17:26:15.245736151 +0100
+***************
+*** 6507,6512 ****
+--- 6528,6534 ----
+  	  c	don't give |ins-completion-menu| messages.  For example,
+  		"-- XXX completion (YYY)", "match 1 of 2", "The only match",
+  		"Pattern not found", "Back at original", etc.
++ 	  q     use "recording" instead of "recording @a"
+  
+  	This gives you the opportunity to avoid that a change between buffers
+  	requires you to hit <Enter>, but still gives as useful a message as
+*** ../vim-7.4.924/runtime/doc/repeat.txt	2013-08-10 13:25:00.000000000 +0200
+--- runtime/doc/repeat.txt	2015-11-19 17:26:15.245736151 +0100
+***************
+*** 102,108 ****
+  q{0-9a-zA-Z"}		Record typed characters into register {0-9a-zA-Z"}
+  			(uppercase to append).  The 'q' command is disabled
+  			while executing a register, and it doesn't work inside
+! 			a mapping and |:normal|.  {Vi: no recording}
+  
+  q			Stops recording.  (Implementation note: The 'q' that
+  			stops recording is not stored in the register, unless
+--- 109,121 ----
+  q{0-9a-zA-Z"}		Record typed characters into register {0-9a-zA-Z"}
+  			(uppercase to append).  The 'q' command is disabled
+  			while executing a register, and it doesn't work inside
+! 			a mapping and |:normal|.
+! 
+! 			Note: If the register being used for recording is also
+! 			used for |y| and |p| the result is most likely not
+! 			what is expected, because the put will paste the
+! 			recorded macro and the yank will overwrite the
+! 			recorded macro. {Vi: no recording}
+  
+  q			Stops recording.  (Implementation note: The 'q' that
+  			stops recording is not stored in the register, unless
+*** ../vim-7.4.924/src/ops.c	2015-08-11 19:36:37.050004181 +0200
+--- src/ops.c	2015-11-19 17:26:15.249736106 +0100
+***************
+*** 1080,1086 ****
+  	    retval = FAIL;
+  	else
+  	{
+! 	    Recording = TRUE;
+  	    showmode();
+  	    regname = c;
+  	    retval = OK;
+--- 1080,1086 ----
+  	    retval = FAIL;
+  	else
+  	{
+! 	    Recording = c;
+  	    showmode();
+  	    regname = c;
+  	    retval = OK;
+*** ../vim-7.4.924/src/option.h	2015-11-10 19:41:30.519462341 +0100
+--- src/option.h	2015-11-19 17:26:15.249736106 +0100
+***************
+*** 213,219 ****
+  #define SHM_ATTENTION	'A'		/* no ATTENTION messages */
+  #define SHM_INTRO	'I'		/* intro messages */
+  #define SHM_COMPLETIONMENU  'c'		/* completion menu messages */
+! #define SHM_ALL		"rmfixlnwaWtToOsAIc" /* all possible flags for 'shm' */
+  
+  /* characters for p_go: */
+  #define GO_ASEL		'a'		/* autoselect */
+--- 213,220 ----
+  #define SHM_ATTENTION	'A'		/* no ATTENTION messages */
+  #define SHM_INTRO	'I'		/* intro messages */
+  #define SHM_COMPLETIONMENU  'c'		/* completion menu messages */
+! #define SHM_RECORDING	'q'		/* short recording message */
+! #define SHM_ALL		"rmfixlnwaWtToOsAIcq" /* all possible flags for 'shm' */
+  
+  /* characters for p_go: */
+  #define GO_ASEL		'a'		/* autoselect */
+*** ../vim-7.4.924/src/screen.c	2015-11-10 14:35:14.312069795 +0100
+--- src/screen.c	2015-11-19 17:54:41.439168573 +0100
+***************
+*** 163,168 ****
+--- 163,169 ----
+  static int win_do_lines __ARGS((win_T *wp, int row, int line_count, int mayclear, int del));
+  static void win_rest_invalid __ARGS((win_T *wp));
+  static void msg_pos_mode __ARGS((void));
++ static void recording_mode __ARGS((int attr));
+  #if defined(FEAT_WINDOWS)
+  static void draw_tabline __ARGS((void));
+  #endif
+***************
+*** 10163,10169 ****
+  #endif
+  		)
+  	{
+! 	    MSG_PUTS_ATTR(_("recording"), attr);
+  	    need_clear = TRUE;
+  	}
+  
+--- 10164,10170 ----
+  #endif
+  		)
+  	{
+! 	    recording_mode(attr);
+  	    need_clear = TRUE;
+  	}
+  
+***************
+*** 10227,10237 ****
+      {
+  	msg_pos_mode();
+  	if (Recording)
+! 	    MSG_PUTS_ATTR(_("recording"), hl_attr(HLF_CM));
+  	msg_clr_eos();
+      }
+  }
+  
+  #if defined(FEAT_WINDOWS)
+  /*
+   * Draw the tab pages line at the top of the Vim window.
+--- 10228,10251 ----
+      {
+  	msg_pos_mode();
+  	if (Recording)
+! 	    recording_mode(hl_attr(HLF_CM));
+  	msg_clr_eos();
+      }
+  }
+  
++     static void
++ recording_mode(attr)
++     int attr;
++ {
++     MSG_PUTS_ATTR(_("recording"), attr);
++     if (!shortmess(SHM_RECORDING))
++     {
++ 	char_u s[4];
++ 	sprintf((char *)s, " @%c", Recording);
++ 	MSG_PUTS_ATTR(s, attr);
++     }
++ }
++ 
+  #if defined(FEAT_WINDOWS)
+  /*
+   * Draw the tab pages line at the top of the Vim window.
+*** ../vim-7.4.924/src/version.c	2015-11-19 13:46:43.658535430 +0100
+--- src/version.c	2015-11-19 17:27:48.956717638 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     925,
+  /**/
+
+-- 
+FIXME and XXX are two common keywords used to mark broken or incomplete code
+not only since XXX as a sex reference would grab everybody's attention but
+simply due to the fact that Vim would highlight these words.
+					-- Hendrik Scholz
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///

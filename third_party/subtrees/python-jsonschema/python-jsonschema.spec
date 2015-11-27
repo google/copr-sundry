@@ -58,10 +58,10 @@ popd
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 
 %check
-#pushd %{py3dir}
-#    %{_bindir}/nosetests-3* -v
-#popd
-#%{_bindir}/nosetests -v
+pushd %{py3dir}
+    %{_bindir}/nosetests-3* -v
+popd
+%{_bindir}/nosetests -v
 
 %files
 %doc README.rst COPYING

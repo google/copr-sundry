@@ -1,0 +1,14 @@
+URL: http://pkgs.fedoraproject.org/cgit/vim.git/
+Version: c087287242228dbac74078de81dd6adca01bc0bd
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for vim - The VIM editor.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Fixed source urls.
+- Versioned provides.
+- Removed vim-7.0-specedit.patch.

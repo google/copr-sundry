@@ -1,0 +1,54 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.933
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.933 (after 7.4.926)
+Problem:    Crash when using longest completion match.
+Solution:   Fix array index.
+Files:      src/ex_getln.c
+
+
+*** ../vim-7.4.932/src/ex_getln.c	2015-11-19 19:00:01.764467054 +0100
+--- src/ex_getln.c	2015-11-21 16:24:42.615966196 +0100
+***************
+*** 3704,3710 ****
+  	    }
+  	    else
+  #endif
+! 		c0 = xp->xp_files[i][len];
+  	    for (i = 1; i < xp->xp_numfiles; ++i)
+  	    {
+  #ifdef FEAT_MBYTE
+--- 3704,3710 ----
+  	    }
+  	    else
+  #endif
+! 		c0 = xp->xp_files[0][len];
+  	    for (i = 1; i < xp->xp_numfiles; ++i)
+  	    {
+  #ifdef FEAT_MBYTE
+*** ../vim-7.4.932/src/version.c	2015-11-21 14:31:29.273812116 +0100
+--- src/version.c	2015-11-21 16:27:32.042123218 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     933,
+  /**/
+
+-- 
+~
+~
+~
+".signature" 4 lines, 50 characters written
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///

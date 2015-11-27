@@ -16,7 +16,7 @@
 %global py2pluginpath %{python_sitelib}/dnf-plugins
 %global py3pluginpath %{python3_sitelib}/dnf-plugins
 
-Name:		dnf
+Name:       dnf
 Version:	1.1.2
 Release:	4%{?snapshot}%{?dist}
 Summary:	Package manager forked from Yum, using libsolv as a dependency resolver
@@ -41,27 +41,27 @@ Requires:   python2-dnf = %{version}-%{release}
 Requires(post):     systemd
 Requires(preun):    systemd
 Requires(postun):   systemd
-Provides:       dnf-command(autoremove)
-Provides:       dnf-command(check-update)
-Provides:       dnf-command(clean)
-Provides:       dnf-command(distro-sync)
-Provides:       dnf-command(downgrade)
-Provides:       dnf-command(group)
-Provides:       dnf-command(history)
-Provides:       dnf-command(info)
-Provides:       dnf-command(install)
-Provides:       dnf-command(list)
-Provides:       dnf-command(makecache)
-Provides:       dnf-command(mark)
-Provides:       dnf-command(provides)
-Provides:       dnf-command(reinstall)
-Provides:       dnf-command(remove)
-Provides:       dnf-command(repolist)
-Provides:       dnf-command(repository-packages)
-Provides:       dnf-command(search)
-Provides:       dnf-command(updateinfo)
-Provides:       dnf-command(upgrade)
-Provides:       dnf-command(upgrade-to)
+Provides:       dnf-command(autoremove) = %{version}-%{release}
+Provides:       dnf-command(check-update) = %{version}-%{release}
+Provides:       dnf-command(clean) = %{version}-%{release}
+Provides:       dnf-command(distro-sync) = %{version}-%{release}
+Provides:       dnf-command(downgrade) = %{version}-%{release}
+Provides:       dnf-command(group) = %{version}-%{release}
+Provides:       dnf-command(history) = %{version}-%{release}
+Provides:       dnf-command(info) = %{version}-%{release}
+Provides:       dnf-command(install) = %{version}-%{release}
+Provides:       dnf-command(list) = %{version}-%{release}
+Provides:       dnf-command(makecache) = %{version}-%{release}
+Provides:       dnf-command(mark) = %{version}-%{release}
+Provides:       dnf-command(provides) = %{version}-%{release}
+Provides:       dnf-command(reinstall) = %{version}-%{release}
+Provides:       dnf-command(remove) = %{version}-%{release}
+Provides:       dnf-command(repolist) = %{version}-%{release}
+Provides:       dnf-command(repository-packages) = %{version}-%{release}
+Provides:       dnf-command(search) = %{version}-%{release}
+Provides:       dnf-command(updateinfo) = %{version}-%{release}
+Provides:       dnf-command(upgrade) = %{version}
+Provides:       dnf-command(upgrade-to) = %{version}-%{release}
 %description
 Package manager forked from Yum, using libsolv as a dependency resolver.
 
@@ -295,7 +295,7 @@ exit 0
 %systemd_postun_with_restart dnf-automatic.timer
 
 %changelog
-* Tue Sep 30 2015 Michal Luscon <mluscon@redhat.com> 1.1.2-4
+* Wed Sep 30 2015 Michal Luscon <mluscon@redhat.com> 1.1.2-4
 - don't import readline as it causes crashes in Anaconda
   (related:RhBug:1258364)
 

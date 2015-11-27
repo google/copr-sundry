@@ -1,0 +1,67 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.936
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.936
+Problem:    Crash when dragging with the mouse.
+Solution:   Add safety check for NULL pointer. Check mouse position for valid
+            value. (Hirohito Higashi)
+Files:      src/window.c, src/term.c
+
+
+*** ../vim-7.4.935/src/window.c	2015-11-19 13:14:26.031915183 +0100
+--- src/window.c	2015-11-22 19:22:45.009237162 +0100
+***************
+*** 5785,5790 ****
+--- 5785,5792 ----
+  	offset = room;		/* Move as far as we can */
+      if (offset <= 0)		/* No room at all, quit. */
+  	return;
++     if (fr == NULL)
++ 	return;			/* Safety check, should not happen. */
+  
+      /* grow frame fr by offset lines */
+      frame_new_width(fr, fr->fr_width + offset, left, FALSE);
+*** ../vim-7.4.935/src/term.c	2015-11-10 15:17:59.166278487 +0100
+--- src/term.c	2015-11-22 19:31:09.535677713 +0100
+***************
+*** 5231,5236 ****
+--- 5231,5243 ----
+  	    else
+  		key_name[1] = get_pseudo_mouse_code(current_button,
+  							   is_click, is_drag);
++ 
++ 	    /* Make sure the mouse position is valid.  Some terminals may
++ 	     * return weird values. */
++ 	    if (mouse_col >= Columns)
++ 		mouse_col = Columns - 1;
++ 	    if (mouse_row >= Rows)
++ 		mouse_row = Rows - 1;
+  	}
+  #endif /* FEAT_MOUSE */
+  
+*** ../vim-7.4.935/src/version.c	2015-11-22 15:08:17.475927509 +0100
+--- src/version.c	2015-11-22 19:35:43.728648086 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     936,
+  /**/
+
+-- 
+A: Because it messes up the order in which people normally read text.
+Q: Why is top-posting such a bad thing?
+A: Top-posting.
+Q: What is the most annoying thing on usenet and in e-mail?
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///
