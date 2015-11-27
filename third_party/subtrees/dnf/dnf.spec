@@ -16,14 +16,16 @@
 %global py2pluginpath %{python_sitelib}/dnf-plugins
 %global py3pluginpath %{python3_sitelib}/dnf-plugins
 
+%global release_ver 4
+
 Name:       dnf
-Version:	1.1.2
-Release:	4%{?snapshot}%{?dist}
+Version:    1.1.2
+Release:	%{release_ver}%{?snapshot}%{?dist}
 Summary:	Package manager forked from Yum, using libsolv as a dependency resolver
 # For a breakdown of the licensing, see PACKAGE-LICENSING
 License:	GPLv2+ and GPLv2 and GPL
 URL:		https://github.com/rpm-software-management/dnf
-Source0:    https://github.com/rpm-software-management/dnf/archive/%{name}-%{version}.tar.gz
+Source0:    https://github.com/rpm-software-management/dnf/archive/%{name}-%{version}-%{release_ver}.tar.gz
 Patch0:    dnf-1.1.2-1-to-dnf-1.1.2-2.patch
 Patch1:    dnf-1.1.2-2-to-dnf-1.1.2-3.patch
 Patch2:    dnf-1.1.2-3-to-dnf-1.1.2-4.patch
