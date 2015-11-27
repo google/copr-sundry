@@ -7,8 +7,10 @@ setOption("BadnessThreshold", 42)
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
+addFilter('SPECS/cmake.spec')
 addFilter('SPECS/gdb.spec')
 addFilter('SPECS/libcomps.spec')
+addFilter('SPECS/perl.spec')
 addFilter('SPECS/python-iniparse.spec')
 addFilter('SPECS/yum.spec')
 
