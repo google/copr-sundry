@@ -19,11 +19,7 @@ Summary:        Repodata downloading library
 Group:          System Environment/Libraries
 License:        LGPLv2+
 URL:            https://github.com/Tojaj/librepo
-# Use the following commands to generate the tarball:
-#  git clone https://github.com/Tojaj/librepo.git
-#  cd librepo
-#  utils/make_tarball.sh %%{gitrev}
-Source0:        librepo-%{gitrev}.tar.xz
+Source0:        https://github.com/rpm-software-management/librepo/archive/librepo-%{version}.tar.gz
 
 BuildRequires:  check-devel
 BuildRequires:  cmake
@@ -163,7 +159,7 @@ popd
 - Switch `command -v` for `which` in nosetest check
 - tests: Skip the relevant tests if extended attributes are not supported (Issue #70)
 - Refactoring: Spelling fixes
-- Support redefining %{gitrev} RPM macro from command line for utils/make_rpm.sh
+- Support redefining %%{gitrev} RPM macro from command line for utils/make_rpm.sh
 
 * Fri May 29 2015 Tomas Mlcoch <tmlcoch@redhat.com> - 1.7.16-1
 - Add LRI_LOWSPEEDTIME and LRI_LOWSPEEDLIMIT
