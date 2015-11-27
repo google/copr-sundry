@@ -32,7 +32,6 @@ Source7: gvim16.png
 Source8: gvim32.png
 Source9: gvim48.png
 Source10: gvim64.png
-Source11: Changelog.rpm
 Source12: vi_help.txt
 %if %{withvimspell}
 Source13: vim-spell-files.tar.bz2
@@ -550,7 +549,6 @@ rm -rf %{buildroot}
 %license LICENSE
 %doc README*
 %doc runtime/docs
-%doc Changelog.rpm
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/vimfiles/template.spec
 %dir %{_datadir}/%{name}/%{vimdir}
