@@ -1,0 +1,251 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.904
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.904
+Problem:    Vim does not provide .desktop files.
+Solution:   Include and install .desktop files. (James McCoy, closes #455)
+Files:      Filelist, runtime/vim.desktop, runtime/gvim.desktop, src/Makefile
+
+
+*** ../vim-7.4.903/Filelist	2015-09-15 19:17:51.990768865 +0200
+--- Filelist	2015-11-02 12:47:17.827018004 +0100
+***************
+*** 584,589 ****
+--- 584,591 ----
+  		runtime/vim32x32.xpm \
+  		runtime/vim48x48.png \
+  		runtime/vim48x48.xpm \
++ 		runtime/gvim.desktop \
++ 		runtime/vim.desktop \
+  
+  # Unix and DOS runtime without CR-LF translation
+  RT_UNIX_DOS_BIN =	\
+*** ../vim-7.4.903/runtime/vim.desktop	2015-11-02 12:50:22.500853811 +0100
+--- runtime/vim.desktop	2015-11-02 12:43:16.581844811 +0100
+***************
+*** 0 ****
+--- 1,80 ----
++ [Desktop Entry]
++ Name=Vim
++ GenericName=Text Editor
++ GenericName[de]=Texteditor
++ Comment=Edit text files
++ Comment[af]=Redigeer tekslêers
++ Comment[am]=የጽሑፍ ፋይሎች ያስተካክሉ
++ Comment[ar]=حرّر ملفات نصية
++ Comment[az]=Mətn fayllarını redaktə edin
++ Comment[be]=Рэдагаваньне тэкставых файлаў
++ Comment[bg]=Редактиране на текстови файлове
++ Comment[bn]=টেক্স্ট ফাইল এডিট করুন
++ Comment[bs]=Izmijeni tekstualne datoteke
++ Comment[ca]=Edita fitxers de text
++ Comment[cs]=Úprava textových souborů
++ Comment[cy]=Golygu ffeiliau testun
++ Comment[da]=Redigér tekstfiler
++ Comment[de]=Textdateien bearbeiten
++ Comment[el]=Επεξεργασία αρχείων κειμένου
++ Comment[en_CA]=Edit text files
++ Comment[en_GB]=Edit text files
++ Comment[es]=Edita archivos de texto
++ Comment[et]=Redigeeri tekstifaile
++ Comment[eu]=Editatu testu-fitxategiak
++ Comment[fa]=ویرایش پرونده‌های متنی
++ Comment[fi]=Muokkaa tekstitiedostoja
++ Comment[fr]=Édite des fichiers texte
++ Comment[ga]=Eagar comhad Téacs
++ Comment[gu]=લખાણ ફાઇલોમાં ફેરફાર કરો
++ Comment[he]=ערוך קבצי טקסט
++ Comment[hi]=पाठ फ़ाइलें संपादित करें
++ Comment[hr]=Uređivanje tekstualne datoteke
++ Comment[hu]=Szövegfájlok szerkesztése
++ Comment[id]=Edit file teks
++ Comment[it]=Modifica file di testo
++ Comment[ja]=テキストファイルを編集します
++ Comment[kn]=ಪಠ್ಯ ಕಡತಗಳನ್ನು ಸಂಪಾದಿಸು
++ Comment[ko]=텍스트 파일을 편집합니다
++ Comment[lt]=Redaguoti tekstines bylas
++ Comment[lv]=Rediģēt teksta failus
++ Comment[mk]=Уреди текстуални фајлови
++ Comment[ml]=വാചക രചനകള് തിരുത്തുക
++ Comment[mn]=Текст файл боловсруулах
++ Comment[mr]=गद्य फाइल संपादित करा
++ Comment[ms]=Edit fail teks
++ Comment[nb]=Rediger tekstfiler
++ Comment[ne]=पाठ फाइललाई संशोधन गर्नुहोस्
++ Comment[nl]=Tekstbestanden bewerken
++ Comment[nn]=Rediger tekstfiler
++ Comment[no]=Rediger tekstfiler
++ Comment[or]=ପାଠ୍ଯ ଫାଇଲଗୁଡ଼ିକୁ ସମ୍ପାଦନ କରନ୍ତୁ
++ Comment[pa]=ਪਾਠ ਫਾਇਲਾਂ ਸੰਪਾਦਨ
++ Comment[pl]=Edytor plików tekstowych
++ Comment[pt]=Editar ficheiros de texto
++ Comment[pt_BR]=Edite arquivos de texto
++ Comment[ro]=Editare fişiere text
++ Comment[ru]=Редактор текстовых файлов
++ Comment[sk]=Úprava textových súborov
++ Comment[sl]=Urejanje datotek z besedili
++ Comment[sq]=Përpuno files teksti
++ Comment[sr]=Измени текстуалне датотеке
++ Comment[sr@Latn]=Izmeni tekstualne datoteke
++ Comment[sv]=Redigera textfiler
++ Comment[ta]=உரை கோப்புகளை தொகுக்கவும்
++ Comment[th]=แก้ไขแฟ้มข้อความ
++ Comment[tk]=Metin faýllary editle
++ Comment[tr]=Metin dosyalarını düzenle
++ Comment[uk]=Редактор текстових файлів
++ Comment[vi]=Soạn thảo tập tin văn bản
++ Comment[wa]=Asspougnî des fitchîs tecses
++ Comment[zh_CN]=编辑文本文件
++ Comment[zh_TW]=編輯文字檔
++ TryExec=vim
++ Exec=vim %F
++ Terminal=true
++ Type=Application
++ Icon=gvim
++ Categories=Utility;TextEditor;
++ StartupNotify=false
++ MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+*** ../vim-7.4.903/runtime/gvim.desktop	2015-11-02 12:50:22.504853764 +0100
+--- runtime/gvim.desktop	2015-11-02 12:43:16.581844811 +0100
+***************
+*** 0 ****
+--- 1,80 ----
++ [Desktop Entry]
++ Name=GVim
++ GenericName=Text Editor
++ GenericName[de]=Texteditor
++ Comment=Edit text files
++ Comment[af]=Redigeer tekslêers
++ Comment[am]=የጽሑፍ ፋይሎች ያስተካክሉ
++ Comment[ar]=حرّر ملفات نصية
++ Comment[az]=Mətn fayllarını redaktə edin
++ Comment[be]=Рэдагаваньне тэкставых файлаў
++ Comment[bg]=Редактиране на текстови файлове
++ Comment[bn]=টেক্স্ট ফাইল এডিট করুন
++ Comment[bs]=Izmijeni tekstualne datoteke
++ Comment[ca]=Edita fitxers de text
++ Comment[cs]=Úprava textových souborů
++ Comment[cy]=Golygu ffeiliau testun
++ Comment[da]=Redigér tekstfiler
++ Comment[de]=Textdateien bearbeiten
++ Comment[el]=Επεξεργασία αρχείων κειμένου
++ Comment[en_CA]=Edit text files
++ Comment[en_GB]=Edit text files
++ Comment[es]=Edita archivos de texto
++ Comment[et]=Redigeeri tekstifaile
++ Comment[eu]=Editatu testu-fitxategiak
++ Comment[fa]=ویرایش پرونده‌های متنی
++ Comment[fi]=Muokkaa tekstitiedostoja
++ Comment[fr]=Édite des fichiers texte
++ Comment[ga]=Eagar comhad Téacs
++ Comment[gu]=લખાણ ફાઇલોમાં ફેરફાર કરો
++ Comment[he]=ערוך קבצי טקסט
++ Comment[hi]=पाठ फ़ाइलें संपादित करें
++ Comment[hr]=Uređivanje tekstualne datoteke
++ Comment[hu]=Szövegfájlok szerkesztése
++ Comment[id]=Edit file teks
++ Comment[it]=Modifica file di testo
++ Comment[ja]=テキストファイルを編集します
++ Comment[kn]=ಪಠ್ಯ ಕಡತಗಳನ್ನು ಸಂಪಾದಿಸು
++ Comment[ko]=텍스트 파일을 편집합니다
++ Comment[lt]=Redaguoti tekstines bylas
++ Comment[lv]=Rediģēt teksta failus
++ Comment[mk]=Уреди текстуални фајлови
++ Comment[ml]=വാചക രചനകള് തിരുത്തുക
++ Comment[mn]=Текст файл боловсруулах
++ Comment[mr]=गद्य फाइल संपादित करा
++ Comment[ms]=Edit fail teks
++ Comment[nb]=Rediger tekstfiler
++ Comment[ne]=पाठ फाइललाई संशोधन गर्नुहोस्
++ Comment[nl]=Tekstbestanden bewerken
++ Comment[nn]=Rediger tekstfiler
++ Comment[no]=Rediger tekstfiler
++ Comment[or]=ପାଠ୍ଯ ଫାଇଲଗୁଡ଼ିକୁ ସମ୍ପାଦନ କରନ୍ତୁ
++ Comment[pa]=ਪਾਠ ਫਾਇਲਾਂ ਸੰਪਾਦਨ
++ Comment[pl]=Edytor plików tekstowych
++ Comment[pt]=Editar ficheiros de texto
++ Comment[pt_BR]=Edite arquivos de texto
++ Comment[ro]=Editare fişiere text
++ Comment[ru]=Редактор текстовых файлов
++ Comment[sk]=Úprava textových súborov
++ Comment[sl]=Urejanje datotek z besedili
++ Comment[sq]=Përpuno files teksti
++ Comment[sr]=Измени текстуалне датотеке
++ Comment[sr@Latn]=Izmeni tekstualne datoteke
++ Comment[sv]=Redigera textfiler
++ Comment[ta]=உரை கோப்புகளை தொகுக்கவும்
++ Comment[th]=แก้ไขแฟ้มข้อความ
++ Comment[tk]=Metin faýllary editle
++ Comment[tr]=Metin dosyalarını düzenle
++ Comment[uk]=Редактор текстових файлів
++ Comment[vi]=Soạn thảo tập tin văn bản
++ Comment[wa]=Asspougnî des fitchîs tecses
++ Comment[zh_CN]=编辑文本文件
++ Comment[zh_TW]=編輯文字檔
++ TryExec=gvim
++ Exec=gvim -f %F
++ Terminal=false
++ Type=Application
++ Icon=gvim
++ Categories=Utility;TextEditor;
++ StartupNotify=true
++ MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+*** ../vim-7.4.903/src/Makefile	2015-08-18 13:48:49.831988811 +0200
+--- src/Makefile	2015-11-02 12:49:43.537310437 +0100
+***************
+*** 1905,1914 ****
+--- 1905,1916 ----
+  	test_autocmd_option \
+  	test_autoformat_join \
+  	test_breakindent \
++ 	test_cdo \
+  	test_changelist \
+  	test_charsearch \
+  	test_close_count \
+  	test_command_count \
++ 	test_comparators \
+  	test_erasebackword \
+  	test_eval \
+  	test_fixeol \
+***************
+*** 2225,2231 ****
+  		-a ! -f $(ICON16PATH)/gvim.png; then \
+  	   $(INSTALL_DATA) $(SCRIPTSOURCE)/vim16x16.png $(ICON16PATH)/gvim.png; \
+  	fi
+! 
+  
+  $(HELPSOURCE)/vim.1 $(MACROSOURCE) $(TOOLSSOURCE):
+  	@echo Runtime files not found.
+--- 2227,2234 ----
+  		-a ! -f $(ICON16PATH)/gvim.png; then \
+  	   $(INSTALL_DATA) $(SCRIPTSOURCE)/vim16x16.png $(ICON16PATH)/gvim.png; \
+  	fi
+! 	$(INSTALL_DATA) $(SCRIPTSOURCE)/vim.desktop $(SCRIPTSOURCE)/gvim.desktop \
+! 		$(DESTDIR)$(DATADIR)/applications
+  
+  $(HELPSOURCE)/vim.1 $(MACROSOURCE) $(TOOLSSOURCE):
+  	@echo Runtime files not found.
+*** ../vim-7.4.903/src/version.c	2015-10-31 15:32:48.182832539 +0100
+--- src/version.c	2015-11-02 12:45:50.164045239 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     904,
+  /**/
+
+-- 
+hundred-and-one symptoms of being an internet addict:
+76. Your ISP regards you as a business partner rather than as a customer.
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///

@@ -1,0 +1,73 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.930
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.930
+Problem:    MS-Windows: Most users appear not to like the window border.
+Solution:   Remove WS_EX_CLIENTEDGE. (Ian Halliday)
+Files:      src/gui_w32.c
+
+
+*** ../vim-7.4.929/src/gui_w32.c	2015-08-27 22:25:03.464318030 +0200
+--- src/gui_w32.c	2015-11-19 20:20:37.224433622 +0100
+***************
+*** 1661,1667 ****
+  	    return FAIL;
+      }
+      s_textArea = CreateWindowEx(
+! 	WS_EX_CLIENTEDGE,
+  	szTextAreaClass, "Vim text area",
+  	WS_CHILD | WS_VISIBLE, 0, 0,
+  	100,				/* Any value will do for now */
+--- 1661,1667 ----
+  	    return FAIL;
+      }
+      s_textArea = CreateWindowEx(
+! 	0,
+  	szTextAreaClass, "Vim text area",
+  	WS_CHILD | WS_VISIBLE, 0, 0,
+  	100,				/* Any value will do for now */
+***************
+*** 1716,1724 ****
+      highlight_gui_started();
+  
+      /*
+!      * Start out by adding the configured border width into the border offset
+       */
+!     gui.border_offset = gui.border_width + 2;	/*CLIENT EDGE*/
+  
+      /*
+       * Set up for Intellimouse processing
+--- 1716,1724 ----
+      highlight_gui_started();
+  
+      /*
+!      * Start out by adding the configured border width into the border offset.
+       */
+!     gui.border_offset = gui.border_width;
+  
+      /*
+       * Set up for Intellimouse processing
+*** ../vim-7.4.929/src/version.c	2015-11-19 20:11:50.026118225 +0100
+--- src/version.c	2015-11-19 20:19:55.232886832 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     930,
+  /**/
+
+-- 
+"A clear conscience is usually the sign of a bad memory."
+                             -- Steven Wright
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///

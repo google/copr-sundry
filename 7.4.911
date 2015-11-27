@@ -1,0 +1,48 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.911
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.911
+Problem:    t_Ce and t_Cs are documented but not supported. (Hirohito Higashi)
+Solution:   Define the options.
+Files:      src/option.c
+
+
+*** ../vim-7.4.910/src/option.c	2015-11-02 15:27:03.442325459 +0100
+--- src/option.c	2015-11-08 20:45:54.839488126 +0100
+***************
+*** 2981,2988 ****
+--- 2981,2990 ----
+      p_term("t_ce", T_CE)
+      p_term("t_cl", T_CL)
+      p_term("t_cm", T_CM)
++     p_term("t_Ce", T_UCE)
+      p_term("t_Co", T_CCO)
+      p_term("t_CS", T_CCS)
++     p_term("t_Cs", T_UCS)
+      p_term("t_cs", T_CS)
+  #ifdef FEAT_VERTSPLIT
+      p_term("t_CV", T_CSV)
+*** ../vim-7.4.910/src/version.c	2015-11-10 13:24:16.510859839 +0100
+--- src/version.c	2015-11-10 13:29:14.391859401 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     911,
+  /**/
+
+-- 
+From "know your smileys":
+ 8<}}	Glasses, big nose, beard
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///

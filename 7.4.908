@@ -1,0 +1,53 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.908
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.908 (after 7.4.907)
+Problem:    Build error with MingW compiler. (Cesar Romani)
+Solution:   Change #if into #ifdef.
+Files:      src/if_perl.xs
+
+
+*** ../vim-7.4.907/src/if_perl.xs	2015-11-02 15:27:03.438325506 +0100
+--- src/if_perl.xs	2015-11-02 17:30:13.179498033 +0100
+***************
+*** 611,617 ****
+  perl_enabled(verbose)
+      int		verbose;
+  {
+! #if WIN3264
+      char *dll = DYNAMIC_PERL_DLL;
+  #else
+      char *dll = *p_perldll ? (char *)p_perldll : DYNAMIC_PERL_DLL;
+--- 611,617 ----
+  perl_enabled(verbose)
+      int		verbose;
+  {
+! #ifdef WIN3264
+      char *dll = DYNAMIC_PERL_DLL;
+  #else
+      char *dll = *p_perldll ? (char *)p_perldll : DYNAMIC_PERL_DLL;
+*** ../vim-7.4.907/src/version.c	2015-11-02 15:27:03.442325459 +0100
+--- src/version.c	2015-11-02 17:35:12.587994312 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     908,
+  /**/
+
+-- 
+hundred-and-one symptoms of being an internet addict:
+85. Choice between paying Compuserve bill and paying for kids education
+    is a no brainer -- although a bit painful for your kids.
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///

@@ -1,0 +1,63 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.928
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.928
+Problem:    A clientserver message interrupts handling keys of a mapping.
+Solution:   Have mch_inchar() send control back to WaitForChar when it is
+            interrupted by server message. (James Kolb)
+Files:      src/os_unix.c
+
+
+*** ../vim-7.4.927/src/os_unix.c	2015-09-15 14:12:01.386632480 +0200
+--- src/os_unix.c	2015-11-19 19:48:25.901196707 +0100
+***************
+*** 401,409 ****
+      {
+  	while (WaitForChar(wtime) == 0)		/* no character available */
+  	{
+! 	    if (!do_resize)	/* return if not interrupted by resize */
+  		return 0;
+- 	    handle_resize();
+  #ifdef MESSAGE_QUEUE
+  	    parse_queued_messages();
+  #endif
+--- 401,415 ----
+      {
+  	while (WaitForChar(wtime) == 0)		/* no character available */
+  	{
+! 	    if (do_resize)
+! 		handle_resize();
+! #ifdef FEAT_CLIENTSERVER
+! 	    else if (!server_waiting())
+! #else
+! 	    else
+! #endif
+! 		/* return if not interrupted by resize or server */
+  		return 0;
+  #ifdef MESSAGE_QUEUE
+  	    parse_queued_messages();
+  #endif
+*** ../vim-7.4.927/src/version.c	2015-11-19 19:33:10.850992480 +0100
+--- src/version.c	2015-11-19 19:44:41.791599027 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     928,
+  /**/
+
+-- 
+hundred-and-one symptoms of being an internet addict:
+118. You are on a first-name basis with your ISP's staff.
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///

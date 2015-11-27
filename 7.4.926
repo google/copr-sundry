@@ -1,0 +1,147 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.926
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.926
+Problem:    Completing the longest match doesn't work properly with multi-byte
+            characters.
+Solution:   When using multi-byte characters use another way to find the
+            longest match. (Hirohito Higashi)
+Files:      src/ex_getln.c, src/testdir/test_utf8.in, src/testdir/test_utf8.ok
+
+
+*** ../vim-7.4.925/src/ex_getln.c	2015-08-11 19:13:55.138175689 +0200
+--- src/ex_getln.c	2015-11-19 18:55:39.355292662 +0100
+***************
+*** 3691,3710 ****
+      /* Find longest common part */
+      if (mode == WILD_LONGEST && xp->xp_numfiles > 0)
+      {
+! 	for (len = 0; xp->xp_files[0][len]; ++len)
+  	{
+! 	    for (i = 0; i < xp->xp_numfiles; ++i)
+  	    {
+  		if (p_fic && (xp->xp_context == EXPAND_DIRECTORIES
+  			|| xp->xp_context == EXPAND_FILES
+  			|| xp->xp_context == EXPAND_SHELLCMD
+  			|| xp->xp_context == EXPAND_BUFFERS))
+  		{
+! 		    if (TOLOWER_LOC(xp->xp_files[i][len]) !=
+! 					    TOLOWER_LOC(xp->xp_files[0][len]))
+  			break;
+  		}
+! 		else if (xp->xp_files[i][len] != xp->xp_files[0][len])
+  		    break;
+  	    }
+  	    if (i < xp->xp_numfiles)
+--- 3691,3727 ----
+      /* Find longest common part */
+      if (mode == WILD_LONGEST && xp->xp_numfiles > 0)
+      {
+! 	int mb_len = 1;
+! 	int c0, ci;
+! 
+! 	for (len = 0; xp->xp_files[0][len]; len += mb_len)
+  	{
+! #ifdef FEAT_MBYTE
+! 	    if (has_mbyte)
+  	    {
++ 		mb_len = (*mb_ptr2len)(&xp->xp_files[0][len]);
++ 		c0 =(* mb_ptr2char)(&xp->xp_files[0][len]);
++ 	    }
++ 	    else
++ #endif
++ 		c0 = xp->xp_files[i][len];
++ 	    for (i = 1; i < xp->xp_numfiles; ++i)
++ 	    {
++ #ifdef FEAT_MBYTE
++ 		if (has_mbyte)
++ 		    ci =(* mb_ptr2char)(&xp->xp_files[i][len]);
++ 		else
++ #endif
++ 		    ci = xp->xp_files[i][len];
+  		if (p_fic && (xp->xp_context == EXPAND_DIRECTORIES
+  			|| xp->xp_context == EXPAND_FILES
+  			|| xp->xp_context == EXPAND_SHELLCMD
+  			|| xp->xp_context == EXPAND_BUFFERS))
+  		{
+! 		    if (MB_TOLOWER(c0) != MB_TOLOWER(ci))
+  			break;
+  		}
+! 		else if (c0 != ci)
+  		    break;
+  	    }
+  	    if (i < xp->xp_numfiles)
+***************
+*** 3714,3719 ****
+--- 3731,3737 ----
+  		break;
+  	    }
+  	}
++ 
+  	ss = alloc((unsigned)len + 1);
+  	if (ss)
+  	    vim_strncpy(ss, xp->xp_files[0], (size_t)len);
+*** ../vim-7.4.925/src/testdir/test_utf8.in	2015-06-25 16:09:20.706461152 +0200
+--- src/testdir/test_utf8.in	2015-11-19 18:42:47.987598529 +0100
+***************
+*** 17,22 ****
+--- 17,41 ----
+  :	$put=strchars(str, 0)
+  :	$put=strchars(str, 1)
+  :endfor
++ :" Test for customlist completion
++ :function! CustomComplete1(lead, line, pos)
++ :	return ['あ', 'い']
++ :endfunction
++ :command -nargs=1 -complete=customlist,CustomComplete1 Test1 :
++ :call feedkeys(":Test1 \<C-L>'\<C-B>$put='\<CR>", 't')
++ :
++ :function! CustomComplete2(lead, line, pos)
++ :	return ['あたし', 'あたま', 'あたりめ']
++ :endfunction
++ :command -nargs=1 -complete=customlist,CustomComplete2 Test2 :
++ :call feedkeys(":Test2 \<C-L>'\<C-B>$put='\<CR>", 't')
++ :
++ :function! CustomComplete3(lead, line, pos)
++ :	return ['Nこ', 'Nん', 'Nぶ']
++ :endfunction
++ :command -nargs=1 -complete=customlist,CustomComplete3 Test3 :
++ :call feedkeys(":Test3 \<C-L>'\<C-B>$put='\<CR>", 't')
++ :
+  :call garbagecollect(1)
+  :/^start:/,$wq! test.out
+  ENDTEST
+*** ../vim-7.4.925/src/testdir/test_utf8.ok	2015-06-25 16:09:20.706461152 +0200
+--- src/testdir/test_utf8.ok	2015-11-19 18:42:47.987598529 +0100
+***************
+*** 17,19 ****
+--- 17,22 ----
+  1
+  1
+  1
++ Test1 
++ Test2 あた
++ Test3 N
+*** ../vim-7.4.925/src/version.c	2015-11-19 17:56:09.434210164 +0100
+--- src/version.c	2015-11-19 18:45:37.129781729 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     926,
+  /**/
+
+-- 
+Amnesia is one of my favorite words, but I forgot what it means.
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///
