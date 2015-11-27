@@ -24,10 +24,10 @@ Version: %{baseversion}.%{patchlevel}
 Release: 1%{?dist}
 License: Vim
 Group: Applications/Editors
-Source0: ftp://ftp.vim.org/pub/vim/unix/vim-%{baseversion}-%{patchlevel}.tar.bz2
+Source0: https://github.com/vim/vim/archive/v%{version}.tar.gz
 Source3: gvim.desktop
 Source4: vimrc
-Source5: ftp://ftp.vim.org/pub/vim/patches/README.patches
+Source5: ftp://ftp.vim.org/pub/vim/patches/README
 Source7: gvim16.png
 Source8: gvim32.png
 Source9: gvim48.png
@@ -120,7 +120,7 @@ many different languages.
 Summary: A minimal version of the VIM editor
 Group: Applications/Editors
 Provides: vi = %{version}-%{release}
-Provides: /bin/vi
+Provides: /bin/vi = %{version}
 
 %description minimal
 VIM (VIsual editor iMproved) is an updated and improved version of the
@@ -166,7 +166,7 @@ Summary: The VIM version of the vi editor for the X Window System
 Group: Applications/Editors
 Requires: vim-common = %{epoch}:%{version}-%{release} libattr >= 2.4 gtk2 >= 2.6
 Provides: gvim = %{version}-%{release}
-Provides: mergetool
+Provides: mergetool = %{version}-%{release}
 BuildRequires: gtk2-devel libSM-devel libXt-devel libXpm-devel
 Requires: perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Requires: hicolor-icon-theme
@@ -185,7 +185,7 @@ with graphics and mouse capabilities.  You'll also need to install the
 vim-common package.
 
 %prep
-%setup -q -b 0 -n %{vimdir}
+%setup -q -b 0 -n vim-%{version}
 # fix rogue dependencies from sample code
 chmod -x runtime/tools/mve.awk
 %patch2002 -p1
