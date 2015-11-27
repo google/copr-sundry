@@ -16,7 +16,7 @@
 %global py2pluginpath %{python_sitelib}/dnf-plugins
 %global py3pluginpath %{python3_sitelib}/dnf-plugins
 
-Name:		dnf
+Name:       dnf
 Version:	1.1.2
 Release:	4%{?snapshot}%{?dist}
 Summary:	Package manager forked from Yum, using libsolv as a dependency resolver
@@ -60,8 +60,8 @@ Provides:       dnf-command(repolist)
 Provides:       dnf-command(repository-packages)
 Provides:       dnf-command(search)
 Provides:       dnf-command(updateinfo)
-Provides:       dnf-command(upgrade)
-Provides:       dnf-command(upgrade-to)
+Provides:       dnf-command(upgrade) = %{version}
+Provides:       dnf-command(upgrade-to) = %{version}
 %description
 Package manager forked from Yum, using libsolv as a dependency resolver.
 
