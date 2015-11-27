@@ -136,7 +136,7 @@ Summary: A version of the VIM editor which includes recent enhancements
 Group: Applications/Editors
 Requires: vim-common = %{epoch}:%{version}-%{release} which
 Provides: vim = %{version}-%{release}
-Provides: mergetool
+Provides: mergetool = %{version}-%{release}
 Requires: perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 
 %description enhanced
