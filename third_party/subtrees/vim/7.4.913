@@ -1,0 +1,425 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.913
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.913
+Problem:    No utf-8 support for the hangul input feature.
+Solution:   Add utf-8 support. (Namsh)
+Files:      src/gui.c, src/hangulin.c, src/proto/hangulin.pro, src/screen.c,
+            src/ui.c, runtime/doc/hangulin.txt, src/feature.h
+
+
+*** ../vim-7.4.912/src/gui.c	2015-08-11 19:13:55.138175689 +0200
+--- src/gui.c	2015-11-10 14:20:22.653009478 +0100
+***************
+*** 1223,1230 ****
+  	    gui.highlight_mask = (cattr | attr);
+  #ifdef FEAT_HANGULIN
+  	    if (composing_hangul)
+! 		(void)gui_outstr_nowrap(composing_hangul_buffer, 2,
+! 			GUI_MON_IS_CURSOR | GUI_MON_NOCLEAR, cfg, cbg, 0);
+  	    else
+  #endif
+  		(void)gui_screenchar(LineOffset[gui.row] + gui.col,
+--- 1223,1241 ----
+  	    gui.highlight_mask = (cattr | attr);
+  #ifdef FEAT_HANGULIN
+  	    if (composing_hangul)
+! 	    {
+! 		char_u *comp_buf;
+! 		int comp_len;
+! 
+! 		comp_buf = hangul_composing_buffer_get(&comp_len);
+! 		if (comp_buf)
+! 		{
+! 		    (void)gui_outstr_nowrap(comp_buf, comp_len,
+! 					    GUI_MON_IS_CURSOR | GUI_MON_NOCLEAR,
+! 					    cfg, cbg, 0);
+! 		    vim_free(comp_buf);
+! 		}
+! 	    }
+  	    else
+  #endif
+  		(void)gui_screenchar(LineOffset[gui.row] + gui.col,
+***************
+*** 2572,2580 ****
+  #ifdef FEAT_HANGULIN
+  	if (composing_hangul
+  		    && gui.col == gui.cursor_col && gui.row == gui.cursor_row)
+! 	    (void)gui_outstr_nowrap(composing_hangul_buffer, 2,
+! 		    GUI_MON_IS_CURSOR | GUI_MON_NOCLEAR,
+! 		    gui.norm_pixel, gui.back_pixel, 0);
+  	else
+  	{
+  #endif
+--- 2583,2601 ----
+  #ifdef FEAT_HANGULIN
+  	if (composing_hangul
+  		    && gui.col == gui.cursor_col && gui.row == gui.cursor_row)
+! 	{
+! 	    char_u *comp_buf;
+! 	    int comp_len;
+! 
+! 	    comp_buf = hangul_composing_buffer_get(&comp_len);
+! 	    if (comp_buf)
+! 	    {
+! 		(void)gui_outstr_nowrap(comp_buf, comp_len,
+! 					GUI_MON_IS_CURSOR | GUI_MON_NOCLEAR,
+! 					gui.norm_pixel, gui.back_pixel, 0);
+! 		vim_free(comp_buf);
+! 	    }
+! 	}
+  	else
+  	{
+  #endif
+*** ../vim-7.4.912/src/hangulin.c	2015-07-21 17:53:11.577527989 +0200
+--- src/hangulin.c	2015-11-10 14:20:22.653009478 +0100
+***************
+*** 1619,1621 ****
+--- 1619,1667 ----
+      *des++ = johab_lcon_to_wan[lv];
+      return 8;
+  }
++ 
++     char_u *
++ hangul_string_convert(buf, p_len)
++     char_u  *buf;
++     int	    *p_len;
++ {
++     char_u *tmpbuf = NULL;
++     vimconv_T vc;
++ 
++     if (enc_utf8)
++     {
++ 	vc.vc_type = CONV_NONE;
++ 	if (convert_setup(&vc, (char_u *)"euc-kr", p_enc) == OK)
++ 	{
++ 	    tmpbuf = string_convert(&vc, buf, p_len);
++ 	    convert_setup(&vc, NULL, NULL);
++ 	}
++     }
++ 
++     return tmpbuf;
++ }
++ 
++     char_u *
++ hangul_composing_buffer_get(p_len)
++     int	    *p_len;
++ {
++     char_u *tmpbuf = NULL;
++ 
++     if (composing_hangul)
++     {
++ 	int len = 2;
++ 
++ 	tmpbuf = hangul_string_convert(composing_hangul_buffer, &len);
++ 	if (tmpbuf != NULL)
++ 	{
++ 	    *p_len = len;
++ 	}
++ 	else
++ 	{
++ 	    tmpbuf = vim_strnsave(composing_hangul_buffer, 2);
++ 	    *p_len = 2;
++ 	}
++     }
++ 
++     return tmpbuf;
++ }
+*** ../vim-7.4.912/src/proto/hangulin.pro	2013-08-10 13:37:14.000000000 +0200
+--- src/proto/hangulin.pro	2015-11-10 14:20:22.653009478 +0100
+***************
+*** 6,9 ****
+--- 6,11 ----
+  void hangul_keyboard_set __ARGS((void));
+  int hangul_input_process __ARGS((char_u *s, int len));
+  void hangul_input_clear __ARGS((void));
++ char_u *hangul_string_convert __ARGS((char_u *buf, int *p_len));
++ char_u *hangul_composing_buffer_get __ARGS((int *p_len));
+  /* vim: set ft=c : */
+*** ../vim-7.4.912/src/screen.c	2015-08-11 18:52:58.077121515 +0200
+--- src/screen.c	2015-11-10 14:20:22.657009438 +0100
+***************
+*** 10047,10053 ****
+  	    if (gui.in_use)
+  	    {
+  		if (hangul_input_state_get())
+! 		    MSG_PUTS_ATTR(" \307\321\261\333", attr);   /* HANGUL */
+  	    }
+  #endif
+  #ifdef FEAT_INS_EXPAND
+--- 10047,10059 ----
+  	    if (gui.in_use)
+  	    {
+  		if (hangul_input_state_get())
+! 		{
+! 		    /* HANGUL */
+! 		    if (enc_utf8)
+! 			MSG_PUTS_ATTR(" \355\225\234\352\270\200", attr);
+! 		    else
+! 			MSG_PUTS_ATTR(" \307\321\261\333", attr);
+! 		}
+  	    }
+  #endif
+  #ifdef FEAT_INS_EXPAND
+*** ../vim-7.4.912/src/ui.c	2015-09-01 20:31:16.311776122 +0200
+--- src/ui.c	2015-11-10 14:20:22.657009438 +0100
+***************
+*** 1723,1730 ****
+--- 1723,1739 ----
+      char_u  *s;
+      int	    len;
+  {
++     char_u *tmpbuf;
++ 
++     tmpbuf = hangul_string_convert(s, &len);
++     if (tmpbuf != NULL)
++ 	s = tmpbuf;
++ 
+      while (len--)
+  	inbuf[inbufcount++] = *s++;
++ 
++     if (tmpbuf != NULL)
++ 	vim_free(tmpbuf);
+  }
+  #endif
+  
+*** ../vim-7.4.912/runtime/doc/hangulin.txt	2013-08-10 13:24:54.000000000 +0200
+--- runtime/doc/hangulin.txt	2015-11-10 14:26:20.313417262 +0100
+***************
+*** 1,11 ****
+! *hangulin.txt*  For Vim version 7.4.  Last change: 2009 Jun 24
+  
+  
+  		  VIM REFERENCE MANUAL    by Chi-Deok Hwang and Sung-Hyun Nam
+  
+- NOTE: The |+hangul_input| feature is scheduled to be removed.  If you want to
+- keep it, please send a message to the Vim user maillist.
+- 
+  
+  Introduction					*hangul*
+  ------------
+--- 1,8 ----
+! *hangulin.txt*  For Vim version 7.4.  Last change: 2015 Nov 10
+  
+  
+  		  VIM REFERENCE MANUAL    by Chi-Deok Hwang and Sung-Hyun Nam
+  
+  
+  Introduction					*hangul*
+  ------------
+***************
+*** 17,23 ****
+  -------
+  Next is a basic option.  You can add any other configure option. >
+  
+!    ./configure --with-x --enable-multibyte --enable-fontset --enable-hangulinput
+  
+  And you should check feature.h.  If |+hangul_input| feature is enabled
+  by configure, you can select more options such as keyboard type, 2 bulsik
+--- 14,21 ----
+  -------
+  Next is a basic option.  You can add any other configure option. >
+  
+!    ./configure --with-x --enable-multibyte --enable-hangulinput \
+!             --disable-xim
+  
+  And you should check feature.h.  If |+hangul_input| feature is enabled
+  by configure, you can select more options such as keyboard type, 2 bulsik
+***************
+*** 26,43 ****
+  	#define HANGUL_DEFAULT_KEYBOARD 2
+  	#define ESC_CHG_TO_ENG_MODE
+  	/* #define X_LOCALE */
+- 	/* #define SLOW_XSERVER */
+  
+  Environment variables
+  ---------------------
+! You should set LANG variable to Korean locale such as ko or ko_KR.euc.
+  If you set LC_ALL variable, it should be set to Korean locale also.
+  
+  VIM resource
+  ------------
+! You should add nexts to your global vimrc ($HOME/.vimrc). >
+  
+! 	:set fileencoding=korea
+  
+  Keyboard
+  --------
+--- 24,44 ----
+  	#define HANGUL_DEFAULT_KEYBOARD 2
+  	#define ESC_CHG_TO_ENG_MODE
+  	/* #define X_LOCALE */
+  
+  Environment variables
+  ---------------------
+! You should set LANG variable to Korean locale such as ko, ko_KR.eucKR
+! or ko_KR.UTF-8.
+  If you set LC_ALL variable, it should be set to Korean locale also.
+  
+  VIM resource
+  ------------
+! You may want to set 'encoding' and 'fileencodings'.
+! Next are examples:
+  
+! 	:set encoding=euc-kr
+! 	:set encoding=utf-8
+! 	:set fileencodings=ucs-bom,utf-8,cp949,euc-kr,latin1
+  
+  Keyboard
+  --------
+***************
+*** 52,59 ****
+  
+  Hangul Fonts
+  ------------
+! You can set text font using $HOME/.Xdefaults or in your gvimrc file.
+! But to use Hangul, you should set 'guifontset' in your vimrc.
+  
+  $HOME/.Xdefaults: >
+      Vim.font: english_font
+--- 53,68 ----
+  
+  Hangul Fonts
+  ------------
+! If you use GTK version of GVIM, you should set 'guifont' and 'guifontwide'.
+! For example:
+!     set guifont=Courier\ 12
+!     set guifontwide=NanumGothicCoding\ 12
+! 
+! If you use Motif or Athena version of GVIM, you should set 'guifontset' in
+! your vimrc.  You can set fontset in the .Xdefaults file.
+! 
+! $HOME/.gvimrc: >
+!     set guifontset=english_font,hangul_font
+  
+  $HOME/.Xdefaults: >
+      Vim.font: english_font
+***************
+*** 66,105 ****
+      *international: True
+      Vim*fontList: english_font;hangul_font:
+  
+- $HOME/.gvimrc: >
+-     set guifontset=english_font,hangul_font
+- 
+  attention! the , (comma) or ; (semicolon)
+  
+  And there should be no ':set guifont'.  If it exists, then Gvim ignores
+  ':set guifontset'.  It means VIM runs without fontset supporting.
+  So, you can see only English.  Hangul does not be correctly displayed.
+  
+! After 'fontset' feature is enabled, VIM does not allow using 'font'.
+  For example, if you use >
+     :set guifontset=eng_font,your_font
+  in your .gvimrc, then you should do for syntax >
+     :hi Comment guifg=Cyan font=another_eng_font,another_your_font
+  If you just do >
+     :hi Comment font=another_eng_font
+! then you can see a GOOD error message.  Be careful!
+  
+  hangul_font width should be twice than english_font width.
+  
+  Unsupported Feature
+  -------------------
+! Johab font not yet supported.  And I don't have any plan.
+! If you really want to use johab font, you can use the
+! hanguldraw.c in gau package.
+  
+! Hanja input not yet supported.  And I don't have any plan.
+! If you really want to input hanja, just use VIM with hanterm.
+  
+  Bug or Comment
+  --------------
+  Send comments, patches and suggestions to:
+  
+- 				    Chi-Deok Hwang <hwang@mizi.co.kr>
+  				    SungHyun Nam <goweol@gmail.com>
+  
+   vim:tw=78:ts=8:ft=help:norl:
+--- 75,112 ----
+      *international: True
+      Vim*fontList: english_font;hangul_font:
+  
+  attention! the , (comma) or ; (semicolon)
+  
+  And there should be no ':set guifont'.  If it exists, then Gvim ignores
+  ':set guifontset'.  It means VIM runs without fontset supporting.
+  So, you can see only English.  Hangul does not be correctly displayed.
+  
+! After 'fontset' feature is enabled, VIM does not allow using english
+! font only in 'font' setting for syntax.
+  For example, if you use >
+     :set guifontset=eng_font,your_font
+  in your .gvimrc, then you should do for syntax >
+     :hi Comment guifg=Cyan font=another_eng_font,another_your_font
+  If you just do >
+     :hi Comment font=another_eng_font
+! then you can see a error message.  Be careful!
+  
+  hangul_font width should be twice than english_font width.
+  
+  Unsupported Feature
+  -------------------
+! We don't support Johab font.
+! We don't support Hanja input.
+! And We don't have any plan to support them.
+  
+! If you really need such features, you can use console version of VIM with a
+! capable terminal emulator.
+  
+  Bug or Comment
+  --------------
+  Send comments, patches and suggestions to:
+  
+  				    SungHyun Nam <goweol@gmail.com>
++ 				    Chi-Deok Hwang <...>
+  
+   vim:tw=78:ts=8:ft=help:norl:
+*** ../vim-7.4.912/src/feature.h	2014-11-30 13:34:16.893626683 +0100
+--- src/feature.h	2015-11-10 14:30:08.087134574 +0100
+***************
+*** 677,685 ****
+  # define ESC_CHG_TO_ENG_MODE		/* if defined, when ESC pressed,
+  					 * turn to english mode
+  					 */
+- # if !defined(FEAT_XFONTSET) && defined(HAVE_X11) && !defined(FEAT_GUI_GTK)
+- #  define FEAT_XFONTSET			/* Hangul input requires xfontset */
+- # endif
+  # if defined(FEAT_XIM) && !defined(LINT)
+  	Error: You should select only ONE of XIM and HANGUL INPUT
+  # endif
+--- 677,682 ----
+***************
+*** 687,693 ****
+  #if defined(FEAT_HANGULIN) || defined(FEAT_XIM)
+  /* # define X_LOCALE */			/* for OS with incomplete locale
+  					   support, like old linux versions. */
+- /* # define SLOW_XSERVER */		/* for extremely slow X server */
+  #endif
+  
+  /*
+--- 684,689 ----
+*** ../vim-7.4.912/src/version.c	2015-11-10 14:06:48.765187078 +0100
+--- src/version.c	2015-11-10 14:21:28.556347509 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     913,
+  /**/
+
+-- 
+From "know your smileys":
+ :-D	Big smile
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///

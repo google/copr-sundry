@@ -1,0 +1,58 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.903
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.903
+Problem:    MS-Windows: When 'encoding' differs from the current code page,
+            expandinig wildcards may cause illegal memory access.
+Solution:   Allocate a longer buffer. (Ken Takata)
+Files:      src/misc1.c
+
+
+*** ../vim-7.4.902/src/misc1.c	2015-10-13 16:13:33.456731872 +0200
+--- src/misc1.c	2015-10-31 15:27:59.450227298 +0100
+***************
+*** 9940,9947 ****
+  	    return 0;
+      }
+  
+!     /* make room for file name */
+!     buf = alloc((int)STRLEN(path) + BASENAMELEN + 5);
+      if (buf == NULL)
+  	return 0;
+  
+--- 9940,9948 ----
+  	    return 0;
+      }
+  
+!     /* Make room for file name.  When doing encoding conversion the actual
+!      * length may be quite a bit longer, thus use the maximum possible length. */
+!     buf = alloc((int)MAXPATHL);
+      if (buf == NULL)
+  	return 0;
+  
+*** ../vim-7.4.902/src/version.c	2015-10-30 16:46:50.504694378 +0100
+--- src/version.c	2015-10-31 15:31:15.079927177 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     903,
+  /**/
+
+-- 
+hundred-and-one symptoms of being an internet addict:
+65. The last time you looked at the clock it was 11:30pm, and in what
+    seems like only a few seconds later, your sister runs past you to
+    catch her 7am school bus.
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///

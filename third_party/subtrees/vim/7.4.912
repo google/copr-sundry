@@ -1,0 +1,93 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.912
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.912
+Problem:    Wrong indenting for C++ constructor.
+Solution:   Recognize ::.  (Anhong)
+Files:      src/misc1.c, src/testdir/test3.in, src/testdir/test3.ok
+
+
+*** ../vim-7.4.911/src/misc1.c	2015-10-31 15:32:48.178832586 +0100
+--- src/misc1.c	2015-11-10 14:04:38.410497286 +0100
+***************
+*** 6250,6255 ****
+--- 6250,6268 ----
+      {
+  	if (cin_iscomment(s))	/* ignore comments */
+  	    s = cin_skipcomment(s);
++ 	else if (*s == ':')
++ 	{
++ 	    if (*(s + 1) == ':')
++ 		s += 2;
++ 	    else
++ 		/* To avoid a mistake in the following situation:
++ 		 * A::A(int a, int b)
++ 		 *     : a(0)  // <--not a function decl
++ 		 *     , b(0)
++ 		 * {...
++ 		 */
++ 		return FALSE;
++ 	}
+  	else
+  	    ++s;
+      }
+*** ../vim-7.4.911/src/testdir/test3.in	2015-10-13 16:13:33.456731872 +0200
+--- src/testdir/test3.in	2015-11-10 13:56:14.111567383 +0100
+***************
+*** 663,668 ****
+--- 663,675 ----
+  {
+  }
+  
++ A::A(int a, int b)
++ : aa(a),
++ bb(b),
++ cc(c)
++ {
++ }
++ 
+  class CAbc :
+     public BaseClass1,
+     protected BaseClass2
+*** ../vim-7.4.911/src/testdir/test3.ok	2015-10-13 16:13:33.456731872 +0200
+--- src/testdir/test3.ok	2015-11-10 13:56:40.763299376 +0100
+***************
+*** 651,656 ****
+--- 651,663 ----
+  {
+  }
+  
++ A::A(int a, int b)
++ 	: aa(a),
++ 	bb(b),
++ 	cc(c)
++ {
++ }
++ 
+  class CAbc :
+  	public BaseClass1,
+  	protected BaseClass2
+*** ../vim-7.4.911/src/version.c	2015-11-10 13:30:34.999047749 +0100
+--- src/version.c	2015-11-10 13:59:59.041305722 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     912,
+  /**/
+
+-- 
+From "know your smileys":
+ +<(:-) The Pope
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///

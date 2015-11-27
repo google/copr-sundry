@@ -1,0 +1,53 @@
+To: vim_dev@googlegroups.com
+Subject: Patch 7.4.914
+Fcc: outbox
+From: Bram Moolenaar <Bram@moolenaar.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+------------
+
+Patch 7.4.914
+Problem:    New compiler warning: logical-not-parentheses
+Solution:   Silence the warning.
+Files:      src/term.c
+    
+
+*** ../vim-7.4.913/src/term.c	2015-07-10 14:05:03.930436893 +0200
+--- src/term.c	2015-11-10 15:16:21.355262405 +0100
+***************
+*** 2276,2282 ****
+   */
+      for (i = 0; i < 2; ++i)
+      {
+! 	if (!builtin_first == i)
+  #endif
+  	/*
+  	 * Search in builtin termcap
+--- 2276,2282 ----
+   */
+      for (i = 0; i < 2; ++i)
+      {
+! 	if ((!builtin_first) == i)
+  #endif
+  	/*
+  	 * Search in builtin termcap
+*** ../vim-7.4.913/src/version.c	2015-11-10 14:35:14.316069755 +0100
+--- src/version.c	2015-11-10 15:17:13.266740195 +0100
+***************
+*** 743,744 ****
+--- 743,746 ----
+  {   /* Add new patch number below this line */
++ /**/
++     914,
+  /**/
+
+
+-- 
+From "know your smileys":
+ :'-D	Laughing so much that they're crying
+
+ /// Bram Moolenaar -- Bram@Moolenaar.net -- http://www.Moolenaar.net   \\\
+///        sponsor Vim, vote for features -- http://www.Vim.org/sponsor/ \\\
+\\\  an exciting new programming language -- http://www.Zimbu.org        ///
+ \\\            help me help AIDS victims -- http://ICCF-Holland.org    ///
