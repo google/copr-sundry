@@ -14,6 +14,7 @@ addFilter('SPECS/libcomps.spec')
 addFilter('SPECS/nginx.spec')
 addFilter('SPECS/perl.spec')
 addFilter('SPECS/python-iniparse.spec')
+addFilter('SPECS/os-prober.spec')
 addFilter('SPECS/yum.spec')
 
 # Python is mostly third-party and has lots of warnings.
