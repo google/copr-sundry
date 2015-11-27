@@ -37,6 +37,7 @@ code that happens to be owned by Google.
  * dnf 1.1.2
  * gperftools 2.4
  * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
+ * nginx 1.8.0
  * perl 5.22.0
  * pyparsing & python3-pyparsing 2.0.3
  * python 2.7.10 (with python-macros backported to EL7)
