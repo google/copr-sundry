@@ -12,3 +12,4 @@ Local Modifications:
 - Fixed source urls.
 - Versioned provides.
 - Removed vim-7.0-specedit.patch.
+- Removed Changelog.rpm from sources (duplicates stuff in spec).

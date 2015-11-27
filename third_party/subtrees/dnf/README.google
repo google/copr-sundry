@@ -10,7 +10,8 @@ dependency resolver.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
-- Make python3 build optional.
-- Fix some spaces vs tabs lint issues.
-- Version provides.
+- Made python3 build optional.
+- Fixed some spaces vs tabs lint issues.
+- Versioned provides.
 - Fixed bogus dates in changelog.
+- Fixed source url.
