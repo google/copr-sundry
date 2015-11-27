@@ -82,13 +82,13 @@ popd
 %{__python2} setup.py install -O1 --skip-build --root %{buildroot}
 
 # Failed on Koji due to X environment not available.
-#%check
-#pushd %{py3dir}
-#%{__python3} setup.py ptr
-#nosetests-%{python3_version}
-#popd
-#%{__python2} setup.py ptr
-#nosetests
+%check
+pushd %{py3dir}
+%{__python3} setup.py ptr
+nosetests-%{python3_version}
+popd
+%{__python2} setup.py ptr
+nosetests
 
 %files
 %doc CHANGES.rst README.rst CONTRIBUTORS.txt
