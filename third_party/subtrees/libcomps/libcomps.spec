@@ -2,10 +2,10 @@
 
 %if 0%{?rhel} && 0%{?rhel} <= 7
 %define python3_build 0
-#%{!?__python2: %global __python2 /usr/bin/python2}
-#%{!?python2_sitelib: %global python2_sitelib %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
-#%{!?python2_sitearch: %global python2_sitearch %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
-%else
+%{!?__python2: %global __python2 /usr/bin/python2}
+%{!?python2_sitelib: %global python2_sitelib %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
+%{!?python2_sitearch: %global python2_sitearch %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
+else
 %define python3_build 1
 %endif
 
@@ -22,11 +22,7 @@ Source0:        https://github.com/midnightercz/libcomps/libcomps-0.1.7.tar.gz
 BuildRequires:  libxml2-devel
 BuildRequires:  check-devel
 BuildRequires:  expat-devel
-#%if 0%{?rhel} == 6
-#BuildRequires:  cmake28
-#%else
 BuildRequires:  cmake
-#%endif
 
 %description
 Libcomps is library for structure-like manipulation with content of
