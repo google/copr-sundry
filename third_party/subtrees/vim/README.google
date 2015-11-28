@@ -13,3 +13,4 @@ Local Modifications:
 - Versioned provides.
 - Removed vim-7.0-specedit.patch.
 - Removed Changelog.rpm from sources (duplicates stuff in spec).
+- Removed im-7.4-licensemacro-1151450.patch.
