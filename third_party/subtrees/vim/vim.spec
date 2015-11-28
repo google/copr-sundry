@@ -56,7 +56,6 @@ Patch3009: vim-7.4-syncolor.patch
 Patch3011: vim72-rh514717.patch
 Patch3012: vim-7.3-manpage-typo-668894-675480.patch
 Patch3013: vim-manpagefixes-948566.patch
-Patch3014: vim-7.4-licensemacro-1151450.patch
 Patch3015: vim-7.4-ssh-keywords.patch
 
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -118,7 +117,7 @@ many different languages.
 Summary: A minimal version of the VIM editor
 Group: Applications/Editors
 Provides: vi = %{version}-%{release}
-Provides: /bin/vi = %{version}
+Provides: /bin/vi
 
 %description minimal
 VIM (VIsual editor iMproved) is an updated and improved version of the
