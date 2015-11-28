@@ -39,6 +39,7 @@ code that happens to be owned by Google.
  * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
  * nginx 1.8.0
  * perl 5.22.0
+ * perl-generators 1.07
  * perl-Fedora-VSP 0.001
  * pyparsing & python3-pyparsing 2.0.3
  * python 2.7.10 (with python-macros backported to EL7)
