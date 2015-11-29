@@ -9,3 +9,6 @@ RPM spec files for libsolv - Package dependency solver.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Fix lint warnings:
+  - tabs vs spaces
+  - macros in comments.

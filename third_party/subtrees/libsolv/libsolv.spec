@@ -28,9 +28,9 @@
 %filter_provides_in %{ruby_vendorarch}/.*\.so$
 %filter_setup
 
-Name:		libsolv
-Version:	0.6.14
-Release:	6%{?dist}
+Name:       libsolv
+Version:    0.6.14
+Release:    6%{?dist}
 License:	BSD
 Url:		https://github.com/openSUSE/libsolv
 Source:		https://github.com/openSUSE/libsolv/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
@@ -237,7 +237,7 @@ make ARGS="-V" test
 
 %changelog
 * Thu Nov 26 2015 Adam Williamson <awilliam@redhat.com> - 0.6.14-6
-- revert obsolete, as %python_provide does it (undocumented)
+- revert obsolete, as %%python_provide does it (undocumented)
 
 * Wed Nov 18 2015 Adam Williamson <awilliam@redhat.com> - 0.6.14-5
 - adjust obsolete for stupid packaging
