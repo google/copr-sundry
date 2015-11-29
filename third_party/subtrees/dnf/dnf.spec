@@ -20,8 +20,8 @@
 
 Name:       dnf
 Version:    1.1.2
-Release:	%{release_ver}%{?snapshot}%{?dist}
-Summary:	Package manager forked from Yum, using libsolv as a dependency resolver
+Release:    %{release_ver}%{?snapshot}%{?dist}
+Summary:    Package manager forked from Yum, using libsolv as a dependency resolver
 # For a breakdown of the licensing, see PACKAGE-LICENSING
 License:	GPLv2+ and GPLv2 and GPL
 URL:		https://github.com/rpm-software-management/dnf
