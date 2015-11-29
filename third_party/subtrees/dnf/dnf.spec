@@ -145,7 +145,7 @@ BuildRequires:  systemd
 Requires:   dnf = %{version}-%{release}
 Requires(post):     systemd
 Requires(preun):    systemd
-Requires(postun):	systemd
+Requires(postun):   systemd
 %description automatic
 Alternative CLI to "dnf upgrade" suitable for automatic, regular execution.
 
