@@ -30,3 +30,8 @@ addFilter('third_party/subtrees/rpm/rpm.spec')
 
 # DNF have a lot of weird stuff:
 addFilter('dnf.spec.*libdir-macro-in-noarch-package')
+
+# Vim provides /bin/vi, which cannot be versioned since it's a path.
+addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
+# There's shell command that I don't want to touch.
+addFilter('vim.spec:218: W: mixed-use-of-spaces-and-tabs')
