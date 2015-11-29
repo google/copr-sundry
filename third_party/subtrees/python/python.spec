@@ -369,7 +369,7 @@ Patch102: python-2.7.3-lib64.patch
 Patch103: python-2.7-lib64-sysconfig.patch
 
 # 00104 #
-# Only used when "%{_lib}" == "lib64"
+# Only used when "%%{_lib}" == "lib64"
 # Another lib64 fix, for distutils/tests/test_install.py; not upstream:
 Patch104: 00104-lib64-fix-for-test_install.patch
 
@@ -940,7 +940,7 @@ Patch199: 00199-alter-tests-to-reflect-sslv3-disabled.patch
 # applied to both versions.
 
 # This is the generated patch to "configure"; see the description of
-#   %{regenerate_autotooling_patch}
+#   %%{regenerate_autotooling_patch}
 # above:
 Patch5000: python-05000-autotool-intermediates.patch
 
@@ -1287,7 +1287,6 @@ mv Modules/cryptmodule.c Modules/_cryptmodule.c
 # 00192: upstream as of Python 2.7.7
 %patch193 -p1
 # 00194: upstream as of Python 2.7.7
-#%patch195 -p1
 # 00196: upstream as of Python 2.7.9
 # 00197: upstream as of Python 2.7.9
 %if 0%{with_rewheel}
@@ -1572,7 +1571,6 @@ install Tools/scripts/*py %{buildroot}%{tools_dir}/scripts/
 
 # Documentation tools
 install -m755 -d %{buildroot}%{doc_tools_dir}
-#install -m755 Doc/tools/mkhowto %{buildroot}%{doc_tools_dir}
 
 # Useful demo scripts
 install -m755 -d %{buildroot}%{demo_dir}
