@@ -3,15 +3,15 @@
 %define github_version %{name}-%{version}-1
 
 Name:       hawkey
-Version:	0.6.1
-Release:	2%{?snapshot}%{?dist}
-Summary:	Library providing simplified C and Python API to libsolv
-Group:		System Environment/Libraries
-License:	LGPLv2+
-URL:		https://github.com/rpm-software-management/%{name}
+Version:    0.6.1
+Release:    2%{?snapshot}%{?dist}
+Summary:    Library providing simplified C and Python API to libsolv
+Group:      System Environment/Libraries
+License:    LGPLv2+
+URL:        https://github.com/rpm-software-management/%{name}
 # git clone https://github.com/rpm-software-management/hawkey.git && cd hawkey && tito build --tgz
 Source0:    https://github.com/rpm-software-management/%{name}/archive/%{github_version}.tar.gz
-BuildRequires:	libsolv-devel >= %{libsolv_version}
+BuildRequires:  libsolv-devel >= %{libsolv_version}
 BuildRequires:	cmake expat-devel rpm-devel zlib-devel check-devel
 Requires:	libsolv%{?_isa} >= %{libsolv_version}
 # prevent provides from nonstandard paths:
