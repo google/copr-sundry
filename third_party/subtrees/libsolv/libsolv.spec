@@ -1,9 +1,9 @@
 %{!?ruby_vendorarch: %global ruby_vendorarch %(ruby -r rbconfig -e "puts RbConfig::CONFIG['vendorarchdir'].nil? ? RbConfig::CONFIG['sitearchdir'] : RbConfig::CONFIG['vendorarchdir']")}
 %filter_provides_in %{perl_vendorarch}/.*\.so$
 %filter_provides_in %{python2_sitearch}/.*\.so$
-%if 0%{?fedora}
-%bcond_without python3
 %filter_provides_in %{python3_sitearch}/.*\.so$
+%bcond_without python3
+%if 0%{?fedora}
 %global _cmake_opts \\\
             -DCMAKE_BUILD_TYPE=RelWithDebInfo \\\
             -DENABLE_PERL=1 \\\
@@ -18,7 +18,6 @@
             -DENABLE_COMPLEX_DEPS=1 \\\
             %{nil}
 %else
-%bcond_with python3
 %global _cmake_opts \\\
             -DCMAKE_BUILD_TYPE=RelWithDebInfo \\\
             -DFEDORA=1 \\\
