@@ -4,6 +4,10 @@ from Config import *
 # avoid crossing.
 setOption("BadnessThreshold", 42)
 
+# Ignore spelling errors as there's currently no sane way to add words into
+# dictionary.
+addFilter('spelling-error')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
