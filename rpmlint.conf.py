@@ -30,3 +30,6 @@ addFilter('third_party/subtrees/rpm/rpm.spec')
 
 # DNF have a lot of weird stuff:
 addFilter('dnf.spec.*libdir-macro-in-noarch-package')
+
+# VIM: allow mixed space/tab usage in specific line.
+addFilter('vim.spec:218: W: mixed-use-of-spaces-and-tabs')
