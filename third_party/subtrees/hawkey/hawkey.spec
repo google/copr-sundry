@@ -3,8 +3,8 @@
 %define github_version %{name}-%{version}-1
 
 Name:       hawkey
-Version:	0.6.1
-Release:	2%{?snapshot}%{?dist}
+Version:    0.6.1
+Release:    2%{?snapshot}%{?dist}
 Summary:	Library providing simplified C and Python API to libsolv
 Group:		System Environment/Libraries
 License:	LGPLv2+
