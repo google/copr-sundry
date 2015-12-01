@@ -4,6 +4,10 @@ from Config import *
 # avoid crossing.
 setOption("BadnessThreshold", 42)
 
+# Ignore documentation issues.
+addFilter('no-manual-page-for-binary')
+addFilter('no-documentation')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
