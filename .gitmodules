@@ -34,3 +34,6 @@
 [submodule "third_party/submodules/puppet"]
 	path = third_party/submodules/puppet
 	url = git://pkgs.fedoraproject.org/puppet.git
+[submodule "third_party/submodules/perl-TermReadKey"]
+	path = third_party/submodules/perl-TermReadKey
+	url = git://pkgs.fedoraproject.org/perl-TermReadKey.git
