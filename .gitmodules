@@ -37,3 +37,6 @@
 [submodule "third_party/submodules/perl-TermReadKey"]
 	path = third_party/submodules/perl-TermReadKey
 	url = git://pkgs.fedoraproject.org/perl-TermReadKey.git
+[submodule "third_party/submodules/perl-Capture-Tiny"]
+	path = third_party/submodules/perl-Capture-Tiny
+	url = git://pkgs.fedoraproject.org/perl-Capture-Tiny.git
