@@ -8,6 +8,10 @@ setOption("BadnessThreshold", 42)
 addFilter('no-manual-page-for-binary')
 addFilter('no-documentation')
 
+# Ignore spelling errors unilt there's a support for custom dictionaries.
+# TODO: add such support.
+addFilter('spelling-error')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
