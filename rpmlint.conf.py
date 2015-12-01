@@ -24,6 +24,7 @@ addFilter('SPECS/perl.spec')
 addFilter('perl.src')
 addFilter('SPECS/python-iniparse.spec')
 addFilter('SPECS/os-prober.spec')
+addFilter('SPECS/puppet.spec')
 addFilter('SPECS/yum.spec')
 
 # Python is mostly third-party and has lots of warnings.
