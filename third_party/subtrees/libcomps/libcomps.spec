@@ -65,7 +65,6 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 %description -n python-libcomps
 Python2 bindings for libcomps library
 
-%if %python3_build
 %package -n python3-libcomps
 Summary:        Python3 bindings for libcomps library
 Group:          Development/Libraries
@@ -74,7 +73,6 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description -n python3-libcomps
 Python3 bindings for libcomps library
-%endif
 
 %prep
 %setup -qn %{name}-%{commit}
