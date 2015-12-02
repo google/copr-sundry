@@ -49,3 +49,6 @@
 [submodule "third_party/submodules/perl-Test-Pod"]
 	path = third_party/submodules/perl-Test-Pod
 	url = git://pkgs.fedoraproject.org/perl-Test-Pod.git
+[submodule "third_party/submodules/perl-Package-Generator"]
+	path = third_party/submodules/perl-Package-Generator
+	url = git://pkgs.fedoraproject.org/perl-Package-Generator.git
