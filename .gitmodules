@@ -52,3 +52,6 @@
 [submodule "third_party/submodules/perl-Package-Generator"]
 	path = third_party/submodules/perl-Package-Generator
 	url = git://pkgs.fedoraproject.org/perl-Package-Generator.git
+[submodule "third_party/submodules/perl-Data-OptList"]
+	path = third_party/submodules/perl-Data-OptList
+	url = git://pkgs.fedoraproject.org/perl-Data-OptList.git
