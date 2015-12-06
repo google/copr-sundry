@@ -41,6 +41,7 @@ code that happens to be owned by Google.
  * perl 5.22.0
  * perl-generators 1.07
  * perl-Capture-Tiny 0.30
+ * perl-Data-Section 0.200006
  * perl-Fedora-VSP 0.001
  * perl-Params-Util 1.07
  * perl-TermReadKey 2.23
