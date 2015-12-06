@@ -1,0 +1,1 @@
+../third_party/submodules/perl-Test-Pod/perl-Test-Pod.spec
