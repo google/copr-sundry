@@ -44,3 +44,6 @@ addFilter('dnf.spec.*libdir-macro-in-noarch-package')
 
 # VIM: allow mixed space/tab usage in specific line.
 addFilter('vim.spec:218: W: mixed-use-of-spaces-and-tabs')
+# Ignore unversioned provide /bin/vi, versioning it triggers another lint
+# warning.
+addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
