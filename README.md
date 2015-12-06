@@ -43,6 +43,7 @@ code that happens to be owned by Google.
  * perl-Capture-Tiny 0.30
  * perl-Data-Section 0.200006
  * perl-Fedora-VSP 0.001
+ * perl-Package-Generator 1.106
  * perl-Params-Util 1.07
  * perl-TermReadKey 2.23
  * perl-Test-Pod 1.51
