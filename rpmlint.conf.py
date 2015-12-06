@@ -22,6 +22,8 @@ addFilter('SPECS/libcomps.spec')
 addFilter('SPECS/nginx.spec')
 addFilter('SPECS/perl.spec')
 addFilter('perl.src')
+addFilter('perl-Params-Util.x86_64')
+addFilter('perl-TermReadKey.x86_64')
 addFilter('SPECS/python-iniparse.spec')
 addFilter('SPECS/os-prober.spec')
 addFilter('SPECS/puppet.spec')
@@ -42,3 +44,6 @@ addFilter('dnf.spec.*libdir-macro-in-noarch-package')
 
 # VIM: allow mixed space/tab usage in specific line.
 addFilter('vim.spec:218: W: mixed-use-of-spaces-and-tabs')
+# Ignore unversioned provide /bin/vi, versioning it triggers another lint
+# warning.
+addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
