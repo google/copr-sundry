@@ -45,6 +45,7 @@ code that happens to be owned by Google.
  * perl-Fedora-VSP 0.001
  * perl-Params-Util 1.07
  * perl-TermReadKey 2.23
+ * perl-Test-Pod 1.51
  * puppet 4.2.1
  * pyparsing & python3-pyparsing 2.0.3
  * python 2.7.10 (with python-macros backported to EL7)
