@@ -42,6 +42,7 @@ code that happens to be owned by Google.
  * perl-generators 1.07
  * perl-Capture-Tiny 0.30
  * perl-Fedora-VSP 0.001
+ * perl-Params-Util 1.07
  * perl-TermReadKey 2.23
  * puppet 4.2.1
  * pyparsing & python3-pyparsing 2.0.3
