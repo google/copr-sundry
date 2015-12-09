@@ -77,12 +77,10 @@ Python3 bindings for libcomps library
 %prep
 %setup -qn %{name}-%{commit}
 
-%if %python3_build == 1
 rm -rf py3
 mkdir ../py3
 cp -a . ../py3/
 mv ../py3 ./
-%endif
 
 %build
 %cmake -DPYTHON_DESIRED:STRING=2 libcomps/
