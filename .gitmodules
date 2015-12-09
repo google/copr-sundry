@@ -58,3 +58,6 @@
 [submodule "third_party/submodules/perl-Sub-Exporter"]
 	path = third_party/submodules/perl-Sub-Exporter
 	url = git://pkgs.fedoraproject.org/perl-Sub-Exporter.git
+[submodule "third_party/submodules/perl-Sub-Install"]
+	path = third_party/submodules/perl-Sub-Install
+	url = git://pkgs.fedoraproject.org/perl-Sub-Install.git
