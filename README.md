@@ -46,6 +46,7 @@ code that happens to be owned by Google.
  * perl-Fedora-VSP 0.001
  * perl-Package-Generator 1.106
  * perl-Params-Util 1.07
+ * perl-Sub-Exporter 0.987
  * perl-TermReadKey 2.23
  * perl-Test-Pod 1.51
  * puppet 4.2.1
