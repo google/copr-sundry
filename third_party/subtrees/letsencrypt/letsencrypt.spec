@@ -33,7 +33,7 @@ BuildRequires: python-psutil
 BuildRequires: python-parsedatetime
 BuildRequires: python-configobj
 BuildRequires: python2-configargparse
-BuildRequires: python2-acme = 0.1.1
+BuildRequires: python2-acme >= 0.1.0
 
 
 %description
