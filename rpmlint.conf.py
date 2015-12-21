@@ -51,3 +51,7 @@ addFilter('vim.spec:218: W: mixed-use-of-spaces-and-tabs')
 # Ignore unversioned provide /bin/vi, versioning it triggers another lint
 # warning.
 addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
+
+# Let's enctrypt
+# There are some bundled unversioned provides and it's fine.
+addFilter('letsencrypt\.(src|spec):.* unversioned-explicit-provides bundled\([a-z]+\)')
