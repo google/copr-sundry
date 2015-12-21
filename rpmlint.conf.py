@@ -54,4 +54,5 @@ addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
 
 # Let's enctrypt
 # There are some bundled unversioned provides and it's fine.
-addFilter('letsencrypt\.(src|spec):.* unversioned-explicit-provides bundled\([a-z]+\)')
+addFilter('letsencrypt\.(src|spec):.* unversioned-explicit-provides bundled\([a-z\-]+\)')
+# It's ok to have some certs in tests.
