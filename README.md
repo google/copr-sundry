@@ -48,6 +48,7 @@ code that happens to be owned by Google.
  * perl-MRO-Compat 0.12
  * perl-Package-Generator 1.106
  * perl-Params-Util 1.07
+ * perl-Software-License 0.103010
  * perl-Sub-Exporter 0.987
  * perl-Sub-Install 0.928
  * perl-TermReadKey 2.23
