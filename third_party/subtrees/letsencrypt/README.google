@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/letsencrypt.git/
+Version: d79d921e73798b55bd02c46c9ed8278ed0f6c799
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for letsencrypt - A free, automated certificate authority client.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
