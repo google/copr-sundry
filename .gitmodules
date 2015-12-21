@@ -79,3 +79,6 @@
 [submodule "third_party/submodules/perl-Module-Build"]
 	path = third_party/submodules/perl-Module-Build
 	url = git://pkgs.fedoraproject.org/perl-Module-Build.git
+[submodule "third_party/submodules/python-acme"]
+	path = third_party/submodules/python-acme
+	url = git://pkgs.fedoraproject.org/python-acme.git
