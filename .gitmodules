@@ -67,3 +67,6 @@
 [submodule "third_party/submodules/perl-Text-Template"]
 	path = third_party/submodules/perl-Text-Template
 	url = git://pkgs.fedoraproject.org/perl-Text-Template.git
+[submodule "third_party/submodules/perl-ExtUtils-MakeMaker"]
+	path = third_party/submodules/perl-ExtUtils-MakeMaker
+	url = git://pkgs.fedoraproject.org/perl-ExtUtils-MakeMaker.git
