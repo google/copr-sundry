@@ -75,4 +75,4 @@
 	url = git://pkgs.fedoraproject.org/pyOpenSSL.git
 [submodule "third_party/submodules/perl-Software-License"]
 	path = third_party/submodules/perl-Software-License
-	url = git://pkgs.fedoraproject.org/perl-Software-License.git
+	url = http://pkgs.fedoraproject.org/git/perl-Software-License.git
