@@ -60,4 +60,3 @@ addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
 ## Let's encrypt.
 # OK to have unversioned bundled provides.
 addFilter('letsencrypt.src:[0-9]+: W: unversioned-explicit-provides bundled\([a-z\-]+\)')
-# OK to have pems in testdata
