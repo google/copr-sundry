@@ -88,12 +88,10 @@ make %{?_smp_mflags}
 make %{?_smp_mflags} docs
 make %{?_smp_mflags} pydocs
 
-%if %python3_build == 1
 pushd py3
 %cmake -DPYTHON_DESIRED:STRING=3 libcomps/
 make %{?_smp_mflags}
 popd
-%endif
 
 
 %check
