@@ -54,6 +54,7 @@ code that happens to be owned by Google.
  * perl-Test-Pod 1.51
  * perl-Text-Template 1.46
  * puppet 4.2.1
+ * pyOpenSSL 0.15.1
  * pyparsing & python3-pyparsing 2.0.3
  * python 2.7.10 (with python-macros backported to EL7)
  * python3 3.5.0
