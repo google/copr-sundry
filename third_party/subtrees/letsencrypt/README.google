@@ -9,3 +9,4 @@ RPM spec files for letsencrypt - A free, automated certificate authority client.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Fixed too version-specific build dependency on python2-acme.
