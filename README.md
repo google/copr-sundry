@@ -51,6 +51,7 @@ code that happens to be owned by Google.
  * perl-Software-License 0.103010
  * perl-Sub-Exporter 0.987
  * perl-Sub-Install 0.928
+ * perl-Module-Build 0.42.14
  * perl-TermReadKey 2.23
  * perl-Test-Pod 1.51
  * perl-Text-Template 1.46
