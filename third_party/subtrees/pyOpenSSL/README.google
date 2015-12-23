@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/pyOpenSSL.git/
+Version: 87e94ccc059bf4ed8423bff6c284145f72ff9e09
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for pyOpenSSL - Python wrapper module around the OpenSSL library.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
