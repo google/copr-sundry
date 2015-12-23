@@ -94,3 +94,6 @@
 [submodule "third_party/submodules/perl-Devel-Symdump"]
 	path = third_party/submodules/perl-Devel-Symdump
 	url = git://pkgs.fedoraproject.org/perl-Devel-Symdump.git
+[submodule "third_party/submodules/perl-Pod-Coverage"]
+	path = third_party/submodules/perl-Pod-Coverage
+	url = git://pkgs.fedoraproject.org/perl-Pod-Coverage.git
