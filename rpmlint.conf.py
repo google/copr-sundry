@@ -36,7 +36,7 @@ addFilter('python(2|3)?-acme\.(src|noarch)')
 addFilter('SPECS/python-iniparse.spec')
 addFilter('SPECS/os-prober.spec')
 addFilter('SPECS/puppet.spec')
-addFilter('SPECS/yum.spec')
+addFilter('yum\.(spec|src)')
 
 # Python is mostly third-party and has lots of warnings.
 # TODO: clean those up.
@@ -66,3 +66,9 @@ addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
 ## Let's encrypt.
 # OK to have unversioned bundled provides.
 addFilter('letsencrypt.src:[0-9]+: W: unversioned-explicit-provides bundled\([a-z\-]+\)')
+
+## Perl
+# Perl packages are weird and often don't have -devel part.
+addFilter('perl-Tk.x86_64: W: devel-file-in-non-devel-package')
+# Some of them also depend on perl-devel
+addFilter('perl-ExtUtils-Miniperl.noarch: W: devel-dependency')
