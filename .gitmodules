@@ -157,3 +157,6 @@
 [submodule "third_party/submodules/python-hypothesis"]
 	path = third_party/submodules/python-hypothesis
 	url = git://pkgs.fedoraproject.org/python-hypothesis.git
+[submodule "third_party/submodules/python-ndg_httpsclient"]
+	path = third_party/submodules/python-ndg_httpsclient
+	url = git://pkgs.fedoraproject.org/python-ndg_httpsclient.git
