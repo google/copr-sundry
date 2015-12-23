@@ -55,6 +55,7 @@ code that happens to be owned by Google.
  * perl-TermReadKey 2.23
  * perl-Test-Pod 1.51
  * perl-Text-Template 1.46
+ * perl-Time-HiRes 1.9728
  * puppet 4.2.1
  * pyOpenSSL 0.15.1
  * pyparsing & python3-pyparsing 2.0.3
