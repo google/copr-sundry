@@ -64,3 +64,6 @@
 [submodule "third_party/submodules/perl-MRO-Compat"]
 	path = third_party/submodules/perl-MRO-Compat
 	url = git://pkgs.fedoraproject.org/perl-MRO-Compat.git
+[submodule "third_party/submodules/python-parsedatetime"]
+	path = third_party/submodules/python-parsedatetime
+	url = git://pkgs.fedoraproject.org/python-parsedatetime.git
