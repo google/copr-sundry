@@ -10,3 +10,4 @@ validation for Python.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Removed build dependency on python-sphinxcontrib-programoutput.

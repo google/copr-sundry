@@ -16,7 +16,6 @@ Source0:        https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-
 
 BuildRequires:  python2-devel
 BuildRequires:  python-sphinx
-BuildRequires:  python-sphinxcontrib-programoutput
 BuildRequires:  python-sphinx_rtd_theme
 BuildRequires:  python-cryptography
 BuildRequires:  pyOpenSSL >= 0.15
@@ -27,7 +26,6 @@ BuildRequires:  python-werkzeug
 %if %{with python3}
 BuildRequires:  python3-devel
 BuildRequires:  python3-sphinx
-BuildRequires:  python3-sphinxcontrib-programoutput
 BuildRequires:  python3-cryptography
 BuildRequires:  python3-pyOpenSSL >= 0.15
 BuildRequires:  python3-requests
@@ -126,20 +124,12 @@ Documentation for the ACME python libraries
 %py3_install
 %endif
 %py2_install
-# man page is pretty useless but api pages are decent
-# Issue opened upstream for improving man page
-# Need to cd as parent makefile tries to build libraries
-(  cd docs && make  html )
 # Clean up stuff we don't need for docs
 rm -rf docs/_build/html/{.buildinfo,man,_sources}
 # Unbundle fonts already on system 
 # Lato ttf is in texlive but that adds a lot of dependencies (30+MB) for just a font in documentation
 # and lato is not in it's own -fonts package, only texlive
 rm -f docs/_build/html/_static/fonts/fontawesome*
-ln -sf /usr/share/fonts/fontawesome/fontawesome-webfont.eot docs/_build/html/_static/fonts/fontawesome-webfont.eot
-ln -sf /usr/share/fonts/fontawesome/fontawesome-webfont.svg docs/_build/html/_static/fonts/fontawesome-webfont.svg
-ln -sf /usr/share/fonts/fontawesome/fontawesome-webfont.ttf docs/_build/html/_static/fonts/fontawesome-webfont.ttf
-ln -sf /usr/share/fonts/fontawesome/fontawesome-webfont.woff docs/_build/html/_static/fonts/fontawesome-webfont.woff
 
 
 %check
@@ -166,7 +156,6 @@ grep -q %{__python2} %{buildroot}%{_bindir}/jws
 %files doc
 %license LICENSE.txt 
 %doc README.rst
-%doc docs/_build/html
 
 %changelog
 * Wed Dec 16 2015 Nick Bebout <nb@fedoraproject.org> - 0.1.1-1
