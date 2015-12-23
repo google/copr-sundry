@@ -39,12 +39,13 @@ code that happens to be owned by Google.
  * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
  * nginx 1.8.0
  * perl 5.22.0
- * perl-generators 1.07
  * perl-Capture-Tiny 0.30
+ * perl-Compress-Raw-Zlib 2.069
  * perl-Data-OptList 0.109
  * perl-Data-Section 0.200006
  * perl-ExtUtils-MakeMaker / perl-ExtUtils-Command 7.10
  * perl-Fedora-VSP 0.001
+ * perl-generators 1.07
  * perl-MRO-Compat 0.12
  * perl-Package-Generator 1.106
  * perl-Params-Util 1.07
