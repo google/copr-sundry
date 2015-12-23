@@ -1,1 +1,1 @@
-../third_party/submodules/python-acme/python-acme.spec
+../third_party/subtrees/python-acme/python-acme.spec
