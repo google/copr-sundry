@@ -100,3 +100,6 @@
 [submodule "third_party/submodules/perl-inc-latest"]
 	path = third_party/submodules/perl-inc-latest
 	url = git://pkgs.fedoraproject.org/perl-inc-latest.git
+[submodule "third_party/submodules/perl-IO-Compress"]
+	path = third_party/submodules/perl-IO-Compress
+	url = git://pkgs.fedoraproject.org/perl-IO-Compress.git
