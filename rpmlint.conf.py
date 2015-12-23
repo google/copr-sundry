@@ -7,6 +7,7 @@ setOption("BadnessThreshold", 42)
 # Ignore documentation issues.
 addFilter('no-manual-page-for-binary')
 addFilter('no-documentation')
+addFilter('name-repeated-in-summary')
 
 # Ignore spelling errors unilt there's a support for custom dictionaries.
 # TODO: add such support.
@@ -19,7 +20,7 @@ addFilter('SPECS/cmake.spec')
 addFilter('SPECS/gdb.spec')
 addFilter('SPECS/gperftools.spec')
 addFilter('SPECS/libcomps.spec')
-addFilter('SPECS/nginx.spec')
+addFilter('nginx\.(spec|x86_64)')
 addFilter('SPECS/perl.spec')
 addFilter('perl.src')
 addFilter('perl-Data-OptList.src')
@@ -38,6 +39,7 @@ addFilter('SPECS/python.spec')
 addFilter('SPECS/python3.spec')
 addFilter('third_party/subtrees/python/python.spec')
 addFilter('third_party/subtrees/python3/python3.spec')
+addFilter('python-libs.x86_64')
 
 # RPM is special, let's ignore warnings from it.
 addFilter('SPECS/rpm.spec')
