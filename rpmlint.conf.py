@@ -19,7 +19,7 @@ addFilter('SPECS/cmake.spec')
 addFilter('SPECS/gdb.spec')
 addFilter('SPECS/gperftools.spec')
 addFilter('SPECS/libcomps.spec')
-addFilter('nginx\.(spec|x86-64|src)')
+addFilter('nginx\.(spec|x86_64|src)')
 addFilter('SPECS/perl.spec')
 addFilter('perl.src')
 addFilter('perl-Data-OptList.src')
@@ -29,6 +29,7 @@ addFilter('perl-Params-Util.x86_64')
 addFilter('perl-Software-License\.(src|spec)')
 addFilter('perl-Sub-Exporter\.(src|spec)')
 addFilter('perl-Sub-Install.src')
+addFilter('perl-Pod-Coverage.src')
 addFilter('perl-Test-Pod\.(src|spec)')
 addFilter('perl-TermReadKey\.(x86_64|src)')
 addFilter('perl-Test-Pod\.(src|spec)')
@@ -36,7 +37,7 @@ addFilter('python(2|3)?-acme\.(src|noarch)')
 addFilter('SPECS/python-iniparse.spec')
 addFilter('SPECS/os-prober.spec')
 addFilter('SPECS/puppet.spec')
-addFilter('SPECS/yum.spec')
+addFilter('yum\.(spec|src)')
 
 # Python is mostly third-party and has lots of warnings.
 # TODO: clean those up.
@@ -66,3 +67,9 @@ addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
 ## Let's encrypt.
 # OK to have unversioned bundled provides.
 addFilter('letsencrypt.src:[0-9]+: W: unversioned-explicit-provides bundled\([a-z\-]+\)')
+
+## Perl
+# Perl packages are weird and often don't have -devel part.
+addFilter('perl-Tk.x86_64: W: devel-file-in-non-devel-package')
+# Some of them also depend on perl-devel
+addFilter('perl-ExtUtils-Miniperl.noarch: W: devel-dependency')
