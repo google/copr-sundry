@@ -77,3 +77,7 @@ addFilter('perl-ExtUtils-Miniperl.noarch: W: devel-dependency')
 ## Let's encrypt:
 # Allow pems in test files.
 addFilter('python2-letsencrypt.noarch: W: pem-certificate /usr/lib/python2.7/site-packages/letsencrypt/tests/testdata/.*')
+# Allow some nonstandard permissions
+addFilter('letsencrypt.noarch: W: non-standard-dir-perm /var/log/letsencrypt 0')
+addFilter('letsencrypt.noarch: W: non-standard-dir-perm /var/lib/letsencrypt 0')
+addFilter('letsencrypt.noarch: W: non-standard-dir-perm /etc/letsencrypt 0')
