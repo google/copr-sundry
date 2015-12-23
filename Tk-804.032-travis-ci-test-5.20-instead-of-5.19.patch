@@ -1,0 +1,29 @@
+From 823f367d5e0952cead89646e0c7b7278a5e633b6 Mon Sep 17 00:00:00 2001
+From: Slaven Rezic <slaven@rezic.de>
+Date: Fri, 8 Aug 2014 08:56:51 +0200
+Subject: [PATCH 10/10] travis-ci: test 5.20 instead of 5.19
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Signed-off-by: Petr Písař <ppisar@redhat.com>
+---
+ .travis.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/.travis.yml b/.travis.yml
+index 8d4e90c..3cdb98f 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -15,7 +15,7 @@ before_install:
+  - (sleep 10; env DISPLAY=:123 $WINDOW_MANAGER) &
+ matrix:
+  include:
+-  - perl: "5.19"
++  - perl: "5.20"
+     env: DISPLAY=:123 WINDOW_MANAGER=twm
+ ## t/fbox.t fails, not reproducible on a freebsd system
+ #  - perl: "5.18"
+-- 
+1.9.3
+
