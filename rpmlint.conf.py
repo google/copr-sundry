@@ -12,6 +12,9 @@ addFilter('no-documentation')
 # TODO: add such support.
 addFilter('spelling-error')
 
+# OK to have unversioned bundled provides
+addFilter('unversioned-explicit-provides bundled([a-z\-]+)')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
@@ -63,10 +66,6 @@ addFilter('vim.spec:218: W: mixed-use-of-spaces-and-tabs')
 # Ignore unversioned provide /bin/vi, versioning it triggers another lint
 # warning.
 addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
-
-## Let's encrypt.
-# OK to have unversioned bundled provides.
-addFilter('letsencrypt.src:[0-9]+: W: unversioned-explicit-provides bundled\([a-z\-]+\)')
 
 ## Perl
 # Perl packages are weird and often don't have -devel part.
