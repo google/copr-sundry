@@ -73,3 +73,7 @@ addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
 addFilter('perl-Tk.x86_64: W: devel-file-in-non-devel-package')
 # Some of them also depend on perl-devel
 addFilter('perl-ExtUtils-Miniperl.noarch: W: devel-dependency')
+
+## Let's encrypt:
+# Allow pems in test files.
+addFilter('python2-letsencrypt.noarch: W: pem-certificate /usr/lib/python2.7/site-packages/letsencrypt/tests/testdata/.*')
