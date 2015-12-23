@@ -96,20 +96,16 @@ popd
 
 %check
 make test
-%if %{python3_build}
 pushd py3
 make pytest
 popd
-%endif
 
 %install
 make install DESTDIR=%{buildroot}
 
-%if %{python3_build}
 pushd py3
 make install DESTDIR=%{buildroot}
 popd
-%endif
 
 %clean
 rm -rf $buildroot

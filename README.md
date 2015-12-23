@@ -40,6 +40,7 @@ code that happens to be owned by Google.
  * nginx 1.8.0
  * perl 5.22.0
  * perl-Capture-Tiny 0.30
+ * perl-Compress-Raw-Bzip2 2.069
  * perl-Compress-Raw-Zlib 2.069
  * perl-Data-OptList 0.109
  * perl-Data-Section 0.200006

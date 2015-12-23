@@ -12,6 +12,9 @@ addFilter('no-documentation')
 # TODO: add such support.
 addFilter('spelling-error')
 
+# OK to have unversioned bundled provides
+addFilter('unversioned-explicit-provides bundled\([a-z\-]+\)')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
@@ -22,6 +25,7 @@ addFilter('SPECS/libcomps.spec')
 addFilter('nginx\.(spec|x86_64|src)')
 addFilter('SPECS/perl.spec')
 addFilter('perl.src')
+addFilter('perl-Compress-Raw-Bzip2.x86_64')
 addFilter('perl-Data-OptList.src')
 addFilter('perl-Data-Section.src')
 addFilter('perl-Software-License.src')
@@ -64,12 +68,12 @@ addFilter('vim.spec:218: W: mixed-use-of-spaces-and-tabs')
 # warning.
 addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
 
-## Let's encrypt.
-# OK to have unversioned bundled provides.
-addFilter('letsencrypt.src:[0-9]+: W: unversioned-explicit-provides bundled\([a-z\-]+\)')
-
 ## Perl
 # Perl packages are weird and often don't have -devel part.
 addFilter('perl-Tk.x86_64: W: devel-file-in-non-devel-package')
 # Some of them also depend on perl-devel
 addFilter('perl-ExtUtils-Miniperl.noarch: W: devel-dependency')
+
+## Let's encrypt:
+# Allow pems in test files.
+addFilter('python2-letsencrypt.noarch: W: pem-certificate /usr/lib/python2.7/site-packages/letsencrypt/tests/testdata/.*')
