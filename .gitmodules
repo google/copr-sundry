@@ -88,3 +88,6 @@
 [submodule "third_party/submodules/perl-Compress-Raw-Zlib"]
 	path = third_party/submodules/perl-Compress-Raw-Zlib
 	url = git://pkgs.fedoraproject.org/perl-Compress-Raw-Zlib.git
+[submodule "third_party/submodules/perl-Compress-Raw-Bzip2"]
+	path = third_party/submodules/perl-Compress-Raw-Bzip2
+	url = git://pkgs.fedoraproject.org/perl-Compress-Raw-Bzip2.git
