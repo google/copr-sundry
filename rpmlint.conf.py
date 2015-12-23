@@ -13,7 +13,7 @@ addFilter('no-documentation')
 addFilter('spelling-error')
 
 # OK to have unversioned bundled provides
-addFilter('unversioned-explicit-provides bundled([a-z\-]+)')
+addFilter('unversioned-explicit-provides bundled\([a-z\-]+\)')
 
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
