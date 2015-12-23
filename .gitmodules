@@ -85,3 +85,6 @@
 [submodule "third_party/submodules/perl-Time-HiRes"]
 	path = third_party/submodules/perl-Time-HiRes
 	url = git://pkgs.fedoraproject.org/perl-Time-HiRes.git
+[submodule "third_party/submodules/perl-Compress-Raw-Zlib"]
+	path = third_party/submodules/perl-Compress-Raw-Zlib
+	url = git://pkgs.fedoraproject.org/perl-Compress-Raw-Zlib.git
