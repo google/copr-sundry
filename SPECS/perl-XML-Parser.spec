@@ -1,0 +1,1 @@
+../third_party/submodules/perl-XML-Parser/perl-XML-Parser.spec
