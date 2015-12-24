@@ -4,7 +4,7 @@
 Name: rubygem-%{gem_name}
 Version: 1.4.1
 Release: 2%{?dist}
-Summary: Retriable is an simple DSL to retry failed code blocks with randomized exponential backoff
+Summary: A simple DSL to retry failed code blocks with randomized exponential backoff
 Group: Development/Languages
 License: MIT
 URL: http://github.com/kamui/retriable
