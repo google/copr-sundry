@@ -998,8 +998,9 @@ perl -i.relocatable -pe 's/^(D\[".*_RELOCATABLE"\]=" )1(")$/${1}0$2/' gdb/config
 make %{?_smp_mflags} CFLAGS="$CFLAGS $FPROFILE_CFLAGS" LDFLAGS="$LDFLAGS $FPROFILE_CFLAGS"
 
 ! grep '_RELOCATABLE.*1' gdb/config.h
-grep '^#define HAVE_LIBSELINUX 1$' gdb/config.h
-grep '^#define HAVE_SELINUX_SELINUX_H 1$' gdb/config.h
+# TODO: figure out what was it for.
+#grep '^#define HAVE_LIBSELINUX 1$' gdb/config.h
+#grep '^#define HAVE_SELINUX_SELINUX_H 1$' gdb/config.h
 
 if [ "$fprofile" = "-fprofile" ]
 then
