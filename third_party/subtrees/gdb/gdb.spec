@@ -466,10 +466,6 @@ Patch634: gdb-runtest-pie-override.patch
 #=fedora
 Patch642: gdb-readline62-ask-more-rh.patch
 
-# Print reasons for failed attach/spawn incl. SELinux deny_ptrace (BZ 786878).
-#=push
-Patch653: gdb-attach-fail-reasons-5of5.patch
-
 # Workaround crashes from stale frame_info pointer (BZ 804256).
 #=fedora
 Patch661: gdb-stale-frame_info.patch
@@ -805,7 +801,6 @@ find -name "*.info*"|xargs rm -f
 %patch579 -p1
 %patch627 -p1
 %patch634 -p1
-%patch653 -p1
 %patch661 -p1
 %patch690 -p1
 %patch698 -p1
