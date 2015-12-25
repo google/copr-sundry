@@ -19,7 +19,7 @@ Summary: A GNU source-level debugger for C, C++, Fortran, Go and other languages
 Name: %{?scl_prefix}gdb
 
 # Freeze it when GDB gets branched
-%global snapsrc    20151113
+%global snapsrc    20151225
 # See timestamp of source gnulib installed into gdb/gnulib/ .
 %global snapgnulib 20150822
 %global tarname gdb-%{version}
@@ -31,9 +31,8 @@ Release: 33%{?dist}
 
 License: GPLv3+ and GPLv3+ with exceptions and GPLv2+ and GPLv2+ with exceptions and GPL+ and LGPLv2+ and BSD and Public Domain and GFDL
 Group: Development/Debuggers
-# Do not provide URL for snapshots as the file lasts there only for 2 days.
-# ftp://sourceware.org/pub/gdb/releases/FIXME{tarname}.tar.xz
-Source: ftp://sourceware.org/pub/gdb/releases/%{tarname}.tar.xz
+# TODO: switch to stable release.
+Source: ftp://sourceware.org/pub/gdb/snapshots/current/%{tarname}.tar.xz
 Buildroot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 URL: http://gnu.org/software/gdb/
 
