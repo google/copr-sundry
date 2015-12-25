@@ -53,7 +53,7 @@ Obsoletes: gdb64 < 5.3.91
 %global have_inproctrace 0
 %ifarch %{ix86} x86_64
 %global have_inproctrace 1
-%endif # %{ix86} x86_64
+%endif # %%{ix86} x86_64
 
 # gdb-add-index cannot be run even for SCL package on RHEL<=6.
 %if 0%{!?rhel:1} || 0%{?rhel} > 6
