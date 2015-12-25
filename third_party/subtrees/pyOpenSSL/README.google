@@ -9,3 +9,4 @@ RPM spec files for pyOpenSSL - Python wrapper module around the OpenSSL library.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Build python3 version unconditionally.

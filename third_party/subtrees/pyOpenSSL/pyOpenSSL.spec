@@ -1,6 +1,4 @@
-%if 0%{?fedora} > 12
 %global with_python3 1
-%endif
 
 Summary: Python wrapper module around the OpenSSL library
 Name: pyOpenSSL
