@@ -131,10 +131,8 @@ rm -rf $buildroot
 %files -n python-libcomps
 %{_libdir}/python2*
 
-%if %{python3_build}
 %files -n python3-libcomps
 %{_libdir}/python3*
-%endif
 
 %changelog
 * Thu Jul 02 2015 Jindrich Luza <jluza@redhat.com> 0.1.7
