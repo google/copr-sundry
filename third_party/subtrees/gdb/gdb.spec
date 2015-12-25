@@ -510,7 +510,6 @@ Patch848: gdb-dts-rhel6-python-compat.patch
 Patch852: gdb-gnat-dwarf-crash-3of3.patch
 
 # VLA (Fortran dynamic arrays) from Intel + archer-jankratochvil-vla tests.
-Patch888: gdb-vla-intel.patch
 Patch983: gdb-vla-intel-logical-not.patch
 Patch889: gdb-vla-intel-stringbt-fix.patch
 Patch912: gdb-vla-intel-04of23-fix.patch
@@ -730,7 +729,6 @@ find -name "*.info*"|xargs rm -f
 
 #patch232 -p1
 %patch349 -p1
-%patch888 -p1
 %patch983 -p1
 %patch889 -p1
 %patch912 -p1
