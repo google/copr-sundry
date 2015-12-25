@@ -17,4 +17,5 @@ Local Modifications:
 - Removed gdb-vla-intel-04of23-fix.patch.
 - Removed gdb-attach-fail-reasons-5of5.patch.
 - Removed gdb-rhbz795424-bitpos-20of25.patch.
-- Removed gdb-rhbz795424-bitpos-21of25.patch
+- Removed gdb-rhbz795424-bitpos-21of25.patch.
+- Removed gdb-rhbz795424-bitpos-22of25.patch.
