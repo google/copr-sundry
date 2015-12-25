@@ -546,7 +546,7 @@ BuildRequires: python3-devel%{buildisa}
 %if 0%{?rhel:1} && 0%{?rhel} <= 7
 # Temporarily before python files get moved to libstdc++.rpm
 # libstdc++%{bits_other} is not present in Koji, the .spec script generating
-# gdb/python/libstdcxx/ also does not depend on the %{bits_other} files.
+# gdb/python/libstdcxx/ also does not depend on the %%{bits_other} files.
 BuildRequires: libstdc++%{buildisa}
 %endif # 0%{?rhel:1} && 0%{?rhel} <= 7
 %endif # 0%{!?_without_python:1}
