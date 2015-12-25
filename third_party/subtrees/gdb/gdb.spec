@@ -867,8 +867,6 @@ mv -f readline-doc readline/doc
 rm -rf zlib
 
 %build
-rm -rf %{buildroot}
-
 test -e %{_root_libdir}/librpm.so.%{librpmver}
 
 # Identify the build directory with the version of gdb as well as the

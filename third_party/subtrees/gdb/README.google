@@ -25,3 +25,4 @@ Local Modifications:
 - Fix lint warnigns for macros in comments and in the changelog.
 - Commente out HAVE_SELINUX checks.
 - Included /usr/lib/debug/usr/bin/gdb-gdb in the package.
+- Removed unnecessary buildroom cleanup.
