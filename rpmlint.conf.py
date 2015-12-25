@@ -85,3 +85,5 @@ addFilter('python2-letsencrypt.noarch: W: pem-certificate /usr/lib/python2.7/sit
 addFilter('letsencrypt.noarch: W: non-standard-dir-perm /var/log/letsencrypt 0')
 addFilter('letsencrypt.noarch: W: non-standard-dir-perm /var/lib/letsencrypt 0')
 addFilter('letsencrypt.noarch: W: non-standard-dir-perm /etc/letsencrypt 0')
+# TODO: fix following
+addFilter('letsencrypt.noarch: W: log-files-without-logrotate')
