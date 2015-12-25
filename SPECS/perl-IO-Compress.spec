@@ -1,0 +1,1 @@
+../third_party/submodules/perl-IO-Compress/perl-IO-Compress.spec
