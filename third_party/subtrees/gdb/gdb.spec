@@ -486,7 +486,6 @@ Patch703: gdb-rhbz-818343-set-solib-absolute-prefix-testcase.patch
 # Fix `GDB cannot access struct member whose offset is larger than 256MB'
 # (RH BZ 795424).
 #=push+work
-Patch812: gdb-rhbz795424-bitpos-21of25.patch
 Patch813: gdb-rhbz795424-bitpos-22of25.patch
 Patch814: gdb-rhbz795424-bitpos-23of25.patch
 Patch816: gdb-rhbz795424-bitpos-25of25.patch
@@ -804,7 +803,6 @@ find -name "*.info*"|xargs rm -f
 %patch690 -p1
 %patch698 -p1
 %patch703 -p1
-%patch812 -p1
 %patch813 -p1
 %patch814 -p1
 %patch816 -p1
