@@ -487,7 +487,6 @@ Patch703: gdb-rhbz-818343-set-solib-absolute-prefix-testcase.patch
 # (RH BZ 795424).
 #=push+work
 Patch817: gdb-rhbz795424-bitpos-25of25-test.patch
-Patch818: gdb-rhbz795424-bitpos-lazyvalue.patch
 
 # Import regression test for `gdb/findvar.c:417: internal-error:
 # read_var_value: Assertion `frame' failed.' (RH BZ 947564) from RHEL 6.5.
@@ -801,7 +800,6 @@ find -name "*.info*"|xargs rm -f
 %patch698 -p1
 %patch703 -p1
 %patch817 -p1
-%patch818 -p1
 %patch832 -p1
 %patch852 -p1
 %patch863 -p1
