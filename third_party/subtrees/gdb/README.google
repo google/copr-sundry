@@ -14,3 +14,4 @@ Local Modifications:
 - Always use librpm.so.7.
 - Removed gdb-vla-intel.patch.
 - Removed gdb-vla-intel-logical-not.patch.
+- Removed gdb-vla-intel-04of23-fix.patch.

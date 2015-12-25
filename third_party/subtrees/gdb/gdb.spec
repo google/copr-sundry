@@ -511,7 +511,6 @@ Patch852: gdb-gnat-dwarf-crash-3of3.patch
 
 # VLA (Fortran dynamic arrays) from Intel + archer-jankratochvil-vla tests.
 Patch889: gdb-vla-intel-stringbt-fix.patch
-Patch912: gdb-vla-intel-04of23-fix.patch
 Patch887: gdb-archer-vla-tests.patch
 
 # Continue backtrace even if a frame filter throws an exception (Phil Muldoon).
@@ -729,7 +728,6 @@ find -name "*.info*"|xargs rm -f
 #patch232 -p1
 %patch349 -p1
 %patch889 -p1
-%patch912 -p1
 %patch1 -p1
 
 %patch105 -p1
