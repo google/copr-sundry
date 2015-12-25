@@ -70,9 +70,6 @@
 [submodule "third_party/submodules/perl-ExtUtils-MakeMaker"]
 	path = third_party/submodules/perl-ExtUtils-MakeMaker
 	url = git://pkgs.fedoraproject.org/perl-ExtUtils-MakeMaker.git
-[submodule "third_party/submodules/pyOpenSSL"]
-	path = third_party/submodules/pyOpenSSL
-	url = git://pkgs.fedoraproject.org/pyOpenSSL.git
 [submodule "third_party/submodules/perl-Software-License"]
 	path = third_party/submodules/perl-Software-License
 	url = http://pkgs.fedoraproject.org/git/perl-Software-License.git
