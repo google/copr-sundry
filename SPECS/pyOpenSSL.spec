@@ -1,1 +1,1 @@
-../third_party/submodules/pyOpenSSL/pyOpenSSL.spec
+../third_party/subtrees/pyOpenSSL/pyOpenSSL.spec
