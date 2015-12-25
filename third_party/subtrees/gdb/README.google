@@ -13,3 +13,4 @@ Local Modifications:
 - Updated to 20151225 snapshot and fixed download URL.
 - Always use librpm.so.7.
 - Removed gdb-vla-intel.patch.
+- Removed gdb-vla-intel-logical-not.patch.
