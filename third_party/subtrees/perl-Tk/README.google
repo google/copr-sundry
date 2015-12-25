@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/perl-Tk.git/
+Version:
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for perl-Tk - Perl Graphical User Interface ToolKit.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
