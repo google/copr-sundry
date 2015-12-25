@@ -92,3 +92,8 @@ addFilter('letsencrypt.noarch: W: log-files-without-logrotate')
 ## Libcomps
 # URL broken :(
 addFilter('libcomps.spec: W: invalid-url Source0: https://github.com/midnightercz/libcomps/libcomps-0.1.7.tar.gz')
+
+## GDB
+# Following should be ok for debugger.
+addFilter('gdb.x86_64: W: unstripped-binary-or-object /usr/bin/gdb')
+addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/lib64/libinproctrace.so')
