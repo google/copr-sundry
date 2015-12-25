@@ -22,3 +22,4 @@ Local Modifications:
 - Removed gdb-rhbz795424-bitpos-23of25.patch.
 - Removed gdb-rhbz795424-bitpos-25of25.patch.
 - Removed gdb-rhbz795424-bitpos-lazyvalue.patch.
+- Fix lint warnigns for macros in comments and in the changelog.

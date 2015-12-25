@@ -707,7 +707,7 @@ tar xJf %{SOURCE5}
 (cd gdb;rm -fv $(perl -pe 's/\\\n/ /' <Makefile.in|sed -n 's/^YYFILES = //p'))
 
 # *.info* is needlessly split in the distro tar; also it would not get used as
-# we build in %{gdb_build}, just to be sure.
+# we build in %%{gdb_build}, just to be sure.
 find -name "*.info*"|xargs rm -f
 
 # Apply patches defined above.
@@ -874,7 +874,7 @@ test -e %{_root_libdir}/librpm.so.%{librpmver}
 # Identify the build directory with the version of gdb as well as the
 # architecture, to allow for mutliple versions to be installed and
 # built.
-# Initially we're in the %{gdb_src} directory.
+# Initially we're in the %%{gdb_src} directory.
 
 for fprofile in %{?_with_profile:-fprofile} ""
 do
@@ -889,7 +889,7 @@ export LDFLAGS="%{?__global_ldflags} %{?_with_asan:-fsanitize=address}"
 CFLAGS="$CFLAGS -DDNF_DEBUGINFO_INSTALL"
 %endif
 
-# --htmldir and --pdfdir are not used as they are used from %{gdb_build}.
+# --htmldir and --pdfdir are not used as they are used from %%{gdb_build}.
 ../configure							\
 	--prefix=%{_prefix}					\
 	--libdir=%{_libdir}					\
@@ -1024,7 +1024,7 @@ make %{?_smp_mflags} \
 cp $RPM_BUILD_DIR/%{gdb_src}/gdb/NEWS $RPM_BUILD_DIR/%{gdb_src}
 
 %check
-# Initially we're in the %{gdb_src} directory.
+# Initially we're in the %%{gdb_src} directory.
 cd %{gdb_build}
 
 %if 0%{!?_with_testsuite:1}
@@ -1579,9 +1579,9 @@ fi
 - Remove %{_bindir}/mono-gdb.py workaround of mono BZ 815501.
 
 * Tue Jul  1 2014 Jan Kratochvil <jan.kratochvil@redhat.com> - 7.7.90.20140627-8.fc21
-- Do not remove %{_datadir}/gdb/syscalls/ppc*.xml as it is secondary target.
-- Remove: %{_datadir}/gdb/guile
-- Remove: %{_datadir}/gdb/system-gdbinit
+- Do not remove %%{_datadir}/gdb/syscalls/ppc*.xml as it is secondary target.
+- Remove: %%{_datadir}/gdb/guile
+- Remove: %%{_datadir}/gdb/system-gdbinit
 
 * Mon Jun 30 2014 Jan Kratochvil <jan.kratochvil@redhat.com> - 7.7.90.20140627-7.fc21
 - Fix crash on optimized-out entry data values (BZ 1111910).
