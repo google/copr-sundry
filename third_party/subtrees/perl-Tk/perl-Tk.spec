@@ -13,8 +13,6 @@ License:        (GPL+ or Artistic) and SWL
 URL:            http://search.cpan.org/dist/Tk/
 Source0:        http://search.cpan.org/CPAN/authors/id/S/SR/SREZIC/Tk-%{version}.tar.gz
 Patch0:         perl-Tk-widget.patch
-# modified version of http://ftp.de.debian.org/debian/pool/main/p/perl-tk/perl-tk_804.027-8.diff.gz
-Patch1:         perl-Tk-debian.patch.gz
 # fix segfaults as in #235666 because of broken cashing code
 Patch2:         perl-Tk-seg.patch
 

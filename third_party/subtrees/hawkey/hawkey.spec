@@ -13,7 +13,7 @@ URL:        https://github.com/rpm-software-management/%{name}
 Source0:    https://github.com/rpm-software-management/%{name}/archive/%{github_version}.tar.gz
 BuildRequires:  libsolv-devel >= %{libsolv_version}
 BuildRequires:  cmake expat-devel rpm-devel zlib-devel check-devel
-Requires:	libsolv%{?_isa} >= %{libsolv_version}
+Requires:    libsolv%{?_isa} >= %{libsolv_version}
 # prevent provides from nonstandard paths:
 %filter_provides_in %{python_sitearch}/.*\.so$
 %filter_provides_in %{python3_sitearch}/.*\.so$
@@ -26,8 +26,8 @@ Requires:	libsolv%{?_isa} >= %{libsolv_version}
 A Library providing simplified C and Python API to libsolv.
 
 %package devel
-Summary:	A Library providing simplified C and Python API to libsolv
-Group:		Development/Libraries
+Summary:    A Library providing simplified C and Python API to libsolv
+Group:      Development/Libraries
 Requires:	hawkey%{?_isa} = %{version}-%{release}
 Requires:	libsolv-devel
 

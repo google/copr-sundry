@@ -29,6 +29,7 @@ addFilter('perl-Compress-Raw-Bzip2.x86_64')
 addFilter('perl-Data-OptList.src')
 addFilter('perl-Data-Section.src')
 addFilter('perl-Params-Util.x86_64')
+addFilter('perl-Pod-Coverage.spec')
 addFilter('perl-Software-License\.(src|spec)')
 addFilter('perl-Sub-Exporter\.(src|spec)')
 addFilter('perl-Sub-Install.src')
@@ -36,6 +37,8 @@ addFilter('perl-Pod-Coverage.src')
 addFilter('perl-Test-Pod\.(src|spec)')
 addFilter('perl-TermReadKey\.(x86_64|src)')
 addFilter('perl-Test-Pod\.(src|spec)')
+addFilter('perl-Text-Template.noarch')
+addFilter('pyOpenSSL-doc.noarch')
 addFilter('python(2|3)?-acme\.(src|noarch)')
 addFilter('SPECS/python-iniparse.spec')
 addFilter('SPECS/os-prober.spec')
@@ -72,6 +75,8 @@ addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
 addFilter('perl-Tk.x86_64: W: devel-file-in-non-devel-package')
 # Some of them also depend on perl-devel
 addFilter('perl-ExtUtils-Miniperl.noarch: W: devel-dependency')
+# Perl-Tk has weird deps
+addFilter('perl-Tk.spec:63: W: comparison-operator-in-deptoken')
 
 ## Let's encrypt:
 # Allow pems in test files.
@@ -80,3 +85,9 @@ addFilter('python2-letsencrypt.noarch: W: pem-certificate /usr/lib/python2.7/sit
 addFilter('letsencrypt.noarch: W: non-standard-dir-perm /var/log/letsencrypt 0')
 addFilter('letsencrypt.noarch: W: non-standard-dir-perm /var/lib/letsencrypt 0')
 addFilter('letsencrypt.noarch: W: non-standard-dir-perm /etc/letsencrypt 0')
+# TODO: fix following
+addFilter('letsencrypt.noarch: W: log-files-without-logrotate')
+
+## Libcomps
+# URL broken :(
+addFilter('libcomps.spec: W: invalid-url Source0: https://github.com/midnightercz/libcomps/libcomps-0.1.7.tar.gz')
