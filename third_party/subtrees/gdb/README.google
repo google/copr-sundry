@@ -24,3 +24,4 @@ Local Modifications:
 - Removed gdb-rhbz795424-bitpos-lazyvalue.patch.
 - Fix lint warnigns for macros in comments and in the changelog.
 - Commente out HAVE_SELINUX checks.
+- Included /usr/lib/debug/usr/bin/gdb-gdb in the package.
