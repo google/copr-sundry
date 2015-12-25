@@ -97,3 +97,6 @@
 [submodule "third_party/submodules/perl-Pod-Coverage"]
 	path = third_party/submodules/perl-Pod-Coverage
 	url = git://pkgs.fedoraproject.org/perl-Pod-Coverage.git
+[submodule "third_party/submodules/perl-inc-latest"]
+	path = third_party/submodules/perl-inc-latest
+	url = git://pkgs.fedoraproject.org/perl-inc-latest.git
