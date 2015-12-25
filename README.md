@@ -50,6 +50,7 @@ code that happens to be owned by Google.
  * perl-generators 1.07
  * perl-inc-latest 0.500
  * perl-IO-Compress 2.069
+ * perl-libintl 1.24
  * perl-MRO-Compat 0.12
  * perl-Package-Generator 1.106
  * perl-Params-Util 1.07

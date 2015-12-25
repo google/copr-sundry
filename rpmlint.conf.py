@@ -28,6 +28,7 @@ addFilter('perl.src')
 addFilter('perl-Compress-Raw-Bzip2.x86_64')
 addFilter('perl-Data-OptList.src')
 addFilter('perl-Data-Section.src')
+addFilter('perl-libintl\.(x86_64|src)')
 addFilter('perl-Params-Util.x86_64')
 addFilter('perl-Pod-Coverage.spec')
 addFilter('perl-Software-License\.(src|spec)')
@@ -91,3 +92,10 @@ addFilter('letsencrypt.noarch: W: log-files-without-logrotate')
 ## Libcomps
 # URL broken :(
 addFilter('libcomps.spec: W: invalid-url Source0: https://github.com/midnightercz/libcomps/libcomps-0.1.7.tar.gz')
+
+## GDB
+# Following should be ok for debugger.
+addFilter('gdb.x86_64: W: unstripped-binary-or-object /usr/bin/gdb')
+addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/lib64/libinproctrace.so')
+addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/bin/gdbserver')
+addFilter('gdb-gdbserver.x86_64: W: shared-lib-calls-exit /usr/lib64/libinproctrace.so exit@GLIBC_2.2.5')
