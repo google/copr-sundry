@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/gdb.git/
+Version: c296a6a29eb16279ab9cf6c8b47cae1c2e7bca13
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for gdb - A GNU source-level debugger for C, C++, Fortran, Go
+and other languages.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
