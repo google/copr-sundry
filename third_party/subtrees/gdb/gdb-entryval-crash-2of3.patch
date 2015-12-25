@@ -1,0 +1,44 @@
+revert:
+commit 4f14910fa1331398cc695011a6af43a89252b4b1
+Author: Andrew Burgess <aburgess@broadcom.com>
+Date:   Tue Nov 26 16:21:53 2013 +0000
+
+    Mark entirely optimized out value as non-lazy.
+    
+    If a value is entirely optimized out, then there's nothing for
+    value_fetch_lazy to fetch.  Sequences like:
+    
+     if (value_lazy (retval))
+       value_fetch_lazy (retval);
+    
+    End up allocating the value contents buffer, wasting memory, for no
+    use.
+    
+    gdb/ChangeLog
+    2013-11-26  Andrew Burgess  <aburgess@broadcom.com>
+    
+    	* value.c (allocate_optimized_out_value): Mark value as non-lazy.
+
+### a/gdb/ChangeLog
+### b/gdb/ChangeLog
+## -1,3 +1,7 @@
++2013-11-26  Andrew Burgess  <aburgess@broadcom.com>
++
++	* value.c (allocate_optimized_out_value): Mark value as non-lazy.
++
+ 2013-11-26  Tom Tromey  <tromey@redhat.com>
+ 
+ 	* dwarf2-frame.c (dwarf2_frame_cache): Revert patch from
+diff --git a/gdb/value.c b/gdb/value.c
+index 29abe5f..f073d71 100644
+--- a/gdb/value.c
++++ b/gdb/value.c
+@@ -906,7 +906,7 @@ allocate_optimized_out_value (struct type *type)
+   struct value *retval = allocate_value_lazy (type);
+ 
+   set_value_optimized_out (retval, 1);
+-  set_value_lazy (retval, 0);
++
+   return retval;
+ }
+ 

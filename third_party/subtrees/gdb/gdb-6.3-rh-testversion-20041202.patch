@@ -1,0 +1,19 @@
+2003-02-24  Elena Zannoni  <ezannoni@redhat.com>
+
+        * gdb.gdb/selftest.exp: Add matching on specific Red Hat only version
+        string.
+
+Index: gdb-7.1.90.20100711/gdb/testsuite/gdb.gdb/selftest.exp
+===================================================================
+--- gdb-7.1.90.20100711.orig/gdb/testsuite/gdb.gdb/selftest.exp	2010-06-26 08:44:47.000000000 +0200
++++ gdb-7.1.90.20100711/gdb/testsuite/gdb.gdb/selftest.exp	2010-07-12 09:59:42.000000000 +0200
+@@ -342,6 +342,9 @@ proc test_with_self { executable } {
+ 	-re ".\[0-9\]+ = +.+ +0x.*\[0-9.\]+.*$gdb_prompt $" {
+ 	    pass "printed version with cast"
+ 	}
++	-re ".\[0-9\]+ = .(Fedora|Red Hat Enterprise Linux) \[\\(\\)0-9.a-z\\-\]+.*$gdb_prompt $" {
++	    pass "printed version Fedora or Red Hat Enterprise Linux only"
++	}
+     }
+ 
+     do_steps_and_nexts
