@@ -7,7 +7,7 @@ via copr at https://copr.fedoraproject.org/coprs/vrusinov/sundry/.
 
 ## Motivation
 
-Projext exists to collect various packages missing from official CentOS and
+Project exists to collect various packages missing from official CentOS and
 Fedora repositories as well as to backport some of the packages from Fedora to CentOS.
 
 ## Installation
