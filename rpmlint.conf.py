@@ -75,6 +75,8 @@ addFilter('vim.spec:[0-9]+: W: unversioned-explicit-provides /bin/vi')
 addFilter('perl-Tk.x86_64: W: devel-file-in-non-devel-package')
 # Some of them also depend on perl-devel
 addFilter('perl-ExtUtils-Miniperl.noarch: W: devel-dependency')
+# Perl-Tk has weird deps
+addFilter('perl-Tk.spec:63: W: comparison-operator-in-deptoken')
 
 ## Let's encrypt:
 # Allow pems in test files.
