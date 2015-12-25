@@ -641,7 +641,7 @@ BuildRequires: libgo-devel%{bits_local} libgo-devel%{bits_other}
 %endif
 BuildRequires: glibc-static%{bits_local}
 # multilib glibc-static is open Bug 488472:
-#BuildRequires: glibc-static%{bits_other}
+#BuildRequires: glibc-static%%{bits_other}
 # Copied from valgrind-3.5.0-1.
 # Valgrind is not yet ported to ppc64le.
 %ifarch %{ix86} x86_64 ppc ppc64
