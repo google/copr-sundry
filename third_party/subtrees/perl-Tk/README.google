@@ -9,3 +9,4 @@ RPM spec files for perl-Tk - Perl Graphical User Interface ToolKit.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Removed perl-Tk-debian.patch.gz.
