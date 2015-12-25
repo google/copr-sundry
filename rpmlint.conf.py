@@ -98,3 +98,4 @@ addFilter('gdb.spec:[0-9]+: W: unversioned-explicit-obsoletes devtoolset')
 # Probably ok for debugger
 addFilter('gdb.x86_64: W: unstripped-binary-or-object /usr/bin/gdb')
 addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/lib64/libinproctrace.so')
+addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/bin/gdbserver')
