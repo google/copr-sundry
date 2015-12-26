@@ -1013,7 +1013,7 @@ fi
 
 cd ..
 
-done	# fprofile
+done # fprofile
 
 cd %{gdb_build}
 
