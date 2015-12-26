@@ -1139,32 +1139,6 @@ done
 %endif # 0%{?_enable_debug_packages:1} && 0%{!?_without_python:1}
 
 %if 0%{!?_without_python:1}
-%if 0%{!?rhel:1} || 0%{?rhel} > 6
-# BZ 999645: /usr/share/gdb/auto-load/ needs filesystem symlinks
-for i in $(echo bin lib $(basename %{_libdir}) sbin|tr ' ' '\n'|sort -u);do
-  # mkdir to satisfy dangling symlinks build check.
-  mkdir -p $RPM_BUILD_ROOT%{_datadir}/gdb/auto-load/%{_root_prefix}/$i
-  ln -s $(echo %{_root_prefix}|sed 's#^/*##')/$i \
-        $RPM_BUILD_ROOT%{_datadir}/gdb/auto-load/$i
-done
-%endif # 0%{!?rhel:1} || 0%{?rhel} > 6
-%if 0%{?rhel:1} && 0%{?rhel} <= 7
-# Temporarily now:
-for LIB in $(echo lib $(basename %{_libdir})|tr ' ' '\n'|sort -u);do
-  LIBPATH="$RPM_BUILD_ROOT%{_datadir}/gdb/auto-load%{_root_prefix}/$LIB"
-  mkdir -p $LIBPATH
-  # basename is being run only for the native (non-biarch) file.
-  sed -e 's,@pythondir@,%{_datadir}/gdb/python,'		\
-      -e 's,@toolexeclibdir@,%{_root_prefix}/'"$LIB,"		\
-      < $RPM_BUILD_DIR/%{gdb_src}/%{libstdcxxpython}/hook.in	\
-      > $LIBPATH/$(basename %{_root_prefix}/%{_lib}/libstdc++.so.6.*)-gdb.py
-  # Test the filename 'libstdc++.so.6.*' has matched.
-  test -f $LIBPATH/libstdc++.so.6.[0-9]*-gdb.py
-done
-test ! -e $RPM_BUILD_ROOT%{_datadir}/gdb/python/libstdcxx
-cp -a $RPM_BUILD_DIR/%{gdb_src}/%{libstdcxxpython}/libstdcxx	\
-      $RPM_BUILD_ROOT%{_datadir}/gdb/python/libstdcxx
-%endif # 0%{?rhel:1} && 0%{?rhel} <= 7
 for i in `find $RPM_BUILD_ROOT%{_datadir}/gdb -name "*.py"`; do
   # Files are installed by install(1) not preserving the timestamps.
   touch -r $RPM_BUILD_DIR/%{gdb_src}/gdb/ChangeLog $i
