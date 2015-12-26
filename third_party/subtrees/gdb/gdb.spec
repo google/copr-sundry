@@ -899,39 +899,39 @@ CFLAGS="$CFLAGS -DDNF_DEBUGINFO_INSTALL"
     --with-gdb-datadir=%{_datadir}/gdb           \
     --enable-gdb-build-warnings=,-Wno-unused     \
 %ifnarch %{ix86} alpha ppc s390 s390x x86_64 ppc64 ppc64le sparc sparcv9 sparc64 %{arm} aarch64
-	--disable-werror					\
+    --disable-werror                             \
 %else
-	--enable-werror						\
+    --enable-werror                              \
 %endif
-	--with-separate-debug-dir=/usr/lib/debug		\
-	--disable-sim						\
-	--disable-rpath						\
+    --with-separate-debug-dir=/usr/lib/debug     \
+    --disable-sim                                \
+    --disable-rpath                              \
 %if 0%{!?rhel:1}
-	--with-babeltrace					\
-	--with-guile						\
+    --with-babeltrace                            \
+    --with-guile                                 \
 %else
-	--without-babeltrace					\
-	--without-guile						\
+    --without-babeltrace                         \
+    --without-guile                              \
 %endif
 %if 0%{!?rhel:1} || 0%{?rhel} > 6
-	--with-system-readline					\
+    --with-system-readline                       \
 %else
-	--without-system-readline				\
+    --without-system-readline                    \
 %endif
-	--with-expat						\
-$(: ppc64 host build crashes on ppc variant of libexpat.so )	\
-	--without-libexpat-prefix				\
-	--enable-tui						\
+    --with-expat                                 \
+$(: ppc64 host build crashes on ppc variant of libexpat.so ) \
+    --without-libexpat-prefix                    \
+    --enable-tui                                 \
 %if 0%{!?_without_python:1}
-	--with-python=%{__python}				\
+    --with-python=%{__python}                    \
 %else
-	--without-python					\
+    --without-python                             \
 %endif
-	--with-rpm=librpm.so.%{librpmver}			\
+    --with-rpm=librpm.so.%{librpmver}            \
 %if 0%{!?rhel:1} || 0%{?rhel} > 6
-	--with-lzma						\
+    --with-lzma                                  \
 %else
-	--without-lzma						\
+    --without-lzma                               \
 %endif
 	--without-libunwind					\
 %ifarch sparc sparcv9 sparc64
