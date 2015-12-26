@@ -118,7 +118,7 @@ Source4: gdbinit
 
 # libstdc++ pretty printers from GCC SVN.
 %global libstdcxxpython gdb-libstdc++-v3-python-r225521
-Source5: %{libstdcxxpython}.tar.xz
+Source5: http://pkgs.fedoraproject.org/repo/pkgs/gdb/%{libstdcxxpython}.tar.xz/7ad32d3894aaf90d00a4343a735c3e1c/%{libstdcxxpython}.tar.xz
 
 # Provide gdbtui for RHEL-5 and RHEL-6 as it is removed upstream (BZ 797664).
 Source6: gdbtui
