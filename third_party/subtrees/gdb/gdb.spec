@@ -2979,7 +2979,7 @@ fi
 - testsuite: gdb-orphanripper.c: Fix uninitialized `termios.c_line'.
 - Fix crashes due to (missing) varobj revalidation, for VLA (for BZ 377541).
 - Archer backport: 58dcda94ac5d6398f47382505e9d3d9d866d79bf
-		 + f3de7bbd655337fe6705aeaafcc970deff3dd5d5
+          + f3de7bbd655337fe6705aeaafcc970deff3dd5d5
   - Implement Fortran modules namespaces (BZ 466118).
 - Fix crash in the charset support.
 
@@ -3020,10 +3020,10 @@ fi
 - Archer backport: c14d9ab7eef43281b2052c885f89d2db96fb5f8e
   - Revert a change regressing: gdb.objc/basicclass.exp
 - Archer backport: ebd649b96e61a1fb481801b65d827bca998c6633
-		 + 1f080e897996d60ab7fde20423e2947512115667
-		 + 1948198702b51b31d79793fc49434b529b4e245f
-		 + e107fb9687bb1e7f74170aa3d19c4a8f6edbb10f
-		 + 1e012c996e121cb35053d239a46bd5dc65b0ce60
+         + 1f080e897996d60ab7fde20423e2947512115667
+         + 1948198702b51b31d79793fc49434b529b4e245f
+         + e107fb9687bb1e7f74170aa3d19c4a8f6edbb10f
+         + 1e012c996e121cb35053d239a46bd5dc65b0ce60
   - Update the Python API from upstream.
 - Archer backport: d3c83ad5ec9f7672b87af9ad29279f459e53da11
   - Fix a Python branch crash.
