@@ -889,15 +889,15 @@ CFLAGS="$CFLAGS -DDNF_DEBUGINFO_INSTALL"
 %endif
 
 # --htmldir and --pdfdir are not used as they are used from %%{gdb_build}.
-../configure							\
-	--prefix=%{_prefix}					\
-	--libdir=%{_libdir}					\
-	--sysconfdir=%{_sysconfdir}				\
-	--mandir=%{_mandir}					\
-	--infodir=%{_infodir}					\
-	--with-system-gdbinit=%{_sysconfdir}/gdbinit		\
-	--with-gdb-datadir=%{_datadir}/gdb			\
-	--enable-gdb-build-warnings=,-Wno-unused		\
+../configure                                     \
+    --prefix=%{_prefix}                          \
+    --libdir=%{_libdir}                          \
+    --sysconfdir=%{_sysconfdir}                  \
+    --mandir=%{_mandir}                          \
+    --infodir=%{_infodir}                        \
+    --with-system-gdbinit=%{_sysconfdir}/gdbinit \
+    --with-gdb-datadir=%{_datadir}/gdb           \
+    --enable-gdb-build-warnings=,-Wno-unused     \
 %ifnarch %{ix86} alpha ppc s390 s390x x86_64 ppc64 ppc64le sparc sparcv9 sparc64 %{arm} aarch64
 	--disable-werror					\
 %else
