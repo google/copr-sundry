@@ -2971,7 +2971,7 @@ fi
 - Archer backport: c2d5c4a39b10994d86d8f2f90dfed769e8f216f3
   - Fix parsing DW_AT_const_value using DW_FORM_string
 - Archer backport: 8d9ab68fc0955c9de6320bec2821a21e3244600d
-		 + db41e11ae0a3aec7120ad6ce86450d838af74dd6
+    + db41e11ae0a3aec7120ad6ce86450d838af74dd6
   - Fix Fortran modules/namespaces parsing (but no change was visible in F11).
 - Archer backport: 000db8b7bfef8581ef099ccca8689cfddfea1be8
   - Fix "some Python error when displaying some C++ objects" (BZ 504356).
