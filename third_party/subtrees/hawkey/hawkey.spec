@@ -28,32 +28,32 @@ A Library providing simplified C and Python API to libsolv.
 %package devel
 Summary:    A Library providing simplified C and Python API to libsolv
 Group:      Development/Libraries
-Requires:	hawkey%{?_isa} = %{version}-%{release}
-Requires:	libsolv-devel
+Requires:   hawkey%{?_isa} = %{version}-%{release}
+Requires:   libsolv-devel
 
 %description devel
 Development files for hawkey.
 
 %package -n python-hawkey
-Summary:	Python 2 bindings for the hawkey library
-Group:		Development/Languages
+Summary:    Python 2 bindings for the hawkey library
+Group:      Development/Languages
 BuildRequires:  python2-devel
 BuildRequires:  python-nose
-BuildRequires:	python-sphinx >= 1.1.3-9
-Requires:	%{name}%{?_isa} = %{version}-%{release}
+BuildRequires:  python-sphinx >= 1.1.3-9
+Requires:   %{name}%{?_isa} = %{version}-%{release}
 
 %description -n python-hawkey
 Python 2 bindings for the hawkey library.
 
 %package -n python3-hawkey
-Summary:	Python 3 bindings for the hawkey library
-Group:		Development/Languages
-BuildRequires:	python3-devel
+Summary:    Python 3 bindings for the hawkey library
+Group:      Development/Languages
+BuildRequires:  python3-devel
 # TODO: re-enable python3 tests once we have python3-nose.
-#BuildRequires:	python3-nose
+#BuildRequires: python3-nose
 # TODO: rebuild with python3 sphinx
-#BuildRequires:	python3-sphinx >= 1.1.3-9
-Requires:	%{name}%{?_isa} = %{version}-%{release}
+#BuildRequires: python3-sphinx >= 1.1.3-9
+Requires:    %{name}%{?_isa} = %{version}-%{release}
 
 %description -n python3-hawkey
 Python 3 bindings for the hawkey library.
