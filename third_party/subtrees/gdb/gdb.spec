@@ -1076,9 +1076,9 @@ gcc -o ./orphanripper %{SOURCE2} -Wall -lutil -ggdb2
   # Disable some problematic testcases.
   # RUNTESTFLAGS='--ignore ...' is not used below as it gets separated by the
   # `check//...' target spawn and too much escaping there would be dense.
-  for test in				\
-    gdb.base/readline-overflow.exp	\
-    gdb.base/bigcore.exp		\
+  for test in                       \
+    gdb.base/readline-overflow.exp  \
+    gdb.base/bigcore.exp            \
   ; do
     mv -f ../../gdb/testsuite/$test ../gdb/testsuite/$test-DISABLED || :
   done
