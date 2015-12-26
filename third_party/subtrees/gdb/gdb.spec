@@ -933,29 +933,29 @@ $(: ppc64 host build crashes on ppc variant of libexpat.so ) \
 %else
     --without-lzma                               \
 %endif
-	--without-libunwind					\
+    --without-libunwind                          \
 %ifarch sparc sparcv9 sparc64
-	--without-mmap						\
+    --without-mmap                               \
 %endif
-	--enable-64-bit-bfd					\
+    --enable-64-bit-bfd                          \
 %if %{have_inproctrace}
-	--enable-inprocess-agent				\
+    --enable-inprocess-agent                     \
 %else
-	--disable-inprocess-agent				\
+    --disable-inprocess-agent                    \
 %endif
-	--with-system-zlib					\
+    --with-system-zlib                           \
 %if %{have_libipt}
-	--with-intel-pt						\
+    --with-intel-pt                              \
 %else
-	--without-intel-pt					\
+    --without-intel-pt                           \
 %endif
-	      --with-auto-load-dir='$debugdir:$datadir/auto-load%{?scl::%{_root_datadir}/gdb/auto-load}'	\
-	--with-auto-load-safe-path='$debugdir:$datadir/auto-load%{?scl::%{_root_datadir}/gdb/auto-load}'	\
+    --with-auto-load-dir='$debugdir:$datadir/auto-load%{?scl::%{_root_datadir}/gdb/auto-load}'       \
+    --with-auto-load-safe-path='$debugdir:$datadir/auto-load%{?scl::%{_root_datadir}/gdb/auto-load}' \
 %ifarch sparc sparcv9
-	sparc-%{_vendor}-%{_target_os}%{?_gnu}
+    sparc-%{_vendor}-%{_target_os}%{?_gnu}
 %else
-	--enable-targets=s390-linux-gnu,powerpc-linux-gnu,arm-linux-gnu,aarch64-linux-gnu	\
-	%{_target_platform}
+    --enable-targets=s390-linux-gnu,powerpc-linux-gnu,arm-linux-gnu,aarch64-linux-gnu  \
+    %{_target_platform}
 %endif
 
 if [ -z "%{!?_with_profile:no}" ]
