@@ -20,10 +20,11 @@ Name: %{?scl_prefix}gdb
 
 # Freeze it when GDB gets branched
 %global snapsrc    20151225
+Version: 7.10.50.%{snapsrc}
+
 # See timestamp of source gnulib installed into gdb/gnulib/ .
 %global snapgnulib 20150822
 %global tarname gdb-%{version}
-Version: 7.10.50.%{snapsrc}
 
 # The release always contains a leading reserved number, start it at 1.
 # `upstream' is not a part of `name' to stay fully rpm dependencies compatible for the testing.
