@@ -121,3 +121,6 @@
 [submodule "third_party/submodules/perl-GD-Barcode"]
 	path = third_party/submodules/perl-GD-Barcode
 	url = git://pkgs.fedoraproject.org/perl-GD-Barcode.git
+[submodule "third_party/submodules/perl-HTML-Tagset"]
+	path = third_party/submodules/perl-HTML-Tagset
+	url = git://pkgs.fedoraproject.org/perl-HTML-Tagset.git
