@@ -103,3 +103,5 @@ addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/bin/gdbserv
 addFilter('gdb-gdbserver.x86_64: W: shared-lib-calls-exit /usr/lib64/libinproctrace.so exit@GLIBC_2.2.5')
 addFilter('gdb.x86_64: W: only-non-binary-in-usr-lib')
 addFilter('gdb-gdbserver.x86_64: W: no-soname /usr/lib64/libinproctrace.so')
+addFilter('gdb.x86_64: W: devel-file-in-non-devel-package /usr/include/gdb/jit-reader.h')
+addFilter('gdb.x86_64: W: dangerous-command-in-%pre mv')
