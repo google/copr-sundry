@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-cryptography-vectors.git/
+Version: 3218089f24f998bff72d0d9c0824c9a4756dd493
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-cryptography-vectors - Test vectors for the cryptography package.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
