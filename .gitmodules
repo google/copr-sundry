@@ -124,3 +124,6 @@
 [submodule "third_party/submodules/perl-HTML-Tagset"]
 	path = third_party/submodules/perl-HTML-Tagset
 	url = git://pkgs.fedoraproject.org/perl-HTML-Tagset.git
+[submodule "third_party/submodules/perl-Test-Pod-Coverage"]
+	path = third_party/submodules/perl-Test-Pod-Coverage
+	url = git://pkgs.fedoraproject.org/perl-Test-Pod-Coverage.git
