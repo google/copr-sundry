@@ -1,0 +1,1 @@
+../third_party/submodules/perl-GD-Barcode/perl-GD-Barcode.spec

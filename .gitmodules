@@ -118,3 +118,6 @@
 [submodule "third_party/submodules/perl-GD"]
 	path = third_party/submodules/perl-GD
 	url = git://pkgs.fedoraproject.org/perl-GD.git
+[submodule "third_party/submodules/perl-GD-Barcode"]
+	path = third_party/submodules/perl-GD-Barcode
+	url = git://pkgs.fedoraproject.org/perl-GD-Barcode.git
