@@ -106,3 +106,6 @@
 [submodule "third_party/submodules/perl-libintl"]
 	path = third_party/submodules/perl-libintl
 	url = git://pkgs.fedoraproject.org/perl-libintl.git
+[submodule "third_party/submodules/perl-HTTP-Date"]
+	path = third_party/submodules/perl-HTTP-Date
+	url = git://pkgs.fedoraproject.org/perl-HTTP-Date.git
