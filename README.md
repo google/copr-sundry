@@ -48,6 +48,7 @@ code that happens to be owned by Google.
  * perl-Devel-Symdump 2.15
  * perl-ExtUtils-MakeMaker / perl-ExtUtils-Command 7.10
  * perl-Fedora-VSP 0.001
+ * perl-GD 2.56
  * perl-generators 1.07
  * perl-HTTP-Date 6.02
  * perl-inc-latest 0.500
