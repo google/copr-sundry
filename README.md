@@ -50,6 +50,7 @@ code that happens to be owned by Google.
  * perl-Fedora-VSP 0.001
  * perl-GD 2.56
  * perl-generators 1.07
+ * perl-GD-Barcode 1.15
  * perl-HTTP-Date 6.02
  * perl-inc-latest 0.500
  * perl-IO-Compress 2.069
