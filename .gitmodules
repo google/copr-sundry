@@ -115,3 +115,6 @@
 [submodule "third_party/submodules/perl-Business-ISBN-Data"]
 	path = third_party/submodules/perl-Business-ISBN-Data
 	url = git://pkgs.fedoraproject.org/perl-Business-ISBN-Data.git
+[submodule "third_party/submodules/perl-GD"]
+	path = third_party/submodules/perl-GD
+	url = git://pkgs.fedoraproject.org/perl-GD.git
