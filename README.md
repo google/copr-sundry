@@ -39,6 +39,7 @@ code that happens to be owned by Google.
  * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
  * nginx 1.8.0
  * perl 5.22.0
+ * perl-Business-ISBN-Data 20140910.003
  * perl-Capture-Tiny 0.30
  * perl-Compress-Raw-Bzip2 2.069
  * perl-Compress-Raw-Zlib 2.069
