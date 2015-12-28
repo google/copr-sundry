@@ -136,3 +136,6 @@
 [submodule "third_party/submodules/perl-threads"]
 	path = third_party/submodules/perl-threads
 	url = git://pkgs.fedoraproject.org/perl-threads.git
+[submodule "third_party/submodules/libev"]
+	path = third_party/submodules/libev
+	url = git://pkgs.fedoraproject.org/libev.git
