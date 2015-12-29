@@ -1,9 +1,6 @@
 [submodule "third_party/submodules/yum"]
 	path = third_party/submodules/yum
 	url = git://pkgs.fedoraproject.org/yum.git
-[submodule "third_party/submodules/gdb"]
-	path = third_party/submodules/gdb
-	url = git://pkgs.fedoraproject.org/gdb.git
 [submodule "third_party/submodules/cmake"]
 	path = third_party/submodules/cmake
 	url = git://pkgs.fedoraproject.org/cmake.git

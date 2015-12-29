@@ -38,6 +38,7 @@ addFilter('perl-Software-License\.(src|spec)')
 addFilter('perl-Sub-Exporter\.(src|spec)')
 addFilter('perl-Sub-Install.src')
 addFilter('perl-Pod-Coverage.src')
+addFilter('perl-libintl\.(x86_64|src)')
 addFilter('perl-Test-Pod\.(src|spec)')
 addFilter('perl-TermReadKey\.(x86_64|src)')
 addFilter('perl-Test-Pod\.(src|spec)')
@@ -100,11 +101,13 @@ addFilter('libcomps.spec: W: invalid-url Source0: https://github.com/midnighterc
 
 ## GDB
 # Following should be ok for debugger.
+addFilter('gdb.spec:[0-9]+: W: unversioned-explicit-obsoletes devtoolset')
 addFilter('gdb.x86_64: W: unstripped-binary-or-object /usr/bin/gdb')
 addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/lib64/libinproctrace.so')
 addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/bin/gdbserver')
 addFilter('gdb-gdbserver.x86_64: W: shared-lib-calls-exit /usr/lib64/libinproctrace.so exit@GLIBC_2.2.5')
 addFilter('gdb.x86_64: W: only-non-binary-in-usr-lib')
 addFilter('gdb-gdbserver.x86_64: W: no-soname /usr/lib64/libinproctrace.so')
-addFilter('gdb.x86_64: W: devel-file-in-non-devel-package /usr/include/gdb/jit-reader.h')
+addFilter('gdb.spec:[0-9]+: W: hardcoded-library-path')
 addFilter('gdb.x86_64: W: dangerous-command-in-%pre mv')
+addFilter('gdb.x86_64: W: devel-file-in-non-devel-package /usr/include/gdb/jit-reader.h')

@@ -1,1 +1,1 @@
-../third_party/submodules/gdb/gdb-orphanripper.c
+../third_party/subtrees/gdb/gdb-orphanripper.c
