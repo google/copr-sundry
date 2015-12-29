@@ -10,4 +10,5 @@ Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
 - Added provide for perl(:MODULE_COMPAT_5.18.4).
+- Added provide for perl(:MODULE_COMPAT_5.20.3).
 - Always rebuild from scratch.
