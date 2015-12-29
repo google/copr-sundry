@@ -1,0 +1,1 @@
+../third_party/submodules/perl-threads/perl-threads.spec
