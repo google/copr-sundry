@@ -172,6 +172,7 @@ Provides:       %perl_compat
 Provides:       perl(:MODULE_COMPAT_5.22.0)
 # Horrible hack to ease bootstrapping.
 # Don't do this at home.
+Provides:       perl(:MODULE_COMPAT_5.16.3)
 Provides:       perl(:MODULE_COMPAT_5.18.4)
 Provides:       perl(:MODULE_COMPAT_5.20.2)
 Provides:       perl(:MODULE_COMPAT_5.20.3)
