@@ -14,3 +14,4 @@ Local Modifications:
 - Added provide for perl(:MODULE_COMPAT_5.20.3).
 - Always rebuild from scratch.
 - Added provide for libperl.so.5.20.
+- Added provide for libperl.so.5.20()(64bit) (aka ugliest hack ever).

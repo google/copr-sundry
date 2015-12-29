@@ -176,6 +176,7 @@ Provides:       perl(:MODULE_COMPAT_5.18.4)
 Provides:       perl(:MODULE_COMPAT_5.20.2)
 Provides:       perl(:MODULE_COMPAT_5.20.3)
 Provides:       libperl.so.5.20
+Provides:       libperl.so.5.20()(64bit)
 # Interpreter version to fulfil required genersted from "require 5.006;"
 Provides:       perl(:VERSION) = %{perl_version}
 # Threading provides
