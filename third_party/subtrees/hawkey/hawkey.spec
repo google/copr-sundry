@@ -53,7 +53,7 @@ BuildRequires:  python3-devel
 #BuildRequires: python3-nose
 # TODO: rebuild with python3 sphinx
 #BuildRequires: python3-sphinx >= 1.1.3-9
-Requires:    %{name}%{?_isa} = %{version}-%{release}
+Requires:   %{name}%{?_isa} = %{version}-%{release}
 
 %description -n python3-hawkey
 Python 3 bindings for the hawkey library.

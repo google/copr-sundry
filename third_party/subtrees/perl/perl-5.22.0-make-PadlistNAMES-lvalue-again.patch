@@ -1,0 +1,38 @@
+From 73949fca082fe50bf47755c5ffa328259057ae36 Mon Sep 17 00:00:00 2001
+From: David Mitchell <davem@iabyn.com>
+Date: Mon, 8 Jun 2015 09:15:17 +0100
+Subject: [PATCH] make PadlistNAMES() lvalue again.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+The PadlistNAMES() macro was introduced with v5.17.3-69-g86d2498.
+This macro happened to be lvalue-capable, although it wasn't documented
+as such.
+
+v5.21.6-163-g9b7476d as a side effect, broke the lvalueness, which broke
+Coro.
+
+This commit restores the lvalueness.
+
+Signed-off-by: Petr Písař <ppisar@redhat.com>
+---
+ pad.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pad.h b/pad.h
+index 1f86248..31b8715 100644
+--- a/pad.h
++++ b/pad.h
+@@ -295,7 +295,7 @@ Restore the old pad saved into the local variable opad by PAD_SAVE_LOCAL()
+ 
+ #define PadlistARRAY(pl)	(pl)->xpadl_alloc
+ #define PadlistMAX(pl)		(pl)->xpadl_max
+-#define PadlistNAMES(pl)	((PADNAMELIST *)*PadlistARRAY(pl))
++#define PadlistNAMES(pl)	*((PADNAMELIST **)PadlistARRAY(pl))
+ #define PadlistNAMESARRAY(pl)	PadnamelistARRAY(PadlistNAMES(pl))
+ #define PadlistNAMESMAX(pl)	PadnamelistMAX(PadlistNAMES(pl))
+ #define PadlistREFCNT(pl)	1	/* reserved for future use */
+-- 
+2.1.0
+

@@ -1,0 +1,93 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use utf8;
+
+use RPM2;
+
+for my $rpm_file (@ARGV) {
+    my $package = RPM2->open_package($rpm_file)
+        or die q{Could not open `} . $rpm_file . q{'.};
+
+    my $package_name = $package->tag('NAME');
+    my $package_version = $package->tag('VERSION');
+
+    my $module_name = $package_name;
+    $module_name =~ s/^([^-]+)-(.*)/$1($2)/;
+    $module_name =~ s/-/::/g;
+    
+    my @names = $package->tag('PROVIDENAME');
+    my @flags = $package->tag('PROVIDEFLAGS');
+    my @versions = $package->tag('PROVIDEVERSION');
+    if (!($#names == $#flags) && ($#names == $#versions)) {
+        die (q{Inconsistent number of provides names, flags, and versions in `}
+            . $rpm_file . q{'.});
+    }
+
+    my $found = 0;
+    for my $name (@names) {
+        my $flag = shift @flags;
+        my $version = shift @versions;
+        if ($name eq $module_name) {
+            $found = 1;
+
+            if (($flag & 0x8) && (($flag & (0x2+0x4)) == 0)) {
+                if (!($package_version eq $version)) {
+                    print $rpm_file . q{: Package version `} .
+                        $package_version . q{' differs from `} .
+                        $module_name . q{' module version `} .
+                        $version . q{'.} . "\n";
+                }
+                last;
+            } else {
+                print $rpm_file . q{: `} . $module_name .
+                    q{' in list of provides is not qualified (};
+                printf '0x%x', $flag;
+                print q{) as equaled.} . "\n";
+            }
+        }
+    }
+
+    if ($found == 0) {
+        print $rpm_file . q{: missing `} . $module_name .
+            q{' in list of provides.} . "\n";
+    }
+}
+
+__END__
+=encoding utf8
+
+=head1 NAME
+
+checkpackageversion - Check a RPM package version matches main Perl module
+version
+
+=head1 SYNOPSIS
+
+checkpackageversion RPM_PACKAGE...
+
+It opens each RPM_PACKAGE, guesses a main Perl module from package name, finds
+it in list of provides (e.g. perl-Foo-Bar → perl(Foo::Bar) and compares
+versions. It reports any irregularities to standard output.
+
+Petr Písař <ppisar@redhat.com>
+
+=head1 COPYING
+
+Copyright (C) 2011  Petr Písař <ppisar@redhat.com>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+=cut
+
