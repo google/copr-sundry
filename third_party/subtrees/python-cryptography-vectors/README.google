@@ -9,3 +9,4 @@ RPM spec files for python-cryptography-vectors - Test vectors for the cryptograp
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Always build python3 version.
