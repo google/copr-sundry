@@ -81,6 +81,7 @@ code that happens to be owned by Google.
  * perl-TimeDate 2.30
  * perl-Time-HiRes 1.9728
  * perl-Tk 804.033
+ * perl-XML-Parser 2.44
  * puppet 4.2.1
  * pyOpenSSL 0.15.1
  * pyparsing & python3-pyparsing 2.0.3
