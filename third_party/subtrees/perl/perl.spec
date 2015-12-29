@@ -29,7 +29,7 @@
 Name:           perl
 Version:        %{perl_version}
 # release number must be even higher, because dual-lived modules will be broken otherwise
-Release:        356%{?dist}
+Release:        357%{?dist}
 Epoch:          %{perl_epoch}
 Summary:        Practical Extraction and Report Language
 Group:          Development/Languages
@@ -179,6 +179,8 @@ Provides:       perl(:MODULE_COMPAT_5.20.2)
 Provides:       perl(:MODULE_COMPAT_5.20.3)
 Provides:       libperl.so.5.20
 Provides:       libperl.so.5.20()(64bit)
+Provides:       libperl.so.5.18
+Provides:       libperl.so.5.18()(64bit)
 # Interpreter version to fulfil required genersted from "require 5.006;"
 Provides:       perl(:VERSION) = %{perl_version}
 # Threading provides
@@ -4637,6 +4639,9 @@ popd
 
 # Old changelog entries are preserved in CVS.
 %changelog
+* Tue Dec 29 2015 Vladimir Rusinov <vrusinov@google.com> - 4:5.22.1-357
+- Add provide for libperl.so.5.18.
+
 * Tue Dec 29 2015 Vladimir Rusinov <vrusinov@google.com> - 4:5.22.1-356
 - Add bunch of hacks for provides to ease up bootstrapping.
 
