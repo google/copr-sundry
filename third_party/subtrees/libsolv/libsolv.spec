@@ -20,6 +20,7 @@
 %else
 %global _cmake_opts \\\
             -DCMAKE_BUILD_TYPE=RelWithDebInfo \\\
+            -DENABLE_PYTHON=1 \\\
             -DFEDORA=1 \\\
             -DENABLE_LZMA_COMPRESSION=1 \\\
             %{nil}
