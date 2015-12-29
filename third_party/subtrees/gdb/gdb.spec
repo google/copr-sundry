@@ -1241,7 +1241,9 @@ rm -rf $RPM_BUILD_ROOT
 # Provide gdb/jit-reader.h so that users are able to write their own GDB JIT
 # plugins.
 %{_includedir}/gdb
+%if 0%{!?_without_python:1}
 /usr/lib/debug/usr/bin/gdb-gdb.py*
+%endif
 
 # don't include the files in include, they are part of binutils
 
