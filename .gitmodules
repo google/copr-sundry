@@ -139,3 +139,6 @@
 [submodule "third_party/submodules/libev"]
 	path = third_party/submodules/libev
 	url = git://pkgs.fedoraproject.org/libev.git
+[submodule "third_party/submodules/perl-Mojolicious"]
+	path = third_party/submodules/perl-Mojolicious
+	url = git://pkgs.fedoraproject.org/perl-Mojolicious.git
