@@ -37,6 +37,7 @@ code that happens to be owned by Google.
  * dnf 1.1.2
  * gperftools 2.4
  * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
+ * libev 4.20
  * nginx 1.8.0
  * perl 5.22.1
  * perl-Business-ISBN 2.010
