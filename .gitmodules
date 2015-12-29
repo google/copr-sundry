@@ -148,3 +148,6 @@
 [submodule "third_party/submodules/perl-Canary-Stability"]
 	path = third_party/submodules/perl-Canary-Stability
 	url = git://pkgs.fedoraproject.org/perl-Canary-Stability.git
+[submodule "third_party/submodules/perl-EV"]
+	path = third_party/submodules/perl-EV
+	url = git://pkgs.fedoraproject.org/perl-EV.git
