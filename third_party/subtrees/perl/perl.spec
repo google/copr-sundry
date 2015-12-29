@@ -170,6 +170,9 @@ License:        GPL+ or Artistic
 # Compat provides
 Provides:       %perl_compat
 Provides:       perl(:MODULE_COMPAT_5.22.0)
+# Horrible hack to ease bootstrapping.
+# Don't do this at home.
+Provides:       perl(:MODULE_COMPAT_5.18.4)
 # Interpreter version to fulfil required genersted from "require 5.006;"
 Provides:       perl(:VERSION) = %{perl_version}
 # Threading provides

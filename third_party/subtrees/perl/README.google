@@ -9,3 +9,4 @@ RPM spec files for perl - Practical Extraction and Report Language.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Added provide for perl(:MODULE_COMPAT_5.18.4).
