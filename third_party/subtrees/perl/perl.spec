@@ -29,7 +29,7 @@
 Name:           perl
 Version:        %{perl_version}
 # release number must be even higher, because dual-lived modules will be broken otherwise
-Release:        357%{?dist}
+Release:        358%{?dist}
 Epoch:          %{perl_epoch}
 Summary:        Practical Extraction and Report Language
 Group:          Development/Languages
@@ -175,6 +175,8 @@ Provides:       perl(:MODULE_COMPAT_5.22.0)
 Provides:       perl(:MODULE_COMPAT_5.16.3)
 Provides:       perl(:MODULE_COMPAT_5.18.2)
 Provides:       perl(:MODULE_COMPAT_5.18.4)
+Provides:       perl(:MODULE_COMPAT_5.20.0)
+Provides:       perl(:MODULE_COMPAT_5.20.1)
 Provides:       perl(:MODULE_COMPAT_5.20.2)
 Provides:       perl(:MODULE_COMPAT_5.20.3)
 Provides:       libperl.so.5.20
@@ -4639,6 +4641,9 @@ popd
 
 # Old changelog entries are preserved in CVS.
 %changelog
+* Tue Dec 29 2015 Vladimir Rusinov <vrusinov@google.com> - 4:5.22.1-358
+- Add provides for MODULE_COMPAT_5.20.0 and MODULE_COMPAT_5.20.1.
+
 * Tue Dec 29 2015 Vladimir Rusinov <vrusinov@google.com> - 4:5.22.1-357
 - Add provide for libperl.so.5.18.
 
