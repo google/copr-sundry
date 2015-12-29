@@ -29,7 +29,7 @@
 Name:           perl
 Version:        %{perl_version}
 # release number must be even higher, because dual-lived modules will be broken otherwise
-Release:        355%{?dist}
+Release:        356%{?dist}
 Epoch:          %{perl_epoch}
 Summary:        Practical Extraction and Report Language
 Group:          Development/Languages
@@ -173,6 +173,7 @@ Provides:       perl(:MODULE_COMPAT_5.22.0)
 # Horrible hack to ease bootstrapping.
 # Don't do this at home.
 Provides:       perl(:MODULE_COMPAT_5.16.3)
+Provides:       perl(:MODULE_COMPAT_5.18.2)
 Provides:       perl(:MODULE_COMPAT_5.18.4)
 Provides:       perl(:MODULE_COMPAT_5.20.2)
 Provides:       perl(:MODULE_COMPAT_5.20.3)
@@ -4636,6 +4637,9 @@ popd
 
 # Old changelog entries are preserved in CVS.
 %changelog
+* Tue Dec 29 2015 Vladimir Rusinov <vrusinov@google.com> - 4:5.22.1-356
+- Add bunch of hacks for provides to ease up bootstrapping.
+
 * Tue Dec 15 2015 Petr Pisar <ppisar@redhat.com> - 4:5.22.1-355
 - Remove bundled Math-BigInt (bug #1277203)
 
