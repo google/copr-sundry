@@ -142,3 +142,6 @@
 [submodule "third_party/submodules/perl-Mojolicious"]
 	path = third_party/submodules/perl-Mojolicious
 	url = git://pkgs.fedoraproject.org/perl-Mojolicious.git
+[submodule "third_party/submodules/perl-common-sense"]
+	path = third_party/submodules/perl-common-sense
+	url = git://pkgs.fedoraproject.org/perl-common-sense.git
