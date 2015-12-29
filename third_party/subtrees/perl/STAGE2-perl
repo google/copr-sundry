@@ -1,0 +1,29 @@
+#requires gdbm
+
+mcd $BUILDDIR/perl
+
+GV=$(cd $SRC; echo perl-*)
+SONAME_VER=`echo $GV | cut -f2- -d'-' | sed 's/^\\([^.]*\\.[^.]*\\).*/\\1/'`
+PERL_VER=`echo $GV | cut -f2- -d'-'`
+
+cd $SRC/$GV
+
+sh $SRC/$GV/Configure -des -Dprefix=/usr -Dlibpth="/usr/local/lib$SUFFIX /lib$SUFFIX /usr/lib$SUFFIX" -Darchlib="/usr/lib$SUFFIX/perl5" -Dsitelib="/usr/local/share/perl5" -DDEBUGGING=-g  -Dcc=gcc -Dmyhostname=localhost -Dperladmin=root@localhost -Duseshrplib -Dusethreads -Duseithreads -Uusedtrace -Duselargefiles -Dd_semctl_semun -Di_db -Ui_ndbm -Di_gdbm -Di_shadow -Di_syslog -Dman3ext=3pm -Duseperlio -Dinstallusrbinperl=n -Ubincompat5005 -Uversiononly -Dd_gethostent_r_proto -Ud_endhostent_r_proto -Ud_sethostent_r_proto -Ud_endprotoent_r_proto -Ud_setprotoent_r_proto -Ud_endservent_r_proto -Ud_setservent_r_proto
+
+BUILD_BZIP2=0
+BZIP2_LIB=%{_libdir}
+export BUILD_BZIP2 BZIP2_LIB
+
+ln -sf libperl.so libperl.so.${SONAME_VER}
+
+make
+
+rm -f /usr/lib${SUFFIX}/perl5/CORE/libperl.so
+
+make install
+
+rm -f /usr/lib${SUFFIX}/libperl.so.${PERL_VER}
+mv /usr/lib${SUFFIX}/perl5/CORE/libperl.so /usr/lib${SUFFIX}/libperl.so.${PERL_VER}
+ln -sf libperl.so.${PERL_VER} /usr/lib${SUFFIX}/libperl.so.${SONAME_VER}
+ln -sf libperl.so.${PERL_VER} /usr/lib${SUFFIX}/libperl.so
+ln -sf libperl.so.${PERL_VER} /usr/lib${SUFFIX}/perl5/CORE/libperl.so
