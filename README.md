@@ -42,6 +42,7 @@ code that happens to be owned by Google.
  * perl 5.22.1
  * perl-Business-ISBN 2.010
  * perl-Business-ISBN-Data 20140910.003
+ * perl-Canary-Stability 2006
  * perl-Capture-Tiny 0.30
  * perl-Carp 1.38
  * perl-common-sense 3.7.4
