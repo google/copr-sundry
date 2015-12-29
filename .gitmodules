@@ -130,3 +130,6 @@
 [submodule "third_party/submodules/perl-Error"]
 	path = third_party/submodules/perl-Error
 	url = git://pkgs.fedoraproject.org/perl-Error.git
+[submodule "third_party/submodules/perl-Carp"]
+	path = third_party/submodules/perl-Carp
+	url = git://pkgs.fedoraproject.org/perl-Carp.git
