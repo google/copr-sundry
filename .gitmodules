@@ -151,3 +151,6 @@
 [submodule "third_party/submodules/perl-EV"]
 	path = third_party/submodules/perl-EV
 	url = git://pkgs.fedoraproject.org/perl-EV.git
+[submodule "third_party/submodules/perl-HTML-Parser"]
+	path = third_party/submodules/perl-HTML-Parser
+	url = git://pkgs.fedoraproject.org/perl-HTML-Parser.git
