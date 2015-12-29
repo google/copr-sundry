@@ -28,3 +28,4 @@ Local Modifications:
 - Removed unnecessary buildroom cleanup.
 - Removed rhel weirdness around auto-load.
 - Replaced tabs with spaces.
+- Added build dependency on perl(Storable).

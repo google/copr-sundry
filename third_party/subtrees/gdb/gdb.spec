@@ -654,6 +654,8 @@ BuildRequires: xz
 
 %endif # 0%{?_with_testsuite:1}
 
+BuildRequires: perl(Storable)
+
 %{?scl:Requires:%scl_runtime}
 
 %description
