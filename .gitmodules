@@ -133,3 +133,6 @@
 [submodule "third_party/submodules/perl-Carp"]
 	path = third_party/submodules/perl-Carp
 	url = git://pkgs.fedoraproject.org/perl-Carp.git
+[submodule "third_party/submodules/perl-threads"]
+	path = third_party/submodules/perl-threads
+	url = git://pkgs.fedoraproject.org/perl-threads.git
