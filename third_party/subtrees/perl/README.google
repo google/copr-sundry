@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/perl.git/
+Version: fcf2c1fd998afdb877b98a38f4e028cf58c62da5
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for perl - Practical Extraction and Report Language.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
