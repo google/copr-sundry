@@ -158,7 +158,7 @@ make %{?_smp_mflags}
 %if %{with python3}
 pushd %{py3dir}/
   %cmake %_cmake_opts \
-        -DPythonLibs_FIND_VERSION=3 -DPythonLibs_FIND_VERSION_MAJOR=3
+        -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPythonLibs_FIND_VERSION=3 -DPythonLibs_FIND_VERSION_MAJOR=3
   make %{?_smp_mflags}
 popd
 %endif
