@@ -96,5 +96,6 @@ code that happens to be owned by Google.
  * python-wheel & python3-wheel 0.24.0
  * rpm 4.13.0-rc1
  * rubygem-fog-profitbricks 0.0.3
+ * rubygem-pathspec 0.0.2
  * rubygem-retriable 1.4.1
  * yum 3.4.3-508
