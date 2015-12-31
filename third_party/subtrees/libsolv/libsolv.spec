@@ -53,8 +53,9 @@ Group:		Development/Libraries
 Summary:	Package dependency solver
 BuildRequires:	cmake libdb-devel expat-devel rpm-devel zlib-devel
 BuildRequires:	swig 
+BuildRequires:  python2-devel
 %if 0%{?fedora}
-BuildRequires:	perl perl-devel ruby ruby-devel python2-devel
+BuildRequires:	perl perl-devel ruby ruby-devel
 %endif
 %if %{with python3}
 BuildRequires:	python3-devel
@@ -108,7 +109,6 @@ Requires:	libsolv%{?_isa} = %{version}-%{release}
 Ruby bindings for sat solver.
 %endif
 
-%if 0%{?fedora}
 %package -n python2-solv
 Summary:	Python bindings for the libsolv library
 Group:		Development/Languages
@@ -118,7 +118,6 @@ Requires:	libsolv%{?_isa} = %{version}-%{release}
 
 %description -n python2-solv
 Python bindings for sat solver.
-%endif
 
 %if %{with python3}
 %package -n python3-solv
@@ -223,11 +222,11 @@ make ARGS="-V" test
 %files -n ruby-solv
 %doc examples/rbsolv
 %{ruby_vendorarch}/*
+%endif
 
 %files -n python2-solv
 %doc examples/pysolv
 %{python2_sitearch}/*
-%endif
 
 %if %{with python3}
 %files -n python3-solv

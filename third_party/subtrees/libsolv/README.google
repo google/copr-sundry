@@ -12,3 +12,4 @@ Local Modifications:
 - Fix lint warnings:
   - tabs vs spaces
   - macros in comments.
+- Always build python2 and python3 versions.
