@@ -64,6 +64,7 @@ addFilter('python-libs.x86_64')
 addFilter('python-devel.x86_64')
 addFilter('python-macros.noarch')
 addFilter('python.x86_64')
+addFilter('python3.src:[0-9]+: W: hardcoded-library-path')
 
 # RPM is special, let's ignore warnings from it.
 addFilter('SPECS/rpm.spec')
@@ -112,3 +113,4 @@ addFilter('gdb-gdbserver.x86_64: W: no-soname /usr/lib64/libinproctrace.so')
 addFilter('gdb.spec:[0-9]+: W: hardcoded-library-path')
 addFilter('gdb.x86_64: W: dangerous-command-in-%pre mv')
 addFilter('gdb.x86_64: W: devel-file-in-non-devel-package /usr/include/gdb/jit-reader.h')
+addFilter('gdb.src:[0-9]+: W: hardcoded-library-path')
