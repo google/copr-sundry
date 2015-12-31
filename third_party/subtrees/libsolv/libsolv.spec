@@ -22,6 +22,7 @@
             -DCMAKE_BUILD_TYPE=RelWithDebInfo \\\
             -DENABLE_PYTHON=1 \\\
             -DFEDORA=1 \\\
+            -DENABLE_ARCHREPO=1 \\\
             -DENABLE_LZMA_COMPRESSION=1 \\\
             %{nil}
 %endif
@@ -185,9 +186,9 @@ make ARGS="-V" test
 %_libdir/libsolvext.so.*
 
 %files tools
-%if 0%{?fedora}
 %_bindir/archpkgs2solv
 %_bindir/archrepo2solv
+%if 0%{?fedora}
 %_bindir/deb2solv
 %endif
 %_bindir/deltainfoxml2solv
