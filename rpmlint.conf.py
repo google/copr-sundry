@@ -64,6 +64,7 @@ addFilter('python-libs.x86_64')
 addFilter('python-devel.x86_64')
 addFilter('python-macros.noarch')
 addFilter('python.x86_64')
+addFilter('python3.src:[0-9]+: W: hardcoded-library-path')
 
 # RPM is special, let's ignore warnings from it.
 addFilter('SPECS/rpm.spec')
