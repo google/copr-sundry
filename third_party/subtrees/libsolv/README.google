@@ -14,3 +14,4 @@ Local Modifications:
   - macros in comments.
 - Always build python2 and python3 versions.
 - Build with rhel version with ARCHREPO.
+- Do not include docs in devel package.

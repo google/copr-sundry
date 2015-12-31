@@ -204,7 +204,6 @@ make ARGS="-V" test
 %_bindir/updateinfoxml2solv
 
 %files devel
-%doc examples/solv/
 %_libdir/libsolv.so
 %_libdir/libsolvext.so
 %_includedir/solv
