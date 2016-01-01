@@ -15,6 +15,9 @@ addFilter('spelling-error')
 # Ignore unversioned bundled provides.
 addFilter('unversioned-explicit-provides bundled\([a-z\-]+\)')
 
+# Don't care about groups.
+addFilter('non-standard-group')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
@@ -114,3 +117,8 @@ addFilter('gdb.spec:[0-9]+: W: hardcoded-library-path')
 addFilter('gdb.x86_64: W: dangerous-command-in-%pre mv')
 addFilter('gdb.x86_64: W: devel-file-in-non-devel-package /usr/include/gdb/jit-reader.h')
 addFilter('gdb.src:[0-9]+: W: hardcoded-library-path')
+# Snapshots dissapear quickly
+addFilter('gdb.src: W: invalid-url Source0: ftp://sourceware.org/pub/gdb/snapshots/current/.*')
+
+## Python-pip
+addFilter('python(3|2)?-pip.noarch: W: non-executable-script /usr/lib/python.\../site-packages/pip/_vendor/requests/packages/chardet/chardetect.py')

@@ -14,6 +14,7 @@ BuildRequires: rubygems-devel
 BuildRequires: ruby
 # BuildRequires: rubygem(rspec)
 BuildArch: noarch
+Provides: rubygem(pathspec) = %{version}
 
 %description
 Use to match path patterns such as gitignore.
