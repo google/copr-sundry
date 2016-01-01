@@ -9,3 +9,4 @@ RPM spec files for python-ply - Python Lex-Yacc.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Removed conditionals for python3 build.
