@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/Cython.git/
+Version: 8812aab3180dff00e25f2d2bddbec60c17202328
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for Cython - A language for writing Python extension modules.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Removed conditional on python3 build.
