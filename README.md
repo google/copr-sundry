@@ -96,6 +96,7 @@ code that happens to be owned by Google.
  * python-hypothesis 1.11.2
  * python-keyring & python3-keyring 5.0
  * python-pip & python3-pip 7.1.0
+ * python-pycparser 2.14
  * python-ply 3.6
  * python2-pyrfc3339 1.0
  * python-setuptools & python3-setuptools 18.3.2
