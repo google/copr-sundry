@@ -1,0 +1,64 @@
+From dbf122652d38ba03ff9f9fe4aa9bee3693e6775f Mon Sep 17 00:00:00 2001
+From: David Beazley <dave@dabeaz.com>
+Date: Fri, 8 May 2015 10:10:55 -0500
+Subject: [PATCH 2/2] Minor fix to account for bad None arguments for
+ tabmodule/lextab
+
+---
+ ply/lex.py  | 4 ++++
+ ply/yacc.py | 5 ++++-
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/ply/lex.py b/ply/lex.py
+index ed1e2ed9d965500afa405791cdd5d4e1f5ca7775..772325cf3b7096109a449d208fd0e3cfd4ed5677 100644
+--- a/ply/lex.py
++++ b/ply/lex.py
+@@ -857,10 +857,14 @@ class LexerReflect(object):
+ #
+ # Build all of the regular expression rules from definitions in the supplied module
+ # -----------------------------------------------------------------------------
+ def lex(module=None, object=None, debug=False, optimize=False, lextab='lextab',
+         reflags=0, nowarn=False, outputdir=None, debuglog=None, errorlog=None):
++
++    if lextab is None:
++        lextab = 'lextab'
++
+     global lexer
+ 
+     ldict = None
+     stateinfo  = {'INITIAL': 'inclusive'}
+     lexobj = Lexer()
+diff --git a/ply/yacc.py b/ply/yacc.py
+index e0b4fafc9e2dca050b4d7311324b6b16aa9bd3bf..eb02cc2c4df557493a76442f0a9a871974e091f2 100644
+--- a/ply/yacc.py
++++ b/ply/yacc.py
+@@ -2707,11 +2707,11 @@ class LRGeneratedTable(LRTable):
+ _tabversion = %r
+ 
+ _lr_method = %r
+ 
+ _lr_signature = %r
+-    ''' % (filename, __tabversion__, self.lr_method, signature))
++    ''' % (os.path.basename(filename), __tabversion__, self.lr_method, signature))
+ 
+             # Change smaller to 0 to go back to original tables
+             smaller = 1
+ 
+             # Factor out names to try and make smaller
+@@ -3181,10 +3181,13 @@ class ParserReflect(object):
+ 
+ def yacc(method='LALR', debug=yaccdebug, module=None, tabmodule=tab_module, start=None,
+          check_recursion=True, optimize=False, write_tables=True, debugfile=debug_file,
+          outputdir=None, debuglog=None, errorlog=None, picklefile=None):
+ 
++    if tabmodule is None:
++        tabmodule = tab_module
++
+     # Reference to the parsing method of the last built parser
+     global parse
+ 
+     # If pickling is enabled, table files are not created
+     if picklefile:
+-- 
+2.4.3
+
