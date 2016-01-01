@@ -90,6 +90,7 @@ code that happens to be owned by Google.
  * python 2.7.10 (with python-macros backported to EL7)
  * python3 3.5.0
  * python-acme 0.1.1
+ * python-cffi 1.4.2
  * python-cryptography-vectors 1.1
  * python-idna 2.0
  * python-jsonschema & python3-jsonschema 2.4.0
