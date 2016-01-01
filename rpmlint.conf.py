@@ -15,6 +15,9 @@ addFilter('spelling-error')
 # Ignore unversioned bundled provides.
 addFilter('unversioned-explicit-provides bundled\([a-z\-]+\)')
 
+# Don't care about groups.
+addFilter('non-standard-group')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
