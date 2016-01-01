@@ -157,3 +157,6 @@
 [submodule "third_party/submodules/python-pyrfc3339"]
 	path = third_party/submodules/python-pyrfc3339
 	url = git://pkgs.fedoraproject.org/python-pyrfc3339.git
+[submodule "third_party/submodules/python-hypothesis"]
+	path = third_party/submodules/python-hypothesis
+	url = git://pkgs.fedoraproject.org/python-hypothesis.git
