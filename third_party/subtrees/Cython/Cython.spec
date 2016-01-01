@@ -1,9 +1,6 @@
-%if 0%{?fedora} > 12
 %global with_python3 1
-%else
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print (get_python_lib())")}
 %{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
-%endif
 
 %global srcname distribute
 

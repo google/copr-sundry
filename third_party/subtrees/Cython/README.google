@@ -9,3 +9,4 @@ RPM spec files for Cython - A language for writing Python extension modules.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Removed conditional on python3 build.
