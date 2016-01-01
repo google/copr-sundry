@@ -34,6 +34,7 @@ code that happens to be owned by Google.
 ### Full list
 
  * cmake 3.3.2
+ * Cython 0.23
  * dnf 1.1.2
  * gperftools 2.4
  * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
