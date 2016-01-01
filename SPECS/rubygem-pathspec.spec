@@ -6,7 +6,7 @@ Version: 0.0.2
 Release: 1%{?dist}
 Summary: PathSpec: for matching path patterns
 Group: Development/Languages
-License: Apache
+License: Apache 2.0
 URL: http://rubygems.org/gems/pathspec
 Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
 BuildRequires: ruby(release)
