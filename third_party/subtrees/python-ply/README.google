@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-ply.git/
+Version: 5a6df866620c439510318b803edd9138d98deac7
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-ply - Python Lex-Yacc.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Removed conditionals for python3 build.
