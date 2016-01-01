@@ -114,3 +114,5 @@ addFilter('gdb.spec:[0-9]+: W: hardcoded-library-path')
 addFilter('gdb.x86_64: W: dangerous-command-in-%pre mv')
 addFilter('gdb.x86_64: W: devel-file-in-non-devel-package /usr/include/gdb/jit-reader.h')
 addFilter('gdb.src:[0-9]+: W: hardcoded-library-path')
+# Snapshots dissapear quickly
+addFilter('gdb.src: W: invalid-url Source0: ftp://sourceware.org/pub/gdb/snapshots/current/.*')
