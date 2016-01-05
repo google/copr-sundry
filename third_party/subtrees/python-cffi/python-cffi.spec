@@ -65,12 +65,9 @@ cd doc
 make html
 rm build/html/.buildinfo
 
-#%check
-## The following test procedure works when I run it manually, but fails
-## from rpmbuild, complaining that it can't import _cffi_backend, and I'm
-## not sure how to make it work
-#python setup_base.py build
-#PYTHONPATH=build/lib.linux-* py.test c/ testing/
+%check
+python setup_base.py build
+PYTHONPATH=build/lib.linux-* py.test c/ testing/
 
 %install
 %if 0%{?with_python3}
