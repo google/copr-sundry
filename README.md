@@ -93,6 +93,7 @@ code that happens to be owned by Google.
  * python-cffi 1.4.2
  * python-cryptography-vectors 1.1
  * python-idna 2.0
+ * python-iso8601 0.1.10
  * python-jsonschema & python3-jsonschema 2.4.0
  * python-hypothesis 1.11.2
  * python-keyring & python3-keyring 5.0

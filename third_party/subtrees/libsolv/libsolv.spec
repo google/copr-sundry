@@ -32,10 +32,10 @@
 Name:       libsolv
 Version:    0.6.14
 Release:    6%{?dist}
-License:	BSD
-Url:		https://github.com/openSUSE/libsolv
-Source:		https://github.com/openSUSE/libsolv/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:		0001-ruby-make-compatible-with-ruby-2.2.patch
+License:    BSD
+Url:        https://github.com/openSUSE/libsolv
+Source:     https://github.com/openSUSE/libsolv/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Patch0:     0001-ruby-make-compatible-with-ruby-2.2.patch
 
 Patch1:         0001-Move-allowuninstall-map-creation.patch
 Patch2:         0002-Prefer-to-autouninstall-orphans.patch
@@ -50,16 +50,16 @@ Patch10:        0006-Make-keep_orphans-also-keep-multiversion-orphans-ins.patch
 
 BuildRequires:  git-core
 
-Group:		Development/Libraries
-Summary:	Package dependency solver
-BuildRequires:	cmake libdb-devel expat-devel rpm-devel zlib-devel
-BuildRequires:	swig 
+Group:      Development/Libraries
+Summary:    Package dependency solver
+BuildRequires:  cmake libdb-devel expat-devel rpm-devel zlib-devel
+BuildRequires:  swig
 BuildRequires:  python2-devel
 %if 0%{?fedora}
-BuildRequires:	perl perl-devel ruby ruby-devel
+BuildRequires:  perl perl-devel ruby ruby-devel
 %endif
 %if %{with python3}
-BuildRequires:	python3-devel
+BuildRequires:  python3-devel
 %endif
 BuildRequires:  xz-devel
 %description
@@ -73,48 +73,48 @@ library is based on two major, but independent, blocks:
   resolving package dependencies.
 
 %package devel
-Summary:	A new approach to package dependency solving
-Group:		Development/Libraries
-Requires:	libsolv-tools%{?_isa} = %{version}-%{release}
-Requires:	libsolv%{?_isa} = %{version}-%{release}
-Requires:	rpm-devel%{?_isa}
-Requires:	cmake
+Summary:    A new approach to package dependency solving
+Group:      Development/Libraries
+Requires:   libsolv-tools%{?_isa} = %{version}-%{release}
+Requires:   libsolv%{?_isa} = %{version}-%{release}
+Requires:   rpm-devel%{?_isa}
+Requires:   cmake
 
 %description devel
 Development files for libsolv,
 
 %package tools
-Summary:	A new approach to package dependency solving
-Group:		Development/Libraries
-Requires:	gzip bzip2 coreutils
-Requires:	libsolv%{?_isa} = %{version}-%{release}
+Summary:    A new approach to package dependency solving
+Group:      Development/Libraries
+Requires:   gzip bzip2 coreutils
+Requires:   libsolv%{?_isa} = %{version}-%{release}
 
 %description tools
 Package dependency solver tools.
 
 %package demo
-Summary:	Applications demoing the libsolv library
-Group:		Development/Libraries
-Requires:	curl gnupg2
+Summary:    Applications demoing the libsolv library
+Group:      Development/Libraries
+Requires:   curl gnupg2
 
 %description demo
 Applications demoing the libsolv library.
 
 %if 0%{?fedora}
 %package -n ruby-solv
-Summary:	Ruby bindings for the libsolv library
-Group:		Development/Languages
-Requires:	libsolv%{?_isa} = %{version}-%{release}
+Summary:    Ruby bindings for the libsolv library
+Group:      Development/Languages
+Requires:   libsolv%{?_isa} = %{version}-%{release}
 
 %description -n ruby-solv
 Ruby bindings for sat solver.
 %endif
 
 %package -n python2-solv
-Summary:	Python bindings for the libsolv library
-Group:		Development/Languages
-Requires:	python2
-Requires:	libsolv%{?_isa} = %{version}-%{release}
+Summary:    Python bindings for the libsolv library
+Group:      Development/Languages
+Requires:   python2
+Requires:   libsolv%{?_isa} = %{version}-%{release}
 %{?python_provide:%python_provide python2-solv}
 
 %description -n python2-solv
@@ -122,10 +122,10 @@ Python bindings for sat solver.
 
 %if %{with python3}
 %package -n python3-solv
-Summary:	Python 3 bindings for the libsolv library
-Group:		Development/Languages
-Requires:	python3
-Requires:	libsolv%{?_isa} = %{version}-%{release}
+Summary:    Python 3 bindings for the libsolv library
+Group:      Development/Languages
+Requires:   python3
+Requires:   libsolv%{?_isa} = %{version}-%{release}
 %{?python_provide:%python_provide python3-solv}
 
 %description -n python3-solv
@@ -134,10 +134,10 @@ Python 3 bindings for sat solver.
 
 %if 0%{?fedora}
 %package -n perl-solv
-Summary:	Perl bindings for the libsolv library
-Group:		Development/Languages
-Requires:	perl
-Requires:	libsolv%{?_isa} = %{version}-%{release}
+Summary:    Perl bindings for the libsolv library
+Group:      Development/Languages
+Requires:   perl
+Requires:   libsolv%{?_isa} = %{version}-%{release}
 
 %description -n perl-solv
 Perl bindings for sat solver.

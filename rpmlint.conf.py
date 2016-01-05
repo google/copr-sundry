@@ -27,8 +27,6 @@ addFilter('SPECS/gperftools.spec')
 addFilter('libev-devel.x86_64')
 addFilter('SPECS/libcomps.spec')
 addFilter('nginx\.(spec|x86_64|src)')
-addFilter('SPECS/perl.spec')
-addFilter('perl.src')
 addFilter('perl-common-sense.x86_64')
 addFilter('perl-Compress-Raw-Bzip2.x86_64')
 addFilter('perl-Data-OptList.src')
@@ -48,8 +46,9 @@ addFilter('perl-Test-Pod\.(src|spec)')
 addFilter('perl-TermReadKey\.(x86_64|src)')
 addFilter('perl-Test-Pod\.(src|spec)')
 addFilter('perl-Text-Template.noarch')
-addFilter('python(2|3)?-acme\.(src|noarch)')
 addFilter('pyOpenSSL-doc.noarch')
+addFilter('python(2|3)?-acme\.(src|noarch)')
+addFilter('python3?-hypothesis\.(src|noarch)')
 addFilter('python-pyrfc3339.src')
 addFilter('SPECS/puppet.spec')
 addFilter('SPECS/python-iniparse.spec')
@@ -120,7 +119,17 @@ addFilter('gdb.x86_64: W: dangerous-command-in-%pre mv')
 addFilter('gdb.x86_64: W: devel-file-in-non-devel-package /usr/include/gdb/jit-reader.h')
 addFilter('gdb.src:[0-9]+: W: hardcoded-library-path')
 # Snapshots dissapear quickly
-addFilter('gdb.src: W: invalid-url Source0: ftp://sourceware.org/pub/gdb/snapshots/current/.*')
+addFilter('gdb\.(src|spec): W: invalid-url Source0: ftp://sourceware.org/pub/gdb/snapshots/current/.*')
 
 ## Python-pip
 addFilter('python(3|2)?-pip.noarch: W: non-executable-script /usr/lib/python.\../site-packages/pip/_vendor/requests/packages/chardet/chardetect.py')
+
+## Cython
+# There's no -devel package.
+addFilter('(python3-)?Cython.x86_64: W: devel-file-in-non-devel-package')
+# false-positives
+addFilter('Cython.x86_64: W: non-executable-script /usr/lib64/python2.7/site-packages/Cython/Build/Cythonize.py')
+addFilter('Cython.x86_64: W: non-executable-script /usr/lib64/python2.7/site-packages/cython.py')
+
+## Perl
+addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
