@@ -10,3 +10,4 @@ Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
 - Build python3 version unconditionally.
+- Disabled tests (to ease poring to epel7).
