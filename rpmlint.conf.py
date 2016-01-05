@@ -27,8 +27,6 @@ addFilter('SPECS/gperftools.spec')
 addFilter('libev-devel.x86_64')
 addFilter('SPECS/libcomps.spec')
 addFilter('nginx\.(spec|x86_64|src)')
-addFilter('SPECS/perl.spec')
-addFilter('perl.src')
 addFilter('perl-common-sense.x86_64')
 addFilter('perl-Compress-Raw-Bzip2.x86_64')
 addFilter('perl-Data-OptList.src')
@@ -124,3 +122,6 @@ addFilter('gdb.src: W: invalid-url Source0: ftp://sourceware.org/pub/gdb/snapsho
 
 ## Python-pip
 addFilter('python(3|2)?-pip.noarch: W: non-executable-script /usr/lib/python.\../site-packages/pip/_vendor/requests/packages/chardet/chardetect.py')
+
+## Perl
+addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
