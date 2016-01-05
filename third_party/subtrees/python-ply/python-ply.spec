@@ -1,17 +1,17 @@
 %global with_python3 1
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print (get_python_lib())")}
 
-Name:			python-ply
-Summary: 		Python Lex-Yacc
-Version:		3.6
-Release:		3%{?dist}
-License:		BSD
-Group:			System Environment/Libraries
-URL:			http://www.dabeaz.com/ply/
-Source0:		http://www.dabeaz.com/ply/ply-%{version}.tar.gz
-BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildArch:		noarch
-BuildRequires:		python-devel
+Name:           python-ply
+Summary:        Python Lex-Yacc
+Version:        3.6
+Release:        3%{?dist}
+License:        BSD
+Group:          System Environment/Libraries
+URL:            http://www.dabeaz.com/ply/
+Source0:        http://www.dabeaz.com/ply/ply-%{version}.tar.gz
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildArch:      noarch
+BuildRequires:  python-devel
 
 %if 0%{?with_python3}
 BuildRequires:          /usr/bin/2to3
