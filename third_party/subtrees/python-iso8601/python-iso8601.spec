@@ -1,8 +1,6 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
-%if 0%{?fedora}
 %global with_python3 1
-%endif
 
 %global srcname iso8601
 

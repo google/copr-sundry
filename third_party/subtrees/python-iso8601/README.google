@@ -9,3 +9,4 @@ RPM spec files for python-iso8601 - Simple module to parse ISO 8601 dates.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Removed conditional on python3 build.
