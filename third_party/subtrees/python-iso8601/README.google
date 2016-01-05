@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-iso8601.git/
+Version: 0be2dcaad2069612fa473cb91a6a033d836177af
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-iso8601 - Simple module to parse ISO 8601 dates.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
