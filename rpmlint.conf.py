@@ -123,5 +123,9 @@ addFilter('gdb.src: W: invalid-url Source0: ftp://sourceware.org/pub/gdb/snapsho
 ## Python-pip
 addFilter('python(3|2)?-pip.noarch: W: non-executable-script /usr/lib/python.\../site-packages/pip/_vendor/requests/packages/chardet/chardetect.py')
 
+## Cython
+# There's no -devel package.
+addFilter('(python3-)?Cython.x86_64: W: devel-file-in-non-devel-package')
+
 ## Perl
 addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
