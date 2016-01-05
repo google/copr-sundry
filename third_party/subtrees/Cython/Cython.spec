@@ -6,28 +6,28 @@
 
 %define run_check 1
 
-Name:		Cython
-Version:	0.23
-Release:	2%{?dist}
-Summary:	A language for writing Python extension modules
+Name:       Cython
+Version:    0.23
+Release:    2%{?dist}
+Summary:    A language for writing Python extension modules
 
 %define upstreamversion %{version}
 
-Group:		Development/Tools
-License:	Python
-URL:		http://www.cython.org
-Source:		http://www.cython.org/release/Cython-%{upstreamversion}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Group:      Development/Tools
+License:    Python
+URL:        http://www.cython.org
+Source:     http://www.cython.org/release/Cython-%{upstreamversion}.tar.gz
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires:	python-devel python-setuptools
+BuildRequires:  python-devel python-setuptools
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
 %endif # if with_python3
 
 %if 0%{run_check}
-BuildRequires:	numpy libtool
+BuildRequires:  numpy libtool
 %endif
-Requires:	python
+Requires:  python
 
 %description
 This is a development version of Pyrex, a language
@@ -36,14 +36,14 @@ for writing Python extension modules.
 For more info, see:
 
     Doc/About.html for a description of the language
-    INSTALL.txt	   for installation instructions
-    USAGE.txt	   for usage instructions
-    Demos	   for usage examples
+    INSTALL.txt    for installation instructions
+    USAGE.txt      for usage instructions
+    Demos          for usage examples
 
 %if 0%{?with_python3}
 %package -n python3-Cython
-Summary:	A language for writing Python extension modules
-Group:		Development/Tools
+Summary:    A language for writing Python extension modules
+Group:      Development/Tools
 
 %description -n python3-Cython
 This is a development version of Pyrex, a language
@@ -52,9 +52,9 @@ for writing Python extension modules.
 For more info, see:
 
     Doc/About.html for a description of the language
-    INSTALL.txt	   for installation instructions
-    USAGE.txt	   for usage instructions
-    Demos	   for usage examples
+    INSTALL.txt    for installation instructions
+    USAGE.txt      for usage instructions
+    Demos          for usage examples
 %endif # with_python3
 
 %prep
