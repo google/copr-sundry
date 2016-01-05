@@ -4,17 +4,14 @@
 
 %global srcname distribute
 
-%define run_check 0%{!?_without_check:1}
-##%define run_check 0%{!?_with_check:0}
+%define run_check 1
 
 Name:		Cython
 Version:	0.23
-##Release:	4.b3%{?dist}
 Release:	2%{?dist}
 Summary:	A language for writing Python extension modules
 
 %define upstreamversion %{version}
-##%%define upstreamversion %{version}b3
 
 Group:		Development/Tools
 License:	Python
