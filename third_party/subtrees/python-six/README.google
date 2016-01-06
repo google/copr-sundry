@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-six.git/
+Version: cb5d338f53d1316027a42c5792fff142899cc321
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-six - Python 2 and 3 compatibility utilities.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
