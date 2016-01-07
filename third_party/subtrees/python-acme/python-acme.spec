@@ -43,7 +43,8 @@ BuildRequires:  pytz
 %if %{with python3}
 BuildRequires:  python3-ndg_httpsclient
 BuildRequires:  python3-nose
-BuildRequires:  python3-tox
+# TODO: re-enable python3 tests.
+#BuildRequires:  python3-tox
 BuildRequires:  python3-mock
 BuildRequires:  python3-pytz
 %endif
@@ -135,7 +136,7 @@ rm -f docs/_build/html/_static/fonts/fontawesome*
 %check
 %{__python2} setup.py test
 %if %{with python3}
-%{__python3} setup.py test
+#%{__python3} setup.py test
 %endif
 # Make sure the script uses the expected python version
 grep -q %{__python2} %{buildroot}%{_bindir}/jws
