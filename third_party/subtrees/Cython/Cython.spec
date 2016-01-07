@@ -89,6 +89,7 @@ pushd %{py3dir}
 mv $RPM_BUILD_ROOT/usr/bin/cython $RPM_BUILD_ROOT/usr/bin/cython3
 mv $RPM_BUILD_ROOT/usr/bin/cygdb $RPM_BUILD_ROOT/usr/bin/cygdb3
 rm -rf %{buildroot}%{python3_sitelib}/setuptools/tests
+sed --in-place '1s:^#!/usr/bin/env .+::' %{buildroot}%{python3_sitelib}/Cython/Build/Cythonize.py
 popd
 %endif
 
