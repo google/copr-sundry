@@ -9,3 +9,4 @@ RPM spec files for python-six - Python 2 and 3 compatibility utilities.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Remove conditional on python3 build.

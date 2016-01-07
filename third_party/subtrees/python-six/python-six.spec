@@ -1,13 +1,9 @@
-%if 0%{?rhel} && 0%{?rhel} <= 6
 %{!?__python2:        %global __python2 /usr/bin/python2}
 %{!?python2_sitelib:  %global python2_sitelib %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
-%endif
 
-%if 0%{?fedora} > 12 || 0%{?rhel} > 7
 %global with_python3 1
 
 %global __python3 python3
-%endif
 
 Name:           python-six
 Version:        1.10.0
