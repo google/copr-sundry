@@ -15,8 +15,6 @@ URL:            https://pypi.python.org/pypi/acme
 Source0:        https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 
 BuildRequires:  python2-devel
-BuildRequires:  python-sphinx
-BuildRequires:  python-sphinx_rtd_theme
 BuildRequires:  python-cryptography
 BuildRequires:  pyOpenSSL >= 0.15
 BuildRequires:  python-requests
@@ -25,7 +23,6 @@ BuildRequires:  python-werkzeug
 
 %if %{with python3}
 BuildRequires:  python3-devel
-BuildRequires:  python3-sphinx
 BuildRequires:  python3-cryptography
 BuildRequires:  python3-pyOpenSSL >= 0.15
 BuildRequires:  python3-requests
