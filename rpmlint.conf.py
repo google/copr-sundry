@@ -128,9 +128,10 @@ addFilter('python(3|2)?-pip.noarch: W: non-executable-script /usr/lib/python.\..
 # There's no -devel package.
 addFilter('(python3-)?Cython.x86_64: W: devel-file-in-non-devel-package')
 # false-positives
-addFilter('Cython.x86_64: W: non-executable-script /usr/lib64/python2.7/site-packages/cython.py')
+addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python(2|3)\.[0-9]/site-packages/cython.py')
 addFilter('Cython.x86_64: W: non-executable-script /usr/lib64/python2.7/site-packages/Cython/Build/Cythonize.py')
 addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[0-9]\.[0-9]/site-packages/Cython/Debugger/Cygdb.py')
+addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[0-9]\.[0-9]/site-packages/Cython/Debugger/libpython.py')
 
 ## Perl
 addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
