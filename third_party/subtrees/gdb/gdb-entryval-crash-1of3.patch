@@ -1,0 +1,194 @@
+http://sourceware.org/ml/gdb-patches/2014-07/msg00530.html
+Subject: [read_frame_arg patch] Handle partially optimized out values similarly to unavailable values (Re: [patchv2] Fix crash on optimized-out entry data values)
+
+
+--V88s5gaDVPzZ0KCq
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Thu, 17 Jul 2014 14:23:06 +0200, Pedro Alves wrote:
+> On 07/16/2014 10:58 PM, Jan Kratochvil wrote:
+> > This patch is apparently not suitable for gdb-7.8 which is I guess often
+> > crashing on -O2 -g entry values so there could be some rather minimal crash
+> > avoiding patch instead.
+> 
+> Yeah.
+> 
+> So this was originally "caused" (more exposed) by 4f14910f:
+>     
+>         gdb/ChangeLog
+>         2013-11-26  Andrew Burgess  <aburgess@broadcom.com>
+>     
+>             * value.c (allocate_optimized_out_value): Mark value as non-lazy.
+> 
+> I tried a few approaches in value_available_contents_eq
+> today, and ended up thinking that the simplest should be to
+> just revert that patch until we have the fuller fix in place.
+
+OK, that seems as the best solution for 7.8 to me.
+
+
+> While doing just that fixes the crash, it surprisingly causes
+> one of your new tests to FAIL:
+> 
+>  (gdb) frame
+>  #0  bar (ref=ref@entry=@0x7fffffffd184: 10) at gdb.arch/amd64-entry-value-paramref.cc:23
+>  23        vv++; /* break-here */
+>  (gdb) FAIL: gdb.arch/amd64-entry-value-paramref.exp: frame
+
+There is a bug in that entry value code of mine, fix attached.
+The testcase then PASSes with the reverted optimization by Andrew Burgess.
+
+For the attached fix - if you nitpick the missing conditional case:
+	value_optimized_out (val_deref) && value_optimized_out (entryval_deref)
+It is not detected there but that IMO does not matter much as
+ * It is for 7.8 only, for trunk it will get compared correctly thanks to the
+   new implementation of value_available_contents_eq()
+   called value_contents_eq().
+ * If the conditional
+                      if (val != val_deref
+                          && !value_optimized_out (val_deref)
+                          && !value_optimized_out (entryval_deref)
+                          && value_available_contents_eq (val_deref, 0,
+                                                          entryval_deref, 0,
+                                                      TYPE_LENGTH (type_deref)))
+                        val_equal = 1;
+   fails it may just print
+     bar (ref=@0x7fffffffd904: <optimized out>, ref@entry=@0x7fffffffd904: <optimized out>)
+   (or some variant with some partially optimized-out/unavailable parts)
+   instead of the more correct
+     bar (ref=ref@entry=@0x7fffffffd904: <optimized out>)
+   which is not much a bug.
+
+The attached fix no longe makes sense after the new implementation
+of value_available_contents_eq() called value_contents_eq() gets applied as it
+handles all the optimized-out/unavailable values on its own, therefore the
+attached patch is really only for 7.8.
+
+
+> Turns out it's the code disabled in value_of_dwarf_reg_entry:
+> 
+>   target_val = dwarf_entry_parameter_to_value (parameter,
+> 					       TYPE_LENGTH (target_type),
+> 					       target_type, caller_frame,
+> 					       caller_per_cu);
+> 
+>   /* value_as_address dereferences TYPE_CODE_REF.  */
+>   addr = extract_typed_address (value_contents (outer_val), checked_type);
+> 
+>   /* The target entry value has artificial address of the entry value
+>      reference.  */
+>   VALUE_LVAL (target_val) = lval_memory;
+>   set_value_address (target_val, addr);
+> 
+> It looks quite wrong to me to just change a value's lval like that.
+> 
+> I ran the testsuite with that code disabled (like in the patch below),
+> and that caused no regressions.  I can't say I really understand the
+> intention here though.  What would we be missing if we removed that code?
+
+I cannot reproduce any wrong case having the code above #if 0-ed.
+
+I just do not find it correct to have it disabled.  But at the same time I do
+like much / I do not find correct the code myself.  It is a bit problematic to
+have struct value describing a memory content which is no longer present
+there.
+
+What happens there:
+------------------------------------------------------------------------------
+volatile int vv;
+static __attribute__((noinline)) int
+bar (int &ref) {
+  ref = 20;
+  vv++; /* break-here */
+  return ref;
+}
+int main (void) {
+  int var = 10;
+  return bar (var);
+}
+------------------------------------------------------------------------------
+ <4><c7>: Abbrev Number: 13 (DW_TAG_GNU_call_site_parameter)
+    <c8>   DW_AT_location    : 1 byte block: 55         (DW_OP_reg5 (rdi))
+    <ca>   DW_AT_GNU_call_site_value: 2 byte block: 91 74       (DW_OP_fbreg: -12)
+    <cd>   DW_AT_GNU_call_site_data_value: 1 byte block: 3a     (DW_OP_lit10)
+------------------------------------------------------------------------------
+gdb -ex 'b value_addr' -ex r --args ../gdb ./1 -ex 'watch vv' -ex r -ex 'p &ref@entry'
+->
+6    return ref;
+bar (ref=@0x7fffffffd944: 20, ref@entry=@0x7fffffffd944: 10) at 1.C:25
+------------------------------------------------------------------------------
+At /* break-here */ struct value variable 'ref' is TYPE_CODE_REF.
+
+With FSF GDB HEAD:
+(gdb) x/gx arg1.contents
+0x6004000a4ad0: 0x00007fffffffd944
+(gdb) p ((struct value *)arg1.location.computed.closure).lval
+$1 = lval_memory
+(gdb) p/x ((struct value *)arg1.location.computed.closure).location.address
+$3 = 0x7fffffffd944
+
+With your #if0-ed code:
+(gdb) x/gx arg1.contents
+0x6004000a4ad0: 0x00007fffffffd944
+(gdb) p ((struct value *)arg1.location.computed.closure).lval
+$8 = not_lval
+(gdb) p/x ((struct value *)arg1.location.computed.closure).location.address
+$9 = 0x0
+
+I do not see how to access
+	((struct value *)arg1.location.computed.closure).location.address
+from GDB CLI.  Trying
+(gdb) p &ref@entry
+will invoke value_addr()'s:
+  if (TYPE_CODE (type) == TYPE_CODE_REF)
+      /* Copy the value, but change the type from (T&) to (T*).  We
+         keep the same location information, which is efficient, and
+         allows &(&X) to get the location containing the reference.  */
+and therefore the address gets fetched already from
+  arg1.contents
+and not from
+  ((struct value *)arg1.location.computed.closure).location.address
+.
+
+And for any other type than TYPE_CODE_REF this code you #if 0-ed does not get
+executed at all.  This DW_AT_GNU_call_site_data_value DWARF was meant
+primarily for Fortran but with -O0 entry values do not get produced
+and with -Og and higher Fortran always optimizes out the passing by reference.
+
+If you do not like the #if 0 code there I am OK with removing it as I do not
+know how to make it's use reproducible for user anyway.  In the worst case
+- if there really is some way how to exploit it - one should just get
+  Attempt to take address of value not located in memory.
+instead of some wrong value and it may be easy to fix then.
+
+
+Thanks for the analysis,
+Jan
+
+--V88s5gaDVPzZ0KCq
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline; filename=1
+
+gdb/
+2014-07-20  Jan Kratochvil  <jan.kratochvil@redhat.com>
+
+	* stack.c (read_frame_arg): Verify value_optimized_out before calling
+	value_available_contents_eq.
+
+diff --git a/gdb/stack.c b/gdb/stack.c
+index 0d6d8e7..4db5df5 100644
+--- a/gdb/stack.c
++++ b/gdb/stack.c
+@@ -413,6 +413,8 @@ read_frame_arg (struct symbol *sym, struct frame_info *frame,
+ 		      /* If the reference addresses match but dereferenced
+ 			 content does not match print them.  */
+ 		      if (val != val_deref
++		          && !value_optimized_out (val_deref)
++		          && !value_optimized_out (entryval_deref)
+ 			  && value_available_contents_eq (val_deref, 0,
+ 							  entryval_deref, 0,
+ 						      TYPE_LENGTH (type_deref)))
+
+--V88s5gaDVPzZ0KCq--
+

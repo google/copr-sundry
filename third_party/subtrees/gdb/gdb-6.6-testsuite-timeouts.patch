@@ -1,0 +1,26 @@
+Index: gdb-7.6.50.20130731-cvs/gdb/testsuite/gdb.base/annota1.exp
+===================================================================
+--- gdb-7.6.50.20130731-cvs.orig/gdb/testsuite/gdb.base/annota1.exp	2013-08-02 16:23:26.559936258 +0200
++++ gdb-7.6.50.20130731-cvs/gdb/testsuite/gdb.base/annota1.exp	2013-08-02 16:23:56.590976418 +0200
+@@ -41,6 +41,8 @@ if  { [gdb_compile "${srcdir}/${subdir}/
+ 
+ clean_restart ${binfile}
+ 
++gdb_test "set breakpoint pending off" "" "Avoid lockup on nonexisting functions"
++
+ # The commands we test here produce many lines of output; disable "press 
+ # <return> to continue" prompts.
+ gdb_test_no_output "set height 0"
+Index: gdb-7.6.50.20130731-cvs/gdb/testsuite/gdb.base/annota3.exp
+===================================================================
+--- gdb-7.6.50.20130731-cvs.orig/gdb/testsuite/gdb.base/annota3.exp	2013-08-02 16:23:26.560936259 +0200
++++ gdb-7.6.50.20130731-cvs/gdb/testsuite/gdb.base/annota3.exp	2013-08-02 16:24:11.654996267 +0200
+@@ -40,6 +40,8 @@ if  { [gdb_compile "${srcdir}/${subdir}/
+ 
+ clean_restart ${binfile}
+ 
++gdb_test "set breakpoint pending off" "" "Avoid lockup on nonexisting functions"
++
+ # The commands we test here produce many lines of output; disable "press 
+ # <return> to continue" prompts.
+ gdb_test_no_output "set height 0"

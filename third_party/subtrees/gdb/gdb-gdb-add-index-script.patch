@@ -1,0 +1,171 @@
+http://sourceware.org/ml/gdb-patches/2010-07/msg00184.html
+Subject: Re: [0/4] RFC: add DWARF index support
+
+Jan Kratochvil: Fixed $d -> $dir.
+Jan Kratochvil: Remove /dev/null redirection.
+
+>>>>> "Tom" == Tom Tromey <tromey@redhat.com> writes:
+
+Tom> This patch series adds support for a DWARF index to gdb.
+
+Roland suggested we wrap up the index-creation code into a helper
+script.
+
+I'm not sure if this is something people would want in gdb proper, but I
+figured I would send it here just in case.
+
+Tom
+
+2010-07-09  Tom Tromey  <tromey@redhat.com>
+
+	* Makefile.in (install-only): Install gdb-add-index.
+	* gdb-add-index: New file.
+
+2010-07-09  Tom Tromey  <tromey@redhat.com>
+
+	* gdb.texinfo (Index Files): Mention gdb-add-index.
+
+>From 30714fe719e61baea03d0dc5793eb0d564faebb7 Mon Sep 17 00:00:00 2001
+From: Tom Tromey <tromey@redhat.com>
+Date: Fri, 9 Jul 2010 11:17:54 -0600
+Subject: [PATCH 4/4] add gdb-add-index
+Subject: [PATCH 4/4] add gdb-add-index
+
+---
+ gdb/ChangeLog       |    5 +++++
+ gdb/Makefile.in     |   11 ++++++++++-
+ gdb/doc/ChangeLog   |    4 ++++
+ gdb/doc/gdb.texinfo |    8 ++++++++
+ gdb/gdb-add-index   |   30 ++++++++++++++++++++++++++++++
+ 5 files changed, 57 insertions(+), 1 deletions(-)
+ create mode 100755 gdb/gdb-add-index
+
+Index: gdb-7.6.90.20140127/gdb/Makefile.in
+===================================================================
+--- gdb-7.6.90.20140127.orig/gdb/Makefile.in	2014-02-06 17:37:54.555975958 +0100
++++ gdb-7.6.90.20140127/gdb/Makefile.in	2014-02-06 17:38:52.110038415 +0100
+@@ -1093,6 +1093,15 @@ install-only: install-gstack $(CONFIG_IN
+ 		  $(INSTALL_SCRIPT) gcore \
+ 			  $(DESTDIR)$(bindir)/$$transformed_name; \
+ 	fi
++	transformed_name=`t='$(program_transform_name)'; \
++			  echo gdb-add-index | sed -e "$$t"` ; \
++		if test "x$$transformed_name" = x; then \
++		  transformed_name=gdb-add-index ; \
++		else \
++		  true ; \
++		fi ; \
++		$(INSTALL_PROGRAM) $(srcdir)/contrib/gdb-add-index.sh \
++			$(DESTDIR)$(bindir)/$$transformed_name$(EXEEXT)
+ 	@$(MAKE) DO=install "DODIRS=$(SUBDIRS)" $(FLAGS_TO_PASS) subdir_do
+ 
+ install-strip:
+Index: gdb-7.6.90.20140127/gdb/doc/gdb.texinfo
+===================================================================
+--- gdb-7.6.90.20140127.orig/gdb/doc/gdb.texinfo	2014-02-06 17:37:50.822971940 +0100
++++ gdb-7.6.90.20140127/gdb/doc/gdb.texinfo	2014-02-06 17:37:54.565975968 +0100
+@@ -17749,6 +17749,14 @@ There are currently some limitation on i
+ for DWARF debugging information, not stabs.  And, they do not
+ currently work for programs using Ada.
+ 
++@value{GDBN} comes with a program, @command{gdb-add-index}, which can
++be used to add the index to a symbol file.  It takes the symbol file
++as its only argument:
++
++@smallexample
++$ gdb-add-index symfile
++@end smallexample
++
+ @node Symbol Errors
+ @section Errors Reading Symbol Files
+ 
+@@ -43878,6 +43886,7 @@ switch (die->tag)
+ * gdbserver man::               Remote Server for the GNU Debugger man page
+ * gcore man::                   Generate a core file of a running program
+ * gdbinit man::                 gdbinit scripts
++* gdb-add-index man::           Add index files to speed up GDB
+ @end menu
+ 
+ @node gdb man
+@@ -44530,6 +44539,54 @@ gdb(1), @code{info -f gdb -n Startup}
+ The full documentation for @value{GDBN} is maintained as a Texinfo manual.
+ If the @code{info} and @code{gdb} programs and @value{GDBN}'s Texinfo
+ documentation are properly installed at your site, the command
++
++@smallexample
++info gdb
++@end smallexample
++
++should give you access to the complete manual.
++
++@cite{Using GDB: A Guide to the GNU Source-Level Debugger},
++Richard M. Stallman and Roland H. Pesch, July 1991.
++@end ifset
++@c man end
++
++@node gdb-add-index man
++@heading gdb-add-index
++
++@c man title gdb-add-index Add index files to speed up GDB
++
++@c man begin SYNOPSIS gdb-add-index
++gdb-add-index @var{filename}
++@c man end
++
++@c man begin DESCRIPTION gdb-add-index
++When GDB finds a symbol file, it scans the symbols in the file in order
++to construct an internal symbol table.  This lets most GDB operations
++work quickly--at the cost of a delay early on.  For large programs,
++this delay can be quite lengthy, so GDB provides a way to build an
++index, which speeds up startup.
++
++To determine whether a file contains such an index, use the command
++@command{readelf -S filename}: the index is stored in a section named
++@code{.gdb_index}.  Note that the index is never generated for files that do
++not contain DWARF debug information (sections named @code{.debug_*}).
++
++See more in
++@ifset man
++the @value{GDBN} manual in node @code{Index Files}
++-- shell command @code{info -f gdb -n 'Index Files'}.
++@end ifset
++@ifclear man
++@ref{Index Files}.
++@end ifclear
++@c man end
++
++@c man begin SEEALSO gdb-add-index
++@ifset man
++The full documentation for @value{GDBN} is maintained as a Texinfo manual.
++If the @code{info} and @code{gdb} programs and @value{GDBN}'s Texinfo
++documentation are properly installed at your site, the command
+ 
+ @smallexample
+ info gdb
+Index: gdb-7.6.90.20140127/gdb/doc/Makefile.in
+===================================================================
+--- gdb-7.6.90.20140127.orig/gdb/doc/Makefile.in	2014-02-06 17:37:50.824971942 +0100
++++ gdb-7.6.90.20140127/gdb/doc/Makefile.in	2014-02-06 17:37:54.565975968 +0100
+@@ -165,7 +165,7 @@ POD2MAN5 = pod2man --center="GNU Develop
+ 		   --release="gdb-`sed q version.subst`" --section=5
+ 
+ # List of man pages generated from gdb.texi
+-MAN1S = gdb.1 gdbserver.1 gcore.1
++MAN1S = gdb.1 gdbserver.1 gcore.1 gdb-add-index.1
+ MAN5S = gdbinit.5
+ MANS = $(MAN1S) $(MAN5S)
+ 
+@@ -590,6 +590,13 @@ gcore.1: $(GDB_DOC_FILES)
+ 		mv -f $@.T$$$$ $@) || (rm -f $@.T$$$$ && exit 1)
+ 	rm -f gcore.pod
+ 
++gdb-add-index.1: $(GDB_DOC_FILES)
++	touch $@
++	-$(TEXI2POD) $(MANCONF) -Dgdb-add-index < $(srcdir)/gdb.texinfo > gdb-add-index.pod
++	-($(POD2MAN1) gdb-add-index.pod | sed -e '/^.if n .na/d' > $@.T$$$$ && \
++		mv -f $@.T$$$$ $@) || (rm -f $@.T$$$$ && exit 1)
++	rm -f gdb-add-index.pod
++
+ gdbinit.5: $(GDB_DOC_FILES)
+ 	touch $@
+ 	-$(TEXI2POD) $(MANCONF) -Dgdbinit < $(srcdir)/gdb.texinfo > gdbinit.pod

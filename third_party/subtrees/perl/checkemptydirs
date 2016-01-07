@@ -1,0 +1,11 @@
+#!/bin/bash
+for P in "$@"; do
+    echo "Empty directories in RPM package $P:"
+
+    for D in $(rpm -qlvp "$P" | \
+            perl -ne \
+                'if (/\Adrwx/) {$n=${[split /\s+/]}[8]; print qq{$n\n}}' | \
+            sort -f); do
+        test $(rpm -qlp "$P" | grep -c -F "$D/") == 0 && echo "$D";
+    done
+done

@@ -1,1 +1,1 @@
-../third_party/submodules/perl/macros.perl
+../third_party/subtrees/perl/macros.perl

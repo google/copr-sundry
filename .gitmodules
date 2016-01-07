@@ -1,9 +1,6 @@
 [submodule "third_party/submodules/yum"]
 	path = third_party/submodules/yum
 	url = git://pkgs.fedoraproject.org/yum.git
-[submodule "third_party/submodules/gdb"]
-	path = third_party/submodules/gdb
-	url = git://pkgs.fedoraproject.org/gdb.git
 [submodule "third_party/submodules/cmake"]
 	path = third_party/submodules/cmake
 	url = git://pkgs.fedoraproject.org/cmake.git
@@ -13,9 +10,6 @@
 [submodule "third_party/submodules/perl-generators"]
 	path = third_party/submodules/perl-generators
 	url = git://pkgs.fedoraproject.org/perl-generators.git
-[submodule "third_party/submodules/perl"]
-	path = third_party/submodules/perl
-	url = git://pkgs.fedoraproject.org/perl.git
 [submodule "third_party/submodules/perl-Fedora-VSP"]
 	path = third_party/submodules/perl-Fedora-VSP
 	url = git://pkgs.fedoraproject.org/perl-Fedora-VSP.git
@@ -91,3 +85,75 @@
 [submodule "third_party/submodules/perl-Devel-Symdump"]
 	path = third_party/submodules/perl-Devel-Symdump
 	url = git://pkgs.fedoraproject.org/perl-Devel-Symdump.git
+[submodule "third_party/submodules/perl-Pod-Coverage"]
+	path = third_party/submodules/perl-Pod-Coverage
+	url = git://pkgs.fedoraproject.org/perl-Pod-Coverage.git
+[submodule "third_party/submodules/perl-inc-latest"]
+	path = third_party/submodules/perl-inc-latest
+	url = git://pkgs.fedoraproject.org/perl-inc-latest.git
+[submodule "third_party/submodules/perl-IO-Compress"]
+	path = third_party/submodules/perl-IO-Compress
+	url = git://pkgs.fedoraproject.org/perl-IO-Compress.git
+[submodule "third_party/submodules/perl-libintl"]
+	path = third_party/submodules/perl-libintl
+	url = git://pkgs.fedoraproject.org/perl-libintl.git
+[submodule "third_party/submodules/perl-HTTP-Date"]
+	path = third_party/submodules/perl-HTTP-Date
+	url = git://pkgs.fedoraproject.org/perl-HTTP-Date.git
+[submodule "third_party/submodules/perl-TimeDate"]
+	path = third_party/submodules/perl-TimeDate
+	url = git://pkgs.fedoraproject.org/perl-TimeDate.git
+[submodule "third_party/submodules/perl-Business-ISBN-Data"]
+	path = third_party/submodules/perl-Business-ISBN-Data
+	url = git://pkgs.fedoraproject.org/perl-Business-ISBN-Data.git
+[submodule "third_party/submodules/perl-GD"]
+	path = third_party/submodules/perl-GD
+	url = git://pkgs.fedoraproject.org/perl-GD.git
+[submodule "third_party/submodules/perl-GD-Barcode"]
+	path = third_party/submodules/perl-GD-Barcode
+	url = git://pkgs.fedoraproject.org/perl-GD-Barcode.git
+[submodule "third_party/submodules/perl-HTML-Tagset"]
+	path = third_party/submodules/perl-HTML-Tagset
+	url = git://pkgs.fedoraproject.org/perl-HTML-Tagset.git
+[submodule "third_party/submodules/perl-Test-Pod-Coverage"]
+	path = third_party/submodules/perl-Test-Pod-Coverage
+	url = git://pkgs.fedoraproject.org/perl-Test-Pod-Coverage.git
+[submodule "third_party/submodules/perl-Business-ISBN"]
+	path = third_party/submodules/perl-Business-ISBN
+	url = git://pkgs.fedoraproject.org/perl-Business-ISBN.git
+[submodule "third_party/submodules/perl-Error"]
+	path = third_party/submodules/perl-Error
+	url = git://pkgs.fedoraproject.org/perl-Error.git
+[submodule "third_party/submodules/perl-Carp"]
+	path = third_party/submodules/perl-Carp
+	url = git://pkgs.fedoraproject.org/perl-Carp.git
+[submodule "third_party/submodules/perl-threads"]
+	path = third_party/submodules/perl-threads
+	url = git://pkgs.fedoraproject.org/perl-threads.git
+[submodule "third_party/submodules/libev"]
+	path = third_party/submodules/libev
+	url = git://pkgs.fedoraproject.org/libev.git
+[submodule "third_party/submodules/perl-Mojolicious"]
+	path = third_party/submodules/perl-Mojolicious
+	url = git://pkgs.fedoraproject.org/perl-Mojolicious.git
+[submodule "third_party/submodules/perl-common-sense"]
+	path = third_party/submodules/perl-common-sense
+	url = git://pkgs.fedoraproject.org/perl-common-sense.git
+[submodule "third_party/submodules/perl-Canary-Stability"]
+	path = third_party/submodules/perl-Canary-Stability
+	url = git://pkgs.fedoraproject.org/perl-Canary-Stability.git
+[submodule "third_party/submodules/perl-EV"]
+	path = third_party/submodules/perl-EV
+	url = git://pkgs.fedoraproject.org/perl-EV.git
+[submodule "third_party/submodules/perl-HTML-Parser"]
+	path = third_party/submodules/perl-HTML-Parser
+	url = git://pkgs.fedoraproject.org/perl-HTML-Parser.git
+[submodule "third_party/submodules/perl-XML-Parser"]
+	path = third_party/submodules/perl-XML-Parser
+	url = git://pkgs.fedoraproject.org/perl-XML-Parser.git
+[submodule "third_party/submodules/python-pyrfc3339"]
+	path = third_party/submodules/python-pyrfc3339
+	url = git://pkgs.fedoraproject.org/python-pyrfc3339.git
+[submodule "third_party/submodules/python-hypothesis"]
+	path = third_party/submodules/python-hypothesis
+	url = git://pkgs.fedoraproject.org/python-hypothesis.git

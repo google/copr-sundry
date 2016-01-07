@@ -1,1 +1,1 @@
-../third_party/submodules/perl/perl.spec
+../third_party/subtrees/perl/perl.spec

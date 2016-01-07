@@ -1,0 +1,1 @@
+../third_party/submodules/perl-Business-ISBN-Data/perl-Business-ISBN-Data.spec

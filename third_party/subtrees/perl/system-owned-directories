@@ -1,0 +1,7 @@
+%dir /usr
+%dir /usr/bin
+%dir /usr/lib
+%dir /usr/share
+%dir /usr/share/man
+%dir /usr/share/man/man1
+%dir /usr/share/man/man3

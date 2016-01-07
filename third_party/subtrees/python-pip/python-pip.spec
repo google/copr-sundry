@@ -126,6 +126,7 @@ pip3 install -I dist/%{python3_wheelname} --root %{buildroot} --strip-file-prefi
 rm %{buildroot}%{_bindir}/pip
 %else
 %{__python3} setup.py install --skip-build --root %{buildroot}
+sed --in-place '1s:^#!/usr/bin/env .+::' %{buildroot}%{python3_sitelib}/pip/_vendor/requests/certs.py
 %endif
 
 %if 0%{?build_wheel}
