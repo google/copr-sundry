@@ -23,9 +23,8 @@ BuildRequires:  tkinter
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
 # For use by selftests:
-# TODO: re-enable python3 tests.
-#BuildRequires:  python3-pytest
-#BuildRequires:  python3-tkinter
+BuildRequires:  python3-pytest
+BuildRequires:  python3-tkinter
 %endif
 Provides:       python2-six = %{version}-%{release}
 
@@ -76,7 +75,7 @@ popd
 py.test -rfsxX test_six.py
 %if 0%{?with_python3}
 pushd %{py3dir}
-#py.test-%{python3_version} -rfsxX test_six.py
+py.test-%{python3_version} -rfsxX test_six.py
 popd
 %endif
 

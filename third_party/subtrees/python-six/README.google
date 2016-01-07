@@ -10,4 +10,3 @@ Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
 - Remove conditional on python3 build.
-- Disable python3 tests to ease porting to epel.
