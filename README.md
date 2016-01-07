@@ -91,6 +91,7 @@ code that happens to be owned by Google.
  * python3 3.5.0
  * python-acme 0.1.1
  * python-cffi 1.4.2
+ * python-cryptography 1.1
  * python-cryptography-vectors 1.1
  * python-idna 2.0
  * python-iso8601 0.1.10
