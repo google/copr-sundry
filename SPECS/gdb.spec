@@ -1,1 +1,1 @@
-../third_party/submodules/gdb/gdb.spec
+../third_party/subtrees/gdb/gdb.spec

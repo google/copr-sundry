@@ -7,7 +7,7 @@ Summary:        An object-oriented approach to text processing
 Group:          Development/Libraries
 License:        MIT
 URL:            http://pyparsing.wikispaces.com/
-Source0:        http://downloads.sourceforge.net/pyparsing/pyparsing-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/source/p/pyparsing/pyparsing-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  python-devel
 BuildRequires:  dos2unix

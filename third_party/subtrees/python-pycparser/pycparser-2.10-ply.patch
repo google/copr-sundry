@@ -1,0 +1,38 @@
+diff -up pycparser-release_v2.10/pycparser/c_lexer.py.ply pycparser-release_v2.10/pycparser/c_lexer.py
+--- pycparser-release_v2.10/pycparser/c_lexer.py.ply	2013-08-03 07:15:32.000000000 -0600
++++ pycparser-release_v2.10/pycparser/c_lexer.py	2014-08-20 12:40:48.308461164 -0600
+@@ -9,8 +9,8 @@
+ import re
+ import sys
+ 
+-from .ply import lex
+-from .ply.lex import TOKEN
++from ply import lex
++from ply.lex import TOKEN
+ 
+ 
+ class CLexer(object):
+diff -up pycparser-release_v2.10/pycparser/c_parser.py.ply pycparser-release_v2.10/pycparser/c_parser.py
+--- pycparser-release_v2.10/pycparser/c_parser.py.ply	2013-08-03 07:15:32.000000000 -0600
++++ pycparser-release_v2.10/pycparser/c_parser.py	2014-08-20 12:40:05.154894980 -0600
+@@ -8,7 +8,7 @@
+ #------------------------------------------------------------------------------
+ import re
+ 
+-from .ply import yacc
++from ply import yacc
+ 
+ from . import c_ast
+ from .c_lexer import CLexer
+diff -up pycparser-release_v2.10/setup.py.ply pycparser-release_v2.10/setup.py
+--- pycparser-release_v2.10/setup.py.ply	2013-08-03 07:15:32.000000000 -0600
++++ pycparser-release_v2.10/setup.py	2014-08-20 12:40:05.154894980 -0600
+@@ -22,7 +22,7 @@ setup(
+     classifiers = [
+         'Programming Language :: Python :: 2',
+         'Programming Language :: Python :: 3',],
+-    packages=['pycparser', 'pycparser.ply'],
++    packages=['pycparser'],
+     package_data={'pycparser': ['*.cfg']},
+ )
+ 

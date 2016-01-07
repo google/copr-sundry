@@ -1,0 +1,17 @@
+Index: gdb-7.4.50.20120602/gdb/symfile.c
+===================================================================
+--- gdb-7.4.50.20120602.orig/gdb/symfile.c	2012-06-02 18:25:20.000000000 +0200
++++ gdb-7.4.50.20120602/gdb/symfile.c	2012-06-02 18:26:36.145232057 +0200
+@@ -3630,6 +3630,12 @@ default_symfile_relocate (struct objfile
+      DWO file.  */
+   bfd *abfd = sectp->owner;
+ 
++  /* Executable files have all the relocations already resolved.
++     Handle files linked with --emit-relocs.
++     http://sources.redhat.com/ml/gdb/2006-08/msg00137.html  */
++  if ((abfd->flags & EXEC_P) != 0)
++    return NULL;
++
+   /* We're only interested in sections with relocation
+      information.  */
+   if ((sectp->flags & SEC_RELOC) == 0)

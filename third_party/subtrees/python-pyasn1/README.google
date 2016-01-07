@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-pyasn1.git/
+Version: 360c60da9ae928cb9651234acb7f74ba80cd2663
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-pyasn1 - ASN.1 tools for Python.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Remove conditional for python3 build.
