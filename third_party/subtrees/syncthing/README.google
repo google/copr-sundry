@@ -1,0 +1,10 @@
+URL: https://github.com/thunderbirdtr/syncthing_rpm
+Version: 7c5df4428e04e370bed45b427c310588bbc3e0cf
+License: MIT
+License File: LICENSE
+
+Description:
+This repository allows you to make an RPM package for Syncthing on Fedora systems.
+
+Local Modifications:
+- Added README.google file.
