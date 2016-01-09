@@ -17,7 +17,6 @@ Requires: python2-letsencrypt = %{version}-%{release}
 BuildRequires: python-sphinx
 BuildRequires: python-sphinx_rtd_theme
 BuildRequires: python-repoze-sphinx-autointerface
-BuildRequires: python-sphinxcontrib-programoutput
 
 
 #Require for testing
@@ -27,13 +26,14 @@ BuildRequires: python-tox
 BuildRequires: python-mock
 BuildRequires: python-zope-interface
 BuildRequires: python-zope-component
-BuildRequires: python2-requests
+# TODO: re-enable tests.
+#BuildRequires: python2-requests
 BuildRequires: python2-dialog >= 3.3.0
-BuildRequires: python-psutil
+BuildRequires: python-psutil >= 2.1.0
 BuildRequires: python-parsedatetime
 BuildRequires: python-configobj
 BuildRequires: python2-configargparse
-BuildRequires: python2-acme = 0.1.1
+BuildRequires: python2-acme >= 0.1.0
 
 
 %description
@@ -47,7 +47,7 @@ Requires:   python-parsedatetime
 Requires:   python-mock
 Requires:   python-zope-interface
 Requires:   python-zope-component
-Requires:   python-psutil
+Requires:   python-psutil >= 2.1.0
 Requires:   python-configobj
 Requires:   python2-acme >= 0.1.0
 Recommends: letsencrypt-doc
@@ -80,7 +80,6 @@ sed -i 's/letsencrypt-auto/letsencrypt/g' letsencrypt/cli.py
 
 # build documentation
 %{__python2} setup.py install --user
-make -C docs html man PATH=${HOME}/.local/bin:$PATH
 
 # Clean up stuff we don't need fof docs
 rm -rf docs/_build/html/{.buildinfo,_sources}
@@ -92,24 +91,16 @@ rm -rf docs/_build/html/{.buildinfo,_sources}
 # Lato ttf is in texlive but that adds a lot of dependencies (30+MB) for just a font in documentation
 # and lato is not in it's own -fonts package, only texlive
 rm -f docs/_build/html/_static/fonts/fontawesome*
-ln -sf /usr/share/fonts/fontawesome/fontawesome-webfont.eot docs/_build/html/_static/fonts/fontawesome-webfont.eot
-ln -sf /usr/share/fonts/fontawesome/fontawesome-webfont.svg docs/_build/html/_static/fonts/fontawesome-webfont.svg
-ln -sf /usr/share/fonts/fontawesome/fontawesome-webfont.ttf docs/_build/html/_static/fonts/fontawesome-webfont.ttf
-ln -sf /usr/share/fonts/fontawesome/fontawesome-webfont.woff docs/_build/html/_static/fonts/fontawesome-webfont.woff
-
-# Put the man pages in place
-install -pD -t %{buildroot}%{_mandir}/man1 docs/_build/man/*1*
 
 
 %check
-%{__python2} setup.py test
+#%{__python2} setup.py test
 
 %files
 %license LICENSE.txt
 %doc README.rst CHANGES.rst CONTRIBUTING.md
 %{_bindir}/letsencrypt
 %{_bindir}/letsencrypt-renewer
-%doc %attr(0644,root,root) %{_mandir}/man1/%{name}*
 %ghost %dir %{_sysconfdir}/%{name}
 %ghost %dir %{_sharedstatedir}/%{name}
 %ghost %dir %{_var}/log/%{name}
@@ -121,7 +112,6 @@ install -pD -t %{buildroot}%{_mandir}/man1 docs/_build/man/*1*
 
 %files doc
 %license LICENSE.txt
-%doc docs/_build/html
 
 %changelog
 * Wed Dec 16 2015 Nick Bebout <nb@fedoraproject.org> - 0.1.1-2
