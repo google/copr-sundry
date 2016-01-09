@@ -134,7 +134,7 @@ addFilter('python(3|2)?-pip.noarch: W: non-executable-script /usr/lib/python.\..
 addFilter('(python3-)?Cython.x86_64: W: devel-file-in-non-devel-package')
 # false-positives
 addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python(2|3)\.[0-9]/site-packages/cython.py')
-addFilter('Cython.x86_64: W: non-executable-script /usr/lib64/python2.7/site-packages/Cython/Build/Cythonize.py')
+addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python(2|3)\.[0-9]/site-packages/Cython/Build/Cythonize.py')
 addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[0-9]\.[0-9]/site-packages/Cython/Debugger/Cygdb.py')
 addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[0-9]\.[0-9]/site-packages/Cython/Debugger/libpython.py')
 
