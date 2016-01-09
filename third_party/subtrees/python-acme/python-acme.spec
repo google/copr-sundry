@@ -133,7 +133,7 @@ rm -f docs/_build/html/_static/fonts/fontawesome*
 %check
 %{__python2} setup.py test
 %if %{with python3}
-#%{__python3} setup.py test
+%{__python3} setup.py test
 %endif
 # Make sure the script uses the expected python version
 grep -q %{__python2} %{buildroot}%{_bindir}/jws
