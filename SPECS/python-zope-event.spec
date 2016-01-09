@@ -1,0 +1,1 @@
+../third_party/submodules/python-zope-event/python-zope-event.spec
