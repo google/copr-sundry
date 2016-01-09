@@ -27,15 +27,9 @@ addFilter('SPECS/gdb.spec')
 addFilter('SPECS/gperftools.spec')
 addFilter('libev-devel.x86_64')
 addFilter('SPECS/libcomps.spec')
-<<<<<<< HEAD
-addFilter('nginx\.(spec|x86_64)')
-addFilter('SPECS/perl.spec')
-addFilter('perl.src')
-=======
 addFilter('nginx\.(spec|x86_64|src)')
 addFilter('perl-common-sense.x86_64')
 addFilter('perl-Compress-Raw-Bzip2.x86_64')
->>>>>>> master
 addFilter('perl-Data-OptList.src')
 addFilter('perl-Data-Section.src')
 addFilter('perl-GD.x86_64')
