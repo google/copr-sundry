@@ -154,3 +154,6 @@ addFilter('python3?-ply.noarch: W: python-bytecode-without-source.*cpython.*')
 
 ## libsolv
 addFilter('libsolv.x86_64: W: shared-lib-calls-exit')
+
+# Python-cffi
+addFilter('python-cffi.x86_64: W: devel-file-in-non-devel-package')
