@@ -178,3 +178,6 @@
 [submodule "third_party/submodules/python-dialog"]
 	path = third_party/submodules/python-dialog
 	url = git://pkgs.fedoraproject.org/python-dialog.git
+[submodule "third_party/submodules/python-zope-event"]
+	path = third_party/submodules/python-zope-event
+	url = git://pkgs.fedoraproject.org/python-zope-event.git
