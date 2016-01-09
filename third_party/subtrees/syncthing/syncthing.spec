@@ -9,7 +9,6 @@ Summary:Syncthing
 License:MIT
 URL:http://syncthing.net/    
 Source0: https://github.com/syncthing/syncthing/archive/v%{version}.zip
-Source1:	syncthing@.service
 ExclusiveArch:  %{go_arches}
 BuildRequires:  systemd
 BuildRequires:  golang >= 1.2-7

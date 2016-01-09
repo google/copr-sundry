@@ -9,3 +9,4 @@ This repository allows you to make an RPM package for Syncthing on Fedora system
 Local Modifications:
 - Added README.google file.
 - Compile from source instead of using binary dist.
+- Removed bundled syncthing@.service since the one from tarball is now used.
