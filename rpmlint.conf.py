@@ -148,3 +148,5 @@ addFilter('python3?-cryptography-vectors.noarch: W: pem-certificate')
 # cpython stuff:
 addFilter('python3?-ply.noarch: W: python-bytecode-without-source.*cpython.*')
 
+## libsolv
+addFilter('libsolv.x86_64: W: shared-lib-calls-exit')
