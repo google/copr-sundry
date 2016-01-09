@@ -25,9 +25,9 @@ BuildRequires:  python-werkzeug
 BuildRequires:  python3-devel
 BuildRequires:  python3-cryptography
 BuildRequires:  python3-pyOpenSSL >= 0.15
-BuildRequires:  python3-requests
+#BuildRequires:  python3-requests
 BuildRequires:  python3-pyrfc3339
-BuildRequires:  python3-werkzeug
+#BuildRequires:  python3-werkzeug
 %endif
 
 # Required for testing
@@ -39,11 +39,11 @@ BuildRequires:  pytz
 
 %if %{with python3}
 BuildRequires:  python3-ndg_httpsclient
-BuildRequires:  python3-nose
 # TODO: re-enable python3 tests.
+#BuildRequires:  python3-nose
 #BuildRequires:  python3-tox
-BuildRequires:  python3-mock
-BuildRequires:  python3-pytz
+#BuildRequires:  python3-mock
+#BuildRequires:  python3-pytz
 %endif
 
 BuildArch:      noarch
