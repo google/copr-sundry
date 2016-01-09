@@ -1,27 +1,18 @@
 %global debug_package %{nil}
 
-%ifarch x86_64
-%global altarch amd64
-%endif
-%ifarch %{ix86}
-%global altarch 386
-%endif
-%ifarch %{arm}
-%global altarch armv7
-%endif
+%{!?go_arches: %define go_arches %{ix86} x86_64 %{arm}}
 
 Name:syncthing
 Version:0.9.17
-Release:2.0%{?dist}
+Release:2.1%{?dist}
 Summary:Syncthing
 License:MIT
 URL:http://syncthing.net/    
-Source0:https://github.com/%{name}/%{name}/releases/download/v%{version}/%{name}-linux-%{altarch}-v%{version}.tar.gz
+Source0: https://github.com/syncthing/syncthing/archive/v%{version}.zip
 Source1:	syncthing@.service
-Source2:	%{name}-linux-386-v%{version}.tar.gz
-ExclusiveArch:  x86_64 %{ix86}
+ExclusiveArch:  %{go_arches}
 BuildRequires:  systemd
-
+BuildRequires:  golang >= 1.2-7
 Requires(post): systemd
 Requires(preun): systemd
 Requires(postun): systemd
@@ -32,18 +23,26 @@ Syncthing replaces Dropbox and BitTorrent Sync with something open, trustworthy 
 Using syncthing, that control is returned to you.
 
 %prep
-%setup -c
+%setup -q -n %{name}-%{version}
 
 %build
+mkdir -p ./_build/src/github.com/%{name}
+ln -s $(pwd) ./_build/src/github.com/%{name}/%{name}
+export GOPATH=$(pwd)/_build:%{gopath}
+./build.sh
+
+%check
+export GOPATH=$(pwd)/_build:%{gopath}
+./build.sh test
 
 %install
 rm -rf %{buildroot}
 
 mkdir -p %{buildroot}%{_bindir}
-install -p -m 0755 %{name}-linux-%{altarch}-v%{version}/syncthing %{buildroot}%{_bindir}
+install -p -m 0755 ./bin/syncthing %{buildroot}%{_bindir}
 
 mkdir -p %{buildroot}%{_unitdir}
-install -p -m 0644 %{S:1} %{buildroot}%{_unitdir}
+install -p -m 0644 ./etc/linux-systemd/system/syncthing@.service %{buildroot}%{_unitdir}
 
 
 %post
@@ -56,12 +55,18 @@ install -p -m 0644 %{S:1} %{buildroot}%{_unitdir}
 %systemd_postun_with_restart %{name}@.service 
 
 %files
-%doc  %{name}-linux-%{altarch}-v%{version}/README.txt %{name}-linux-%{altarch}-v%{version}/LICENSE.txt %{name}-linux-%{altarch}-v%{version}/CONTRIBUTORS.txt
+%doc AUTHORS CONDUCT.md CONTRIBUTING.md LICENSE NICKS README.md
 %{_bindir}/syncthing
 %{_unitdir}/%{name}@.service
 
 
 %changelog
+* Mon Sep 21 2015 Vladimir Rusinov <vrusinov@google.com> 0.9.17-2.1
+- Use source tarball instead of binary package.
+
+* Sat Sep 20 2014 Onuralp SEZER <thunderbirdtr@fedoraproject.org> 0.9.17-2.0
+- Version update to v0.9.17
+
 * Sat Sep 20 2014 Onuralp SEZER <thunderbirdtr@fedoraproject.org> 0.9.17-2.0
 - Version update to v0.9.17
 
