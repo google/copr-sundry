@@ -28,7 +28,7 @@ BuildRequires: python-zope-interface
 BuildRequires: python-zope-component
 BuildRequires: python2-requests
 BuildRequires: python2-dialog >= 3.3.0
-BuildRequires: python-psutil
+BuildRequires: python-psutil >= 2.1.0
 BuildRequires: python-parsedatetime
 BuildRequires: python-configobj
 BuildRequires: python2-configargparse
@@ -46,7 +46,7 @@ Requires:   python-parsedatetime
 Requires:   python-mock
 Requires:   python-zope-interface
 Requires:   python-zope-component
-Requires:   python-psutil
+Requires:   python-psutil >= 2.1.0
 Requires:   python-configobj
 Requires:   python2-acme >= 0.1.0
 Recommends: letsencrypt-doc
