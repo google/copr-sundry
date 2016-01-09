@@ -142,4 +142,5 @@ addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[
 addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
 
 ## Python-cryptoghraphy
+addFilter('python3?-cryptography-vectors.noarch: W: pem-certificate')
 addFilter('python3-cryptography-vectors.noarch: W: pem-certificate')
