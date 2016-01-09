@@ -24,7 +24,7 @@ Requires:       python-enum34 python-ipaddress %reqs python
 
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
-#BuildRequires:  python3-pytest %breqs python3
+BuildRequires:  python3-pytest %breqs python3
 BuildRequires:  %breqs python3
 BuildRequires:  %reqs python3
 %endif
