@@ -1,0 +1,1 @@
+../third_party/subtrees/python-pyasn1/python-pyasn1.spec

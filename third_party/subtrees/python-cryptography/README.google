@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-cryptography.git/
+Version: 8f91816479d6f16c2faeef5f02dd9643d159bf08
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-cryptography - PyCA's cryptography library.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build python3 version unconditionally.
+- Disabled tests (to ease poring to epel7).

@@ -1,0 +1,1 @@
+../third_party/submodules/python-ndg_httpsclient/python-ndg_httpsclient.spec

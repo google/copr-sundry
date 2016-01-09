@@ -5,7 +5,7 @@
 %{!?__python2: %global __python2 /usr/bin/python2}
 %{!?python2_sitelib: %global python2_sitelib %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 %{!?python2_sitearch: %global python2_sitearch %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
-else
+%else
 %define python3_build 1
 %endif
 
@@ -88,30 +88,24 @@ make %{?_smp_mflags}
 make %{?_smp_mflags} docs
 make %{?_smp_mflags} pydocs
 
-%if %python3_build == 1
 pushd py3
 %cmake -DPYTHON_DESIRED:STRING=3 libcomps/
 make %{?_smp_mflags}
 popd
-%endif
 
 
 %check
 make test
-%if %{python3_build}
 pushd py3
 make pytest
 popd
-%endif
 
 %install
 make install DESTDIR=%{buildroot}
 
-%if %{python3_build}
 pushd py3
 make install DESTDIR=%{buildroot}
 popd
-%endif
 
 %clean
 rm -rf $buildroot
@@ -137,10 +131,8 @@ rm -rf $buildroot
 %files -n python-libcomps
 %{_libdir}/python2*
 
-%if %{python3_build}
 %files -n python3-libcomps
 %{_libdir}/python3*
-%endif
 
 %changelog
 * Thu Jul 02 2015 Jindrich Luza <jluza@redhat.com> 0.1.7

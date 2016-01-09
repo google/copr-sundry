@@ -1,0 +1,17 @@
+URL: http://pkgs.fedoraproject.org/cgit/libsolv.git/
+Version: dfe1bfb38e08518806986fde9a036a5f7e443225
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for libsolv - Package dependency solver.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Fix lint warnings:
+  - tabs vs spaces
+  - macros in comments.
+- Always build python2 and python3 versions.
+- Build with rhel version with ARCHREPO.
+- Do not include docs in devel package.

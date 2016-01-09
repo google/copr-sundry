@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-idna.git/
+Version: ebb29b51428e5490679ea293a42495133622fd79
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-idna  - Internationalized Domain Names in
+Applications (IDNA).
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Always build python3 version.

@@ -1,0 +1,152 @@
+Index: gdb-7.9.90.20150709/gdb/config/i386/linux64.mh
+===================================================================
+--- gdb-7.9.90.20150709.orig/gdb/config/i386/linux64.mh	2015-07-09 18:23:32.173786118 +0200
++++ gdb-7.9.90.20150709/gdb/config/i386/linux64.mh	2015-07-09 18:23:51.823953736 +0200
+@@ -7,7 +7,7 @@ NATDEPFILES= inf-ptrace.o fork-child.o \
+ 	linux-procfs.o linux-ptrace.o linux-btrace.o \
+ 	linux-waitpid.o linux-personality.o x86-linux.o \
+ 	x86-linux-dregs.o linux-namespaces.o
+-NAT_FILE= config/nm-linux.h
++NAT_FILE= nm-linux64.h
+ NAT_CDEPS = $(srcdir)/proc-service.list
+ 
+ # The dynamically loaded libthread_db needs access to symbols in the
+Index: gdb-7.9.90.20150709/gdb/config/i386/linux.mh
+===================================================================
+--- gdb-7.9.90.20150709.orig/gdb/config/i386/linux.mh	2015-07-09 18:23:30.527772078 +0200
++++ gdb-7.9.90.20150709/gdb/config/i386/linux.mh	2015-07-09 18:23:32.174786127 +0200
+@@ -1,6 +1,6 @@
+ # Host: Intel 386 running GNU/Linux.
+ 
+-NAT_FILE= config/nm-linux.h
++NAT_FILE= nm-linux.h
+ NATDEPFILES= inf-ptrace.o fork-child.o \
+ 	x86-nat.o x86-dregs.o i386-linux-nat.o x86-linux-nat.o \
+ 	proc-service.o linux-thread-db.o \
+Index: gdb-7.9.90.20150709/gdb/config/i386/nm-linux.h
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ gdb-7.9.90.20150709/gdb/config/i386/nm-linux.h	2015-07-09 18:23:32.174786127 +0200
+@@ -0,0 +1,28 @@
++/* Native support for GNU/Linux i386.
++
++   Copyright 2010 Free Software Foundation, Inc.
++
++   This file is part of GDB.
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 3 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
++
++#ifndef NM_LINUX_H
++#define NM_LINUX_H
++
++#include "config/nm-linux.h"
++
++/* Red Hat backward compatibility with gdb-6.8.  */
++#define target_can_use_hardware_watchpoint(type, cnt, ot) 1
++
++#endif /* NM_LINUX64_H */
+Index: gdb-7.9.90.20150709/gdb/config/i386/nm-linux64.h
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ gdb-7.9.90.20150709/gdb/config/i386/nm-linux64.h	2015-07-09 18:23:32.174786127 +0200
+@@ -0,0 +1,28 @@
++/* Native support for GNU/Linux amd64.
++
++   Copyright 2010 Free Software Foundation, Inc.
++
++   This file is part of GDB.
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 3 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
++
++#ifndef NM_LINUX64_H
++#define NM_LINUX64_H
++
++#include "config/nm-linux.h"
++
++/* Red Hat backward compatibility with gdb-6.8.  */
++#define target_can_use_hardware_watchpoint(type, cnt, ot) 1
++
++#endif /* NM_LINUX64_H */
+Index: gdb-7.9.90.20150709/gdb/target.h
+===================================================================
+--- gdb-7.9.90.20150709.orig/gdb/target.h	2015-07-09 18:23:30.528772086 +0200
++++ gdb-7.9.90.20150709/gdb/target.h	2015-07-09 18:23:32.175786135 +0200
+@@ -1849,9 +1849,11 @@ extern char *target_thread_name (struct
+    CNT is the number of such watchpoints used so far, including this
+    one.  OTHERTYPE is who knows what...  */
+ 
++#ifndef target_can_use_hardware_watchpoint
+ #define target_can_use_hardware_watchpoint(TYPE,CNT,OTHERTYPE) \
+  (*current_target.to_can_use_hw_breakpoint) (&current_target,  \
+ 					     TYPE, CNT, OTHERTYPE)
++#endif
+ 
+ /* Returns the number of debug registers needed to watch the given
+    memory region, or zero if not supported.  */
+Index: gdb-7.9.90.20150709/gdb/testsuite/gdb.base/watchpoint-hw-before-run.exp
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ gdb-7.9.90.20150709/gdb/testsuite/gdb.base/watchpoint-hw-before-run.exp	2015-07-09 18:23:32.175786135 +0200
+@@ -0,0 +1,40 @@
++# Copyright 2009, 2010 Free Software Foundation, Inc.
++
++# This program is free software; you can redistribute it and/or modify
++# it under the terms of the GNU General Public License as published by
++# the Free Software Foundation; either version 3 of the License, or
++# (at your option) any later version.
++#
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with this program.  If not, see <http://www.gnu.org/licenses/>.
++
++# Arch not supporting hw watchpoints does not imply no_hardware_watchpoints set.
++if {(![istarget "i?86-*-*"] && ![istarget "x86_64-*-*"]
++     && ![istarget "ia64-*-*"])
++    || [target_info exists gdb,no_hardware_watchpoints]} then {
++    verbose "Skipping watchpoint-hw-before-run test."
++    return
++}
++
++set test watchpoint-hw-before-run
++set srcfile watchpoint-hw-hit-once.c
++if { [prepare_for_testing ${test}.exp ${test} ${srcfile}] } {
++    return -1
++}
++
++gdb_test "rwatch watchee" "ardware read watchpoint 1: watchee"
++
++# `runto_main' or `runto main' would delete the watchpoint created above.
++
++if { [gdb_start_cmd] < 0 } {
++    untested start
++    return -1
++}
++gdb_test "" "main .* at .*" "start"
++
++gdb_test "continue" "Continuing.\r\nHardware read watchpoint \[0-9\]+: watchee\r\n\r\nValue = 0\r\n.*"

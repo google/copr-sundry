@@ -1,0 +1,1 @@
+../third_party/submodules/perl-Text-Template/perl-Text-Template.spec

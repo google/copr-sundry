@@ -13,3 +13,4 @@ Local Modifications:
 - Modified to build python3 version unconditionally.
 - Moved build_wheel out of os version conditional.
 - Disabled tests to ease bootstrapping.
+- Remove shebang for non-executable scripts.
