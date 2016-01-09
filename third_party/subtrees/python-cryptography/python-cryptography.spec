@@ -81,7 +81,7 @@ popd
 
 
 %check
-#%{__python} setup.py test
+%{__python} setup.py test
 
 %if 0%{?with_python3}
 pushd %{py3dir}

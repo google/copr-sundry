@@ -116,6 +116,7 @@ code that happens to be owned by Google.
  * python-wheel & python3-wheel 0.24.0
  * python-zope-event 4.1.0
  * python-zope-component 4.2.2
+ * python-zope-interface 4.1.3
  * rpm 4.13.0-rc1
  * rubygem-fog-profitbricks 0.0.3
  * rubygem-pathspec 0.0.2

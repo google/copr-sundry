@@ -1,0 +1,1 @@
+../third_party/submodules/python-zope-interface/python-zope-interface.spec

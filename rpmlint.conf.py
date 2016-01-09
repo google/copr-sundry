@@ -50,10 +50,13 @@ addFilter('perl-Text-Template.noarch')
 addFilter('pyOpenSSL(-doc)?\.(noarch|spec)')
 addFilter('python(2|3)?-acme\.(src|noarch)')
 addFilter('python(2|3)?-hypothesis\.(src|noarch)')
+addFilter('python(2|3)-dialog.noarch')
+addFilter('python-mock.spec')
 addFilter('python-ndg_httpsclient\.(src|spec)')
 addFilter('python-parsedatetime.spec')
 addFilter('python-psutil.spec')
 addFilter('python-pyrfc3339.src')
+addFilter('python-zope-event\.(noarch|spec)')
 addFilter('SPECS/puppet.spec')
 addFilter('SPECS/python-iniparse.spec')
 addFilter('python-pyrfc3339.src')
@@ -140,6 +143,7 @@ addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[
 
 ## Perl
 addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
+addFilter('perl\.(src|spec): W: invalid-license')
 
 ## Python-cryptoghraphy
 addFilter('python3?-cryptography-vectors.noarch: W: pem-certificate')
@@ -150,3 +154,6 @@ addFilter('python3?-ply.noarch: W: python-bytecode-without-source.*cpython.*')
 
 ## libsolv
 addFilter('libsolv.x86_64: W: shared-lib-calls-exit')
+
+# Python-cffi
+addFilter('python-cffi.x86_64: W: devel-file-in-non-devel-package')

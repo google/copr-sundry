@@ -108,14 +108,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
-%doc CHANGES example/
+%doc example/
 %{python_sitelib}/ply/
 %{python_sitelib}/ply*.egg-info
 
 %if 0%{?with_python3}
 %files -n python3-ply
 %defattr(-,root,root,-)
-%doc CHANGES example/
+%doc example/
 %{python3_sitelib}/ply/
 %{python3_sitelib}/ply*.egg-info
 %endif # with_python3

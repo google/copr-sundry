@@ -24,7 +24,7 @@ BuildRequires: python-nose-xcover
 BuildRequires: python-pep8
 BuildRequires: python-tox
 BuildRequires: python-mock
-BuildRequires: python-zope-interface
+BuildRequires: python-zope-interface >= 4.1.0
 BuildRequires: python-zope-component
 # TODO: re-enable tests.
 #BuildRequires: python2-requests
@@ -45,7 +45,7 @@ Requires:   python2-configargparse
 Requires:   python2-dialog >= 3.3.0
 Requires:   python-parsedatetime
 Requires:   python-mock
-Requires:   python-zope-interface
+Requires:   python-zope-interface >= 4.1.0
 Requires:   python-zope-component
 Requires:   python-psutil >= 2.1.0
 Requires:   python-configobj

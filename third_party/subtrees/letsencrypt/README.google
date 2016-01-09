@@ -12,3 +12,4 @@ Local Modifications:
 - Fixed too version-specific build dependency on python2-acme.
 - Disabled docs build.
 - Require psutil version >= 2.1.0.
+- Bumped minimal required version of python-zope-interface to 4.1.0.
