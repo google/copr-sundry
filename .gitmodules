@@ -169,3 +169,6 @@
 [submodule "third_party/submodules/python-mock"]
 	path = third_party/submodules/python-mock
 	url = git://pkgs.fedoraproject.org/python-mock.git
+[submodule "third_party/submodules/python-zope-component"]
+	path = third_party/submodules/python-zope-component
+	url = git://pkgs.fedoraproject.org/python-zope-component.git

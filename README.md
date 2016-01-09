@@ -112,6 +112,7 @@ code that happens to be owned by Google.
  * python-setuptools & python3-setuptools 18.3.2
  * python-six 1.10.0
  * python-wheel & python3-wheel 0.24.0
+ * python-zope-component 4.2.2
  * rpm 4.13.0-rc1
  * rubygem-fog-profitbricks 0.0.3
  * rubygem-pathspec 0.0.2
