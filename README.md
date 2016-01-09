@@ -96,6 +96,7 @@ code that happens to be owned by Google.
  * python-configargparse 0.9.3
  * python-cryptography 1.1
  * python-cryptography-vectors 1.1
+ * python-dialog 3.3.0
  * python-idna 2.0
  * python-iso8601 0.1.10
  * python-jsonschema & python3-jsonschema 2.4.0
