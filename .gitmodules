@@ -175,3 +175,6 @@
 [submodule "third_party/submodules/python-configargparse"]
 	path = third_party/submodules/python-configargparse
 	url = git://pkgs.fedoraproject.org/python-configargparse.git
+[submodule "third_party/submodules/python-dialog"]
+	path = third_party/submodules/python-dialog
+	url = git://pkgs.fedoraproject.org/python-dialog.git
