@@ -50,6 +50,8 @@ addFilter('perl-Text-Template.noarch')
 addFilter('pyOpenSSL(-doc)?\.(noarch|spec)')
 addFilter('python(2|3)?-acme\.(src|noarch)')
 addFilter('python(2|3)?-hypothesis\.(src|noarch)')
+addFilter('python-ndg_httpsclient\.(src|spec)')
+addFilter('python-parsedatetime.spec')
 addFilter('python-psutil.spec')
 addFilter('python-pyrfc3339.src')
 addFilter('SPECS/puppet.spec')
@@ -132,7 +134,7 @@ addFilter('python(3|2)?-pip.noarch: W: non-executable-script /usr/lib/python.\..
 addFilter('(python3-)?Cython.x86_64: W: devel-file-in-non-devel-package')
 # false-positives
 addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python(2|3)\.[0-9]/site-packages/cython.py')
-addFilter('Cython.x86_64: W: non-executable-script /usr/lib64/python2.7/site-packages/Cython/Build/Cythonize.py')
+addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python(2|3)\.[0-9]/site-packages/Cython/Build/Cythonize.py')
 addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[0-9]\.[0-9]/site-packages/Cython/Debugger/Cygdb.py')
 addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[0-9]\.[0-9]/site-packages/Cython/Debugger/libpython.py')
 
@@ -140,4 +142,11 @@ addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[
 addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
 
 ## Python-cryptoghraphy
-addFilter('python3-cryptography-vectors.noarch: W: pem-certificate')
+addFilter('python3?-cryptography-vectors.noarch: W: pem-certificate')
+
+## Python-ply
+# cpython stuff:
+addFilter('python3?-ply.noarch: W: python-bytecode-without-source.*cpython.*')
+
+## libsolv
+addFilter('libsolv.x86_64: W: shared-lib-calls-exit')

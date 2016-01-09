@@ -158,6 +158,7 @@ sed -i '/^setuptools\/tests\//d' %{buildroot}%{python2_record}
 install -p -m 0644 %{SOURCE1} %{SOURCE2} .
 find %{buildroot}%{python2_sitelib} -name '*.exe' | xargs rm -f
 chmod +x %{buildroot}%{python2_sitelib}/setuptools/command/easy_install.py
+chmod -x %{buildroot}/usr/share/doc/python-setuptools/README.txt
 
 %if 0%{?with_check}
 %check

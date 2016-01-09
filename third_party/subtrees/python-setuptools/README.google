@@ -13,3 +13,4 @@ Local Modifications:
 - Modified to build python3 version unconditionally.
 - Unconditionally build with wheel.
 - Versioned provides.
+- Removed executable bit from docs.

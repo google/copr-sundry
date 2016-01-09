@@ -94,7 +94,7 @@ rm -f docs/_build/html/_static/fonts/fontawesome*
 
 
 %check
-#%{__python2} setup.py test
+%{__python2} setup.py test
 
 %files
 %license LICENSE.txt
