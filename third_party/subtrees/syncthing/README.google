@@ -4,10 +4,12 @@ License: MIT
 License File: LICENSE
 
 Description:
-This repository allows you to make an RPM package for Syncthing on Fedora systems.
+This repository allows you to make an RPM package for Syncthing on Fedora
+systems.
 
 Local Modifications:
 - Added README.google file.
 - Compile from source instead of using binary dist.
 - Removed bundled syncthing@.service since the one from tarball is now used.
 - Updated version to 0.12.11.
+- Reformatted description to fit under 80 characters width.

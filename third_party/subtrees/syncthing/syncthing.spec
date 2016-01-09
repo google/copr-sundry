@@ -17,7 +17,10 @@ Requires(preun): systemd
 Requires(postun): systemd
 
 %description
-Syncthing replaces Dropbox and BitTorrent Sync with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.
+Syncthing replaces Dropbox and BitTorrent Sync with something open,
+trustworthy and decentralized. Your data is your data alone and you deserve to
+choose where it is stored, if it is shared with some third party and how it's
+transmitted over the Internet.
 
 Using syncthing, that control is returned to you.
 
