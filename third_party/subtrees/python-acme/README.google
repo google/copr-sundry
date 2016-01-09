@@ -11,4 +11,3 @@ Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
 - Removed build dependencies on python-sphinx*
-- Disabled python3 tests.
