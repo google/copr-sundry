@@ -143,4 +143,8 @@ addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch
 
 ## Python-cryptoghraphy
 addFilter('python3?-cryptography-vectors.noarch: W: pem-certificate')
-addFilter('python3-cryptography-vectors.noarch: W: pem-certificate')
+
+## Python-ply
+# cpython stuff:
+addFilter('python3?-ply.noarch: W: python-bytecode-without-source.*cpython.*')
+
