@@ -99,6 +99,7 @@ code that happens to be owned by Google.
  * python-hypothesis 1.11.2
  * python-keyring & python3-keyring 5.0
  * python-ndg\_httpsclient 0.4.0
+ * python-parsedatetime 1.5
  * python-pip & python3-pip 7.1.0
  * python-pyasn1 0.1.9
  * python-pycparser 2.14

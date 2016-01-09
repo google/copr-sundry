@@ -7,6 +7,7 @@ setOption("BadnessThreshold", 42)
 # Ignore documentation issues.
 addFilter('no-manual-page-for-binary')
 addFilter('no-documentation')
+addFilter('name-repeated-in-summary')
 
 # Ignore spelling errors unilt there's a support for custom dictionaries.
 # TODO: add such support.
@@ -63,6 +64,7 @@ addFilter('SPECS/python.spec')
 addFilter('SPECS/python3.spec')
 addFilter('third_party/subtrees/python/python.spec')
 addFilter('third_party/subtrees/python3/python3.spec')
+addFilter('python-libs.x86_64')
 addFilter('python-debuginfo.x86_64')
 addFilter('python-libs.x86_64')
 addFilter('python-devel.x86_64')
