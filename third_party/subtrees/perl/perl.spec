@@ -119,9 +119,9 @@ BuildRequires:  procps, rsyslog
 %global perl_compat perl(:MODULE_COMPAT_5.22.1)
 
 # File provides
-Provides: perl(bytes_heavy.pl)
-Provides: perl(dumpvar.pl)
-Provides: perl(perl5db.pl)
+Provides: perl(bytes_heavy.pl) = %{version}
+Provides: perl(dumpvar.pl) = %{version}
+Provides: perl(perl5db.pl) = %{version}
 
 # suidperl isn't created by upstream since 5.12.0
 Obsoletes: perl-suidperl <= 4:5.12.2
@@ -169,34 +169,35 @@ Group:          Development/Languages
 License:        GPL+ or Artistic
 # Compat provides
 Provides:       %perl_compat
-Provides:       perl(:MODULE_COMPAT_5.22.0)
+Provides:       perl(:MODULE_COMPAT_5.22.0) = %{perl_version}
 # Horrible hack to ease bootstrapping.
 # Don't do this at home.
-Provides:       perl(:MODULE_COMPAT_5.16.3)
-Provides:       perl(:MODULE_COMPAT_5.18.2)
-Provides:       perl(:MODULE_COMPAT_5.18.4)
-Provides:       perl(:MODULE_COMPAT_5.20.0)
-Provides:       perl(:MODULE_COMPAT_5.20.1)
-Provides:       perl(:MODULE_COMPAT_5.20.2)
-Provides:       perl(:MODULE_COMPAT_5.20.3)
-Provides:       libperl.so.5.20
-Provides:       libperl.so.5.20()(64bit)
-Provides:       libperl.so.5.18
-Provides:       libperl.so.5.18()(64bit)
+# TODO: remove these.
+Provides:       perl(:MODULE_COMPAT_5.16.3) = %{version}
+Provides:       perl(:MODULE_COMPAT_5.18.2) = %{version}
+Provides:       perl(:MODULE_COMPAT_5.18.4) = %{version}
+Provides:       perl(:MODULE_COMPAT_5.20.0) = %{version}
+Provides:       perl(:MODULE_COMPAT_5.20.1) = %{version}
+Provides:       perl(:MODULE_COMPAT_5.20.2) = %{version}
+Provides:       perl(:MODULE_COMPAT_5.20.3) = %{version}
+Provides:       libperl.so.5.20 = %{version}
+Provides:       libperl.so.5.20()(64bit) = %{version}
+Provides:       libperl.so.5.18 = %{perl_version}
+Provides:       libperl.so.5.18()(64bit) = %{version}
 # Interpreter version to fulfil required genersted from "require 5.006;"
 Provides:       perl(:VERSION) = %{perl_version}
 # Threading provides
-Provides:       perl(:WITH_ITHREADS)
-Provides:       perl(:WITH_THREADS)
+Provides:       perl(:WITH_ITHREADS) = %{version}
+Provides:       perl(:WITH_THREADS) = %{version}
 # Largefile provides
-Provides:       perl(:WITH_LARGEFILES)
+Provides:       perl(:WITH_LARGEFILES) = %{version}
 # PerlIO provides
-Provides:       perl(:WITH_PERLIO)
+Provides:       perl(:WITH_PERLIO) = %{version}
 # Loaded by charnames, unicore/Name.pm does not declare unicore::Name module
-Provides:       perl(unicore::Name)
+Provides:       perl(unicore::Name) = %{version}
 # Keep utf8 modules in perl-libs because a sole regular expression like /\pN/
 # causes loading utf8 and unicore/Heave.pl and unicore/lib files.
-Provides:       perl(utf8_heavy.pl)
+Provides:       perl(utf8_heavy.pl) = %{version}
 # utf8 and utf8_heavy.pl require Carp, re, strict, warnings, XSLoader
 Requires:       perl(Carp)
 Requires:       perl(Exporter)
