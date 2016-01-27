@@ -102,6 +102,10 @@ addFilter('perl-Tk.x86_64: W: devel-file-in-non-devel-package')
 addFilter('perl-ExtUtils-Miniperl.noarch: W: devel-dependency')
 # Perl-Tk has weird deps
 addFilter('perl-Tk.spec:63: W: comparison-operator-in-deptoken')
+# Not sure what version that would be.
+addFilter('perl.spec:1245: W: unversioned-explicit-provides perl(IO::Uncompress::Bunzip2)')
+# Ditto
+addFilter('perl\.(src|spec):[0-9]+: W: unversioned-explicit-obsoletes')
 
 ## Let's encrypt:
 # Allow pems in test files.
