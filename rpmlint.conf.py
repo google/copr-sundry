@@ -136,6 +136,8 @@ addFilter('gdb.x86_64: W: devel-file-in-non-devel-package /usr/include/gdb/jit-r
 addFilter('gdb.src:[0-9]+: W: hardcoded-library-path')
 # Snapshots dissapear quickly
 addFilter('gdb\.(src|spec): W: invalid-url Source0: ftp://sourceware.org/pub/gdb/snapshots/current/.*')
+addFilter('gdb.src: W: strange-permission gdbtui 775')
+addFilter('gdb.src:[0-9]+: W: unversioned-explicit-obsoletes devtoolset')
 
 ## Python-pip
 addFilter('python(3|2)?-pip.noarch: W: non-executable-script /usr/lib/python.\../site-packages/pip/_vendor/requests/packages/chardet/chardetect.py')
