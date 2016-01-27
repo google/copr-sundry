@@ -152,7 +152,7 @@ addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[
 addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[0-9]\.[0-9]/site-packages/Cython/Debugger/libpython.py')
 
 ## Perl
-addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
+addFilter('perl\.(spec|src): W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
 addFilter('perl\.(src|spec): W: invalid-license')
 
 ## Python-cryptoghraphy
