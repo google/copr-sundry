@@ -20,6 +20,7 @@ Source:     http://www.cython.org/release/Cython-%{upstreamversion}.tar.gz
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  python-devel python-setuptools
+BuildRequires:  dos2unix
 %if 0%{?with_python3}
 BuildRequires:  python3-devel
 %endif # if with_python3
@@ -95,6 +96,8 @@ popd
 
 %{__python} setup.py install -O1 --skip-build --root $RPM_BUILD_ROOT
 rm -rf %{buildroot}%{python_sitelib}/setuptools/tests
+
+dos2unix Demos/callback/cheesefinder.h
 
 
 %clean
