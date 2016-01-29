@@ -5,7 +5,6 @@ Summary:        A fast erasure codec with python bindings
 License:        GPLv2+
 URL:            http://allmydata.org/trac/zfec
 Source0:        http://pypi.python.org/packages/source/z/zfec/zfec-%{version}.tar.gz
-Patch0:         zfec-fix-setup.patch
 
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
@@ -20,9 +19,6 @@ lost then the original data can be recovered from the remaining blocks.
 
 %prep
 %setup -qn zfec-%{version}
-%patch0 -p1
-rm -rf *.egg
-rm -rf *.egg-info
 
 %build
 CFLAGS="%{optflags}" %{__python2} setup.py build
