@@ -8,7 +8,6 @@ Source0:        http://pypi.python.org/packages/source/z/zfec/zfec-%{version}.ta
 
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
-BuildRequires:  python-setuptools_trial
 BuildRequires:  pyutil
 Requires:       pyutil
 
@@ -34,9 +33,6 @@ find %{buildroot} -name *.h -delete
 sed -i '/^#!\/usr\/bin\/env/d' %{buildroot}%{python_sitearch}/zfec/test/test_zfec.py
 sed -i '/^#!\/usr\/bin\/env/d' %{buildroot}%{python_sitearch}/zfec/cmdline_zfec.py
 sed -i '/^#!\/usr\/bin\/env/d' %{buildroot}%{python_sitearch}/zfec/cmdline_zunfec.py
-
-%check
-%{__python2} setup.py trial
 
 %files
 %doc README.rst TODO NEWS.txt COPYING.GPL COPYING.TGPPL.html
