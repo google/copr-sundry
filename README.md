@@ -41,6 +41,7 @@ code that happens to be owned by Google.
  * gperftools 2.4
  * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
  * letsencrypt 0.1.1
+ * lafs-backup-tool 20160129
  * libev 4.20
  * libsolv 0.6.14
  * nginx 1.8.0
