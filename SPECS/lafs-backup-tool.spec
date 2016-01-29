@@ -4,7 +4,7 @@
 
 Name: lafs-backup-tool
 Version: %{release_date}.%{github_short_rev}
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Tool to securely push incremental backups to Tahoe LAFS.
 License: WTFPL
 URL: https://github.com/mk-fg/lafs-backup-tool/
@@ -18,6 +18,8 @@ BuildRequires: libacl-devel
 BuildRequires: libcap-devel
 BuildRequires: python-cffi
 BuildRequires: python-twisted-core
+
+Requires: python-layered-yaml-attrdict-config
 
 Provides: %{name} = %{version}-%{release}
 
@@ -44,5 +46,8 @@ rm -rf %{buildroot}
 /usr/bin/lafs-backup-tool
 
 %changelog
-* Fri Jan 29 2016 Vladimir Rusinov <vrusinov@google.com> - 20160129-33f7384
+* Fri Jan 29 2016 Vladimir Rusinov <vrusinov@google.com> - 20160129-33f7384-2
+- Add missing dependencies.
+
+* Fri Jan 29 2016 Vladimir Rusinov <vrusinov@google.com> - 20160129-33f7384-1
 - Initial package.
