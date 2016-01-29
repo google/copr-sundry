@@ -20,6 +20,7 @@ BuildRequires: python-cffi
 BuildRequires: python-twisted-core
 
 Requires: python-layered-yaml-attrdict-config
+Requires: python-twisted-core
 
 Provides: %{name} = %{version}-%{release}
 
