@@ -1,0 +1,1 @@
+../third_party/submodules/python-zbase32/python-zbase32.spec
