@@ -103,6 +103,7 @@ code that happens to be owned by Google.
  * python-jsonschema & python3-jsonschema 2.4.0
  * python-hypothesis 1.11.2
  * python-keyring & python3-keyring 5.0
+ * python-layered-yaml-attrdict-config 16.1.0
  * python-mock 1.0.1
  * python-ndg\_httpsclient 0.4.0
  * python-parsedatetime 1.5
