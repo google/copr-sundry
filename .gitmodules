@@ -187,3 +187,6 @@
 [submodule "third_party/submodules/python-zbase32"]
 	path = third_party/submodules/python-zbase32
 	url = http://pkgs.fedoraproject.org/git/rpms/python-zbase32.git
+[submodule "third_party/submodules/pyutil"]
+	path = third_party/submodules/pyutil
+	url = http://pkgs.fedoraproject.org/git/rpms/pyutil.git
