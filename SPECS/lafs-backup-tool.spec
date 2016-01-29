@@ -1,4 +1,4 @@
-%define release_date 20160229
+%define release_date 20160129
 %define github_rev 33f73846323ebd9fc626fc9ab0469306f56f5ba3
 %define github_short_rev 33f7384
 
@@ -44,5 +44,5 @@ rm -rf %{buildroot}
 /usr/bin/lafs-backup-tool
 
 %changelog
-* Fri Jan 29 2016 Vladimir Rusinov <vrusinov@google.com> - 20160229-33f7384
+* Fri Jan 29 2016 Vladimir Rusinov <vrusinov@google.com> - 20160129-33f7384
 - Initial package.
