@@ -29,7 +29,7 @@ Tool to securely push incremental (think "rsync --link-dest") backups to Tahoe
 Least Authority File System.
 
 %prep
-%setup -n %{name}-%{github_rev}
+%setup -q -n %{name}-%{github_rev}
 
 %build
 %{__python} setup.py build
