@@ -17,7 +17,7 @@ Provides: %{name} = %{version}-%{release}
 Simple YAML-based configuration module, does what it says in the name.
 
 %prep
-%setup -n layered-yaml-attrdict-config-%{version}
+%setup -q -n layered-yaml-attrdict-config-%{version}
 
 %build
 %{__python} setup.py build
