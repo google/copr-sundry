@@ -5,7 +5,7 @@
 Name: lafs-backup-tool
 Version: %{release_date}.%{github_short_rev}
 Release: 2%{?dist}
-Summary: Tool to securely push incremental backups to Tahoe LAFS.
+Summary: Tool to securely push incremental backups to Tahoe LAFS
 License: WTFPL
 URL: https://github.com/mk-fg/lafs-backup-tool/
 
