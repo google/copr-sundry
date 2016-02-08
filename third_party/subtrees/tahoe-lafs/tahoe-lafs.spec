@@ -7,7 +7,7 @@ Release:	0.4%{dist}
 License:	GPLv2+
 URL:		https://www.tahoe-lafs.org/trac/tahoe-lafs
 Source0:	https://tahoe-lafs.org/source/tahoe-lafs/releases/%{full_release}.zip
-Provides:	tahoe
+Provides:	tahoe = %{version}
 
 BuildArch: noarch
 BuildRequires: git

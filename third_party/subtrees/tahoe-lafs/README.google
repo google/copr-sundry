@@ -8,3 +8,4 @@ RPM spec files for tahoe-lafs  - Least Authority File System.
 
 Local Modifications:
 - Added README.google file.
+- Versioned provides.
