@@ -10,3 +10,5 @@ Local Modifications:
 - Added README.google file.
 - Versioned provides.
 - Updated to 1.10.2.
+- Added dependency on python-foolscap.
+- Added dependency on python-zfec.

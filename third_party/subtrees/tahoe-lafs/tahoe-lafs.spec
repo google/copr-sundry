@@ -16,6 +16,8 @@ BuildRequires: python2-devel
 BuildRequires: libffi
 BuildRequires: python-cffi
 BuildRequires: openssl-devel
+BuildRequires: python-foolscap
+BuildRequires: python-zfec
 
 Requires: pyOpenSSL
 Requires: pycryptopp
@@ -35,6 +37,8 @@ Requires: python-zope-interface
 %setup -q -n %{full_release}
 
 %build
+rm -rf setuptools-*.egg
+mkdir -p setuptools-0.0.0.egg
 %{__python} setup.py build
 
 %install
