@@ -2,8 +2,8 @@
 
 Name:		tahoe-lafs
 Summary:	Least Authority File System
-Version:	1.10.0
-Release:	0.4%{dist}
+Version:	1.10.2
+Release:	1%{dist}
 License:	GPLv2+
 URL:		https://www.tahoe-lafs.org/trac/tahoe-lafs
 Source0:	https://tahoe-lafs.org/source/tahoe-lafs/releases/%{full_release}.zip
