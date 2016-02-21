@@ -9,3 +9,6 @@ RPM spec files for python-newow  - Web application construction kit written in P
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Upgraded to 0.13.0
+- Removed docs
+- Change download url to github.

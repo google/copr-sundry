@@ -2,13 +2,12 @@
 
 Summary: Web application construction kit written in Python
 Name: python-nevow
-Version: 0.10.0
-Release: 11%{?dist}
+Version: 0.13.0
+Release: 1%{?dist}
 License: MIT
 Group: Development/Languages
 URL: http://divmod.org/trac/wiki/DivmodNevow
-# Add ?format=raw to download...
-Source: http://divmod.org/trac/attachment/wiki/SoftwareReleases/Nevow-%{version}.tar.gz
+Source: https://github.com/twisted/nevow/archive/nevow-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires: python-twisted-core
 Requires: python-twisted-web
@@ -26,12 +25,10 @@ express as much of the view logic as desired in Python.
 
 
 %prep
-%setup -q -n Nevow-%{version}
+%setup -q -n nevow-nevow-%{version}
 # Convert all DOS files to UNIX
 find examples \( -name '*.html' -o -name '*.xml' -o -name '*.css' \) \
     -exec dos2unix {} \;
-# Remove +x from executable doc files
-%{__chmod} -x examples/i18n/update-l10n examples/wsgi/test-cgi.py
 
 # build script is broken when setuptools is installed. This problem surfaced
 # only recently because setuptools is now being dragged in by the other
@@ -48,6 +45,15 @@ sed -i 's|import setuptools|import setuptoolsBAD|' setup.py
 # Install man page
 %{__install} -D -p -m 0644 doc/man/nevow-xmlgettext.1 \
     %{buildroot}%{_mandir}/man1/nevow-xmlgettext.1
+# Clean up some stuff instanned to /usr/doc/
+rm %{buildroot}/usr/doc/Makefile
+rm -r %{buildroot}/usr/doc/_static/
+rm -r %{buildroot}/usr/doc/_templates/
+rm %{buildroot}/usr/doc/conf.py
+rm -r %{buildroot}/usr/doc/howto/
+rm -r %{buildroot}/usr/doc/index.rst
+rm -r %{buildroot}/usr/doc/man/
+rm -r %{buildroot}/usr/doc/old/
 
 
 %clean
@@ -56,7 +62,7 @@ sed -i 's|import setuptools|import setuptoolsBAD|' setup.py
 
 %files
 %defattr(-,root,root,-)
-%doc LICENSE README examples/
+%doc LICENSE
 %{_bindir}/nevow-xmlgettext
 %{_bindir}/nit
 %if 0%{?fedora} >= 9
