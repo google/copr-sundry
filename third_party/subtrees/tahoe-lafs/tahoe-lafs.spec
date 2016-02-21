@@ -18,6 +18,7 @@ BuildRequires: python-cffi
 BuildRequires: openssl-devel
 BuildRequires: python-foolscap
 BuildRequires: python-zfec
+BuildRequires: python-nevow >= 0.11.1
 
 Requires: pyOpenSSL
 Requires: pycryptopp

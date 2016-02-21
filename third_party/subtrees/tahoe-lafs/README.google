@@ -12,3 +12,4 @@ Local Modifications:
 - Updated to 1.10.2.
 - Added dependency on python-foolscap.
 - Added dependency on python-zfec.
+- Added dependency on Nevow>=0.11.1.
