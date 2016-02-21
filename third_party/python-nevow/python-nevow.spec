@@ -65,9 +65,7 @@ rm -r %{buildroot}/usr/doc/old/
 %doc LICENSE
 %{_bindir}/nevow-xmlgettext
 %{_bindir}/nit
-%if 0%{?fedora} >= 9
 %{python_sitelib}/Nevow-*.egg-info
-%endif
 %{python_sitelib}/formless/
 %{python_sitelib}/nevow/
 %{python_sitelib}/twisted/plugins/nevow_widget.py*

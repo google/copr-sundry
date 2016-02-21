@@ -12,3 +12,4 @@ Local Modifications:
 - Upgraded to 0.13.0
 - Removed docs
 - Change download url to github.
+- Package egg not only on fedora.
