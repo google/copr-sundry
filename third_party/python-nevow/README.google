@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-nevow.git/
+Version: b9e0d387b1118be3dd2611a3067db8d35dfed5db
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-newow  - Web application construction kit written in Python.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
