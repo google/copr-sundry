@@ -40,10 +40,10 @@ Requires: python-zope-interface
 %build
 rm -rf setuptools-*.egg
 mkdir -p setuptools-0.0.0.egg
-%{__python} setup.py build
 
 %install
-%{__python} setup.py install -O1 --skip-build --root=%{buildroot}
+# build does not accept --single-version-externally-managed, so we actually have to build here.
+%{__python} setup.py install -O1 --single-version-externally-managed --root=%{buildroot}
 rm -rf %{buildroot}/%{python_sitelib}/buildtest
 
 %files
@@ -55,5 +55,9 @@ rm -rf %{buildroot}/%{python_sitelib}/buildtest
 Tahoe-LAFS is a distributed, secure filesystem.
 
 %changelog
+* Sun Feb 21 2016 Vladimir Rusinov <vrusinov@google.com> - 1.10.2-1
+- Version bump
+- Added some new dependencies.
+
 * Tue Oct 14 2014 Ryan Brown <ryansb@redhat.com> - 1.10.0-0.1
 - New package
