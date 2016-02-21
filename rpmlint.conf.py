@@ -173,3 +173,6 @@ addFilter('libsolv.x86_64: W: shared-lib-calls-exit')
 # Python-cffi
 addFilter('python3?-cffi.x86_64: W: devel-file-in-non-devel-package')
 addFilter('python3-cffi.x86_64: W: unstripped-binary-or-object')
+
+# Tahoe
+addFilter('tahoe-lafs.noarch: W: non-executable-script /usr/lib/python2.7/site-packages/allmydata/storage/shares.py')
