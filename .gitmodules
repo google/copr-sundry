@@ -190,3 +190,6 @@
 [submodule "third_party/submodules/pyutil"]
 	path = third_party/submodules/pyutil
 	url = http://pkgs.fedoraproject.org/git/rpms/pyutil.git
+[submodule "third_party/submodules/grub2"]
+	path = third_party/submodules/grub2
+	url = git://pkgs.fedoraproject.org/grub2.git

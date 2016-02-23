@@ -39,6 +39,7 @@ code that happens to be owned by Google.
  * Cython 0.23
  * dnf 1.1.2
  * gperftools 2.4
+ * grub2 2.02
  * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
  * letsencrypt 0.1.1
  * lafs-backup-tool 20160129

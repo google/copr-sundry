@@ -4,7 +4,7 @@ BUILDROOT/*
 RPMS/*
 SRPMS/*
 SOURCES/*.gem
-SOURCES/*.tar.gz
+SOURCES/*.gz
 SOURCES/*.tar.xz
 SOURCES/*.zip
 SOURCES/*.bz2
