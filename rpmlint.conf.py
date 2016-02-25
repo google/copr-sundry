@@ -24,7 +24,7 @@ addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
 addFilter('SPECS/cmake.spec')
 addFilter('SPECS/gdb.spec')
-addFilter('grub2.x86_64')
+addFilter('grub2\.(x86_64|src)')
 addFilter('grub2-(tools|debuginfo|efi)\.x86_64')
 addFilter('SPECS/gperftools.spec')
 addFilter('libev-devel.x86_64')
