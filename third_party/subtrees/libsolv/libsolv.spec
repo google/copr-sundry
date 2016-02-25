@@ -37,7 +37,6 @@ Url:        https://github.com/openSUSE/libsolv
 Source:     https://github.com/openSUSE/libsolv/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0:     0001-ruby-make-compatible-with-ruby-2.2.patch
 
-Patch1:         0001-Move-allowuninstall-map-creation.patch
 Patch3:         0003-Check-keep_orphans-flag-in-solver_addduprules.patch
 Patch5:         0001-Simplify-solver_addduprules-a-bit.patch
 Patch6:         0002-Drop-inline-from-solver_addtodupmaps.patch
