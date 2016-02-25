@@ -97,14 +97,15 @@ diff -up Python-2.7.3/Tools/gdb/libpython.py.fix-fake-repr-in-gdb-hooks Python-2
              pyop_value.write_repr(out, visited)
  
 @@ -1252,8 +1255,11 @@ class Frame(object):
-             if pyop:
-                 sys.stdout.write('#%i %s\n' % (self.get_index(), pyop.get_truncated_repr(MAX_OUTPUT_LEN)))
+                 write_unicode(sys.stdout, '#%i %s\n' % (self.get_index(), line))
                  if not pyop.is_optimized_out():
 -                    line = pyop.current_line()
--                    sys.stdout.write('    %s\n' % line.strip())
+-                    if line is not None:
+-                        sys.stdout.write('    %s\n' % line.strip())
 +                    try:
 +                        line = pyop.current_line()
-+                        sys.stdout.write('    %s\n' % line.strip())
++                        if line is not None:
++                            sys.stdout.write('    %s\n' % line.strip())
 +                    except CantReadFilename:
 +                        sys.stdout.write('    %s\n' % '(unable to read filename)')
              else:
