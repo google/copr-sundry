@@ -24,8 +24,8 @@ index cb49c4a..c9795a5 100644
                  if not gotit:
                      if __debug__:
 @@ -599,7 +602,7 @@ class _Event(_Verbose):
-         finally:
-             self.__cond.release()
+         with self.__cond:
+             self.__flag = False
  
 -    def wait(self, timeout=None):
 +    def wait(self, timeout=None, balancing=True):
@@ -33,14 +33,14 @@ index cb49c4a..c9795a5 100644
  
          If the internal flag is true on entry, return immediately. Otherwise,
 @@ -617,7 +620,7 @@ class _Event(_Verbose):
-         self.__cond.acquire()
-         try:
+         """
+         with self.__cond:
              if not self.__flag:
 -                self.__cond.wait(timeout)
 +                self.__cond.wait(timeout, balancing)
              return self.__flag
-         finally:
-             self.__cond.release()
+
+ # Helper to generate new thread names
 @@ -908,7 +911,7 @@ class Thread(_Verbose):
              if 'dummy_threading' not in _sys.modules:
                  raise
