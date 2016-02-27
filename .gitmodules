@@ -193,3 +193,6 @@
 [submodule "third_party/submodules/grub2"]
 	path = third_party/submodules/grub2
 	url = git://pkgs.fedoraproject.org/grub2.git
+[submodule "third_party/submodules/python-rpm-macros"]
+	path = third_party/submodules/python-rpm-macros
+	url = http://pkgs.fedoraproject.org/git/rpms/python-rpm-macros.git
