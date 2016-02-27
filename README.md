@@ -39,6 +39,7 @@ code that happens to be owned by Google.
  * Cython 0.23
  * dnf 1.1.2
  * gperftools 2.4
+ * grub2 2.02
  * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
  * letsencrypt 0.1.1
  * lafs-backup-tool 20160129
@@ -90,7 +91,7 @@ code that happens to be owned by Google.
  * perl-XML-Parser 2.44
  * puppet 4.2.1
  * pyOpenSSL 0.15.1
- * pyparsing & python3-pyparsing 2.0.3
+ * pyparsing & python3-pyparsing 2.1.0
  * python 2.7.11
  * python3 3.5.0
  * python-acme 0.1.1
@@ -114,6 +115,7 @@ code that happens to be owned by Google.
  * python-pycparser 2.14
  * python-ply 3.6
  * python2-pyrfc3339 1.0
+ * python-rpm-macros
  * python-setuptools & python3-setuptools 18.3.2
  * python-six 1.10.0
  * python-wheel & python3-wheel 0.24.0
