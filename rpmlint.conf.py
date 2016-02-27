@@ -47,6 +47,7 @@ addFilter('perl-Test-Pod\.(src|spec)')
 addFilter('perl-TermReadKey\.(x86_64|src)')
 addFilter('perl-Test-Pod\.(src|spec)')
 addFilter('perl-Text-Template.noarch')
+addFilter('SPECS/puppet.spec')
 addFilter('pyOpenSSL(-doc)?\.(noarch|spec)')
 addFilter('python(2|3)?-acme\.(src|noarch)')
 addFilter('python(2|3)?-hypothesis\.(src|noarch)')
@@ -56,11 +57,14 @@ addFilter('python-ndg_httpsclient\.(src|spec)')
 addFilter('python-parsedatetime.spec')
 addFilter('python-psutil.spec')
 addFilter('python-pyrfc3339.src')
-addFilter('python-zope-event\.(noarch|spec)')
-addFilter('SPECS/puppet.spec')
+addFilter('python(2|3)?-rpm-macros\.noarch')
+addFilter('python-zbase32.noarch')
+addFilter('python3?-zope-event\.(noarch|spec)')
+addFilter('python3-zope-interface.x86_64')
 addFilter('SPECS/python-iniparse.spec')
 addFilter('python-pyrfc3339.src')
 addFilter('python-zope-event.noarch')
+addFilter('pyutil.noarch')
 addFilter('SPECS/os-prober.spec')
 addFilter('SPECS/puppet.spec')
 addFilter('yum\.(spec|src)')
@@ -77,7 +81,9 @@ addFilter('python-libs.x86_64')
 addFilter('python-devel.x86_64')
 addFilter('python-macros.noarch')
 addFilter('python.x86_64')
-addFilter('python3.src:[0-9]+: W: hardcoded-library-path')
+addFilter('python3?.src:[0-9]+: W: hardcoded-library-path')
+addFilter('python.src: W: %ifarch-applied-patch Patch131')
+addFilter('python.src:[0-9]+: W: unversioned-explicit-obsoletes')
 
 # RPM is special, let's ignore warnings from it.
 addFilter('SPECS/rpm.spec')
@@ -145,6 +151,7 @@ addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[
 ## Perl
 addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
 addFilter('perl\.(src|spec): W: invalid-license')
+addFilter('perl.spec:[0-9]+: W: unversioned-explicit-obsoletes')
 
 ## Python-cryptoghraphy
 addFilter('python3?-cryptography-vectors.noarch: W: pem-certificate')
@@ -158,3 +165,7 @@ addFilter('libsolv.x86_64: W: shared-lib-calls-exit')
 
 # Python-cffi
 addFilter('python-cffi.x86_64: W: devel-file-in-non-devel-package')
+addFilter('python3-cffi.x86_64: W: unstripped-binary-or-object')
+
+# pyparsing
+addFilter('pyparsing-doc.noarch: W: file-not-utf8')
