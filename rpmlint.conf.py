@@ -160,3 +160,6 @@ addFilter('libsolv.x86_64: W: shared-lib-calls-exit')
 
 # Python-cffi
 addFilter('python-cffi.x86_64: W: devel-file-in-non-devel-package')
+
+# pyparsing
+addFilter('pyparsing-doc.noarch: W: file-not-utf8')
