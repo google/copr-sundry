@@ -91,7 +91,7 @@ code that happens to be owned by Google.
  * perl-XML-Parser 2.44
  * puppet 4.2.1
  * pyOpenSSL 0.15.1
- * pyparsing & python3-pyparsing 2.0.3
+ * pyparsing & python3-pyparsing 2.1.0
  * python 2.7.10 (with python-macros backported to EL7)
  * python3 3.5.0
  * python-acme 0.1.1
