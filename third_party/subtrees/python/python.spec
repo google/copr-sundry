@@ -107,8 +107,8 @@
 Summary: An interpreted, interactive, object-oriented programming language
 Name: %{python}
 # Remember to also rebase python-docs when changing this:
-Version: 2.7.10
-Release: 10%{?dist}
+Version: 2.7.11
+Release: 4%{?dist}
 License: Python
 Group: Development/Languages
 Requires: %{python}-libs%{?_isa} = %{version}-%{release}
@@ -201,15 +201,7 @@ Source4: systemtap-example.stp
 # Written by dmalcolm; not yet sent upstream
 Source5: pyfuntop.stp
 
-# Supply various useful macros for building python 2 modules:
-#  __python2, python2_sitelib, python2_sitearch, python2_version
-Source6: macros.python2
-
 Source7: pynche
-
-# Supply version independent macros such as python_provide, py_build and
-# py_install
-Source8: macros.python
 
 # Modules/Setup.dist is ultimately used by the "makesetup" script to construct
 # the Makefile and config.c
@@ -914,10 +906,10 @@ Patch193: 00193-enable-loading-sqlite-extensions.patch
 Patch198: 00198-add-rewheel-module.patch
 %endif
 
-# OpenSSL disabled SSLv3 in SSLv23 method
-# This patch alters python tests to reflect this change
-# Issue: http://bugs.python.org/issue22638 Upstream discussion about SSLv3 in Python
-Patch199: 00199-alter-tests-to-reflect-sslv3-disabled.patch
+# test_gdb.test_threads fails when run within rpmbuild
+# I couldnt reproduce the issue outside of rpmbuild, therefore
+# I skip test for now
+Patch200: 00200-skip-thread-test.patch
 
 # (New patches go here ^^^)
 #
@@ -1018,7 +1010,8 @@ a scripting language, and by the main "python" executable
 Summary: The libraries and header files needed for Python development
 Group: Development/Libraries
 Requires: %{python}%{?_isa} = %{version}-%{release}
-Requires: python-macros = %{version}-%{release}
+Requires: python-rpm-macros
+Requires: python2-rpm-macros
 Requires: pkgconfig
 # Needed here because of the migration of Makefile from -devel to the main
 # package
@@ -1039,18 +1032,6 @@ Install python-devel if you want to develop Python extensions.  The
 python package will also need to be installed.  You'll probably also
 want to install the python-docs package, which contains Python
 documentation.
-
-%package -n python-macros
-Summary: The unversioned Python RPM macros
-Group: Development/Libraries
-BuildArch: noarch
-
-%description -n python-macros
-This package contains the unversioned Python RPM macros, that most
-implementations should rely on.
-
-You should not need to install this package manually as the various
-python?-devel packages require it. So install a python-devel package instead.
 
 %package tools
 Summary: A collection of development tools included with Python
@@ -1291,8 +1272,8 @@ mv Modules/cryptmodule.c Modules/_cryptmodule.c
 # 00197: upstream as of Python 2.7.9
 %if 0%{with_rewheel}
 %patch198 -p1
-%patch199 -p1
 %endif
+%patch200 -p1
 
 
 # This shouldn't be necesarry, but is right now (2.2a3)
@@ -1650,11 +1631,6 @@ sed -i -e "s/'pyconfig.h'/'%{_pyconfig_h}'/" \
   %{buildroot}%{pylibdir}/distutils/sysconfig.py \
   %{buildroot}%{pylibdir}/sysconfig.py
 
-# Install macros for rpm:
-mkdir -p %{buildroot}/%{_rpmconfigdir}/macros.d/
-install -m 644 %{SOURCE6} %{buildroot}/%{_rpmconfigdir}/macros.d/
-install -m 644 %{SOURCE8} %{buildroot}/%{_rpmconfigdir}/macros.d/
-
 # Ensure that the curses module was linked against libncursesw.so, rather than
 # libncurses.so (bug 539917)
 ldd %{buildroot}/%{dynload_dir}/_curses*.so \
@@ -1966,11 +1942,6 @@ rm -fr %{buildroot}
 %endif
 %{_bindir}/python%{pybasever}-config
 %{_libdir}/libpython%{pybasever}.so
-%{_rpmconfigdir}/macros.d/macros.python2
-
-%files -n python-macros
-%defattr(-,root,root,-)
-%{_rpmconfigdir}/macros.d/macros.python
 
 %files tools
 %defattr(-,root,root,755)
@@ -2153,6 +2124,21 @@ rm -fr %{buildroot}
 # ======================================================
 
 %changelog
+* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 2.7.11-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
+* Wed Jan 13 2016 Orion Poplawski <orion@cora.nwra.com> - 2.7.11-3
+- Drop macros, require python/python2-rpm-macros
+
+* Wed Dec 30 2015 Orion Poplawski <orion@cora.nwra.com> - 2.7.11-2
+- Get ready for separate python-macros package
+
+* Tue Dec 15 2015 Robert Kuska <rkuska@redhat.com> - 2.7.11-1
+- Update to 2.7.11
+
+* Thu Oct 15 2015 Thomas Spura <tomspur@fedoraproject.org> - 2.7.10-11
+- provide/obsolete _isa packages in python_provide (#1271776)
+
 * Wed Sep 23 2015 Robert Kuska <rkuska@redhat.com> - 2.7.10-10
 - Revert the moving modules to python-tools because distutils uses lib2to3
 
