@@ -1,0 +1,1 @@
+../third_party/submodules/python-foolscap/python-foolscap.spec

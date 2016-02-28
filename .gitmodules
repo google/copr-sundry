@@ -196,3 +196,6 @@
 [submodule "third_party/submodules/python-rpm-macros"]
 	path = third_party/submodules/python-rpm-macros
 	url = http://pkgs.fedoraproject.org/git/rpms/python-rpm-macros.git
+[submodule "third_party/submodules/python-foolscap"]
+	path = third_party/submodules/python-foolscap
+	url = http://pkgs.fedoraproject.org/git/rpms/python-foolscap.git
