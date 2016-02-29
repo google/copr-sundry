@@ -13,4 +13,5 @@ Local Modifications:
 - Added dependency on python-foolscap.
 - Added dependency on python-zfec.
 - Added dependency on Nevow>=0.11.1.
+- Added dependency on python-twisted >= 13.0.0.
 - Use --single-version-externally-managed to install.

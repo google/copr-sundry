@@ -19,6 +19,7 @@ BuildRequires: openssl-devel
 BuildRequires: python-foolscap
 BuildRequires: python-zfec
 BuildRequires: python-nevow >= 0.11.1
+BuildRequires: python-twisted >= 13.0.0
 
 Requires: pyOpenSSL
 Requires: pycryptopp
@@ -30,7 +31,7 @@ Requires: python-pyasn1
 Requires: python-service-identity
 Requires: python-setuptools
 Requires: python-simplejson
-Requires: python-twisted
+Requires: python-twisted >= 13.0.0
 Requires: python-zfec
 Requires: python-zope-interface
 
