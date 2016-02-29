@@ -65,7 +65,7 @@ install -p -m 0644 ./etc/linux-systemd/system/syncthing@.service %{buildroot}%{_
 
 
 %changelog
-* Sun Jan 09 2016 Vladimir Rusinov <vrusinov@google.com> 0.12.11-1
+* Sat Jan 09 2016 Vladimir Rusinov <vrusinov@google.com> 0.12.11-1
 - Version update to v0.12.11.
 
 * Mon Sep 21 2015 Vladimir Rusinov <vrusinov@google.com> 0.9.17-2.1

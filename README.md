@@ -117,6 +117,7 @@ code that happens to be owned by Google.
  * python-ply 3.6
  * python2-pyrfc3339 1.0
  * python-rpm-macros
+ * python-service-identity 14.0.0
  * python-setuptools & python3-setuptools 18.3.2
  * python-six 1.10.0
  * python-wheel & python3-wheel 0.24.0
