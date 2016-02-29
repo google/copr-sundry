@@ -18,3 +18,4 @@ Local Modifications:
 - Removed 0001-Move-allowuninstall-map-creation.patch.
 - Removed 0002-Prefer-to-autouninstall-orphans.patch.
 - Removed 0004-Fix-spelling-duh.patch.
+- Do not use python_provides macro.
