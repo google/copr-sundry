@@ -160,6 +160,8 @@ addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[
 addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
 addFilter('perl\.(src|spec): W: invalid-license')
 addFilter('perl.spec:[0-9]+: W: unversioned-explicit-obsoletes')
+addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides')
+addFilter('perl-threads.x86_64: W: unstripped-binary-or-object')
 
 ## Python-cryptoghraphy
 addFilter('python3?-cryptography-vectors.noarch: W: pem-certificate')
