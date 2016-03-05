@@ -122,6 +122,7 @@ code that happens to be owned by Google.
  * python-service-identity 14.0.0
  * python-setuptools & python3-setuptools 18.3.2
  * python-six 1.10.0
+ * python-twisted 15.4.0
  * python-wheel & python3-wheel 0.24.0
  * python-zbase32 1.1.5
  * python-zope-event 4.1.0
