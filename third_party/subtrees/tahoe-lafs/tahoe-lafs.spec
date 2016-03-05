@@ -20,9 +20,10 @@ BuildRequires: python-foolscap
 BuildRequires: python-zfec
 BuildRequires: python-nevow >= 0.11.1
 BuildRequires: python-twisted >= 13.0.0
+BuildRequires: pycryptopp >= 0.6.0
 
 Requires: pyOpenSSL
-Requires: pycryptopp
+Requires: pycryptopp >= 0.6.0
 Requires: python-crypto
 Requires: python-foolscap
 Requires: python-mock
