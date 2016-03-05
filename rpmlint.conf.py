@@ -126,7 +126,7 @@ addFilter('libcomps.spec: W: invalid-url Source0: https://github.com/midnighterc
 
 ## GDB
 # Following should be ok for debugger.
-addFilter('gdb.spec:[0-9]+: W: unversioned-explicit-obsoletes devtoolset')
+addFilter('gdb\.(spec|src):[0-9]+: W: unversioned-explicit-obsoletes devtoolset')
 addFilter('gdb.x86_64: W: unstripped-binary-or-object /usr/bin/gdb')
 addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/lib64/libinproctrace.so')
 addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/bin/gdbserver')
