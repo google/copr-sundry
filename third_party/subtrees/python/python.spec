@@ -217,36 +217,36 @@ Source7: pynche
 #   we built them as shared libraries
 #   - build the "readline" module (appears to also be handled by setup.py now)
 #   - enable the build of the following modules:
-#     - array arraymodule.c	# array objects
+#     - array arraymodule.c # array objects
 #     - cmath cmathmodule.c # -lm # complex math library functions
 #     - math mathmodule.c # -lm # math library functions, e.g. sin()
-#     - _struct _struct.c	# binary structure packing/unpacking
+#     - _struct _struct.c  # binary structure packing/unpacking
 #     - time timemodule.c # -lm # time operations and variables
-#     - operator operator.c	# operator.add() and similar goodies
-#     - _weakref _weakref.c	# basic weak reference support
+#     - operator operator.c # operator.add() and similar goodies
+#     - _weakref _weakref.c # basic weak reference support
 #     - _testcapi _testcapimodule.c    # Python C API test module
-#     - _random _randommodule.c	# Random number generator
+#     - _random _randommodule.c # Random number generator
 #     - _collections _collectionsmodule.c # Container types
 #     - itertools itertoolsmodule.c
 #     - strop stropmodule.c
 #     - _functools _functoolsmodule.c
-#     - _bisect _bisectmodule.c	# Bisection algorithms
+#     - _bisect _bisectmodule.c # Bisection algorithms
 #     - unicodedata unicodedata.c    # static Unicode character database
 #     - _locale _localemodule.c
-#     - fcntl fcntlmodule.c	# fcntl(2) and ioctl(2)
-#     - spwd spwdmodule.c		# spwd(3)
-#     - grp grpmodule.c		# grp(3)
-#     - select selectmodule.c	# select(2); not on ancient System V
+#     - fcntl fcntlmodule.c # fcntl(2) and ioctl(2)
+#     - spwd spwdmodule.c   # spwd(3)
+#     - grp grpmodule.c     # grp(3)
+#     - select selectmodule.c # select(2); not on ancient System V
 #     - mmap mmapmodule.c  # Memory-mapped files
 #     - _csv _csv.c  # CSV file helper
 #     - _socket socketmodule.c  # Socket module helper for socket(2)
 #     - _ssl _ssl.c
-#     - crypt cryptmodule.c -lcrypt	# crypt(3)
-#     - nis nismodule.c -lnsl	# Sun yellow pages -- not everywhere
-#     - termios termios.c	# Steen Lumholt's termios module
-#     - resource resource.c	# Jeremy Hylton's rlimit interface
-#     - audioop audioop.c	# Operations on audio samples
-#     - imageop imageop.c	# Operations on images
+#     - crypt cryptmodule.c -lcrypt # crypt(3)
+#     - nis nismodule.c -lnsl # Sun yellow pages -- not everywhere
+#     - termios termios.c   # Steen Lumholt's termios module
+#     - resource resource.c # Jeremy Hylton's rlimit interface
+#     - audioop audioop.c   # Operations on audio samples
+#     - imageop imageop.c   # Operations on images
 #     - _md5 md5module.c md5.c
 #     - _sha shamodule.c
 #     - _sha256 sha256module.c
