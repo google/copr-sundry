@@ -108,6 +108,7 @@ code that happens to be owned by Google.
  * python-keyring & python3-keyring 5.0
  * python-layered-yaml-attrdict-config 16.1.0
  * python-mock 1.0.1
+ * python-nevow 0.13.0
  * python-ndg\_httpsclient 0.4.0
  * python-parsedatetime 1.5
  * python-psutil 3.2.1
