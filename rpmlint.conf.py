@@ -49,6 +49,7 @@ addFilter('perl-Test-Pod\.(src|spec)')
 addFilter('perl-TermReadKey\.(x86_64|src)')
 addFilter('perl-Test-Pod\.(src|spec)')
 addFilter('perl-Text-Template.noarch')
+addFilter('perl-Time-HiRes.x86_64')
 addFilter('SPECS/puppet.spec')
 addFilter('pyOpenSSL(-doc)?\.(noarch|spec)')
 addFilter('python(2|3)?-acme\.(src|noarch)')
@@ -59,14 +60,16 @@ addFilter('python-ndg_httpsclient\.(src|spec)')
 addFilter('python-parsedatetime.spec')
 addFilter('python-psutil.spec')
 addFilter('python-pyrfc3339.src')
-addFilter('python(2|3)?-rpm-macros\.noarch')
+addFilter('python-twisted.x86_64')
+addFilter('python(2|3)?-rpm-macros\.(noarch|src)')
+addFilter('python-srpm-macros.noarch')
 addFilter('python-zbase32.noarch')
 addFilter('python3?-zope-event\.(noarch|spec)')
-addFilter('python3-zope-interface.x86_64')
+addFilter('python3?-zope-interface\.(x86_64|src|spec)')
 addFilter('SPECS/python-iniparse.spec')
 addFilter('python-pyrfc3339.src')
 addFilter('python-zope-event.noarch')
-addFilter('pyutil.noarch')
+addFilter('pyutil\.(noarch|src|spec)')
 addFilter('SPECS/os-prober.spec')
 addFilter('SPECS/puppet.spec')
 addFilter('yum\.(spec|src)')
@@ -86,6 +89,8 @@ addFilter('python.x86_64')
 addFilter('python3?.src:[0-9]+: W: hardcoded-library-path')
 addFilter('python.src: W: %ifarch-applied-patch Patch131')
 addFilter('python.src:[0-9]+: W: unversioned-explicit-obsoletes')
+addFilter('python.src:[0-9]+: W: unversioned-explicit-provides')
+addFilter('python.src: W: strange-permission pythondeps.sh')
 
 # RPM is special, let's ignore warnings from it.
 addFilter('SPECS/rpm.spec')
@@ -124,7 +129,7 @@ addFilter('libcomps.spec: W: invalid-url Source0: https://github.com/midnighterc
 
 ## GDB
 # Following should be ok for debugger.
-addFilter('gdb.spec:[0-9]+: W: unversioned-explicit-obsoletes devtoolset')
+addFilter('gdb\.(spec|src):[0-9]+: W: unversioned-explicit-obsoletes devtoolset')
 addFilter('gdb.x86_64: W: unstripped-binary-or-object /usr/bin/gdb')
 addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/lib64/libinproctrace.so')
 addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/bin/gdbserver')
@@ -135,6 +140,7 @@ addFilter('gdb.spec:[0-9]+: W: hardcoded-library-path')
 addFilter('gdb.x86_64: W: dangerous-command-in-%pre mv')
 addFilter('gdb.x86_64: W: devel-file-in-non-devel-package /usr/include/gdb/jit-reader.h')
 addFilter('gdb.src:[0-9]+: W: hardcoded-library-path')
+addFilter('gdb.src: W: strange-permission gdbtui')
 # Snapshots dissapear quickly
 addFilter('gdb\.(src|spec): W: invalid-url Source0: ftp://sourceware.org/pub/gdb/snapshots/current/.*')
 
@@ -154,6 +160,8 @@ addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[
 addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
 addFilter('perl\.(src|spec): W: invalid-license')
 addFilter('perl.spec:[0-9]+: W: unversioned-explicit-obsoletes')
+addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides')
+addFilter('perl-threads.x86_64: W: unstripped-binary-or-object')
 
 ## Python-cryptoghraphy
 addFilter('python3?-cryptography-vectors.noarch: W: pem-certificate')
@@ -166,7 +174,7 @@ addFilter('python3?-ply.noarch: W: python-bytecode-without-source.*cpython.*')
 addFilter('libsolv.x86_64: W: shared-lib-calls-exit')
 
 # Python-cffi
-addFilter('python-cffi.x86_64: W: devel-file-in-non-devel-package')
+addFilter('python3?-cffi.x86_64: W: devel-file-in-non-devel-package')
 addFilter('python3-cffi.x86_64: W: unstripped-binary-or-object')
 
 # pyparsing
