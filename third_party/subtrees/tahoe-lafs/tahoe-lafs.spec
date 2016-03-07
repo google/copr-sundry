@@ -21,6 +21,7 @@ BuildRequires: python-zfec
 BuildRequires: python-nevow >= 0.11.1
 BuildRequires: python-twisted >= 13.0.0
 BuildRequires: pycryptopp >= 0.6.0
+BuildRequires: pyOpenSSL
 
 Requires: pyOpenSSL
 Requires: pycryptopp >= 0.6.0
