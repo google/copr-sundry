@@ -13,5 +13,5 @@ Local Modifications:
 - Removed bundled syncthing@.service since the one from tarball is now used.
 - Updated version to 0.12.11.
 - Reformatted description to fit under 80 characters width.
-- Removed RPMS.
-- Removed older SRPMS.
+- Removed pre-built RPMs.
+- Removed pre-built SRPMs.

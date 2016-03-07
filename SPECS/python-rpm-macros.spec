@@ -1,0 +1,1 @@
+../third_party/submodules/python-rpm-macros/python-rpm-macros.spec

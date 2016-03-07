@@ -15,4 +15,7 @@ Local Modifications:
 - Always build python2 and python3 versions.
 - Build with rhel version with ARCHREPO.
 - Do not include docs in devel package.
+- Removed 0001-Move-allowuninstall-map-creation.patch.
+- Removed 0002-Prefer-to-autouninstall-orphans.patch.
 - Removed 0004-Fix-spelling-duh.patch.
+- Do not use python_provides macro.

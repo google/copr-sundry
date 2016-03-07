@@ -40,6 +40,7 @@ code that happens to be owned by Google.
  * Cython 0.23
  * dnf 1.1.2
  * gperftools 2.4
+ * grub2 2.02
  * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
  * letsencrypt 0.1.1
  * lafs-backup-tool 20160129
@@ -90,16 +91,19 @@ code that happens to be owned by Google.
  * perl-Tk 804.033
  * perl-XML-Parser 2.44
  * puppet 4.2.1
+ * pycryptopp 0.6.0
  * pyOpenSSL 0.15.1
- * pyparsing & python3-pyparsing 2.0.3
- * python 2.7.10 (with python-macros backported to EL7)
+ * pyparsing & python3-pyparsing 2.1.0
+ * python 2.7.11
  * python3 3.5.0
  * python-acme 0.1.1
  * python-cffi 1.4.2
+ * python-characteristic 14.3.0
  * python-configargparse 0.9.3
  * python-cryptography 1.1
  * python-cryptography-vectors 1.1
  * python-dialog 3.3.0
+ * python-foolscap 0.10.1
  * python-idna 2.0
  * python-iso8601 0.1.10
  * python-jsonschema & python3-jsonschema 2.4.0
@@ -107,6 +111,7 @@ code that happens to be owned by Google.
  * python-keyring & python3-keyring 5.0
  * python-layered-yaml-attrdict-config 16.1.0
  * python-mock 1.0.1
+ * python-nevow 0.13.0
  * python-ndg\_httpsclient 0.4.0
  * python-parsedatetime 1.5
  * python-psutil 3.2.1
@@ -115,8 +120,11 @@ code that happens to be owned by Google.
  * python-pycparser 2.14
  * python-ply 3.6
  * python2-pyrfc3339 1.0
+ * python-rpm-macros
+ * python-service-identity 14.0.0
  * python-setuptools & python3-setuptools 18.3.2
  * python-six 1.10.0
+ * python-twisted 15.4.0
  * python-wheel & python3-wheel 0.24.0
  * python-zbase32 1.1.5
  * python-zfec 1.4.24
