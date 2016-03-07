@@ -90,6 +90,7 @@ code that happens to be owned by Google.
  * perl-Tk 804.033
  * perl-XML-Parser 2.44
  * puppet 4.2.1
+ * pycryptopp 0.6.0
  * pyOpenSSL 0.15.1
  * pyparsing & python3-pyparsing 2.1.0
  * python 2.7.11

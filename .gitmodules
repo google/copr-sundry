@@ -208,3 +208,6 @@
 [submodule "third_party/submodules/python-twisted"]
 	path = third_party/submodules/python-twisted
 	url = http://pkgs.fedoraproject.org/git/rpms/python-twisted.git
+[submodule "third_party/submodules/pycryptopp"]
+	path = third_party/submodules/pycryptopp
+	url = http://pkgs.fedoraproject.org/git/rpms/pycryptopp.git
