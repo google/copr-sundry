@@ -19,6 +19,9 @@ addFilter('unversioned-explicit-provides bundled\([a-z\-]+\)')
 # Don't care about groups.
 addFilter('non-standard-group')
 
+# Some packages may want to have empty files.
+addFilter('zero-length')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
@@ -30,6 +33,7 @@ addFilter('SPECS/gperftools.spec')
 addFilter('libev-devel.x86_64')
 addFilter('SPECS/libcomps.spec')
 addFilter('nginx\.(spec|x86_64|src)')
+addFilter('SPECS/os-prober.spec')
 addFilter('perl-common-sense.x86_64')
 addFilter('perl-Compress-Raw-Bzip2.x86_64')
 addFilter('perl-Data-OptList.src')
@@ -49,6 +53,7 @@ addFilter('perl-Test-Pod\.(src|spec)')
 addFilter('perl-TermReadKey\.(x86_64|src)')
 addFilter('perl-Test-Pod\.(src|spec)')
 addFilter('perl-Text-Template.noarch')
+addFilter('perl-threads.x86_64')
 addFilter('perl-Time-HiRes.x86_64')
 addFilter('SPECS/puppet.spec')
 addFilter('pycryptopp.x86_64')
@@ -56,23 +61,19 @@ addFilter('pyOpenSSL(-doc)?\.(noarch|spec)')
 addFilter('python(2|3)?-acme\.(src|noarch)')
 addFilter('python(2|3)?-hypothesis\.(src|noarch)')
 addFilter('python(2|3)-dialog.noarch')
+addFilter('SPECS/python-iniparse.spec')
 addFilter('python-mock.spec')
 addFilter('python-ndg_httpsclient\.(src|spec)')
 addFilter('python-parsedatetime.spec')
-addFilter('python-psutil.spec')
+addFilter('python-psutil\.(spec|x86_64)')
 addFilter('python-pyrfc3339.src')
-addFilter('python-twisted.x86_64')
 addFilter('python(2|3)?-rpm-macros\.(noarch|src)')
 addFilter('python-srpm-macros.noarch')
-addFilter('python-zbase32.noarch')
-addFilter('python3?-zope-event\.(noarch|spec)')
-addFilter('python3?-zope-interface\.(x86_64|src|spec)')
-addFilter('SPECS/python-iniparse.spec')
-addFilter('python-pyrfc3339.src')
-addFilter('python-zope-event.noarch')
+addFilter('python-twisted.x86_64')
+addFilter('python-zbase32\.(spec|noarch)')
+addFilter('python3?-zope-event\.(noarch|spec|src)')
+addFilter('python3?-zope-interface\.(src|spec|x86_64)')
 addFilter('pyutil\.(noarch|src|spec)')
-addFilter('SPECS/os-prober.spec')
-addFilter('SPECS/puppet.spec')
 addFilter('yum\.(spec|src)')
 
 # Python is mostly third-party and has lots of warnings.
@@ -113,6 +114,10 @@ addFilter('perl-Tk.x86_64: W: devel-file-in-non-devel-package')
 addFilter('perl-ExtUtils-Miniperl.noarch: W: devel-dependency')
 # Perl-Tk has weird deps
 addFilter('perl-Tk.spec:63: W: comparison-operator-in-deptoken')
+# Not sure what version that would be.
+addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides perl\(IO::Uncompress::Bunzip2\)')
+addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides %perl_compat')
+addFilter('perl\.(src|spec):[0-9]+: W: unversioned-explicit-obsoletes')
 
 ## Let's encrypt:
 # Allow pems in test files.
@@ -144,6 +149,8 @@ addFilter('gdb.src:[0-9]+: W: hardcoded-library-path')
 addFilter('gdb.src: W: strange-permission gdbtui')
 # Snapshots dissapear quickly
 addFilter('gdb\.(src|spec): W: invalid-url Source0: ftp://sourceware.org/pub/gdb/snapshots/current/.*')
+addFilter('gdb.src: W: strange-permission gdbtui 775')
+addFilter('gdb.src:[0-9]+: W: unversioned-explicit-obsoletes devtoolset')
 
 ## Python-pip
 addFilter('python(3|2)?-pip.noarch: W: non-executable-script /usr/lib/python.\../site-packages/pip/_vendor/requests/packages/chardet/chardetect.py')
@@ -158,7 +165,7 @@ addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[
 addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[0-9]\.[0-9]/site-packages/Cython/Debugger/libpython.py')
 
 ## Perl
-addFilter('perl.spec: W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
+addFilter('perl\.(spec|src): W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
 addFilter('perl\.(src|spec): W: invalid-license')
 addFilter('perl.spec:[0-9]+: W: unversioned-explicit-obsoletes')
 addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides')
@@ -177,6 +184,9 @@ addFilter('libsolv.x86_64: W: shared-lib-calls-exit')
 # Python-cffi
 addFilter('python3?-cffi.x86_64: W: devel-file-in-non-devel-package')
 addFilter('python3-cffi.x86_64: W: unstripped-binary-or-object')
+
+# Tahoe
+addFilter('tahoe-lafs.noarch: W: non-executable-script /usr/lib/python2.7/site-packages/allmydata/storage/shares.py')
 
 # pyparsing
 addFilter('pyparsing-doc.noarch: W: file-not-utf8')

@@ -1,0 +1,19 @@
+URL: https://github.com/ryansb/tahoe-lafs-fedora-rpmspec
+Version: 105fbb1c7bdf094e1f0e3e5036a49b460bff1695
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for tahoe-lafs  - Least Authority File System.
+
+Local Modifications:
+- Added README.google file.
+- Versioned provides.
+- Updated to 1.10.2.
+- Added dependency on python-foolscap.
+- Added dependency on python-zfec.
+- Added dependency on Nevow>=0.11.1.
+- Added dependency on python-twisted >= 13.0.0.
+- Added build dependency on pycryptopp >= 0.6.0.
+- Added build dependency on pyOpenSSL.
+- Use --single-version-externally-managed to install.
