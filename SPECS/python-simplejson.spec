@@ -1,0 +1,1 @@
+../third_party/submodules/python-simplejson/python-simplejson.spec
