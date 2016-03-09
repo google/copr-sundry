@@ -123,6 +123,7 @@ code that happens to be owned by Google.
  * python-rpm-macros
  * python-service-identity 14.0.0
  * python-setuptools & python3-setuptools 18.3.2
+ * python-simplejson 3.5.3
  * python-six 1.10.0
  * python-twisted 15.4.0
  * python-wheel & python3-wheel 0.24.0
