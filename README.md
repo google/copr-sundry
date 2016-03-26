@@ -37,6 +37,7 @@ code that happens to be owned by Google.
 ### Full list
 
  * cmake 3.3.2
+ * cryptopp 5.6.3
  * Cython 0.23
  * dnf 1.1.2
  * gperftools 2.4
