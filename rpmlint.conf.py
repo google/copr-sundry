@@ -26,6 +26,7 @@ addFilter('zero-length')
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
 addFilter('SPECS/cmake.spec')
+addFilter('cryptopp(-(progs|devel))?.x86_64')
 addFilter('SPECS/gdb.spec')
 addFilter('grub2\.(x86_64|src|spec)')
 addFilter('grub2-(tools|debuginfo|efi|efi-modules)\.x86_64')
