@@ -10,3 +10,5 @@ Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
 - Build python3 version unconditionally.
+- Bumped version to 16.0.0.
+- Removed -doc package, skipped building docs.

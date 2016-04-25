@@ -2,8 +2,8 @@
 
 Summary: Python wrapper module around the OpenSSL library
 Name: pyOpenSSL
-Version: 0.15.1
-Release: 2%{?dist}
+Version: 16.0.0
+Release: 1%{?dist}
 Source0: http://pypi.python.org/packages/source/p/pyOpenSSL/pyOpenSSL-%{version}.tar.gz
 
 BuildArch: noarch
@@ -12,15 +12,12 @@ Group: Development/Libraries
 Url: http://pyopenssl.sourceforge.net/
 
 BuildRequires: python-setuptools
-BuildRequires: python-sphinx
 
 BuildRequires: python2-devel
 BuildRequires: python-cryptography
 Requires: python-cryptography
-%if 0%{?with_python3}
 BuildRequires: python3-devel
 BuildRequires: python3-cryptography
-%endif
 
 %description
 High-level wrapper around a subset of the OpenSSL library, includes among others
@@ -42,13 +39,6 @@ High-level wrapper around a subset of the OpenSSL library, includes among others
  * Extensive error-handling mechanism, mirroring OpenSSL's error codes
 %endif
 
-%package doc
-Summary: Documentation for pyOpenSSL
-BuildArch: noarch
-
-%description doc
-Documentation for pyOpenSSL
-
 %prep
 %setup -q -n pyOpenSSL-%{version}
 
@@ -69,8 +59,6 @@ CFLAGS="%{optflags} -fno-strict-aliasing" %{__python3} setup.py build
 popd
 %endif
 
-%{__make} -C doc html
-
 %install
 %{__python} setup.py install --skip-build --root %{buildroot}
 
@@ -89,9 +77,6 @@ popd
 %{python3_sitelib}/OpenSSL/
 %{python3_sitelib}/pyOpenSSL-*.egg-info
 %endif
-
-%files doc
-%doc examples doc/_build/html
 
 %changelog
 * Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.15.1-2
