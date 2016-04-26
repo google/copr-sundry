@@ -1,0 +1,1 @@
+../third_party/submodules/python-ipaddress/python-ipaddress.spec
