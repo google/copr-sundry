@@ -93,7 +93,7 @@ code that happens to be owned by Google.
  * perl-XML-Parser 2.44
  * puppet 4.2.1
  * pycryptopp 0.6.0
- * pyOpenSSL 0.15.1
+ * pyOpenSSL 16.0.0
  * pyparsing & python3-pyparsing 2.1.0
  * python 2.7.11
  * python3 3.5.0
