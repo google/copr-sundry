@@ -1,15 +1,13 @@
 %global with_python3 1
 
-%if 0%{?rhel} && 0%{?rhel} <= 6
 %{!?__python2:        %global __python2 /usr/bin/python2}
 %{!?python2_sitelib:  %global python2_sitelib %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
-%endif
 
 %global modname cryptography-vectors
 %global pymodname cryptography_vectors
 
 Name:               python-%{modname}
-Version:            1.1
+Version:            1.3.1
 Release:            1%{?dist}
 Summary:            Test vectors for the cryptography package
 
@@ -83,6 +81,9 @@ CFLAGS="$RPM_OPT_FLAGS" %{__python3} setup.py build
 
 
 %changelog
+* Tue May 03 2016 Vladimir Rusinov <vrusinov@google.com> - 1.3.1-1
+- Update to v1.3.1
+
 * Wed Nov 11 2015 Robert Kuska <rkuska@redhat.com> - 1.1-1
 - Update to v1.1
 
