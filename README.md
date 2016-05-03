@@ -102,7 +102,7 @@ code that happens to be owned by Google.
  * python-characteristic 14.3.0
  * python-configargparse 0.9.3
  * python-cryptography 1.1
- * python-cryptography-vectors 1.1
+ * python-cryptography-vectors 1.3.1
  * python-dialog 3.3.0
  * python-foolscap 0.10.1
  * python-idna 2.0
