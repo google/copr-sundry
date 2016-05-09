@@ -5,7 +5,7 @@
 %global reqs() %1-idna >= 2.0 %1-pyasn1 %1-six >= 1.4.1 %1-cffi >= 0.8
 %global breqs() %1-setuptools %1-pretend %1-iso8601 %1-cryptography-vectors = %{version} %1-pyasn1-modules %1-hypothesis
 Name:           python-cryptography
-Version:        1.1
+Version:        1.3.1
 Release:        1%{?dist}
 Summary:        PyCA's cryptography library
 
@@ -22,12 +22,10 @@ BuildRequires:  pytest %breqs python
 BuildRequires:  python-enum34 python-ipaddress %reqs python
 Requires:       python-enum34 python-ipaddress %reqs python
 
-%if 0%{?with_python3}
 BuildRequires:  python3-devel
 BuildRequires:  python3-pytest %breqs python3
 BuildRequires:  %breqs python3
 BuildRequires:  %reqs python3
-%endif
 
 
 %description
@@ -103,6 +101,9 @@ popd
 
 
 %changelog
+* Sun May 08 2016 Vladimir Rusinov <vrusinov@google.com> - 1.3.1-1
+- Update to v1.3.1
+
 * Wed Nov 11 2015 Robert Kuska <rkuska@redhat.com> - 1.1-1
 - Update to v1.1
 
