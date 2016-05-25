@@ -163,9 +163,6 @@
 [submodule "third_party/submodules/python-ndg_httpsclient"]
 	path = third_party/submodules/python-ndg_httpsclient
 	url = git://pkgs.fedoraproject.org/python-ndg_httpsclient.git
-[submodule "third_party/submodules/python-psutil"]
-	path = third_party/submodules/python-psutil
-	url = git://pkgs.fedoraproject.org/python-psutil.git
 [submodule "third_party/submodules/python-mock"]
 	path = third_party/submodules/python-mock
 	url = git://pkgs.fedoraproject.org/python-mock.git
