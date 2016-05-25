@@ -1,1 +1,1 @@
-../third_party/submodules/python-psutil/python-psutil.spec
+../third_party/subtrees/python-psutil/python-psutil.spec
