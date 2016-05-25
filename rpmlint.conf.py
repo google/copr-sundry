@@ -19,6 +19,10 @@ addFilter('unversioned-explicit-provides bundled\([a-z\-]+\)')
 # Don't care about groups.
 addFilter('non-standard-group')
 
+# Not sure what to do with those.
+# TODO: enforce
+addFilter('crypto-policy-non-compliance-openssl')
+
 # Some packages may want to have empty files.
 addFilter('zero-length')
 
