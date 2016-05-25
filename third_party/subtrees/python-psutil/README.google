@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-psutil.git/
+Version: b5b6253f2a48da1d734badde44e357415d165872
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-psutil - A process and system utilities module for
+Python.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
