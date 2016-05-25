@@ -1,0 +1,21 @@
+diff -up psutil-3.2.1/psutil/_psutil_linux.c.than psutil-3.2.1/psutil/_psutil_linux.c
+--- psutil-3.2.1/psutil/_psutil_linux.c.than	2016-03-11 06:35:23.200161395 -0500
++++ psutil-3.2.1/psutil/_psutil_linux.c	2016-03-11 06:37:55.010161395 -0500
+@@ -272,7 +272,7 @@ psutil_proc_cpu_affinity_get(PyObject *s
+     cpu_set_t *mask = NULL;
+     PyObject *py_list = NULL;
+ 
+-    if (!PyArg_ParseTuple(args, "i", &pid))
++    if (!PyArg_ParseTuple(args, "l", &pid))
+         return NULL;
+     ncpus = NCPUS_START;
+     while (1) {
+@@ -339,7 +339,7 @@ psutil_proc_cpu_affinity_get(PyObject *s
+     PyObject* py_retlist = NULL;
+     PyObject *py_cpu_num = NULL;
+ 
+-    if (!PyArg_ParseTuple(args, "i", &pid))
++    if (!PyArg_ParseTuple(args, "l", &pid))
+         return NULL;
+ 	CPU_ZERO(&cpuset);
+     if (sched_getaffinity(pid, len, &cpuset) < 0)
