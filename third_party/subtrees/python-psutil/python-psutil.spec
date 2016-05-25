@@ -5,14 +5,13 @@
 %global __provides_exclude_from ^(%{python2_sitearch}|%{python3_sitearch})/.*\\.so$
 
 Name:           python-%{srcname}
-Version:        3.2.1
-Release:        6%{?dist}
+Version:        4.2.0
+Release:        1%{?dist}
 Summary:        %{sum}
 
 License:        BSD
 URL:            https://github.com/giampaolo/psutil
 Source0:        https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
-Patch0:         python-psutil-endian.patch
 
 BuildRequires:  python2-devel
 BuildRequires:  python%{python3_pkgversion}-devel
@@ -57,11 +56,11 @@ ifconfig, nice, ionice, iostat, iotop, uptime, pidof, tty, who, taskset, pmap.
 %autosetup -p1 -n %{srcname}-%{version}
 
 # Remove shebangs
-for file in psutil/*.py; do
-  sed -i.orig -e 1d $file && \
-  touch -r $file.orig $file && \
-  rm $file.orig
-done
+#for file in psutil/*.py; do
+#  sed -i.orig -e 1d $file && \
+#  touch -r $file.orig $file && \
+#  rm $file.orig
+#done
 
 
 %build
@@ -82,19 +81,22 @@ make test-memleaks PYTHON=%{__python3}
  
 %files -n python2-%{srcname}
 %license LICENSE
-%doc CREDITS HISTORY.rst README.rst TODO
+%doc CREDITS HISTORY.rst README.rst
 %{python2_sitearch}/%{srcname}/
 %{python2_sitearch}/*.egg-info
 
 
 %files -n python%{python3_pkgversion}-%{srcname}
 %license LICENSE
-%doc CREDITS HISTORY.rst README.rst TODO
+%doc CREDITS HISTORY.rst README.rst
 %{python3_sitearch}/%{srcname}/
 %{python3_sitearch}/*.egg-info
 
 
 %changelog
+* Wed May 25 2016 Vladimir Rusinov <vrusinov@google.com> - 4.2.0-1
+- Update to 4.2.0.
+
 * Mon May 16 2016 Orion Poplawski <orion@cora.nwra.com> - 3.2.1-6
 - Use modern provides filter
 - Update URL
