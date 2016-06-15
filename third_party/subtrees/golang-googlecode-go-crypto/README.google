@@ -10,3 +10,4 @@ libraries.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Build devel packages everywhere.
