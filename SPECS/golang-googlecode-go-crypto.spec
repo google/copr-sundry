@@ -1,0 +1,1 @@
+../third_party/submodules/golang-googlecode-go-crypto/golang-googlecode-go-crypto.spec
