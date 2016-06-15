@@ -3,7 +3,7 @@
 %{!?go_arches: %define go_arches %{ix86} x86_64 %{arm}}
 
 Name: syncthing
-Version: 0.12.11
+Version: 0.13.7
 Release: 1%{?dist}
 Summary: Syncronisation service
 License:MIT
@@ -15,6 +15,9 @@ BuildRequires:  golang >= 1.2-7
 Requires(post): systemd
 Requires(preun): systemd
 Requires(postun): systemd
+
+BuildRequires: golang(golang.org/x/crypto/bcrypt)
+BuildRequires: golang(github.com/vitrun/qart/qr)
 
 %description
 Syncthing replaces Dropbox and BitTorrent Sync with something open,
@@ -65,6 +68,9 @@ install -p -m 0644 ./etc/linux-systemd/system/syncthing@.service %{buildroot}%{_
 
 
 %changelog
+* Wed Jun 15 2016 Vladimir Rusinov <vrusinov@google.com> 0.13.7-1
+- Version update to v0.13.7.
+
 * Sat Jan 09 2016 Vladimir Rusinov <vrusinov@google.com> 0.12.11-1
 - Version update to v0.12.11.
 
