@@ -244,7 +244,7 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %gotest %{import_path}/scrypt
 %gotest %{import_path}/sha3
 # undefined: elliptic.P224
-#%gotest %%{import_path}/ssh
+#%%gotest %%{import_path}/ssh
 %gotest %{import_path}/ssh/agent
 %gotest %{import_path}/ssh/terminal
 %gotest %{import_path}/ssh/test
