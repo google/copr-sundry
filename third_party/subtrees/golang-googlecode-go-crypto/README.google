@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-googlecode-go-crypto.git/
+Version: dbbe28c2e3dc7e08a25bc6b3000583475f3e5c76
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-googlecode-go-crypto - Supplementary Go cryptography
+libraries.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build devel packages everywhere.

@@ -35,7 +35,6 @@ Release:    6%{?dist}
 License:    BSD
 Url:        https://github.com/openSUSE/libsolv
 Source:     https://github.com/openSUSE/libsolv/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch3:         0003-Check-keep_orphans-flag-in-solver_addduprules.patch
 Patch6:         0002-Drop-inline-from-solver_addtodupmaps.patch
 Patch7:         0003-Rename-hasdupjobs-to-needduprules.patch
 Patch8:         0004-Fix-typo-in-comment.patch
