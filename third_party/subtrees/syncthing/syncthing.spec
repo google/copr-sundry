@@ -21,6 +21,7 @@ BuildRequires: golang(github.com/vitrun/qart/qr)
 BuildRequires: golang(github.com/jackpal/gateway)
 BuildRequires: golang(github.com/AudriusButkevicius/go-nat-pmp)
 
+
 %description
 Syncthing replaces Dropbox and BitTorrent Sync with something open,
 trustworthy and decentralized. Your data is your data alone and you deserve to
