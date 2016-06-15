@@ -40,6 +40,7 @@ code that happens to be owned by Google.
  * cryptopp 5.6.3
  * Cython 0.23
  * dnf 1.1.2
+ * golang-googlecode-go-crypto / golang-golangorg-crypto 0-0.10.gitc10c31b
  * gperftools 2.4
  * grub2 2.02
  * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
