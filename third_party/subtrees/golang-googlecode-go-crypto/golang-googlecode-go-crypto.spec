@@ -300,7 +300,7 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 * Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.4.gitc57d4a7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
-* Mon Jun 15 2015 jchaloup <jchaloup@redhat.com> - 0-0.3.git%{shortcommit}
+* Mon Jun 15 2015 jchaloup <jchaloup@redhat.com> - 0-0.3.git%%{shortcommit}
 - Repository has moved to github.com/golang/crypto, updating spec file accordingly
   resolves: #1231618
 
