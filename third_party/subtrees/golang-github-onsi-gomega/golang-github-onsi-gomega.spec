@@ -129,7 +129,6 @@ for file in $(find . -iname "*.go" \! -iname "*_test.go") ; do
     echo "%%{gopath}/src/%%{import_path}/$file" >> devel.file-list
 done
 %endif
-# cp -pav {format,gbytes,gexec,ghttp,internal,matchers,types} %{buildroot}/%{gopath}/src/%{import_path}/
 
 # testing files for this project
 %if 0%{?with_unit_test}
