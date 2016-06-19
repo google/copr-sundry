@@ -1,0 +1,79 @@
+From a0fde42296592b3bee4503370464b5789cf83440 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Lucas=20K=C3=A4ldstr=C3=B6m?=
+ <lucas.kaldstrom@hotmail.co.uk>
+Date: Thu, 28 Jan 2016 07:48:12 +0200
+Subject: [PATCH 1/4] Add linux_arm64 support
+
+---
+ internal/remote/output_interceptor_unix.go |  9 ++++++---
+ internal/remote/syscall_dup_linux_arm64.go | 11 +++++++++++
+ internal/remote/syscall_dup_unix.go        | 10 ++++++++++
+ 3 files changed, 27 insertions(+), 3 deletions(-)
+ create mode 100644 internal/remote/syscall_dup_linux_arm64.go
+ create mode 100644 internal/remote/syscall_dup_unix.go
+
+diff --git a/internal/remote/output_interceptor_unix.go b/internal/remote/output_interceptor_unix.go
+index 181b227..1235ad0 100644
+--- a/internal/remote/output_interceptor_unix.go
++++ b/internal/remote/output_interceptor_unix.go
+@@ -6,7 +6,6 @@ import (
+ 	"errors"
+ 	"io/ioutil"
+ 	"os"
+-	"syscall"
+ )
+ 
+ func NewOutputInterceptor() OutputInterceptor {
+@@ -31,8 +30,12 @@ func (interceptor *outputInterceptor) StartInterceptingOutput() error {
+ 		return err
+ 	}
+ 
+-	syscall.Dup2(int(interceptor.redirectFile.Fd()), 1)
+-	syscall.Dup2(int(interceptor.redirectFile.Fd()), 2)
++	// Call a function in ./syscall_dup_*.go
++	// If building for everything other than linux_arm64,
++	// use a "normal" syscall.Dup2(oldfd, newfd) call. If building for linux_arm64 (which doesn't have syscall.Dup2)
++	// call syscall.Dup3(oldfd, newfd, 0). They are nearly identical, see: http://linux.die.net/man/2/dup3
++	syscallDup(int(interceptor.redirectFile.Fd()), 1)
++	syscallDup(int(interceptor.redirectFile.Fd()), 2)
+ 
+ 	return nil
+ }
+diff --git a/internal/remote/syscall_dup_linux_arm64.go b/internal/remote/syscall_dup_linux_arm64.go
+new file mode 100644
+index 0000000..5c59728
+--- /dev/null
++++ b/internal/remote/syscall_dup_linux_arm64.go
+@@ -0,0 +1,11 @@
++// +build linux,arm64
++
++package remote
++
++import "syscall"
++
++// linux_arm64 doesn't have syscall.Dup2 which ginkgo uses, so
++// use the nearly identical syscall.Dup3 instead
++func syscallDup(oldfd int, newfd int) (err error) {
++	return syscall.Dup3(oldfd, newfd, 0)
++}
+\ No newline at end of file
+diff --git a/internal/remote/syscall_dup_unix.go b/internal/remote/syscall_dup_unix.go
+new file mode 100644
+index 0000000..b0111d1
+--- /dev/null
++++ b/internal/remote/syscall_dup_unix.go
+@@ -0,0 +1,10 @@
++// +build !linux !arm64
++// +build !windows
++
++package remote
++
++import "syscall"
++
++func syscallDup(oldfd int, newfd int) (err error) {
++	return syscall.Dup2(oldfd, newfd)
++}
+\ No newline at end of file
+-- 
+2.5.0
+
