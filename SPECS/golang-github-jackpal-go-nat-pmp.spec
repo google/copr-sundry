@@ -8,7 +8,7 @@
 
 %global debug_package   %{nil}
 
-Name:           golang-githib-jackpal-%{repo}
+Name:           golang-github-jackpal-%{repo}
 Version:        1.0.1
 Release:        1%{?dist}
 Summary:        A Go language client for the NAT-PMP internet protocol for port mapping and discovering the external IP address of a firewall.

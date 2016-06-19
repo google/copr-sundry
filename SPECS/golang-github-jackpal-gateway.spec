@@ -7,7 +7,7 @@
 
 %global debug_package   %{nil}
 
-Name:           golang-githib-jackpal-gateway
+Name:           golang-github-jackpal-gateway
 Version:        1.0.4
 Release:        2%{?dist}
 Summary:        A simple library for discovering the IP address of the default gateway.

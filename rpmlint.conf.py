@@ -23,6 +23,9 @@ addFilter('non-standard-group')
 # TODO: enforce
 addFilter('crypto-policy-non-compliance-openssl')
 
+# Allow devel dependencies in golang test packages,
+addFilter('golang-.*-test.x86_64: W: devel-dependency')
+
 # Some packages may want to have empty files.
 addFilter('zero-length')
 
