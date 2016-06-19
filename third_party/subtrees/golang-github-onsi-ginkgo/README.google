@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-github-onsi-ginkgo.git/
+Version: e3fd01f50a630880528f6766d70af07073e79033
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-github-onsi-ginkgo - A Golang BDD Testing Framework.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
