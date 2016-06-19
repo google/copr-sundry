@@ -174,15 +174,15 @@ echo "%%dir %%{gopath}/src/%%{import_path}/." >> devel.file-list
 install -d -p %{buildroot}/%{gopath}/src/%{gc_import_path}/
 echo "%%dir %%{gopath}/src/%%{gc_import_path}/." >> gc_devel.file-list
 for ext in go s; do
-	# find all *.go but no *_test.go files and generate devel.file-list
-	for file in $(find . -iname "*.$ext" \! -iname "*_test.go") ; do
-	    install -d -p %{buildroot}/%{gopath}/src/%{import_path}/$(dirname $file)
-	    cp -pav $file %{buildroot}/%{gopath}/src/%{import_path}/$file
-	    echo "%%{gopath}/src/%%{import_path}/$file" >> devel.file-list
-	    install -d -p %{buildroot}/%{gopath}/src/%{gc_import_path}/$(dirname $file)
-	    cp -pav $file %{buildroot}/%{gopath}/src/%{gc_import_path}/$file
-	    echo "%%{gopath}/src/%%{gc_import_path}/$file" >> gc_devel.file-list
-	done
+    # find all *.go but no *_test.go files and generate devel.file-list
+    for file in $(find . -iname "*.$ext" \! -iname "*_test.go") ; do
+        install -d -p %{buildroot}/%{gopath}/src/%{import_path}/$(dirname $file)
+        cp -pav $file %{buildroot}/%{gopath}/src/%{import_path}/$file
+        echo "%%{gopath}/src/%%{import_path}/$file" >> devel.file-list
+        install -d -p %{buildroot}/%{gopath}/src/%{gc_import_path}/$(dirname $file)
+        cp -pav $file %{buildroot}/%{gopath}/src/%{gc_import_path}/$file
+        echo "%%{gopath}/src/%%{gc_import_path}/$file" >> gc_devel.file-list
+    done
 done
 pushd %{buildroot}/%{gopath}/src/%{gc_import_path}
 sed -i 's/"golang\.org\/x\/crypto/"code\.google\.com\/p\/go\.crypto/g' \
