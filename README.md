@@ -42,6 +42,7 @@ code that happens to be owned by Google.
  * dnf 1.1.2
  * golang-googlecode-go-crypto / golang-golangorg-crypto 0-0.10.gitc10c31b
  * golang-github-jackpal-gateway 1.0.4
+ * golang-githib-jackpal-go-nat-pmp 1.0.1
  * golang-githib-vitrun-qart 0.1
  * gperftools 2.4
  * grub2 2.02
