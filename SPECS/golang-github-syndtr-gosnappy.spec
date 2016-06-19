@@ -1,0 +1,1 @@
+../third_party/subtrees/golang-github-syndtr-gosnappy/golang-github-syndtr-gosnappy.spec
