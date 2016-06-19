@@ -24,7 +24,7 @@ Version:        0
 Release:        1.fit%{shortcommit}%{?dist}
 Summary:        Extensions to the standard Go OS package
 License:        zlib
-URL:            https://%{provider_prefix}
+URL:            http://%{provider_prefix}
 Source0:        http://%{provider_prefix}/archive/%{commit}.zip
 
 # e.g. el6 has ppc64 arch without gcc-go, so EA tag is required
