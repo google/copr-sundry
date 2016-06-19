@@ -1,0 +1,1 @@
+../third_party/subtrees/golang-github-syndtr-goleveldb/golang-github-syndtr-goleveldb.spec
