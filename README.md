@@ -44,6 +44,7 @@ code that happens to be owned by Google.
  * golang-github-jackpal-gateway 1.0.4
  * golang-githib-jackpal-go-nat-pmp 1.0.1
  * golang-github-onsi-ginkgo 1.1.0
+ * golang-github-onsi-gomega git8adf9e1
  * golang-githib-vitrun-qart 0.1
  * gperftools 2.4
  * grub2 2.02
