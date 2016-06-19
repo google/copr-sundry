@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-bitbucket-kardianos-osext.git/
+Version: aaab57037558f99ba879a4a79cb562de8c1a17c2
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-bitbucket-kardianos-osext - Extensions to the "os"
+package.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
