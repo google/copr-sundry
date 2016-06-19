@@ -228,7 +228,7 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %gotest %{import_path}/nacl/box
 %gotest %{import_path}/nacl/secretbox
 # undefined: elliptic.P224
-#%gotest %%{import_path}/ocsp
+#%%gotest %%{import_path}/ocsp
 %gotest %{import_path}/openpgp
 %gotest %{import_path}/openpgp/armor
 %gotest %{import_path}/openpgp/clearsign
