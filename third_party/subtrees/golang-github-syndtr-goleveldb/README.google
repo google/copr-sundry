@@ -10,3 +10,4 @@ in Go.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Build -devel rpm everywhere.
