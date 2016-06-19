@@ -1,7 +1,7 @@
 %global with_devel 1
 %global with_bundled 0
 %global with_debug 0
-%global with_check 1
+%global with_check 0
 %global with_unit_test 1
 
 %if 0%{?with_debug}
@@ -10,24 +10,22 @@
 %global debug_package   %{nil}
 %endif
 
-%global provider        bitbucket
+%global provider        github
 %global provider_tld    org
 %global project         kardianos
 %global repo            osext
-# https://bitbucket.org/kardianos/osext
-%global provider_prefix bitbucket.org/kardianos/osext
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
 %global import_path     %{provider_prefix}
-%global commit          364fb577de68fb646c4cb39cc0e09c887ee16376
-%global shortcommit     %(c=%{commit}; echo ${c:0:12})
+%global commit          29ae4ffbc9a6fe9fb2bc5029050ce6996ea1d3bc
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           golang-%{provider}-%{project}-%{repo}
 Version:        0
-Release:        0.11.hg%{shortcommit}%{?dist}
+Release:        1.fit%{shortcommit}%{?dist}
 Summary:        Extensions to the standard Go OS package
 License:        zlib
 URL:            https://%{provider_prefix}
-Source0:        https://%{provider_prefix}/get/default.tar.bz2
+Source0:        http://%{provider_prefix}/archive/%{commit}.zip
 
 # e.g. el6 has ppc64 arch without gcc-go, so EA tag is required
 ExclusiveArch:  %{?go_arches:%{go_arches}}%{!?go_arches:%{ix86} x86_64 %{arm}}
@@ -82,7 +80,7 @@ providing packages with %{import_path} prefix.
 %endif
 
 %prep
-%setup -q -n %{project}-%{repo}-%{shortcommit}
+%setup -q -n %{repo}-%{commit}
 
 %build
 
@@ -146,6 +144,9 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %endif
 
 %changelog
+* Sun Jun 19 2016 Vladimir Rusinov <vrusinov@google.com> - 0-1.git29ae4ff
+- switch to github
+
 * Mon Feb 22 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.11.hg364fb577de68
 - https://fedoraproject.org/wiki/Changes/golang1.6
 
