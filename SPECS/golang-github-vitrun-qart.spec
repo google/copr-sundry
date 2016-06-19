@@ -7,7 +7,7 @@
 
 %global debug_package   %{nil}
 
-Name:           golang-githib-vitrun-qart
+Name:           golang-github-vitrun-qart
 Version:        0.1
 Release:        1%{?dist}
 Summary:        Qart generates not-so-ugly qr codes.
@@ -49,7 +49,7 @@ for ext in go s; do
     done
 done
 
-%files -n golang-githib-vitrun-qart-devel
+%files -n golang-github-vitrun-qart-devel
 %license LICENSE
 %doc README.md
 %dir %{gopath}/src/%{import_path}
