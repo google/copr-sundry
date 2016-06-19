@@ -11,7 +11,7 @@
 %endif
 
 %global provider        github
-%global provider_tld    org
+%global provider_tld    com
 %global project         kardianos
 %global repo            osext
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
