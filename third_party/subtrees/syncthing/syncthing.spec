@@ -19,6 +19,7 @@ Requires(postun): systemd
 BuildRequires: golang(golang.org/x/crypto/bcrypt)
 BuildRequires: golang(github.com/vitrun/qart/qr)
 BuildRequires: golang(github.com/jackpal/gateway)
+BuildRequires: golang(github.com/AudriusButkevicius/go-nat-pmp)
 
 %description
 Syncthing replaces Dropbox and BitTorrent Sync with something open,
