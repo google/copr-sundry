@@ -9,7 +9,7 @@
 
 Name:           golang-githib-jackpal-gateway
 Version:        1.0.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A simple library for discovering the IP address of the default gateway.
 License:        ASL 2.0
 URL:            https://%{provider_prefix}
@@ -24,7 +24,7 @@ BuildRequires:  golang
 Summary:       %{summary}
 BuildArch:     noarch
 
-Provides:      golang(%{import_path}gateway) = %{version}-%{release}
+Provides:      golang(%{import_path}) = %{version}-%{release}
 
 %description devel
 %{summary}
@@ -58,5 +58,8 @@ done
 /usr/share/gocode/src/github.com/jackpal/gateway/gateway_windows.go
 
 %changelog
+* Sun Jun 19 2016 Vladimir Rusinov <vrusinov@google.com> 1.0.4-2
+- Fixed provides.
+
 * Thu Jun 16 2016 Vladimir Rusinov <vrusinov@google.com> 1.0.4-1
 - First version.
