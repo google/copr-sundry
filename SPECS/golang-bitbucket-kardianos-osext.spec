@@ -1,0 +1,1 @@
+../third_party/subtrees/golang-bitbucket-kardianos-osext/golang-bitbucket-kardianos-osext.spec
