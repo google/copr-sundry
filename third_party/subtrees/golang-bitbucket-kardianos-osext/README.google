@@ -10,3 +10,4 @@ package.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Build -devel package on EL.
