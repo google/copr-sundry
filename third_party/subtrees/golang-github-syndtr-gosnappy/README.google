@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-github-syndtr-gosnappy.git/
+Version: 5b2893a4e7069de1aeeca6ec65e7a4f66ea9a675
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-github-syndtr-gosnappy - Implementation of the
+Snappy compression format for Go.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build -devel package everywhere.
