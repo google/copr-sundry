@@ -35,8 +35,6 @@ Release:    6%{?dist}
 License:    BSD
 Url:        https://github.com/openSUSE/libsolv
 Source:     https://github.com/openSUSE/libsolv/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch7:         0003-Rename-hasdupjobs-to-needduprules.patch
-Patch8:         0004-Fix-typo-in-comment.patch
 Patch10:        0006-Make-keep_orphans-also-keep-multiversion-orphans-ins.patch
 
 BuildRequires:  git-core
