@@ -38,11 +38,11 @@ Provides:      golang(%{import_path}) = %{version}-%{release}
 # source codes for building projects
 install -d -p %{buildroot}/%{gopath}/src/%{import_path}/
 for ext in go s; do
-	# find all *.go but no *_test.go files.
-	for file in $(find . -iname "*.$ext" \! -iname "*_test.go") ; do
-	    install -d -p %{buildroot}/%{gopath}/src/%{import_path}/$(dirname $file)
-	    cp -pav $file %{buildroot}/%{gopath}/src/%{import_path}/$file
-	done
+    # find all *.go but no *_test.go files.
+    for file in $(find . -iname "*.$ext" \! -iname "*_test.go") ; do
+        install -d -p %{buildroot}/%{gopath}/src/%{import_path}/$(dirname $file)
+        cp -pav $file %{buildroot}/%{gopath}/src/%{import_path}/$file
+    done
 done
 
 %files -n %{name}-devel
