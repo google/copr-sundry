@@ -23,6 +23,7 @@ BuildRequires: golang(github.com/AudriusButkevicius/go-nat-pmp)
 BuildRequires: golang(github.com/kardianos/osext)
 BuildRequires: golang(github.com/syndtr/goleveldb/leveldb/util)
 BuildRequires: golang(github.com/rcrowley/go-metrics)
+BuildRequires: golang(github.com/gobwas/glob)
 
 %description
 Syncthing replaces Dropbox and BitTorrent Sync with something open,
