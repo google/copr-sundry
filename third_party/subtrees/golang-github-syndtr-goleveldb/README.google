@@ -1,0 +1,14 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-github-syndtr-goleveldb.git/
+Version: 14c42b0932bfcf5d97590bebaf2d9a76d9c3cd02
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-github-syndtr-goleveldb - LevelDB key/value database
+in Go.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build -devel rpm everywhere.
+- Disabled cache test.

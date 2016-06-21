@@ -11,7 +11,7 @@
 Name:           golang-github-jackpal-%{repo}
 Version:        1.0.1
 Release:        1%{?dist}
-Summary:        A Go language client for the NAT-PMP internet protocol for port mapping and discovering the external IP address of a firewall.
+Summary:        A Go language client for the NAT-PMP internet protocol.
 License:        ASL 2.0
 URL:            https://%{provider_prefix}
 Source0:        https://%{provider_prefix}/archive/v%{version}.tar.gz
@@ -40,11 +40,11 @@ Provides:      golang(%{import_path_AudriusButkevicius}) = %{version}-%{release}
 # source codes for building projects
 install -d -p %{buildroot}/%{gopath}/src/%{import_path}/
 for ext in go s; do
-	# find all *.go but no *_test.go files.
-	for file in $(find . -iname "*.$ext" \! -iname "*_test.go") ; do
-	    install -d -p %{buildroot}/%{gopath}/src/%{import_path}/$(dirname $file)
-	    cp -pav $file %{buildroot}/%{gopath}/src/%{import_path}/$file
-	done
+    # find all *.go but no *_test.go files.
+    for file in $(find . -iname "*.$ext" \! -iname "*_test.go") ; do
+        install -d -p %{buildroot}/%{gopath}/src/%{import_path}/$(dirname $file)
+        cp -pav $file %{buildroot}/%{gopath}/src/%{import_path}/$file
+    done
 done
 mkdir -p %{buildroot}/%{gopath}/src/github.com/AudriusButkevicius
 ln -s /%{gopath}/src/%{import_path} %{buildroot}/%{gopath}/src/%{import_path_AudriusButkevicius}
