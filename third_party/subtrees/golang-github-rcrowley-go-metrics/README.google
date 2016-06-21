@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-github-rcrowley-go-metrics.git/
+Version: 
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-github-rcrowley-go-metrics - Go port of
+Coda Hales Metrics library.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build -devel package everywhere.

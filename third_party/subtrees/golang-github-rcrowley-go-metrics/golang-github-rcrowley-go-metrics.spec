@@ -1,7 +1,8 @@
 %global with_devel 1
 %global with_bundled 0
 %global with_debug 0
-%global with_check 1
+# Test failed in koji: meter_test.go:35: m.RateMean() didn't decrease
+%global with_check 0
 %global with_unit_test 1
 
 %if 0%{?with_debug}
@@ -19,18 +20,18 @@
 
 %global provider        github
 %global provider_tld    com
-%global project         syndtr
-%global repo            goleveldb
-# https://github.com/syndtr/goleveldb
+%global project         rcrowley
+%global repo            go-metrics
+# https://github.com/rcrowley/go-metrics
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
 %global import_path     %{provider_prefix}
-%global commit          012f65f74744ed62a80abac6e9a8c86e71c2b6fa
+%global commit          dee209f2455f101a5e4e593dea94872d2c62d85d
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           golang-%{provider}-%{project}-%{repo}
 Version:        0
-Release:        0.6.git%{shortcommit}%{?dist}
-Summary:        LevelDB key/value database in Go
+Release:        0.7.git%{shortcommit}%{?dist}
+Summary:        Go port of Coda Hales Metrics library
 License:        BSD
 URL:            https://%{provider_prefix}
 Source0:        https://%{provider_prefix}/archive/%{commit}/%{repo}-%{shortcommit}.tar.gz
@@ -49,7 +50,7 @@ BuildRequires:   golang
 %endif
 
 %description
-%{summary}
+Go port of Coda Hales Metrics library
 
 %if 0%{?with_devel}
 %package devel
@@ -57,30 +58,17 @@ Summary:       %{summary}
 BuildArch:     noarch
 
 %if 0%{?with_check}
-BuildRequires: golang(github.com/onsi/ginkgo)
-BuildRequires: golang(github.com/onsi/ginkgo/config)
-BuildRequires: golang(github.com/onsi/gomega)
-BuildRequires: golang(github.com/syndtr/gosnappy/snappy)
+BuildRequires: golang(github.com/influxdb/influxdb/client)
+BuildRequires: golang(github.com/stathat/go)
 %endif
 
-Requires:      golang(github.com/onsi/ginkgo)
-Requires:      golang(github.com/onsi/ginkgo/config)
-Requires:      golang(github.com/onsi/gomega)
-Requires:      golang(github.com/syndtr/gosnappy/snappy)
+Requires:      golang(github.com/influxdb/influxdb/client)
+Requires:      golang(github.com/stathat/go)
 
-Provides:      golang(%{import_path}/leveldb) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/cache) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/comparer) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/errors) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/filter) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/iterator) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/journal) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/memdb) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/opt) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/storage) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/table) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/testutil) = %{version}-%{release}
-Provides:      golang(%{import_path}/leveldb/util) = %{version}-%{release}
+Provides:      golang(%{import_path}) = %{version}-%{release}
+Provides:      golang(%{import_path}/influxdb) = %{version}-%{release}
+Provides:      golang(%{import_path}/librato) = %{version}-%{release}
+Provides:      golang(%{import_path}/stathat) = %{version}-%{release}
 
 %description devel
 %{summary}
@@ -125,6 +113,7 @@ providing packages with %{import_path} prefix.
 %setup -q -n %{repo}-%{commit}
 
 %build
+# the ./cmd pieces are presently examples
 
 %install
 # source codes for building projects
@@ -162,23 +151,13 @@ function gotest { go test "$@"; }
 %endif
 
 export GOPATH=%{buildroot}/%{gopath}:%{gopath}
-# Failed in Koji - timeout
-#gotest %%{import_path}/leveldb
-# timeout here as well.
-#gotest %%{import_path}/leveldb/cache
-gotest %{import_path}/leveldb/filter
-gotest %{import_path}/leveldb/iterator
-gotest %{import_path}/leveldb/journal
-gotest %{import_path}/leveldb/memdb
-gotest %{import_path}/leveldb/storage
-gotest %{import_path}/leveldb/table
-gotest %{import_path}/leveldb/util
+gotest %{import_path}
 %endif
 
 %if 0%{?with_devel}
 %files devel -f devel.file-list
 %copying LICENSE
-%doc README.md
+%doc memory.md README.md
 %dir %{gopath}/src/%{provider}.%{provider_tld}/%{project}
 %dir %{gopath}/src/%{import_path}
 %endif
@@ -186,28 +165,37 @@ gotest %{import_path}/leveldb/util
 %if 0%{?with_unit_test}
 %files unit-test -f unit-test.file-list
 %copying LICENSE
-%doc README.md
+%doc memory.md README.md
 %endif
 
 %changelog
-* Mon Feb 22 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.6.git012f65f
+* Mon Feb 22 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.7.gitdee209f
 - https://fedoraproject.org/wiki/Changes/golang1.6
 
-* Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0-0.5.git012f65f
+* Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0-0.6.gitdee209f
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
-* Mon Aug 10 2015 Fridolin Pokorny <fpokorny@redhat.com> - 0-0.1.git012f65f
-- Update spec file to spec-2.0
-- Disable leveldb test
-  related: #1220163
+* Mon Aug 17 2015 jchaloup <jchaloup@redhat.com> - 0-0.5.gitdee209f
+- Remove superfluous Provides
+  related: #1250501
 
-* Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.3.git012f65f
+* Mon Aug 10 2015 Fridolin Pokorny <fpokorny@redhat.com> - 0-0.4.gitdee209f
+- Update spec file to spec-2.0
+- Disabled check due to test failure
+  resolves: #1250501
+
+* Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.3.gitdee209f
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
-* Sun May 10 2015 jchaloup <jchaloup@redhat.com> - 0-0.2.git012f65f
-- Bump to upstream 012f65f74744ed62a80abac6e9a8c86e71c2b6fa
-  resolves: #1220163
+* Mon Jan 12 2015 jchaloup <jchaloup@redhat.com> - 0-0.2.gitdee209f
+- Bump to dee209f2455f101a5e4e593dea94872d2c62d85d
+  adding missing provides
+  related: #1120867
 
-* Sat Feb 07 2015 jchaloup <jchaloup@redhat.com> - 0-0.1.gite9e2c8f
-- First package for Fedora
-  resolves: #1190418
+* Fri Sep 19 2014 Lokesh Mandvekar <lsm5@fedoraproject.org> - 0-0.1.git3be59ce
+- BuildArch: noarch for main package
+- defattr and attrs aren't needed in files listing
+- replacing repo and project values with macros
+
+* Thu Jul 17 2014 Colin Walters <walters@verbum.org> 0-0.0.git3be59ce
+- Initial package
