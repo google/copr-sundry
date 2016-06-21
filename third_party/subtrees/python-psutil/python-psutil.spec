@@ -84,6 +84,7 @@ make test-memleaks PYTHON=%{__python3}
 %doc CREDITS HISTORY.rst README.rst
 %{python2_sitearch}/%{srcname}/
 %{python2_sitearch}/*.egg-info
+%exclude /usr/lib64/python2.7/site-packages/psutil/tests/test_process.py
 
 
 %files -n python%{python3_pkgversion}-%{srcname}
