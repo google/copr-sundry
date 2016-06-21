@@ -1,0 +1,1 @@
+../third_party/subtrees/golang-github-onsi-ginkgo/golang-github-onsi-ginkgo.spec
