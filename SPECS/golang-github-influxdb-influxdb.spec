@@ -1,0 +1,1 @@
+../third_party/subtrees/golang-github-influxdb-influxdb/golang-github-influxdb-influxdb.spec

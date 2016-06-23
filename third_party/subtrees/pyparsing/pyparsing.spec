@@ -40,7 +40,6 @@ definitions for any number of text parsing applications.
 
 %package -n python3-pyparsing
 Summary:        %{sum}
-%{?python_provide:%python_provide python3-%{srcname}}
 
 %description -n python3-pyparsing
 pyparsing is a module that can be used to easily and directly configure syntax
