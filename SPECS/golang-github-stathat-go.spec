@@ -1,0 +1,1 @@
+../third_party/subtrees/golang-github-stathat-go/golang-github-stathat-go.spec
