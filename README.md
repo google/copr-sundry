@@ -48,6 +48,7 @@ code that happens to be owned by Google.
  * golang-github-onsi-ginkgo 1.1.0
  * golang-github-onsi-gomega git8adf9e1
  * golang-github-rcrowley-go-metrics gitdee209f
+ * golang-github-stathat-go git01d012b
  * golang-github-syndtr-goleveldb git012f65f
  * golang-github-syndtr-gosnappy / golang-github-golang-snappy git156a073
  * golang-githib-vitrun-qart 0.1
