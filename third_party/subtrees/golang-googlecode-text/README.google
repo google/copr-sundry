@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-googlecode-text.git/
+Version: eb33fa5b2ea065379d18a565fe58749fb99f7027
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-googlecode-text - Supplementary Go text
+libraries.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build devel packages everywhere.
