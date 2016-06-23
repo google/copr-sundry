@@ -24,6 +24,20 @@ BuildRequires: golang(github.com/kardianos/osext)
 BuildRequires: golang(github.com/syndtr/goleveldb/leveldb/util)
 BuildRequires: golang(github.com/rcrowley/go-metrics)
 BuildRequires: golang(github.com/gobwas/glob)
+BuildRequires: golang(golang.org/x/net/ipv6)
+BuildRequires: golang(golang.org/x/net/proxy)
+BuildRequires: golang(github.com/calmh/du)
+BuildRequires: golang(golang.org/x/text/unicode/norm)
+BuildRequires: golang(golang.org/x/net/context)
+BuildRequires: golang(github.com/thejerf/suture)
+BuildRequires: golang(github.com/lib/pq)
+BuildRequires: golang(github.com/juju/ratelimit)
+BuildRequires: golang(github.com/golang/groupcache/lru)
+BuildRequires: golang(github.com/cznic/ql)
+BuildRequires: golang(github.com/calmh/xdr)
+BuildRequires: golang(github.com/calmh/luhn)
+BuildRequires: golang(github.com/bkaradzic/go-lz4)
+
 
 %description
 Syncthing replaces Dropbox and BitTorrent Sync with something open,
