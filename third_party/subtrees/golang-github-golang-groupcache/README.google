@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-github-golang-groupcache.git/
+Version: 6962a14554b583a307266f9e530fd0e4a6385e32
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-github-golang-groupcache - Caching and cache
+filling library as a replacement for memcached in many cases.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build -devel package everywhere.
