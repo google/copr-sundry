@@ -7,7 +7,7 @@
 
 %global debug_package   %{nil}
 
-Name:           golang-github-gobwas-%{repo}
+Name:           golang-github-%{project}-%{repo}
 Version:        0.2.0
 Release:        1%{?dist}
 Summary:        Go Globbing Library
