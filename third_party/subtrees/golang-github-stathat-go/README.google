@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-github-stathat-go.git/
+Version: e38e4486bb584e43d4efde93c296e7f389c5c027
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-github-stathat-go - Go package for
+reporting stat counts and values to StatHat.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build -devel package everywhere.
