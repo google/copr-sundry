@@ -36,7 +36,6 @@ This module parses the most common forms of ISO 8601 date strings
 %if 0%{?with_python3}
 %package -n python3-iso8601
 Summary:        Simple module to parse ISO 8601 dates
-%{?python_provide:%python_provide python3-iso8601}
 
 BuildRequires:  python3-devel python3-setuptools
 
