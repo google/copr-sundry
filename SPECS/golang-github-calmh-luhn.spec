@@ -3,7 +3,7 @@
 %global project         calmh
 %global repo            luhn
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
-%global import_path     github.com/%{project}/%{project}
+%global import_path     github.com/%{project}/%{repo}
 
 %global debug_package   %{nil}
 
