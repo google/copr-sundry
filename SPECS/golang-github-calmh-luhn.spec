@@ -3,11 +3,11 @@
 %global project         calmh
 %global repo            luhn
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
-%global import_path     github.com/%{project}/luhn
+%global import_path     github.com/%{project}/%{project}
 
 %global debug_package   %{nil}
 
-Name:           golang-githib-%{project}-luhn
+Name:           golang-%{provider}-%{project}-luhn
 Version:        1.0.0
 Release:        1%{?dist}
 Summary:        A Luhn-mod-N implementation in Go
