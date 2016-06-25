@@ -43,6 +43,7 @@ code that happens to be owned by Google.
  * golang-googlecode-go-crypto / golang-golangorg-crypto 0-0.10.gitc10c31b
  * golang-github-bkaradzic-go-lz4 1.0.0
  * golang-github-calmh-du 1.0.0
+ * golang-github-calmh-xdr 2.0.0
  * golang-github-cznic-ql 1.0.3
  * golang-github-gobwas-glob-devel 0.2.0
  * golang-github-golang-groupcache git604ed57
