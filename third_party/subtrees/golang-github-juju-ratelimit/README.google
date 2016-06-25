@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-github-juju-ratelimit.git/
+Version: af1ed7239c05658ea490db4687d6ba13683f62de
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-github-juju-ratelimit - Efficient token-bucket
+based rate limiter package.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build -devel package everywhere.
