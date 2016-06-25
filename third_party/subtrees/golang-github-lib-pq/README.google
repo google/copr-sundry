@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-github-lib-pq.git/
+Version: 25ae1bcc7959b3d6ed63fe4bb19de0c08c0b9f28
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-github-lib-pq - Pure Go Postgres driver for
+database/sql.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build -devel package everywhere.

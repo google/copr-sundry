@@ -12,3 +12,4 @@ Local Modifications:
 - Removed conditional on python3 build.
 - Removed shebangs from non-executable scripts.
 - Added newline conversion for some of the files in Demos.
+- Fixed urls.
