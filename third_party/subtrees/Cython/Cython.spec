@@ -15,8 +15,8 @@ Summary:    A language for writing Python extension modules
 
 Group:      Development/Tools
 License:    Python
-URL:        http://www.cython.org
-Source:     http://www.cython.org/release/Cython-%{upstreamversion}.tar.gz
+URL:        http://cython.org
+Source:     http://cython.org/release/Cython-%{upstreamversion}.tar.gz
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  python-devel python-setuptools

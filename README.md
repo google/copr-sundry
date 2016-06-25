@@ -43,11 +43,13 @@ code that happens to be owned by Google.
  * golang-googlecode-go-crypto / golang-golangorg-crypto 0-0.10.gitc10c31b
  * golang-github-bkaradzic-go-lz4 1.0.0
  * golang-github-calmh-du 1.0.0
+ * golang-github-cznic-ql 1.0.3
  * golang-github-gobwas-glob-devel 0.2.0
  * golang-github-influxdb-influxdb 0.9.5.1
  * golang-github-jackpal-gateway 1.0.4
  * golang-githib-jackpal-go-nat-pmp 1.0.1
  * golang-github-juju-ratelimit git772f5c3
+ * golang-github-lib-pq git0dad96c
  * golang-github-onsi-ginkgo 1.1.0
  * golang-github-onsi-gomega git8adf9e1
  * golang-github-rcrowley-go-metrics gitdee209f
