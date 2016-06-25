@@ -1,0 +1,33 @@
+From f2e8bf6beb357d1c09cb0ca9443052642911ff0d Mon Sep 17 00:00:00 2001
+From: Jan Chaloupka <jchaloup@redhat.com>
+Date: Thu, 8 Oct 2015 19:40:52 +0200
+Subject: [PATCH] abs to Abs
+
+---
+ ratelimit_test.go | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/ratelimit_test.go b/ratelimit_test.go
+index 9438a66..852c35f 100644
+--- a/ratelimit_test.go
++++ b/ratelimit_test.go
+@@ -7,6 +7,7 @@ package ratelimit
+ import (
+ 	gc "launchpad.net/gocheck"
+ 
++	"math"
+ 	"testing"
+ 	"time"
+ )
+@@ -261,7 +262,7 @@ func (rateLimitSuite) TestPanics(c *gc.C) {
+ }
+ 
+ func isCloseTo(x, y, tolerance float64) bool {
+-	return abs(x-y)/y < tolerance
++	return math.Abs(x-y)/y < tolerance
+ }
+ 
+ func (rateLimitSuite) TestRate(c *gc.C) {
+-- 
+1.9.3
+
