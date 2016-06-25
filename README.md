@@ -47,6 +47,7 @@ code that happens to be owned by Google.
  * golang-github-influxdb-influxdb 0.9.5.1
  * golang-github-jackpal-gateway 1.0.4
  * golang-githib-jackpal-go-nat-pmp 1.0.1
+ * golang-github-juju-ratelimit git772f5c3
  * golang-github-onsi-ginkgo 1.1.0
  * golang-github-onsi-gomega git8adf9e1
  * golang-github-rcrowley-go-metrics gitdee209f
