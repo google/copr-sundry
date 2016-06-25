@@ -96,8 +96,13 @@ make test-memleaks PYTHON=%{__python3}
 %doc CREDITS HISTORY.rst README.rst
 %{python3_sitearch}/%{srcname}/
 %{python3_sitearch}/*.egg-info
-%exclude /usr/lib64/python3.5/site-packages/psutil/tests/test_process.py
+%exclude /usr/lib64/python3.5/site-packages/psutil/tests/test_linux.py
 %exclude /usr/lib64/python3.5/site-packages/psutil/tests/__init__.py
+%exclude /usr/lib64/python3.5/site-packages/psutil/tests/test_process.py
+%exclude /usr/lib64/python3.5/site-packages/psutil/tests/test_misc.py
+%exclude /usr/lib64/python3.5/site-packages/psutil/tests/test_sunos.py
+%exclude /usr/lib64/python3.5/site-packages/psutil/tests/test_memory_leaks.py
+%exclude /usr/lib64/python3.5/site-packages/psutil/tests/test_osx.py
 
 
 %changelog
