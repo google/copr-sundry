@@ -53,6 +53,7 @@ code that happens to be owned by Google.
  * golang-github-stathat-go git01d012b
  * golang-github-syndtr-goleveldb git012f65f
  * golang-github-syndtr-gosnappy / golang-github-golang-snappy git156a073
+ * golang-github-thejerf-suture 1.1.1
  * golang-githib-vitrun-qart 0.1
  * gperftools 2.4
  * grub2 2.02
