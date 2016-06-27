@@ -1,0 +1,14 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-googlecode-net.git/
+Version: bb838be473cbb698544da4fd9951744248759b89
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-googlecode-net - Supplementary Go networking
+libraries.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build devel packages everywhere.
+- Disabled tests.

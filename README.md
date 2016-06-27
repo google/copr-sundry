@@ -41,7 +41,9 @@ code that happens to be owned by Google.
  * Cython 0.23
  * dnf 1.1.2
  * golang-googlecode-go-crypto / golang-golangorg-crypto 0-0.10.gitc10c31b
+ * golang-googlecode-net git6acef71
  * golang-googlecode-text git6fc2e00
+ * golang-github-gobwas-glob-devel 0.2.0
  * golang-github-bkaradzic-go-lz4 1.0.0
  * golang-github-calmh-du 1.0.0
  * golang-github-calmh-luhn 1.0.0
@@ -49,6 +51,7 @@ code that happens to be owned by Google.
  * golang-github-gobwas-glob 0.2.0
  * golang-github-golang-groupcache git604ed57
  * golang-github-cznic-ql 1.0.3
+>>>>>>> master
  * golang-github-influxdb-influxdb 0.9.5.1
  * golang-github-jackpal-gateway 1.0.4
  * golang-githib-jackpal-go-nat-pmp 1.0.1
