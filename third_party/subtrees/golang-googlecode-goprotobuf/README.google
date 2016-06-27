@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-googlecode-goprotobuf.git/
+Version: 066c978fb4ced7bef0d9849bf0f591ed3b1e6baf
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-googlecode-goprotobuf - Go support for Google
+protocol buffers.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build devel packages everywhere.

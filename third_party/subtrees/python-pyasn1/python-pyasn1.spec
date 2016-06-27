@@ -44,7 +44,7 @@ ASN.1 types modules for python-pyasn1.
 
 %package -n python3-pyasn1
 Summary:    ASN.1 tools for Python 3
-Provides: python3-pyasn1
+Provides: python3-pyasn1 = %{version}
 
 %description -n python3-pyasn1
 This is an implementation of ASN.1 types and codecs in the Python 3 programming
