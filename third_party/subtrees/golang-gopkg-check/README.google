@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-gopkg-check.git/
+Version: a5976b5237c3e11d86e481723c81ee8c535096d5
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-gopkg-check - Rich testing for the Go language.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build -devel package on EL.
