@@ -7,7 +7,7 @@
 %define run_check 1
 
 Name:       Cython
-Version:    0.23
+Version:    0.24
 Release:    2%{?dist}
 Summary:    A language for writing Python extension modules
 
@@ -15,8 +15,8 @@ Summary:    A language for writing Python extension modules
 
 Group:      Development/Tools
 License:    Python
-URL:        http://www.cython.org
-Source:     http://www.cython.org/release/Cython-%{upstreamversion}.tar.gz
+URL:        http://cython.org
+Source:     https://pypi.python.org/packages/b1/51/bd5ef7dff3ae02a2c6047aa18d3d06df2fb8a40b00e938e7ea2f75544cac/Cython-%{version}.tar.gz
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  python-devel python-setuptools
