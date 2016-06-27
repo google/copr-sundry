@@ -7,9 +7,9 @@
 
 %global debug_package   %{nil}
 
-Name:           golang-%{provider}-%{project}-luhn
+Name:           golang-%{provider}-%{project}-%{repo}
 Version:        1.0.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Luhn-mod-N implementation in Go
 License:        MIT
 URL:            https://%{provider_prefix}
@@ -24,7 +24,7 @@ BuildRequires:  golang
 Summary:       %{summary}
 BuildArch:     noarch
 
-Provides:      golang(github.com/vitrun/qart/qr) = %{version}-%{release}
+Provides:      golang(%{import_path}) = %{version}-%{release}
 
 %description devel
 %{summary}
@@ -51,5 +51,8 @@ done
 /usr/share/gocode/src/github.com/calmh/luhn/luhn.go
 
 %changelog
+* Mon Jun 27 2016 Vladimir Rusinov <vrusinov@google.com> 1.0.0-2
+- Fix provides.
+
 * Fri Jun 24 2016 Vladimir Rusinov <vrusinov@google.com> 1.0.0-1
 - First version.
