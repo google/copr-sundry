@@ -1,0 +1,1 @@
+../third_party/subtrees/golang-gopkg-check/golang-gopkg-check.spec
