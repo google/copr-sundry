@@ -53,7 +53,7 @@ code that happens to be owned by Google.
  * golang-github-gobwas-glob 0.2.0
  * golang-github-golang-groupcache git604ed57
  * golang-github-cznic-ql 1.0.3
->>>>>>> master
+ * golang-github-cznic-zappy
  * golang-github-influxdb-influxdb 0.9.5.1
  * golang-github-jackpal-gateway 1.0.4
  * golang-githib-jackpal-go-nat-pmp 1.0.1
