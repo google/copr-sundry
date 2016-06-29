@@ -29,6 +29,9 @@ addFilter('golang-.*-test.x86_64: W: devel-dependency')
 # Some packages may want to have empty files.
 addFilter('zero-length')
 
+# It's ok to obsolete whole packages
+addFilter('unversioned-explicit-obsoletes')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
@@ -99,7 +102,6 @@ addFilter('python-macros.noarch')
 addFilter('python.x86_64')
 addFilter('python3?.src:[0-9]+: W: hardcoded-library-path')
 addFilter('python.src: W: %ifarch-applied-patch Patch131')
-addFilter('python.src:[0-9]+: W: unversioned-explicit-obsoletes')
 addFilter('python.src:[0-9]+: W: unversioned-explicit-provides')
 addFilter('python.src: W: strange-permission pythondeps.sh')
 
@@ -126,7 +128,6 @@ addFilter('perl-Tk.spec:63: W: comparison-operator-in-deptoken')
 # Not sure what version that would be.
 addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides perl\(IO::Uncompress::Bunzip2\)')
 addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides %perl_compat')
-addFilter('perl\.(src|spec):[0-9]+: W: unversioned-explicit-obsoletes')
 
 ## Let's encrypt:
 # Allow pems in test files.
@@ -144,7 +145,6 @@ addFilter('libcomps.spec: W: invalid-url Source0: https://github.com/midnighterc
 
 ## GDB
 # Following should be ok for debugger.
-addFilter('gdb\.(spec|src):[0-9]+: W: unversioned-explicit-obsoletes devtoolset')
 addFilter('gdb.x86_64: W: unstripped-binary-or-object /usr/bin/gdb')
 addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/lib64/libinproctrace.so')
 addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/bin/gdbserver')
@@ -159,7 +159,6 @@ addFilter('gdb.src: W: strange-permission gdbtui')
 # Snapshots dissapear quickly
 addFilter('gdb\.(src|spec): W: invalid-url Source0: ftp://sourceware.org/pub/gdb/snapshots/current/.*')
 addFilter('gdb.src: W: strange-permission gdbtui 775')
-addFilter('gdb.src:[0-9]+: W: unversioned-explicit-obsoletes devtoolset')
 
 ## Python-pip
 addFilter('python(3|2)?-pip.noarch: W: non-executable-script /usr/lib/python.\../site-packages/pip/_vendor/requests/packages/chardet/chardetect.py')
@@ -176,7 +175,6 @@ addFilter('(python3-)?Cython.x86_64: W: non-executable-script /usr/lib64/python[
 ## Perl
 addFilter('perl\.(spec|src): W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir64.patch')
 addFilter('perl\.(src|spec): W: invalid-license')
-addFilter('perl.spec:[0-9]+: W: unversioned-explicit-obsoletes')
 addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides')
 addFilter('perl-threads.x86_64: W: unstripped-binary-or-object')
 
