@@ -50,6 +50,7 @@ code that happens to be owned by Google.
  * golang-github-calmh-du 1.0.0
  * golang-github-calmh-luhn 1.0.0
  * golang-github-calmh-xdr 2.0.0
+ * golang-github-cznic-b
  * golang-github-gobwas-glob 0.2.0
  * golang-github-cznic-fileutil
  * golang-github-golang-groupcache git604ed57
