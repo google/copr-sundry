@@ -51,9 +51,10 @@ code that happens to be owned by Google.
  * golang-github-calmh-luhn 1.0.0
  * golang-github-calmh-xdr 2.0.0
  * golang-github-cznic-b
- * golang-github-gobwas-glob 0.2.0
  * golang-github-cznic-bufs
  * golang-github-cznic-fileutil
+ * golang-github-cznic-mathutil
+ * golang-github-gobwas-glob 0.2.0
  * golang-github-golang-groupcache git604ed57
  * golang-github-cznic-ql 1.0.3
  * golang-github-cznic-sortutil
