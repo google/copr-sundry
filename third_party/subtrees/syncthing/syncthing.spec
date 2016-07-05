@@ -39,6 +39,7 @@ BuildRequires: golang(github.com/calmh/luhn)
 BuildRequires: golang(github.com/bkaradzic/go-lz4)
 BuildRequires: golang(github.com/cznic/b)
 BuildRequires: golang(github.com/cznic/bufs)
+BuildRequires: golang(github.com/cznic/fileutil)
 
 
 %description
