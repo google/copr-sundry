@@ -38,6 +38,7 @@ BuildRequires: golang(github.com/calmh/xdr)
 BuildRequires: golang(github.com/calmh/luhn)
 BuildRequires: golang(github.com/bkaradzic/go-lz4)
 BuildRequires: golang(github.com/cznic/b)
+BuildRequires: golang(github.com/cznic/bufs)
 
 
 %description
