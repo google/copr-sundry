@@ -9,7 +9,7 @@
 
 %global debug_package   %{nil}
 
-Name:           golang-github-jackpal-%{repo}
+Name:           golang-github-%{project}-%{repo}
 Version:        0
 Release:        1git%{shortcommit}%{?dist}
 Summary:        A Go language client for the NAT-PMP internet protocol.
