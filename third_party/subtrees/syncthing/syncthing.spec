@@ -42,6 +42,7 @@ BuildRequires: golang(github.com/cznic/bufs)
 BuildRequires: golang(github.com/cznic/fileutil)
 BuildRequires: golang(github.com/cznic/mathutil)
 BuildRequires: golang(github.com/cznic/sortutil)
+BuildRequires: golang(github.com/cznic/strutil)
 
 
 %description
