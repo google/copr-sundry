@@ -10,7 +10,7 @@
 Name:           golang-github-jackpal-%{repo}
 Version:        1.0.1
 Release:        2%{?dist}
-Summary:        A Go language client for the NAT-PMP internet protocol.
+Summary:        A Go language client for the NAT-PMP internet protocol
 License:        ASL 2.0
 URL:            https://%{provider_prefix}
 Source0:        https://%{provider_prefix}/archive/v%{version}.tar.gz
