@@ -26,6 +26,9 @@ addFilter('crypto-policy-non-compliance-openssl')
 # Allow devel dependencies in golang test packages,
 addFilter('golang-.*-test.x86_64: W: devel-dependency')
 
+# Allow statically linled binaries
+addFilter('statically-linked-binary')
+
 # Some packages may want to have empty files.
 addFilter('zero-length')
 
