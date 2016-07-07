@@ -43,6 +43,7 @@ BuildRequires: golang(github.com/cznic/fileutil)
 BuildRequires: golang(github.com/cznic/mathutil)
 BuildRequires: golang(github.com/cznic/sortutil)
 BuildRequires: golang(github.com/cznic/strutil)
+BuildRequires: golang(github.com/cznic/zappy)
 
 
 %description
