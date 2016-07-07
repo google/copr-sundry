@@ -44,8 +44,9 @@ code that happens to be owned by Google.
  * golang-googlecode-goprotobuf git6aaa8d4
  * golang-googlecode-net git6acef71
  * golang-googlecode-text git6fc2e00
- * golang-gopkg-check 1
- * golang-github-gobwas-glob-devel 0.2.0
+ * golang-gopkg-check
+ * golang-github-AudriusButkevicius-go-nat-pmp
+ * golang-github-gobwas-glob
  * golang-github-bkaradzic-go-lz4 1.0.0
  * golang-github-calmh-du 1.0.0
  * golang-github-calmh-luhn 1.0.0

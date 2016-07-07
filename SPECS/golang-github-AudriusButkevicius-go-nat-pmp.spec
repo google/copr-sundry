@@ -1,19 +1,21 @@
 %global provider        github
 %global provider_tld    com
-%global project         jackpal
+%global project         AudriusButkevicius
 %global repo            go-nat-pmp
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
-%global import_path     github.com/jackpal/%{repo}
+%global import_path     github.com/%{project}/%{repo}
+%global commit          452c97607362b2ab5a7839b8d1704f0396b640ca
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 %global debug_package   %{nil}
 
-Name:           golang-github-jackpal-%{repo}
-Version:        1.0.1
-Release:        2%{?dist}
-Summary:        A Go language client for the NAT-PMP internet protocol
+Name:           golang-github-%{project}-%{repo}
+Version:        0
+Release:        1git%{shortcommit}%{?dist}
+Summary:        A Go language client for the NAT-PMP internet protocol.
 License:        ASL 2.0
 URL:            https://%{provider_prefix}
-Source0:        https://%{provider_prefix}/archive/v%{version}.tar.gz
+Source0:        https://%{provider_prefix}/archive/%{commit}.zip
 
 BuildRequires:  golang
 
@@ -30,7 +32,7 @@ Provides:      golang(%{import_path}) = %{version}-%{release}
 %{summary}
 
 %prep
-%setup -q -n %{repo}-%{version}
+%setup -q -n %{repo}-%{commit}
 
 %build
 
@@ -49,13 +51,8 @@ done
 %license LICENSE
 %doc README.md
 %dir %{gopath}/src/%{import_path}
-%{gopath}/src/github.com/jackpal/go-nat-pmp/natpmp.go
-%{gopath}/src/github.com/jackpal/go-nat-pmp/network.go
-%{gopath}/src/github.com/jackpal/go-nat-pmp/recorder.go
+%{gopath}/src/github.com/AudriusButkevicius/go-nat-pmp/natpmp.go
 
 %changelog
-* Thu Jul 07 2016 Vladimir Rusinov <vrusinov@google.com> 1.0.1-2
-- Do not provide AudriusButkevicius version since it is not compatible.
-
-* Sun Jun 19 2016 Vladimir Rusinov <vrusinov@google.com> 1.0.1-1
-- First version.
+* Thu Jul 07 2016 Vladimir Rusinov <vrusinov@google.com> 0.git452c976
+- First version, forked from golang-github-jackpal-go-nat-pmp

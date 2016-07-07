@@ -63,7 +63,7 @@ Provides:       golang(%{import_path}/models) = %{version}-%{release}
 Provides:       golang(%{import_path}/pkg/escape) = %{version}-%{release}
 
 %description client
-%{%description}
+%{description}
 
 This package contains client part of influxdb.
 
