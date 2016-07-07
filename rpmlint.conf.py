@@ -197,3 +197,6 @@ addFilter('tahoe-lafs.noarch: W: non-executable-script /usr/lib/python2.7/site-p
 
 # pyparsing
 addFilter('pyparsing-doc.noarch: W: file-not-utf8')
+
+# golang packages:
+addFilter('golang-googlecode-goprotobuf.x86_64: W: unstripped-binary-or-object')
