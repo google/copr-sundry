@@ -3,7 +3,7 @@
 %{!?go_arches: %define go_arches %{ix86} x86_64 %{arm}}
 
 Name: syncthing
-Version: 0.12.11
+Version: 0.13.7
 Release: 1%{?dist}
 Summary: Syncronisation service
 License:MIT
@@ -15,6 +15,36 @@ BuildRequires:  golang >= 1.2-7
 Requires(post): systemd
 Requires(preun): systemd
 Requires(postun): systemd
+
+BuildRequires: golang(golang.org/x/crypto/bcrypt)
+BuildRequires: golang(github.com/vitrun/qart/qr)
+BuildRequires: golang(github.com/jackpal/gateway)
+BuildRequires: golang(github.com/AudriusButkevicius/go-nat-pmp)
+BuildRequires: golang(github.com/kardianos/osext)
+BuildRequires: golang(github.com/syndtr/goleveldb/leveldb/util)
+BuildRequires: golang(github.com/rcrowley/go-metrics)
+BuildRequires: golang(github.com/gobwas/glob)
+BuildRequires: golang(golang.org/x/net/ipv6)
+BuildRequires: golang(golang.org/x/net/proxy)
+BuildRequires: golang(github.com/calmh/du)
+BuildRequires: golang(golang.org/x/text/unicode/norm)
+BuildRequires: golang(golang.org/x/net/context)
+BuildRequires: golang(github.com/thejerf/suture)
+BuildRequires: golang(github.com/lib/pq)
+BuildRequires: golang(github.com/juju/ratelimit)
+BuildRequires: golang(github.com/golang/groupcache/lru)
+BuildRequires: golang(github.com/cznic/ql)
+BuildRequires: golang(github.com/calmh/xdr)
+BuildRequires: golang(github.com/calmh/luhn)
+BuildRequires: golang(github.com/bkaradzic/go-lz4)
+BuildRequires: golang(github.com/cznic/b)
+BuildRequires: golang(github.com/cznic/bufs)
+BuildRequires: golang(github.com/cznic/fileutil)
+BuildRequires: golang(github.com/cznic/mathutil)
+BuildRequires: golang(github.com/cznic/sortutil)
+BuildRequires: golang(github.com/cznic/strutil)
+BuildRequires: golang(github.com/cznic/zappy)
+
 
 %description
 Syncthing replaces Dropbox and BitTorrent Sync with something open,
@@ -30,8 +60,16 @@ Using syncthing, that control is returned to you.
 %build
 mkdir -p ./_build/src/github.com/%{name}
 ln -s $(pwd) ./_build/src/github.com/%{name}/%{name}
-export GOPATH=$(pwd)/_build:%{gopath}
-./build.sh
+
+# Starting with 0.7, sytncthing build script behaves weird with multiple things in GOPATH.
+#export GOPATH=$(pwd)/_build:%{gopath}
+ln -s /usr/share/gocode/src/github.com/* $(pwd)/_build/src/github.com/
+ln -s /usr/share/gocode/src/golang.org $(pwd)/_build/src/
+export GOPATH=$(pwd)/_build
+
+# Alternatively, we could do this:
+#./build.sh
+go run build.go -version v%{version} -no-upgrade
 
 %check
 export GOPATH=$(pwd)/_build:%{gopath}
@@ -65,6 +103,9 @@ install -p -m 0644 ./etc/linux-systemd/system/syncthing@.service %{buildroot}%{_
 
 
 %changelog
+* Wed Jun 15 2016 Vladimir Rusinov <vrusinov@google.com> 0.13.7-1
+- Version update to v0.13.7.
+
 * Sat Jan 09 2016 Vladimir Rusinov <vrusinov@google.com> 0.12.11-1
 - Version update to v0.12.11.
 
