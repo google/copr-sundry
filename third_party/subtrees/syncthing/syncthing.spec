@@ -66,10 +66,10 @@ ln -s $(pwd) ./_build/src/github.com/%{name}/%{name}
 ln -s /usr/share/gocode/src/github.com/* $(pwd)/_build/src/github.com/
 ln -s /usr/share/gocode/src/golang.org $(pwd)/_build/src/
 export GOPATH=$(pwd)/_build
-./build.sh
 
 # Alternatively, we could do this:
-#go run build.go
+#./build.sh
+go run build.go -version v%{version} -no-upgrade
 
 %check
 export GOPATH=$(pwd)/_build:%{gopath}

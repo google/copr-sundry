@@ -16,3 +16,4 @@ Local Modifications:
 - Removed pre-built RPMs.
 - Removed pre-built SRPMs.
 - Added hack for GOPATH for 0.13.
+- Disabled auto-update.
