@@ -69,8 +69,9 @@ code that happens to be owned by Google.
  * golang-github-lib-pq git0dad96c
  * golang-github-onsi-ginkgo 1.1.0
  * golang-github-onsi-gomega git8adf9e1
- * golang-github-rcrowley-go-metrics gitdee209f
- * golang-github-stathat-go git01d012b
+ * golang-github-oschwald-geoip2-golang
+ * golang-github-rcrowley-go-metrics
+ * golang-github-stathat-go
  * golang-github-syndtr-goleveldb git012f65f
  * golang-github-syndtr-gosnappy / golang-github-golang-snappy git156a073
  * golang-github-thejerf-suture 1.1.1
