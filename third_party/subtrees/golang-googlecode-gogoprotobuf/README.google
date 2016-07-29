@@ -1,0 +1,14 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-googlecode-gogoprotobuf.git/
+Version: 2125264a9b94d9890e421592a674399b859622f1
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-googlecode-gogoprotobuf - A fork of goprotobuf with
+several extra features.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build devel packages everywhere.
+- Do not build debug package.
