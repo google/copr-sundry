@@ -1,6 +1,6 @@
 %global with_devel 1
 %global with_bundled 0
-%global with_debug 1
+%global with_debug 0
 # No test files so far
 %global with_check 0
 %global with_unit_test 0
@@ -350,7 +350,8 @@ echo "Unable to build from bundled deps. No Godeps nor vendor directory"
 exit 1
 %endif
 
-%gobuild -o bin/protoc-gen-gogo %{import_path}/protoc-gen-gogo
+#%gobuild -o bin/protoc-gen-gogo %{import_path}/protoc-gen-gogo
+go build -o bin/protoc-gen-gogo %{import_path}/protoc-gen-gogo
 
 %install
 #### binary ####
