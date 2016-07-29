@@ -41,6 +41,7 @@ code that happens to be owned by Google.
  * Cython 0.23
  * dnf 1.1.2
  * golang-googlecode-go-crypto / golang-golangorg-crypto 0-0.10.gitc10c31b
+ * golang-googlecode-gogoprotobuf
  * golang-googlecode-goprotobuf git6aaa8d4
  * golang-googlecode-net git6acef71
  * golang-googlecode-text git6fc2e00
