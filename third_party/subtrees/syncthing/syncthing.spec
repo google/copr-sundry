@@ -45,6 +45,7 @@ BuildRequires: golang(github.com/cznic/sortutil)
 BuildRequires: golang(github.com/cznic/strutil)
 BuildRequires: golang(github.com/cznic/zappy)
 BuildRequires: golang(github.com/gogo/protobuf/gogoproto)
+BuildRequires: golang(github.com/oschwald/geoip2-golang)
 
 
 %description
