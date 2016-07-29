@@ -1,17 +1,9 @@
-%if 0%{?fedora} || 0%{?rhel} == 6
 %global with_devel 1
 %global with_bundled 0
 %global with_debug 1
 # No test files so far
 %global with_check 0
 %global with_unit_test 0
-%else
-%global with_devel 0
-%global with_bundled 0
-%global with_debug 1
-%global with_check 0
-%global with_unit_test 0
-%endif
 
 %if 0%{?with_debug}
 %global _dwz_low_mem_die_limit 0
