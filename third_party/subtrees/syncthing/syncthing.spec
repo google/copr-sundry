@@ -3,7 +3,7 @@
 %{!?go_arches: %define go_arches %{ix86} x86_64 %{arm}}
 
 Name: syncthing
-Version: 0.13.7
+Version: 0.14.3
 Release: 1%{?dist}
 Summary: Syncronisation service
 License:MIT
@@ -44,6 +44,7 @@ BuildRequires: golang(github.com/cznic/mathutil)
 BuildRequires: golang(github.com/cznic/sortutil)
 BuildRequires: golang(github.com/cznic/strutil)
 BuildRequires: golang(github.com/cznic/zappy)
+BuildRequires: golang(github.com/gogo/protobuf/gogoproto)
 
 
 %description
@@ -103,6 +104,9 @@ install -p -m 0644 ./etc/linux-systemd/system/syncthing@.service %{buildroot}%{_
 
 
 %changelog
+* Fri Jul 29 2016 Vladimir Rusinov <vrusinov@google.com> 0.14.3-1
+- Version bump.
+
 * Wed Jun 15 2016 Vladimir Rusinov <vrusinov@google.com> 0.13.7-1
 - Version update to v0.13.7.
 
