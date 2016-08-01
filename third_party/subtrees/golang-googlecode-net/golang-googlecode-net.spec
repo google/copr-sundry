@@ -47,7 +47,7 @@ BuildRequires:  %{?go_compiler:compiler(go-compiler)}%{!?go_compiler:golang}
 
 %if 0%{?with_devel}
 %package devel
-Summary:       Supplementary Go networking libraries for code.google.com/p/ imports
+Summary:       Supplementary Go networking libraries
 BuildArch:     noarch
 
 %if 0%{?with_check}
