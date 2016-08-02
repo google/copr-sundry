@@ -35,6 +35,9 @@ addFilter('zero-length')
 # It's ok to obsolete whole packages
 addFilter('unversioned-explicit-obsoletes')
 
+# There's something weird with this warning
+addFilter('incoherent-version-in-changelog')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.

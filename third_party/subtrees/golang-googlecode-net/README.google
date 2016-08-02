@@ -12,3 +12,4 @@ Local Modifications:
 - Added LICENSE file.
 - Build devel packages everywhere.
 - Disabled tests.
+- Shortened description.

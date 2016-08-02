@@ -64,17 +64,18 @@ code that happens to be owned by Google.
  * golang-github-cznic-zappy
  * golang-github-influxdb-influxdb 0.9.5.1
  * golang-github-jackpal-gateway 1.0.4
- * golang-githib-jackpal-go-nat-pmp 1.0.1
+ * golang-github-jackpal-go-nat-pmp 1.0.1
  * golang-github-juju-ratelimit git772f5c3
  * golang-github-lib-pq git0dad96c
  * golang-github-onsi-ginkgo 1.1.0
  * golang-github-onsi-gomega git8adf9e1
  * golang-github-oschwald-geoip2-golang
+ * golang-github-oschwald-maxminddb-golang
  * golang-github-rcrowley-go-metrics
  * golang-github-stathat-go
- * golang-github-syndtr-goleveldb git012f65f
- * golang-github-syndtr-gosnappy / golang-github-golang-snappy git156a073
- * golang-github-thejerf-suture 1.1.1
+ * golang-github-syndtr-goleveldb
+ * golang-github-syndtr-gosnappy / golang-github-golang-snappy
+ * golang-github-thejerf-suture
  * golang-githib-vitrun-qart 0.1
  * gperftools 2.4
  * grub2 2.02
