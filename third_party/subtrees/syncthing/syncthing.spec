@@ -47,6 +47,7 @@ BuildRequires: golang(github.com/cznic/zappy)
 BuildRequires: golang(github.com/gogo/protobuf/gogoproto)
 BuildRequires: golang(github.com/oschwald/geoip2-golang)
 BuildRequires: golang(github.com/oschwald/maxminddb-golang)
+BuildRequires: golang(golang.org/x/sys/unix)
 
 
 %description
