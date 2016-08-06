@@ -62,7 +62,6 @@ mkdir -p ./_build/src/github.com/%{name}
 ln -s $(pwd) ./_build/src/github.com/%{name}/%{name}
 
 # Starting with 0.7, sytncthing build script behaves weird with multiple things in GOPATH.
-#export GOPATH=$(pwd)/_build:%{gopath}
 ln -s /usr/share/gocode/src/github.com/* $(pwd)/_build/src/github.com/
 ln -s /usr/share/gocode/src/golang.org $(pwd)/_build/src/
 export GOPATH=$(pwd)/_build
