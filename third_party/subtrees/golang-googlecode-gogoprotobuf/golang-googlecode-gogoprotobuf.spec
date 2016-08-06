@@ -350,7 +350,7 @@ echo "Unable to build from bundled deps. No Godeps nor vendor directory"
 exit 1
 %endif
 
-#%gobuild -o bin/protoc-gen-gogo %{import_path}/protoc-gen-gogo
+#%%gobuild -o bin/protoc-gen-gogo %%{import_path}/protoc-gen-gogo
 go build -o bin/protoc-gen-gogo %{import_path}/protoc-gen-gogo
 
 %install
@@ -419,8 +419,8 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %gotest %{import_path}/io
 %gotest %{import_path}/jsonpb
 %gotest %{import_path}/parser
-#%gotest %%{import_path}/proto
-#%gotest %%{import_path}/proto/testdata
+#%%gotest %%{import_path}/proto
+#%%gotest %%{import_path}/proto/testdata
 %gotest %{import_path}/protoc-gen-gogo/generator
 %gotest %{import_path}/test
 %gotest %{import_path}/test/casttype/combos/both
@@ -438,7 +438,7 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %gotest %{import_path}/test/combos/unsafeunmarshaler
 %gotest %{import_path}/test/custom
 %gotest %{import_path}/test/custombytesnonstruct
-#%gotest %%{import_path}/test/dashfilename
+#%%gotest %%{import_path}/test/dashfilename
 %gotest %{import_path}/test/defaultconflict
 %gotest %{import_path}/test/embedconflict
 %gotest %{import_path}/test/empty-issue70
