@@ -45,7 +45,6 @@ and manage protocol buffers.
 
 Install %{name}-devel for the associated support library.
 
-%if 0%{?with_devel}
 %package devel
 Summary:       %{summary}
 BuildArch:     noarch
@@ -106,7 +105,6 @@ Requires:        %{name}-devel = %{version}-%{release}
 
 This package contains unit tests for project
 providing packages with %{import_path} prefix.
-%endif
 
 %prep
 %setup -q -n %{repo}-%{commit}
@@ -225,7 +223,7 @@ export GOPATH=%{buildroot}/%{gopath}:%{gopath}
 gotest %{import_path}/jsonpb
 gotest %{import_path}/proto
 # --- FAIL: TestGolden (0.09s)
-#	golden_test.go:52: sum("test.pb.go"): length is 78494
+#    golden_test.go:52: sum("test.pb.go"): length is 78494
 #gotest %%{import_path}/proto/testdata
 gotest %{import_path}/protoc-gen-go/generator
 #gotest %%{import_path}/protoc-gen-go/testdata
