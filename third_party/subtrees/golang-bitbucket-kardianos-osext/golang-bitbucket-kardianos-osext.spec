@@ -20,8 +20,8 @@
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           golang-%{provider}-%{project}-%{repo}
-Version:        0
-Release:        1.fit%{shortcommit}%{?dist}
+Version:        0.20160807.git%{shortcommit}
+Release:        1%{?dist}
 Summary:        Extensions to the standard Go OS package
 License:        zlib
 URL:            http://%{provider_prefix}
@@ -40,7 +40,6 @@ including Executable, which returns an absolute path which can
 be used to re-invoke the current program, and ExecutableFolder,
 which returns the directory containing the same.
 
-%if 0%{?with_devel}
 %package devel
 Summary:       Supplementary Go networking libraries
 BuildArch:     noarch
@@ -56,7 +55,6 @@ Provides:      golang(%{import_path}) = %{version}-%{release}
 This package contains library source intended for
 building other packages which use import path with
 %{import_path} prefix.
-%endif
 
 %if 0%{?with_unit_test} && 0%{?with_devel}
 %package unit-test
@@ -144,6 +142,9 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %endif
 
 %changelog
+* Sun Aug 07 2016 Vladimir Rusinov <vrusinov@google.com> - 0.20160807..git29ae4ff-1
+- fix version name
+
 * Sun Jun 19 2016 Vladimir Rusinov <vrusinov@google.com> - 0-1.git29ae4ff
 - switch to github
 
