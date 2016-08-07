@@ -4,7 +4,7 @@
 
 Name: syncthing
 Version: 0.14.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Syncronisation service
 License:MIT
 URL:http://syncthing.net/    
@@ -72,8 +72,8 @@ export GOPATH=$(pwd)/_build
 export GOBIN=$(pwd)/bin
 
 go run build.go assets
-go build -i -v -ldflags "-w -X main.Version=\"v%{version}\"" -tags noupgrade ./cmd/syncthing
-go install -v -ldflags "-w -X main.Version=\"v%{version}\"" -tags noupgrade ./cmd/syncthing
+go build -i -v -ldflags "-w -X main.Version=v%{version}" -tags noupgrade ./cmd/syncthing
+go install -v -ldflags "-w -X main.Version=v%{version}" -tags noupgrade ./cmd/syncthing
 
 %check
 export GOPATH=$(pwd)/_build:%{gopath}
@@ -107,6 +107,9 @@ install -p -m 0644 ./etc/linux-systemd/system/syncthing@.service %{buildroot}%{_
 
 
 %changelog
+* Sun Aug 07 2016 Vladimir Rusinov <vrusinov@google.com> 0.14.3-2
+- Fix supplied version.
+
 * Fri Jul 29 2016 Vladimir Rusinov <vrusinov@google.com> 0.14.3-1
 - Version bump.
 
