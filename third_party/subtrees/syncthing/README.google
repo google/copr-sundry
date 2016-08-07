@@ -11,7 +11,7 @@ Local Modifications:
 - Added README.google file.
 - Compile from source instead of using binary dist.
 - Removed bundled syncthing@.service since the one from tarball is now used.
-- Updated version to 0.13.7.
+- Updated version to 0.14.3.
 - Reformatted description to fit under 80 characters width.
 - Removed pre-built RPMs.
 - Removed pre-built SRPMs.

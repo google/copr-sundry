@@ -3,8 +3,8 @@
 %{!?go_arches: %define go_arches %{ix86} x86_64 %{arm}}
 
 Name: syncthing
-Version: 0.13.7
-Release: 1%{?dist}
+Version: 0.14.3
+Release: 2%{?dist}
 Summary: Syncronisation service
 License:MIT
 URL:http://syncthing.net/    
@@ -44,6 +44,10 @@ BuildRequires: golang(github.com/cznic/mathutil)
 BuildRequires: golang(github.com/cznic/sortutil)
 BuildRequires: golang(github.com/cznic/strutil)
 BuildRequires: golang(github.com/cznic/zappy)
+BuildRequires: golang(github.com/gogo/protobuf/gogoproto)
+BuildRequires: golang(github.com/oschwald/geoip2-golang)
+BuildRequires: golang(github.com/oschwald/maxminddb-golang)
+BuildRequires: golang(golang.org/x/sys/unix)
 
 
 %description
@@ -60,16 +64,16 @@ Using syncthing, that control is returned to you.
 %build
 mkdir -p ./_build/src/github.com/%{name}
 ln -s $(pwd) ./_build/src/github.com/%{name}/%{name}
+rm -rf ./_build/src/github.com/syncthing/syncthing/vendor/
 
-# Starting with 0.7, sytncthing build script behaves weird with multiple things in GOPATH.
-#export GOPATH=$(pwd)/_build:%{gopath}
 ln -s /usr/share/gocode/src/github.com/* $(pwd)/_build/src/github.com/
 ln -s /usr/share/gocode/src/golang.org $(pwd)/_build/src/
 export GOPATH=$(pwd)/_build
+export GOBIN=$(pwd)/bin
 
-# Alternatively, we could do this:
-#./build.sh
-go run build.go -version v%{version} -no-upgrade
+go run build.go assets
+go build -i -v -ldflags "-w -X main.Version=v%{version}" -tags noupgrade ./cmd/syncthing
+go install -v -ldflags "-w -X main.Version=v%{version}" -tags noupgrade ./cmd/syncthing
 
 %check
 export GOPATH=$(pwd)/_build:%{gopath}
@@ -82,6 +86,7 @@ rm -rf %{buildroot}
 
 mkdir -p %{buildroot}%{_bindir}
 install -p -m 0755 ./bin/syncthing %{buildroot}%{_bindir}
+strip -s %{buildroot}%{_bindir}/syncthing
 
 mkdir -p %{buildroot}%{_unitdir}
 install -p -m 0644 ./etc/linux-systemd/system/syncthing@.service %{buildroot}%{_unitdir}
@@ -103,6 +108,12 @@ install -p -m 0644 ./etc/linux-systemd/system/syncthing@.service %{buildroot}%{_
 
 
 %changelog
+* Sun Aug 07 2016 Vladimir Rusinov <vrusinov@google.com> 0.14.3-2
+- Fix supplied version.
+
+* Fri Jul 29 2016 Vladimir Rusinov <vrusinov@google.com> 0.14.3-1
+- Version bump.
+
 * Wed Jun 15 2016 Vladimir Rusinov <vrusinov@google.com> 0.13.7-1
 - Version update to v0.13.7.
 
