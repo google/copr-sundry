@@ -86,6 +86,7 @@ rm -rf %{buildroot}
 
 mkdir -p %{buildroot}%{_bindir}
 install -p -m 0755 ./bin/syncthing %{buildroot}%{_bindir}
+strip -s %{buildroot}%{_bindir}/syncthing
 
 mkdir -p %{buildroot}%{_unitdir}
 install -p -m 0644 ./etc/linux-systemd/system/syncthing@.service %{buildroot}%{_unitdir}
