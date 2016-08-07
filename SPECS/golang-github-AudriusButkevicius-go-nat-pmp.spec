@@ -12,7 +12,7 @@
 Name:           golang-github-%{project}-%{repo}
 Version:        0
 Release:        1git%{shortcommit}%{?dist}
-Summary:        A Go language client for the NAT-PMP internet protocol.
+Summary:        A Go language client for the NAT-PMP internet protocol
 License:        ASL 2.0
 URL:            https://%{provider_prefix}
 Source0:        https://%{provider_prefix}/archive/%{commit}.zip

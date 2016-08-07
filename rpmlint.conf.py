@@ -38,6 +38,9 @@ addFilter('unversioned-explicit-obsoletes')
 # There's something weird with this warning
 addFilter('incoherent-version-in-changelog')
 
+# This is also fine - examples don't have to be executable.
+addFilter('script-without-shebang')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.

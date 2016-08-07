@@ -56,13 +56,14 @@ code that happens to be owned by Google.
  * golang-github-cznic-bufs
  * golang-github-cznic-fileutil
  * golang-github-cznic-mathutil
+ * golang-github-cznic-ql
  * golang-github-cznic-strutil
- * golang-github-gobwas-glob 0.2.0
- * golang-github-golang-groupcache git604ed57
- * golang-github-cznic-ql 1.0.3
  * golang-github-cznic-sortutil
  * golang-github-cznic-zappy
- * golang-github-influxdb-influxdb 0.9.5.1
+ * golang-github-gobwas-glob 0.2.0
+ * golang-github-golang-groupcache git604ed57
+ * golang-github-golang-sys
+ * golang-github-influxdb-influxdb
  * golang-github-jackpal-gateway 1.0.4
  * golang-github-jackpal-go-nat-pmp 1.0.1
  * golang-github-juju-ratelimit git772f5c3
