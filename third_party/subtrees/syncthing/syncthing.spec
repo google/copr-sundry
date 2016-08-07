@@ -64,16 +64,16 @@ Using syncthing, that control is returned to you.
 %build
 mkdir -p ./_build/src/github.com/%{name}
 ln -s $(pwd) ./_build/src/github.com/%{name}/%{name}
+rm -rf ./_build/src/github.com/syncthing/syncthing/vendor/
 
-# Starting with 0.7, sytncthing build script behaves weird with multiple things in GOPATH.
-#export GOPATH=$(pwd)/_build:%{gopath}
 ln -s /usr/share/gocode/src/github.com/* $(pwd)/_build/src/github.com/
 ln -s /usr/share/gocode/src/golang.org $(pwd)/_build/src/
 export GOPATH=$(pwd)/_build
+export GOBIN=$(pwd)/bin
 
-# Alternatively, we could do this:
-#./build.sh
-go run build.go -version v%{version} -no-upgrade
+go run build.go assets
+go build -i -v -ldflags "-w -X main.Version=\"v%{version}\"" -tags noupgrade ./cmd/syncthing
+go install -v -ldflags "-w -X main.Version=\"v%{version}\"" -tags noupgrade ./cmd/syncthing
 
 %check
 export GOPATH=$(pwd)/_build:%{gopath}
