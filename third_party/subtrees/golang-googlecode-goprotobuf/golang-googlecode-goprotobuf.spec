@@ -104,6 +104,7 @@ Requires:        %{name}-devel = %{version}-%{release}
 
 This package contains unit tests for project
 providing packages with %{import_path} prefix.
+%endif
 
 %prep
 %setup -q -n %{repo}-%{commit}
@@ -164,7 +165,6 @@ install -d %{buildroot}%{_bindir}
 install -m 755 bin/protoc-gen-go %{buildroot}/%{_bindir}/protoc-gen-go
 
 # source codes for building projects
-%if 0%{?with_devel}
 install -d -p %{buildroot}/%{gopath}/src/%{import_path}/
 # find all *.go but no *_test.go files and generate devel.file-list
 for file in $(find . -iname "*.go" \! -iname "*_test.go") ; do
@@ -184,7 +184,6 @@ pushd %{buildroot}/%{gopath}/src/%{simport_path}/
 sed -i 's/"github\.com\/golang\/protobuf/"code\.google\.com\/p\/goprotobuf/g' \
         $(find . -name '*.go')
 popd
-%endif
 
 # testing files for this project
 %if 0%{?with_unit_test}
