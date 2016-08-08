@@ -86,7 +86,6 @@ Install %{name} for the related protocol compiler plugin.
 This package contains library source intended for
 building other packages which use import path with
 %{import_path} prefix.
-%endif
 
 %if 0%{?with_unit_test}
 %package unit-test
