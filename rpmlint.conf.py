@@ -212,3 +212,4 @@ addFilter('pyparsing-doc.noarch: W: file-not-utf8')
 
 # golang packages:
 addFilter('golang-googlecode-goprotobuf.x86_64: W: unstripped-binary-or-object')
+addFilter('golang-github-odeke-em-drive.spec:[0-9]+: W: rpm-buildroot-usage')
