@@ -180,7 +180,8 @@ providing packages with %{import_path} prefix.
 %build
 export GOROOT=/usr/share/gocode
 export GOPATH=%{buildroot}/%{gopath}:%{gopath}:/usr/lib/golang:$(pwd)/Godeps/_workspace:$(pwd)/drive-gen/Godeps/_workspace:%{gopath}
-echo $GOPATH
+mkdir -p $(pwd)/Godeps/_workspace/src/github.com/odeke-em
+ln -s $(pwd) $(pwd)/Godeps/_workspace/src/github.com/odeke-em/drive
 %gobuild ./cmd/drive
 
 %install
