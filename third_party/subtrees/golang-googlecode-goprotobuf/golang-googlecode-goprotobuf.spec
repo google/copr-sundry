@@ -225,7 +225,7 @@ export GOPATH=%{buildroot}/%{gopath}:%{gopath}
 gotest %{import_path}/jsonpb
 gotest %{import_path}/proto
 # --- FAIL: TestGolden (0.09s)
-#	golden_test.go:52: sum("test.pb.go"): length is 78494
+#    golden_test.go:52: sum("test.pb.go"): length is 78494
 #gotest %%{import_path}/proto/testdata
 gotest %{import_path}/protoc-gen-go/generator
 #gotest %%{import_path}/protoc-gen-go/testdata
