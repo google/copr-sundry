@@ -136,5 +136,3 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %changelog
 * Sun Aug 21 2016 Vladimir Rusinov <vladimir@greenmice.info> - 0-0.1.git801861a
 - First package for Fedora
-
-
