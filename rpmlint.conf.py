@@ -45,6 +45,7 @@ addFilter('script-without-shebang')
 addFilter('pem-certificate .*/test(data|s)/.*')
 
 # Ignore invalid url problems:
+# This is external - will be discovered and fixed on rebiuild.
 addFilter('invalid-url')
 
 # Ignore all lint warnings in submodules:
