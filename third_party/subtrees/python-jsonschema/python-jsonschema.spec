@@ -1,8 +1,6 @@
 # Created by pyp2rpm-0.4.2
 %global pypi_name jsonschema
 
-%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print (get_python_lib())")}
-
 Name:           python-%{pypi_name}
 Version:        2.4.0
 Release:        2%{?dist}
