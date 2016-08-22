@@ -129,19 +129,19 @@ Requires:          gd
 %description mod-http-image-filter
 %{summary}.
 
-%package mod-http-perl
-Group:             System Environment/Daemons
-Summary:           Nginx HTTP perl module
-BuildRequires:     perl-devel
-%if 0%{?fedora} >= 24
-BuildRequires:     perl-generators
-%endif
-BuildRequires:     perl(ExtUtils::Embed)
-Requires:          nginx
-Requires:          perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
+#%package mod-http-perl
+#Group:             System Environment/Daemons
+#Summary:           Nginx HTTP perl module
+#BuildRequires:     perl-devel
+#%if 0%{?fedora} >= 24
+#BuildRequires:     perl-generators
+#%endif
+#BuildRequires:     perl(ExtUtils::Embed)
+#Requires:          nginx
+#Requires:          perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 
-%description mod-http-perl
-%{summary}.
+#%description mod-http-perl
+#%{summary}.
 
 %package mod-http-xslt-filter
 Group:             System Environment/Daemons
@@ -225,7 +225,6 @@ export DESTDIR=%{buildroot}
     --with-http_degradation_module \
     --with-http_slice_module \
     --with-http_stub_status_module \
-    --with-http_perl_module=dynamic \
     --with-mail=dynamic \
     --with-mail_ssl_module \
     --with-pcre \
@@ -239,6 +238,8 @@ export DESTDIR=%{buildroot}
     --with-cc-opt="%{optflags} $(pcre-config --cflags)" \
     --with-ld-opt="$RPM_LD_FLAGS -Wl,-E" # so the perl module finds its symbols
 
+    #--with-http_perl_module=dynamic \
+
 make %{?_smp_mflags}
 
 
@@ -246,7 +247,7 @@ make %{?_smp_mflags}
 make install DESTDIR=%{buildroot} INSTALLDIRS=vendor
 
 find %{buildroot} -type f -name .packlist -exec rm -f '{}' \;
-find %{buildroot} -type f -name perllocal.pod -exec rm -f '{}' \;
+#find %{buildroot} -type f -name perllocal.pod -exec rm -f '{}' \;
 find %{buildroot} -type f -empty -exec rm -f '{}' \;
 find %{buildroot} -type f -iname '*.so' -exec chmod 0755 '{}' \;
 
@@ -294,8 +295,8 @@ echo 'load_module "%{_libdir}/nginx/modules/ngx_http_geoip_module.so";' \
     > %{buildroot}%{_datadir}/nginx/modules/mod-http-geoip.conf
 echo 'load_module "%{_libdir}/nginx/modules/ngx_http_image_filter_module.so";' \
     > %{buildroot}%{_datadir}/nginx/modules/mod-http-image-filter.conf
-echo 'load_module "%{_libdir}/nginx/modules/ngx_http_perl_module.so";' \
-    > %{buildroot}%{_datadir}/nginx/modules/mod-http-perl.conf
+#echo 'load_module "%{_libdir}/nginx/modules/ngx_http_perl_module.so";' \
+#    > %{buildroot}%{_datadir}/nginx/modules/mod-http-perl.conf
 echo 'load_module "%{_libdir}/nginx/modules/ngx_http_xslt_filter_module.so";' \
     > %{buildroot}%{_datadir}/nginx/modules/mod-http-xslt-filter.conf
 echo 'load_module "%{_libdir}/nginx/modules/ngx_mail_module.so";' \
@@ -323,10 +324,10 @@ if [ $1 -eq 1 ]; then
     /usr/bin/systemctl reload nginx.service >/dev/null 2>&1 || :
 fi
 
-%post mod-http-perl
-if [ $1 -eq 1 ]; then
-    /usr/bin/systemctl reload nginx.service >/dev/null 2>&1 || :
-fi
+#%post mod-http-perl
+#if [ $1 -eq 1 ]; then
+#    /usr/bin/systemctl reload nginx.service >/dev/null 2>&1 || :
+#fi
 
 %post mod-http-xslt-filter
 if [ $1 -eq 1 ]; then
@@ -364,7 +365,7 @@ fi
 %{_datadir}/vim/vimfiles/ftdetect/nginx.vim
 %{_datadir}/vim/vimfiles/syntax/nginx.vim
 %{_datadir}/vim/vimfiles/indent/nginx.vim
-%{_mandir}/man3/nginx.3pm*
+#%{_mandir}/man3/nginx.3pm*
 %{_mandir}/man8/nginx.8*
 %{_mandir}/man8/nginx-upgrade.8*
 %{_unitdir}/nginx.service
@@ -408,12 +409,12 @@ fi
 %{_datadir}/nginx/modules/mod-http-image-filter.conf
 %{_libdir}/nginx/modules/ngx_http_image_filter_module.so
 
-%files mod-http-perl
-%{_datadir}/nginx/modules/mod-http-perl.conf
-%{_libdir}/nginx/modules/ngx_http_perl_module.so
-%dir %{perl_vendorarch}/auto/nginx
-%{perl_vendorarch}/nginx.pm
-%{perl_vendorarch}/auto/nginx/nginx.so
+#%files mod-http-perl
+#%{_datadir}/nginx/modules/mod-http-perl.conf
+#%{_libdir}/nginx/modules/ngx_http_perl_module.so
+#%dir %{perl_vendorarch}/auto/nginx
+#%{perl_vendorarch}/nginx.pm
+#%{perl_vendorarch}/auto/nginx/nginx.so
 
 %files mod-http-xslt-filter
 %{_datadir}/nginx/modules/mod-http-xslt-filter.conf

@@ -10,3 +10,4 @@ server.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Commented out perl module.
