@@ -1,0 +1,11 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-googlecode-goauth2.git/
+Version: c01369168c85cbce3f165f3a92c6ee1a7f40a412
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-googlecode-goauth2 - OAuth 2.0 for Go clients.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
