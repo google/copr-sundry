@@ -10,3 +10,4 @@ Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
 - Fixed some of the lint issues.
+- Build -devel package everywhere.
