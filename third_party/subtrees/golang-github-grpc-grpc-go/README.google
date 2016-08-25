@@ -10,3 +10,4 @@ of gRPC. HTTP/2 based RPC.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Remove conditional on -devel build.
