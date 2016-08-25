@@ -9,3 +9,4 @@ RPM spec files for golang-googlecode-goauth2 - OAuth 2.0 for Go clients.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Fixed some of the lint issues.

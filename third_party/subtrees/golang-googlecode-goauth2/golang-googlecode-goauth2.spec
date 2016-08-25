@@ -218,7 +218,7 @@ export GOPATH=%{buildroot}/%{gopath}:%{gopath}
 gotest %{import_path}
 gotest %{import_path}/clientcredentials
 # open testdata/gcloud/credentials: no such file or directory
-#gotest %{import_path}/google
+#gotest %%{import_path}/google
 gotest %{import_path}/internal
 gotest %{import_path}/jws
 gotest %{import_path}/jwt
