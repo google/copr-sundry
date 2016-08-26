@@ -48,34 +48,34 @@ BuildRequires: golang(github.com/golang/protobuf/proto)
 #BuildRequires: golang(github.com/odeke-em/cli-spinner)
 #BuildRequires: golang(github.com/odeke-em/exponential-backoff)
 BuildRequires: golang(github.com/odeke-em/extractor)
-BuildRequires: golang(github.com/odeke-em/go-utils/pkger/src)
-BuildRequires: golang(github.com/odeke-em/go-utils/tmpfile)
+#BuildRequires: golang(github.com/odeke-em/go-utils/pkger/src)
+#BuildRequires: golang(github.com/odeke-em/go-utils/tmpfile)
 #BuildRequires: golang(github.com/odeke-em/log)
 #BuildRequires: golang(github.com/odeke-em/meddler)
-#BuildRequires: golang(github.com/odeke-em/pretty-words)
+BuildRequires: golang(github.com/odeke-em/pretty-words)
 #BuildRequires: golang(github.com/odeke-em/semalim)
 #BuildRequires: golang(github.com/odeke-em/statos)
 #BuildRequires: golang(github.com/olekukonko/ts)
 #BuildRequires: golang(github.com/skratchdot/open-golang/open)
 BuildRequires: golang(golang.org/x/crypto/scrypt)
 BuildRequires: golang(golang.org/x/net/context)
-BuildRequires: golang(golang.org/x/oauth2)
-BuildRequires: golang(golang.org/x/oauth2/google)
+#BuildRequires: golang(golang.org/x/oauth2)
+#BuildRequires: golang(golang.org/x/oauth2/google)
 #BuildRequires: golang(golang.org/x/oauth2/internal)
-BuildRequires: golang(golang.org/x/oauth2/jws)
-BuildRequires: golang(golang.org/x/oauth2/jwt)
-BuildRequires: golang(google.golang.org/api/drive/v2)
-BuildRequires: golang(google.golang.org/api/googleapi)
+#BuildRequires: golang(golang.org/x/oauth2/jws)
+#BuildRequires: golang(golang.org/x/oauth2/jwt)
+#BuildRequires: golang(google.golang.org/api/drive/v2)
+#BuildRequires: golang(google.golang.org/api/googleapi)
 #BuildRequires: golang(google.golang.org/api/googleapi/internal/uritemplates)
-BuildRequires: golang(google.golang.org/appengine)
-BuildRequires: golang(google.golang.org/appengine/urlfetch)
-BuildRequires: golang(google.golang.org/cloud)
-BuildRequires: golang(google.golang.org/cloud/compute/metadata)
+#BuildRequires: golang(google.golang.org/appengine)
+#BuildRequires: golang(google.golang.org/appengine/urlfetch)
+#BuildRequires: golang(google.golang.org/cloud)
+#BuildRequires: golang(google.golang.org/cloud/compute/metadata)
 #BuildRequires: golang(google.golang.org/cloud/internal)
 #BuildRequires: golang(google.golang.org/cloud/internal/opts)
-BuildRequires: golang(google.golang.org/grpc)
-BuildRequires: golang(google.golang.org/grpc/credentials)
-BuildRequires: golang(google.golang.org/grpc/credentials/oauth)
+#BuildRequires: golang(google.golang.org/grpc)
+#BuildRequires: golang(google.golang.org/grpc/credentials)
+#BuildRequires: golang(google.golang.org/grpc/credentials/oauth)
 %endif
 
 Requires:      golang(github.com/boltdb/bolt)
@@ -182,7 +182,8 @@ export GOROOT=/usr/share/gocode
 export GOPATH=%{buildroot}/%{gopath}:%{gopath}:/usr/lib/golang:$(pwd)/Godeps/_workspace:$(pwd)/drive-gen/Godeps/_workspace:%{gopath}
 mkdir -p $(pwd)/Godeps/_workspace/src/github.com/odeke-em
 ln -s $(pwd) $(pwd)/Godeps/_workspace/src/github.com/odeke-em/drive
-%gobuild ./cmd/drive
+go build ./cmd/drive
+#%gobuild ./cmd/drive
 
 %install
 # source codes for building projects
