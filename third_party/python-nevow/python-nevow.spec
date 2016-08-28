@@ -1,5 +1,3 @@
-%define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")
-
 Summary: Web application construction kit written in Python
 Name: python-nevow
 Version: 0.13.0

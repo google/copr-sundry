@@ -13,3 +13,4 @@ Local Modifications:
 - Removed docs
 - Change download url to github.
 - Package egg not only on fedora.
+- Removed python_sitelib macro.
