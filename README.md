@@ -69,6 +69,7 @@ code that happens to be owned by Google.
  * golang-github-juju-ratelimit git772f5c3
  * golang-github-lib-pq git0dad96c
  * golang-github-odeke-em-extractor
+ * golang-github-odeke-em-go-uuid
  * golang-github-onsi-ginkgo
  * golang-github-onsi-gomega
  * golang-github-oschwald-geoip2-golang
@@ -79,9 +80,9 @@ code that happens to be owned by Google.
  * golang-github-syndtr-gosnappy / golang-github-golang-snappy
  * golang-github-thejerf-suture
  * golang-githib-vitrun-qart
- * gperftools 2.4
- * grub2 2.02
- * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
+ * gperftools
+ * grub2
+ * hawkey
  * letsencrypt 0.1.1
  * lafs-backup-tool 20160129
  * libev 4.20
