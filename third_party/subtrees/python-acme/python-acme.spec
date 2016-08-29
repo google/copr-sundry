@@ -87,7 +87,6 @@ Requires: python3-six
 Requires: python3-werkzeug
 Recommends: python-acme-doc
 Summary:        %{summary}
-Provides: python3-acme
 
 %description -n python3-acme
 Python 3 library for use of the Automatic Certificate Management Environment

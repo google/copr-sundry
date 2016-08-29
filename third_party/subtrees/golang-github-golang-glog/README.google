@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-github-golang-glog.git/
+Version: a1a86545829e47d935be19747ee240ef0db7672e
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-github-golang-glog - Leveled execution logs for Go.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build -devel package everywhere.
