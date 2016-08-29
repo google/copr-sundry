@@ -18,8 +18,6 @@
 %bcond_with libimaevm
 %endif
 
-%{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
-
 %define rpmhome /usr/lib/rpm
 
 %define rpmver 4.13.0
