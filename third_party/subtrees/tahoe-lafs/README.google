@@ -9,7 +9,7 @@ RPM spec files for tahoe-lafs  - Least Authority File System.
 Local Modifications:
 - Added README.google file.
 - Versioned provides.
-- Updated to 1.10.2.
+- Updated to 1.11.0.
 - Added dependency on python-foolscap.
 - Added dependency on python-zfec.
 - Added dependency on Nevow>=0.11.1.
