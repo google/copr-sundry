@@ -1,6 +1,6 @@
 Name:           python-zfec
 Version:        1.4.24
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        A fast erasure codec with python bindings
 License:        GPLv2+
 URL:            http://allmydata.org/trac/zfec
@@ -42,6 +42,9 @@ sed -i '/^#!\/usr\/bin\/env/d' %{buildroot}%{python_sitearch}/zfec/cmdline_zunfe
 %{python2_sitearch}/zfec-%{version}-py%{python2_version}.egg-info
 
 %changelog
+* Mon Aug 29 2016 Vladimir Rusinov <vrusinov@google.com> - 1.4.24-10
+- Rebuilt
+
 * Sun Aug 17 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.24-9
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
