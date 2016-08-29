@@ -1,5 +1,4 @@
 %global with_python3 1
-%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print (get_python_lib())")}
 
 %global module pyasn1
 %global modules_version 0.0.8
@@ -17,10 +16,8 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 BuildRequires:  python-devel python-setuptools
 
-%if 0%{?with_python3}
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
-%endif
 
 %description
 This is an implementation of ASN.1 types and codecs in the Python programming
