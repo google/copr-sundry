@@ -1,5 +1,4 @@
 %{!?__python2:        %global __python2 /usr/bin/python2}
-%{!?python2_sitelib:  %global python2_sitelib %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 %global with_python3 1
 
@@ -20,12 +19,10 @@ BuildRequires:  python2-devel
 # For use by selftests:
 BuildRequires:  pytest
 BuildRequires:  tkinter
-%if 0%{?with_python3}
 BuildRequires:  python3-devel
 # For use by selftests:
 BuildRequires:  python3-pytest
 BuildRequires:  python3-tkinter
-%endif
 Provides:       python2-six = %{version}-%{release}
 
 %description
