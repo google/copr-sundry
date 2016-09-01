@@ -70,6 +70,7 @@ code that happens to be owned by Google.
  * golang-github-juju-ratelimit git772f5c3
  * golang-github-lib-pq git0dad96c
  * golang-github-odeke-em-extractor
+ * golang-github-odeke-em-go-utils
  * golang-github-odeke-em-go-uuid
  * golang-github-onsi-ginkgo
  * golang-github-onsi-gomega
