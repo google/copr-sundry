@@ -48,9 +48,10 @@ code that happens to be owned by Google.
  * golang-gopkg-check
  * golang-github-AudriusButkevicius-go-nat-pmp
  * golang-github-gobwas-glob
- * golang-github-bkaradzic-go-lz4 1.0.0
- * golang-github-calmh-du 1.0.0
- * golang-github-calmh-luhn 1.0.0
+ * golang-github-grpc-grpc-go
+ * golang-github-bkaradzic-go-lz4
+ * golang-github-calmh-du
+ * golang-github-calmh-luhn
  * golang-github-calmh-xdr 2.0.0
  * golang-github-cznic-b
  * golang-github-cznic-bufs
