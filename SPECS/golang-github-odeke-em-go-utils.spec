@@ -121,9 +121,9 @@ export GOPATH=%{buildroot}/%{gopath}:%{gopath}
 export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %endif
 
-%gotest %{import_path}/io-vs-os_pipe-benchmarks
-%gotest %{import_path}/sexagesimal
-%gotest %{import_path}/tmpfile
+go test %{import_path}/io-vs-os_pipe-benchmarks
+go test %{import_path}/sexagesimal
+go test %{import_path}/tmpfile
 %endif
 
 #define license tag if not already defined
