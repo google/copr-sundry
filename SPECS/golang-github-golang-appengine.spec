@@ -1,0 +1,1 @@
+../third_party/subtrees/golang-github-golang-appengine/golang-github-golang-appengine.spec
