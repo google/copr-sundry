@@ -23,7 +23,7 @@
 Name:           golang-%{provider}-%{project}-%{repo}
 Version:        0
 Release:        0.1.git%{shortcommit}%{?dist}
-Summary:        meddler
+Summary:        Meddler
 License:        MIT
 URL:            https://%{provider_prefix}
 Source0:        https://%{provider_prefix}/archive/%{commit}/%{repo}-%{shortcommit}.tar.gz
