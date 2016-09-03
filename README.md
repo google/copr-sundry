@@ -70,6 +70,7 @@ code that happens to be owned by Google.
  * golang-github-juju-ratelimit git772f5c3
  * golang-github-lib-pq git0dad96c
  * golang-github-odeke-em-extractor
+ * golang-github-odeke-em-cache
  * golang-github-odeke-em-go-utils
  * golang-github-odeke-em-go-uuid
  * golang-github-odeke-em-meddler
@@ -96,9 +97,9 @@ code that happens to be owned by Google.
  * perl-Business-ISBN
  * perl-Business-ISBN-Data
  * perl-Canary-Stability
- * perl-Capture-Tiny 0.30
- * perl-Carp 1.38
- * perl-common-sense 3.7.4
+ * perl-Capture-Tiny
+ * perl-Carp
+ * perl-common-sense
  * perl-Compress-Raw-Bzip2 2.069
  * perl-Compress-Raw-Zlib 2.069
  * perl-Data-OptList 0.109
