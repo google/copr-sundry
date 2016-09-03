@@ -39,6 +39,7 @@ BuildRequires: golang(golang.org/x/crypto/scrypt)
 BuildRequires: golang(golang.org/x/net/context)
 BuildRequires: golang(github.com/odeke-em/meddler)
 BuildRequires: golang(github.com/odeke-em/semalim)
+BuildRequires: golang(github.com/odeke-em/cache)
 
 %description
 %{summary}
@@ -52,7 +53,6 @@ BuildArch:     noarch
 #BuildRequires: golang(github.com/boltdb/bolt/cmd/bolt)
 #BuildRequires: golang(github.com/cheggaaa/pb)
 #BuildRequires: golang(github.com/mattn/go-isatty)
-#BuildRequires: golang(github.com/odeke-em/cache)
 #BuildRequires: golang(github.com/odeke-em/cli-spinner)
 #BuildRequires: golang(github.com/odeke-em/exponential-backoff)
 #BuildRequires: golang(github.com/odeke-em/log)
