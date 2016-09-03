@@ -38,6 +38,7 @@ BuildRequires: golang(github.com/odeke-em/pretty-words)
 BuildRequires: golang(golang.org/x/crypto/scrypt)
 BuildRequires: golang(golang.org/x/net/context)
 BuildRequires: golang(github.com/odeke-em/meddler)
+BuildRequires: golang(github.com/odeke-em/semalim)
 
 %description
 %{summary}
@@ -55,7 +56,6 @@ BuildArch:     noarch
 #BuildRequires: golang(github.com/odeke-em/cli-spinner)
 #BuildRequires: golang(github.com/odeke-em/exponential-backoff)
 #BuildRequires: golang(github.com/odeke-em/log)
-#BuildRequires: golang(github.com/odeke-em/semalim)
 #BuildRequires: golang(github.com/odeke-em/statos)
 #BuildRequires: golang(github.com/olekukonko/ts)
 #BuildRequires: golang(github.com/skratchdot/open-golang/open)
