@@ -72,6 +72,7 @@ code that happens to be owned by Google.
  * golang-github-odeke-em-extractor
  * golang-github-odeke-em-go-utils
  * golang-github-odeke-em-go-uuid
+ * golang-github-odeke-em-meddler
  * golang-github-onsi-ginkgo
  * golang-github-onsi-gomega
  * golang-github-oschwald-geoip2-golang
@@ -85,9 +86,9 @@ code that happens to be owned by Google.
  * gperftools
  * grub2
  * hawkey
- * letsencrypt 0.1.1
- * lafs-backup-tool 20160129
- * libev 4.20
+ * letsencrypt
+ * lafs-backup-tool
+ * libev
  * libsolv 0.6.14
  * nginx 1.8.0
  * perl 5.22.1
