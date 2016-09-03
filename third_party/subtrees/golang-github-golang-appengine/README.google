@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-github-golang-appengine.git/
+Version: 0e3a14d0f2c1d64360763d9efcd3cb65ca12e6f3
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-github-golang-appengine - Go App Engine for
+Managed VMs.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build -devel package everywhere.
