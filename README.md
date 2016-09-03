@@ -73,6 +73,7 @@ code that happens to be owned by Google.
  * golang-github-odeke-em-go-utils
  * golang-github-odeke-em-go-uuid
  * golang-github-odeke-em-meddler
+ * golang-github-odeke-em-semalim
  * golang-github-onsi-ginkgo
  * golang-github-onsi-gomega
  * golang-github-oschwald-geoip2-golang
@@ -92,9 +93,9 @@ code that happens to be owned by Google.
  * libsolv 0.6.14
  * nginx 1.8.0
  * perl 5.22.1
- * perl-Business-ISBN 2.010
- * perl-Business-ISBN-Data 20140910.003
- * perl-Canary-Stability 2006
+ * perl-Business-ISBN
+ * perl-Business-ISBN-Data
+ * perl-Canary-Stability
  * perl-Capture-Tiny 0.30
  * perl-Carp 1.38
  * perl-common-sense 3.7.4
