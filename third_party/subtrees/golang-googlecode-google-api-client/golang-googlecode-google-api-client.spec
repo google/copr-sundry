@@ -17,7 +17,7 @@
 # https://github.com/google/google-api-go-client
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
 %global import_path     google.golang.org/api
-%global commit          18450f4e95c7e76ce3a5dc3a8cb7178ab6d56121
+%global commit          66a8bc6d16488febe10aa767dce67cbf3e7dd21d
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 %global gg_name         golang-google-golang-api
@@ -36,7 +36,7 @@
 
 Name:           golang-googlecode-google-api-client
 Version:        0
-Release:        0.15.git%{shortcommit}%{?dist}
+Release:        0.16.git%{shortcommit}%{?dist}
 Summary:        Go libraries for "new style" Google APIs
 License:        BSD
 URL:            https://%{provider_prefix}
@@ -403,12 +403,8 @@ export GOPATH=%{buildroot}/%{gopath}:%{gopath}
 export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %endif
 
-%if ! 0%{?gotest:1}
-%global gotest go test
-%endif
-
-%gotest %{import_path}/google-api-go-generator
-%gotest %{import_path}/googleapi
+go test %{import_path}/google-api-go-generator
+go test %{import_path}/googleapi
 %endif
 
 #define license tag if not already defined
@@ -431,6 +427,9 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %endif
 
 %changelog
+* Mon Sep 05 2016 Vladimir Rusinov <vrusinov@google.com> - 0-0.16.git66a8b
+- Updated to latest git revision
+
 * Tue Aug 09 2016 jchaloup <jchaloup@redhat.com> - 0-0.15.git18450f4
 - Polish spec file, enable devel and unit-test for epel7
   related: #1250521
