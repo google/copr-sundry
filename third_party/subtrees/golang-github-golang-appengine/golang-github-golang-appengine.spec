@@ -164,9 +164,7 @@ export GOPATH=%{buildroot}/%{gopath}:%{gopath}
 export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %endif
 
-%if ! 0%{?gotest:1}
 %global gotest go test
-%endif
 
 %gotest %{import_path}
 %gotest %{import_path}/channel
