@@ -22,9 +22,6 @@
 [submodule "third_party/submodules/gperftools"]
 	path = third_party/submodules/gperftools
 	url = git://pkgs.fedoraproject.org/gperftools.git
-[submodule "third_party/submodules/nginx"]
-	path = third_party/submodules/nginx
-	url = git://pkgs.fedoraproject.org/nginx.git
 [submodule "third_party/submodules/puppet"]
 	path = third_party/submodules/puppet
 	url = git://pkgs.fedoraproject.org/puppet.git
