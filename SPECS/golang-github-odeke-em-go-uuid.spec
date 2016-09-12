@@ -1,7 +1,7 @@
 %global with_devel 1
 %global with_bundled 0
 %global with_debug 0
-%global with_check 0
+%global with_check 1
 %global with_unit_test 1
 
 %if 0%{?with_debug}
@@ -12,20 +12,21 @@
 
 %global provider        github
 %global provider_tld    com
-%global project         kardianos
-%global repo            osext
+%global project         odeke-em
+%global repo            go-uuid
+# https://github.com/odeke-em/go-uuid
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
 %global import_path     %{provider_prefix}
-%global commit          29ae4ffbc9a6fe9fb2bc5029050ce6996ea1d3bc
+%global commit          b211d769a9aaba5b2b8bdbab5de3c227116f3c39
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           golang-%{provider}-%{project}-%{repo}
-Version:        0.20160807.git%{shortcommit}
-Release:        1%{?dist}
-Summary:        Extensions to the standard Go OS package
-License:        zlib
-URL:            http://%{provider_prefix}
-Source0:        http://%{provider_prefix}/archive/%{commit}.zip
+Version:        0
+Release:        0.1.git%{shortcommit}%{?dist}
+Summary:        UUID package in Golang
+License:        BSD
+URL:            https://%{provider_prefix}
+Source0:        https://%{provider_prefix}/archive/%{commit}/%{repo}-%{shortcommit}.tar.gz
 
 # e.g. el6 has ppc64 arch without gcc-go, so EA tag is required
 ExclusiveArch:  %{?go_arches:%{go_arches}}%{!?go_arches:%{ix86} x86_64 %{arm}}
@@ -35,17 +36,14 @@ BuildRequires:  %{?go_compiler:compiler(go-compiler)}%{!?go_compiler:golang}
 %description
 %{summary}
 
-This package provides extensions to the standard Go OS package,
-including Executable, which returns an absolute path which can
-be used to re-invoke the current program, and ExecutableFolder,
-which returns the directory containing the same.
-
+%if 0%{?with_devel}
 %package devel
-Summary:       Supplementary Go networking libraries
+Summary:       %{summary}
 BuildArch:     noarch
 
-%if 0%{?with_check}
+%if 0%{?with_check} && ! 0%{?with_bundled}
 %endif
+
 
 Provides:      golang(%{import_path}) = %{version}-%{release}
 
@@ -55,13 +53,11 @@ Provides:      golang(%{import_path}) = %{version}-%{release}
 This package contains library source intended for
 building other packages which use import path with
 %{import_path} prefix.
+%endif
 
 %if 0%{?with_unit_test} && 0%{?with_devel}
-%package unit-test
+%package unit-test-devel
 Summary:         Unit tests for %{name} package
-# If go_compiler is not set to 1, there is no virtual provide. Use golang instead.
-BuildRequires:  %{?go_compiler:compiler(go-compiler)}%{!?go_compiler:golang}
-
 %if 0%{?with_check}
 #Here comes all BuildRequires: PACKAGE the unit tests
 #in %%check section need for running
@@ -70,7 +66,7 @@ BuildRequires:  %{?go_compiler:compiler(go-compiler)}%{!?go_compiler:golang}
 # test subpackage tests code from devel subpackage
 Requires:        %{name}-devel = %{version}-%{release}
 
-%description unit-test
+%description unit-test-devel
 %{summary}
 
 This package contains unit tests for project
@@ -104,7 +100,7 @@ for file in $(find . -iname "*_test.go"); do
     echo "%%dir %%{gopath}/src/%%{import_path}/$(dirname $file)" >> devel.file-list
     install -d -p %{buildroot}/%{gopath}/src/%{import_path}/$(dirname $file)
     cp -pav $file %{buildroot}/%{gopath}/src/%{import_path}/$file
-    echo "%%{gopath}/src/%%{import_path}/$file" >> unit-test.file-list
+    echo "%%{gopath}/src/%%{import_path}/$file" >> unit-test-devel.file-list
 done
 %endif
 
@@ -120,11 +116,7 @@ export GOPATH=%{buildroot}/%{gopath}:%{gopath}
 export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %endif
 
-%if ! 0%{?gotest:1}
-%global gotest go test
-%endif
-
-%gotest %{import_path}
+go test %{import_path}
 %endif
 
 #define license tag if not already defined
@@ -133,53 +125,16 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %if 0%{?with_devel}
 %files devel -f devel.file-list
 %license LICENSE
+%doc README.md CONTRIBUTORS
 %dir %{gopath}/src/%{provider}.%{provider_tld}/%{project}
 %endif
 
 %if 0%{?with_unit_test} && 0%{?with_devel}
-%files unit-test -f unit-test.file-list
+%files unit-test-devel -f unit-test-devel.file-list
 %license LICENSE
+%doc README.md CONTRIBUTORS
 %endif
 
 %changelog
-* Sun Aug 07 2016 Vladimir Rusinov <vrusinov@google.com> - 0.20160807..git29ae4ff-1
-- fix version name
-
-* Sun Jun 19 2016 Vladimir Rusinov <vrusinov@google.com> - 0-1.git29ae4ff
-- switch to github
-
-* Mon Feb 22 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.11.hg364fb577de68
-- https://fedoraproject.org/wiki/Changes/golang1.6
-
-* Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0-0.10.hg364fb577de68
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
-
-* Sat Sep 12 2015 jchaloup <jchaloup@redhat.com> - 0-0.9.hg364fb577de68
-- Define gotest macro if not defined
-
-* Fri Sep 11 2015 jchaloup <jchaloup@redhat.com> - 0-0.8.hg364fb577de68
-- Update to spec-2.1
-
-* Wed Aug 12 2015 Fridolin Pokorny <fpokorny@redhat.com> - 0-0.7.hg364fb577de68
-- Update spec file to spec-2.0
-  resolves: #1254591
-
-* Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.6.hg364fb577de68
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
-
-* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.5.hg364fb577de68
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
-
-* Wed Oct 16 2013 Lokesh Mandvekar <lsm5@redhat.com> 0-0.4.hg364fb577de68
-- removed double quotes from provides
-
-* Mon Oct 14 2013 Lokesh Mandvekar <lsm5@redhat.com> 0-0.3.hg364fb577de68
-- devel description update
-
-* Mon Oct 14 2013 Lokesh Mandvekar <lsm5@redhat.com> 0-0.2.hg364fb577de68
-- defattr removed
-- description and summary updated
-
-* Sat Oct 12 2013 Lokesh Mandvekar <lsm5@redhat.com> 0-0.1.hg364fb577de68
-- Initial fedora package
-
+* Mon Aug 29 2016 Vladimir Rusinov <vladimir@greenmice.info> - 0-0.1.gitb211d76
+- First package for Fedora

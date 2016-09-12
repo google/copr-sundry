@@ -48,27 +48,35 @@ code that happens to be owned by Google.
  * golang-gopkg-check
  * golang-github-AudriusButkevicius-go-nat-pmp
  * golang-github-gobwas-glob
- * golang-github-bkaradzic-go-lz4 1.0.0
- * golang-github-calmh-du 1.0.0
- * golang-github-calmh-luhn 1.0.0
+ * golang-github-grpc-grpc-go
+ * golang-github-bkaradzic-go-lz4
+ * golang-github-calmh-du
+ * golang-github-calmh-luhn
  * golang-github-calmh-xdr 2.0.0
  * golang-github-cznic-b
  * golang-github-cznic-bufs
  * golang-github-cznic-fileutil
  * golang-github-cznic-mathutil
+ * golang-github-cznic-ql
  * golang-github-cznic-strutil
- * golang-github-gobwas-glob 0.2.0
- * golang-github-golang-groupcache git604ed57
- * golang-github-cznic-ql 1.0.3
  * golang-github-cznic-sortutil
  * golang-github-cznic-zappy
- * golang-github-influxdb-influxdb 0.9.5.1
+ * golang-github-gobwas-glob 0.2.0
+ * golang-github-golang-groupcache git604ed57
+ * golang-github-golang-sys
+ * golang-github-influxdb-influxdb
  * golang-github-jackpal-gateway 1.0.4
  * golang-github-jackpal-go-nat-pmp 1.0.1
  * golang-github-juju-ratelimit git772f5c3
  * golang-github-lib-pq git0dad96c
- * golang-github-onsi-ginkgo 1.1.0
- * golang-github-onsi-gomega git8adf9e1
+ * golang-github-odeke-em-extractor
+ * golang-github-odeke-em-cache
+ * golang-github-odeke-em-go-utils
+ * golang-github-odeke-em-go-uuid
+ * golang-github-odeke-em-meddler
+ * golang-github-odeke-em-semalim
+ * golang-github-onsi-ginkgo
+ * golang-github-onsi-gomega
  * golang-github-oschwald-geoip2-golang
  * golang-github-oschwald-maxminddb-golang
  * golang-github-rcrowley-go-metrics
@@ -76,19 +84,19 @@ code that happens to be owned by Google.
  * golang-github-syndtr-goleveldb
  * golang-github-syndtr-gosnappy / golang-github-golang-snappy
  * golang-github-thejerf-suture
- * golang-githib-vitrun-qart 0.1
- * gperftools 2.4
- * grub2 2.02
- * hawkey 0.6.1 (including python-hawkey and python3-hawkey)
- * letsencrypt 0.1.1
- * lafs-backup-tool 20160129
- * libev 4.20
+ * golang-githib-vitrun-qart
+ * gperftools
+ * grub2
+ * hawkey
+ * letsencrypt
+ * lafs-backup-tool
+ * libev
  * libsolv 0.6.14
  * nginx 1.8.0
  * perl 5.22.1
- * perl-Business-ISBN 2.010
- * perl-Business-ISBN-Data 20140910.003
- * perl-Canary-Stability 2006
+ * perl-Business-ISBN
+ * perl-Business-ISBN-Data
+ * perl-Canary-Stability
  * perl-Capture-Tiny 0.30
  * perl-Carp 1.38
  * perl-common-sense 3.7.4

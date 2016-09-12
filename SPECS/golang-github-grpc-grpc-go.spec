@@ -1,0 +1,1 @@
+../third_party/subtrees/golang-github-grpc-grpc-go/golang-github-grpc-grpc-go.spec

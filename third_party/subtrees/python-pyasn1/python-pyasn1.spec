@@ -16,10 +16,8 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 BuildRequires:  python-devel python-setuptools
 
-%if 0%{?with_python3}
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
-%endif
 
 %description
 This is an implementation of ASN.1 types and codecs in the Python programming

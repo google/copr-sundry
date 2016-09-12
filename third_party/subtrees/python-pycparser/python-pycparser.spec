@@ -1,5 +1,4 @@
 %global with_python3 1
-%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print (get_python_lib())")}
 
 Name:           python-pycparser
 Summary:        C parser and AST generator written in Python
@@ -19,16 +18,12 @@ Patch100:       pycparser-2.10-ply.patch
 BuildArch:      noarch
 
 BuildRequires:  python2-devel python-setuptools
-
 # for unit tests
 BuildRequires:  dos2unix
 BuildRequires:  python-ply >= 3.6
-
-%if 0%{?with_python3}
 BuildRequires:  python3-devel python3-setuptools
 # for unit tests
 BuildRequires:  python3-ply       
-%endif # if with_python3
 
 Requires:       python-ply >= 3.6
 

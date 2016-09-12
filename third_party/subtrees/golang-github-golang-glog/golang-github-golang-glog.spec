@@ -1,7 +1,7 @@
 %global with_devel 1
 %global with_bundled 0
 %global with_debug 0
-%global with_check 0
+%global with_check 1
 %global with_unit_test 1
 
 %if 0%{?with_debug}
@@ -12,20 +12,21 @@
 
 %global provider        github
 %global provider_tld    com
-%global project         kardianos
-%global repo            osext
+%global project         golang
+%global repo            glog
+# https://github.com/golang/glog
 %global provider_prefix %{provider}.%{provider_tld}/%{project}/%{repo}
 %global import_path     %{provider_prefix}
-%global commit          29ae4ffbc9a6fe9fb2bc5029050ce6996ea1d3bc
+%global commit          fca8c8854093a154ff1eb580aae10276ad6b1b5f
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           golang-%{provider}-%{project}-%{repo}
-Version:        0.20160807.git%{shortcommit}
-Release:        1%{?dist}
-Summary:        Extensions to the standard Go OS package
-License:        zlib
-URL:            http://%{provider_prefix}
-Source0:        http://%{provider_prefix}/archive/%{commit}.zip
+Version:        0
+Release:        0.11.git%{shortcommit}%{?dist}
+Summary:        Leveled execution logs for Go
+License:        ASL 2.0
+URL:            https://%{provider_prefix}
+Source0:        https://%{provider_prefix}/archive/%{commit}/%{repo}-%{shortcommit}.tar.gz
 
 # e.g. el6 has ppc64 arch without gcc-go, so EA tag is required
 ExclusiveArch:  %{?go_arches:%{go_arches}}%{!?go_arches:%{ix86} x86_64 %{arm}}
@@ -35,13 +36,9 @@ BuildRequires:  %{?go_compiler:compiler(go-compiler)}%{!?go_compiler:golang}
 %description
 %{summary}
 
-This package provides extensions to the standard Go OS package,
-including Executable, which returns an absolute path which can
-be used to re-invoke the current program, and ExecutableFolder,
-which returns the directory containing the same.
-
+%if 0%{?with_devel}
 %package devel
-Summary:       Supplementary Go networking libraries
+Summary:       %{summary}
 BuildArch:     noarch
 
 %if 0%{?with_check}
@@ -52,9 +49,19 @@ Provides:      golang(%{import_path}) = %{version}-%{release}
 %description devel
 %{summary}
 
+This is an efficient pure Go implementation of leveled logs in the
+manner of the open source C++ package
+    http://code.google.com/p/google-glog
+
+By binding methods to booleans it is possible to use the log package
+without paying the expense of evaluating the arguments to the log.
+Through the -vmodule flag, the package also provides fine-grained
+control over logging at the file level.
+
 This package contains library source intended for
 building other packages which use import path with
 %{import_path} prefix.
+%endif
 
 %if 0%{?with_unit_test} && 0%{?with_devel}
 %package unit-test
@@ -133,53 +140,50 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %if 0%{?with_devel}
 %files devel -f devel.file-list
 %license LICENSE
+%doc README
 %dir %{gopath}/src/%{provider}.%{provider_tld}/%{project}
 %endif
 
 %if 0%{?with_unit_test} && 0%{?with_devel}
 %files unit-test -f unit-test.file-list
 %license LICENSE
+%doc README
 %endif
 
 %changelog
-* Sun Aug 07 2016 Vladimir Rusinov <vrusinov@google.com> - 0.20160807..git29ae4ff-1
-- fix version name
+* Thu Jul 21 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.11.gitfca8c88
+- https://fedoraproject.org/wiki/Changes/golang1.7
 
-* Sun Jun 19 2016 Vladimir Rusinov <vrusinov@google.com> - 0-1.git29ae4ff
-- switch to github
+* Mon Apr 18 2016 jchaloup <jchaloup@redhat.com> - 0-0.10.gitfca8c88
+- Bump to upstream fca8c8854093a154ff1eb580aae10276ad6b1b5f
+  related: #1249052
 
-* Mon Feb 22 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.11.hg364fb577de68
+* Mon Feb 22 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.9.git44145f0
 - https://fedoraproject.org/wiki/Changes/golang1.6
 
-* Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0-0.10.hg364fb577de68
+* Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0-0.8.git44145f0
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
-* Sat Sep 12 2015 jchaloup <jchaloup@redhat.com> - 0-0.9.hg364fb577de68
-- Define gotest macro if not defined
-
-* Fri Sep 11 2015 jchaloup <jchaloup@redhat.com> - 0-0.8.hg364fb577de68
+* Sat Sep 12 2015 jchaloup <jchaloup@redhat.com> - 0-0.7.git44145f0
 - Update to spec-2.1
+  related: #1249052
 
-* Wed Aug 12 2015 Fridolin Pokorny <fpokorny@redhat.com> - 0-0.7.hg364fb577de68
+* Fri Jul 31 2015 jchaloup <jchaloup@redhat.com> - 0-0.6.git44145f0
 - Update spec file to spec-2.0
-  resolves: #1254591
+  resolves: #1249052
 
-* Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.6.hg364fb577de68
+* Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.5.git44145f0
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
-* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-0.5.hg364fb577de68
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+* Sun Nov 09 2014 jchaloup <jchaloup@redhat.com> - 0-0.4.git44145f0
+- Bump to upstream 44145f04b68cf362d9c4df2182967c2275eaefed
+  resolves: #1161627
+- Choose the correct architecture
 
-* Wed Oct 16 2013 Lokesh Mandvekar <lsm5@redhat.com> 0-0.4.hg364fb577de68
-- removed double quotes from provides
+* Mon Sep 15 2014 Lokesh Mandvekar <lsm5@fedoraproject.org> - 0.2.gitd1c4472
+- BR golang
+- include check
 
-* Mon Oct 14 2013 Lokesh Mandvekar <lsm5@redhat.com> 0-0.3.hg364fb577de68
-- devel description update
-
-* Mon Oct 14 2013 Lokesh Mandvekar <lsm5@redhat.com> 0-0.2.hg364fb577de68
-- defattr removed
-- description and summary updated
-
-* Sat Oct 12 2013 Lokesh Mandvekar <lsm5@redhat.com> 0-0.1.hg364fb577de68
-- Initial fedora package
+* Tue Aug 05 2014 Adam Miller <maxamillion@fedoraproject.org> - 0.0.1.gitd1c4472b
+- First package for Fedora
 

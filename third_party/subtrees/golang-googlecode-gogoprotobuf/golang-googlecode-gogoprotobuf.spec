@@ -350,7 +350,6 @@ echo "Unable to build from bundled deps. No Godeps nor vendor directory"
 exit 1
 %endif
 
-#%%gobuild -o bin/protoc-gen-gogo %%{import_path}/protoc-gen-gogo
 go build -o bin/protoc-gen-gogo %{import_path}/protoc-gen-gogo
 
 %install
