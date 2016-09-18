@@ -43,8 +43,9 @@ code that happens to be owned by Google.
  * golang-googlecode-go-crypto / golang-golangorg-crypto 0-0.10.gitc10c31b
  * golang-googlecode-gogoprotobuf
  * golang-googlecode-goprotobuf git6aaa8d4
+ * golang-googlecode-google-api-client
  * golang-googlecode-net git6acef71
- * golang-googlecode-text git6fc2e00
+ * golang-googlecode-text
  * golang-gopkg-check
  * golang-github-AudriusButkevicius-go-nat-pmp
  * golang-github-gobwas-glob
@@ -52,7 +53,7 @@ code that happens to be owned by Google.
  * golang-github-bkaradzic-go-lz4
  * golang-github-calmh-du
  * golang-github-calmh-luhn
- * golang-github-calmh-xdr 2.0.0
+ * golang-github-calmh-xdr
  * golang-github-cznic-b
  * golang-github-cznic-bufs
  * golang-github-cznic-fileutil
@@ -61,7 +62,7 @@ code that happens to be owned by Google.
  * golang-github-cznic-strutil
  * golang-github-cznic-sortutil
  * golang-github-cznic-zappy
- * golang-github-gobwas-glob 0.2.0
+ * golang-github-gobwas-glob
  * golang-github-golang-groupcache git604ed57
  * golang-github-golang-sys
  * golang-github-influxdb-influxdb
