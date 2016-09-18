@@ -1,0 +1,15 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-googlecode-google-api-client.git/
+Version: 82f9ffc5d5ebcee27ac8505d9eea1bfe7cece108
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-googlecode-google-api-client - Go libraries for
+new style" Google APIs.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Build devel package on EL7.
+- Replaced %gotest with "go test".
+- Updated to 0-0.16.git66a8b.
