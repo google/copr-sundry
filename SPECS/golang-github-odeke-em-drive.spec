@@ -40,6 +40,7 @@ BuildRequires: golang(golang.org/x/net/context)
 BuildRequires: golang(github.com/odeke-em/meddler)
 BuildRequires: golang(github.com/odeke-em/semalim)
 BuildRequires: golang(github.com/odeke-em/cache)
+BuildRequires: golang(google.golang.org/api/drive/v2) >= 0-0.16
 
 %description
 %{summary}
@@ -64,7 +65,6 @@ BuildArch:     noarch
 #BuildRequires: golang(golang.org/x/oauth2/internal)
 #BuildRequires: golang(golang.org/x/oauth2/jws)
 #BuildRequires: golang(golang.org/x/oauth2/jwt)
-#BuildRequires: golang(google.golang.org/api/drive/v2)
 #BuildRequires: golang(google.golang.org/api/googleapi)
 #BuildRequires: golang(google.golang.org/api/googleapi/internal/uritemplates)
 #BuildRequires: golang(google.golang.org/appengine)
