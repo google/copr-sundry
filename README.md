@@ -76,6 +76,7 @@ code that happens to be owned by Google.
  * golang-github-odeke-em-go-uuid
  * golang-github-odeke-em-meddler
  * golang-github-odeke-em-semalim
+ * golang-github-odeke-em-pretty-words
  * golang-github-onsi-ginkgo
  * golang-github-onsi-gomega
  * golang-github-oschwald-geoip2-golang
@@ -92,9 +93,9 @@ code that happens to be owned by Google.
  * letsencrypt
  * lafs-backup-tool
  * libev
- * libsolv 0.6.14
- * nginx 1.8.0
- * perl 5.22.1
+ * libsolv
+ * nginx
+ * perl
  * perl-Business-ISBN
  * perl-Business-ISBN-Data
  * perl-Canary-Stability
