@@ -52,11 +52,6 @@ BuildRequires:     zlib-devel
 
 Requires:          nginx-filesystem = %{epoch}:%{version}-%{release}
 
-%if 0%{?rhel} || 0%{?fedora} < 24
-# Introduced at 1:1.10.0-1 to ease upgrade path. To be removed later.
-Requires:          nginx-all-modules = %{epoch}:%{version}-%{release}
-%endif
-
 Requires:          openssl
 Requires:          pcre
 Requires(pre):     nginx-filesystem
@@ -430,6 +425,9 @@ fi
 
 
 %changelog
+* Wed Sep 28 2016 Vladimir Rusinov <vrusinov@google.com> - 1:1.10.1-2
+- removed dependency on nginx-all-modules
+
 * Tue May 31 2016 Jamie Nguyen <jamielinux@fedoraproject.org> - 1:1.10.1-1
 - update to upstream release 1.10.1
 
