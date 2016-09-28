@@ -40,6 +40,7 @@ BuildRequires: golang(golang.org/x/net/context)
 BuildRequires: golang(github.com/odeke-em/meddler)
 BuildRequires: golang(github.com/odeke-em/semalim)
 BuildRequires: golang(github.com/odeke-em/cache)
+BuildRequires: golang(github.com/odeke-em/command)
 BuildRequires: golang(google.golang.org/api/drive/v2) >= 0-0.16
 BuildRequires: golang(github.com/skratchdot/open-golang/open)
 
@@ -117,13 +118,9 @@ Requires:      golang(google.golang.org/grpc/credentials)
 Requires:      golang(google.golang.org/grpc/credentials/oauth)
 
 Provides:      golang(%{import_path}/config) = %{version}-%{release}
-Provides:      golang(%{import_path}/drive-gen/Godeps/_workspace/src/github.com/boltdb/bolt) = %{version}-%{release}
-Provides:      golang(%{import_path}/drive-gen/Godeps/_workspace/src/github.com/cheggaaa/pb) = %{version}-%{release}
-Provides:      golang(%{import_path}/drive-gen/Godeps/_workspace/src/github.com/google/google-api-go-client/drive/v2) = %{version}-%{release}
 Provides:      golang(%{import_path}/drive-gen/Godeps/_workspace/src/github.com/mattn/go-isatty) = %{version}-%{release}
 Provides:      golang(%{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/cache) = %{version}-%{release}
 Provides:      golang(%{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/cli-spinner) = %{version}-%{release}
-Provides:      golang(%{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/command) = %{version}-%{release}
 Provides:      golang(%{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/exponential-backoff) = %{version}-%{release}
 Provides:      golang(%{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/log) = %{version}-%{release}
 Provides:      golang(%{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/ripper/src) = %{version}-%{release}
@@ -176,6 +173,8 @@ providing packages with %{import_path} prefix.
 
 %prep
 %setup -q -n %{repo}-%{version}
+# Bundled version of command is too old and not compatible.
+rm -r ./drive-gen/Godeps/_workspace/src/github.com/odeke-em/command
 
 %build
 export GOROOT=/usr/share/gocode
@@ -227,7 +226,6 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/boltdb/bolt/cmd/bolt
 %gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/cheggaaa/pb
 %gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/cache
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/command
 %gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/log
 %gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/ripper/src
 %gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/statos
