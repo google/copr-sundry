@@ -83,6 +83,7 @@ code that happens to be owned by Google.
  * golang-github-oschwald-geoip2-golang
  * golang-github-oschwald-maxminddb-golang
  * golang-github-rcrowley-go-metrics
+ * golang-github-skratchdot-open-golang
  * golang-github-stathat-go
  * golang-github-syndtr-goleveldb
  * golang-github-syndtr-gosnappy / golang-github-golang-snappy
