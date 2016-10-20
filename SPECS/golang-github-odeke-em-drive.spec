@@ -222,23 +222,8 @@ export GOPATH=%{buildroot}/%{gopath}:%{gopath}
 export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 %endif
 
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/boltdb/bolt
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/boltdb/bolt/cmd/bolt
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/cheggaaa/pb
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/cache
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/log
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/ripper/src
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/github.com/odeke-em/statos
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/golang.org/x/net/context
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/golang.org/x/oauth2
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/golang.org/x/oauth2/clientcredentials
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/golang.org/x/oauth2/google
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/golang.org/x/oauth2/internal
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/golang.org/x/oauth2/jwt
-%gotest %{import_path}/drive-gen/Godeps/_workspace/src/google.golang.org/api/googleapi
-%gotest %{import_path}/src
-%gotest %{import_path}/src/dcrypto
-%gotest %{import_path}/src/dcrypto/v1
+go test %{import_path}/src/dcrypto
+go test %{import_path}/src/dcrypto/v1
 %endif
 
 #define license tag if not already defined
