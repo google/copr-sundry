@@ -178,7 +178,7 @@ rm -r ./drive-gen/Godeps/_workspace/src/github.com/odeke-em/command
 
 %build
 export GOROOT=/usr/share/gocode
-export GOPATH=%{buildroot}/%{gopath}:%{gopath}:/usr/lib/golang:$(pwd)/Godeps/_workspace:$(pwd)/drive-gen/Godeps/_workspace:%{gopath}
+export GOPATH=%{gopath}:/usr/lib/golang:$(pwd)/Godeps/_workspace:$(pwd)/drive-gen/Godeps/_workspace:%{gopath}
 mkdir -p $(pwd)/Godeps/_workspace/src/github.com/odeke-em
 ln -s $(pwd) $(pwd)/Godeps/_workspace/src/github.com/odeke-em/drive
 go build ./cmd/drive
