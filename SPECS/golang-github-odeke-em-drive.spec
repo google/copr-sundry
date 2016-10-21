@@ -185,6 +185,7 @@ go build ./cmd/drive
 %install
 mkdir -p %{buildroot}/usr/bin/
 cp drive %{buildroot}/usr/bin/drive
+strip -s %{buildroot}/usr/bin/drive
 
 # source codes for building projects
 %if 0%{?with_devel}
