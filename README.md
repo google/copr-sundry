@@ -63,11 +63,12 @@ code that happens to be owned by Google.
  * golang-github-cznic-sortutil
  * golang-github-cznic-zappy
  * golang-github-gobwas-glob
- * golang-github-golang-groupcache git604ed57
+ * golang-github-golang-appengine
+ * golang-github-golang-groupcache
  * golang-github-golang-sys
  * golang-github-influxdb-influxdb
- * golang-github-jackpal-gateway 1.0.4
- * golang-github-jackpal-go-nat-pmp 1.0.1
+ * golang-github-jackpal-gateway
+ * golang-github-jackpal-go-nat-pmp
  * golang-github-juju-ratelimit git772f5c3
  * golang-github-lib-pq git0dad96c
  * golang-github-odeke-em-extractor
