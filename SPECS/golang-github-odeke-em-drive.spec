@@ -20,7 +20,7 @@
 
 Name:           golang-%{provider}-%{project}-%{repo}
 Version:        0.3.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Google Drive client for the commandline
 License:        ASL 2.0
 URL:            https://%{provider_prefix}
@@ -183,6 +183,9 @@ ln -s $(pwd) $(pwd)/Godeps/_workspace/src/github.com/odeke-em/drive
 go build ./cmd/drive
 
 %install
+mkdir -p %{buildroot}/usr/bin/
+cp drive %{buildroot}/usr/bin/drive
+
 # source codes for building projects
 %if 0%{?with_devel}
 install -d -p %{buildroot}/%{gopath}/src/%{import_path}/
@@ -227,6 +230,9 @@ go test %{import_path}/src/dcrypto/v1
 #define license tag if not already defined
 %{!?_licensedir:%global license %doc}
 
+%files
+/usr/bin/drive
+
 %if 0%{?with_devel}
 %files devel -f devel.file-list
 %license LICENSE
@@ -241,5 +247,8 @@ go test %{import_path}/src/dcrypto/v1
 %endif
 
 %changelog
+* Fri Oct 21 2016 Vladimir Rusinov <vrusinov@google.com> - 0.3.7-2
+- Include drive binary in the rpm.
+
 * Thu Aug 11 2016 Vladimir Rusinov <vladimir@greenmice.info> - 0.3.7-1
 - First package for Fedora.
