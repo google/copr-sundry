@@ -1,0 +1,1 @@
+../third_party/subtrees/golang-googlecode-goauth2/golang-googlecode-goauth2.spec
