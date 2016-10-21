@@ -1,0 +1,13 @@
+URL: http://pkgs.fedoraproject.org/cgit/golang-github-grpc-grpc-go.git/
+Version: f4f56449a05662853f5bc2f66309d596bcf86209
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for golang-github-grpc-grpc-go - The Go language implementation
+of gRPC. HTTP/2 based RPC.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
+- Remove conditional on -devel build.

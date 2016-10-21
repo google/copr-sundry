@@ -1,1 +1,1 @@
-../third_party/submodules/nginx/nginx.spec
+../third_party/subtrees/nginx/nginx.spec

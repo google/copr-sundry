@@ -41,6 +41,12 @@ addFilter('incoherent-version-in-changelog')
 # This is also fine - examples don't have to be executable.
 addFilter('script-without-shebang')
 
+# Allow certificates in tests:
+addFilter('pem-certificate .*/test(data|s)/.*')
+
+# Ignore invalid url problems:
+addFilter('invalid-url')
+
 # Ignore all lint warnings in submodules:
 addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
@@ -55,6 +61,7 @@ addFilter('SPECS/libcomps.spec')
 addFilter('nginx\.(spec|x86_64|src)')
 addFilter('SPECS/os-prober.spec')
 addFilter('perl-common-sense.x86_64')
+addFilter('perl-Capture-Tiny.spec')
 addFilter('perl-Compress-Raw-Bzip2.x86_64')
 addFilter('perl-Data-OptList.src')
 addFilter('perl-Data-Section.src')
@@ -140,8 +147,6 @@ addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides perl\(IO::Uncompre
 addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides %perl_compat')
 
 ## Let's encrypt:
-# Allow pems in test files.
-addFilter('python2-letsencrypt.noarch: W: pem-certificate /usr/lib/python2.7/site-packages/letsencrypt/tests/testdata/.*')
 # Allow some nonstandard permissions
 addFilter('letsencrypt.noarch: W: non-standard-dir-perm /var/log/letsencrypt 0')
 addFilter('letsencrypt.noarch: W: non-standard-dir-perm /var/lib/letsencrypt 0')
@@ -187,9 +192,6 @@ addFilter('perl\.(spec|src): W: %ifarch-applied-patch Patch3: perl-5.8.0-libdir6
 addFilter('perl\.(src|spec): W: invalid-license')
 addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides')
 addFilter('perl-threads.x86_64: W: unstripped-binary-or-object')
-
-## Python-cryptoghraphy
-addFilter('python3?-cryptography-vectors.noarch: W: pem-certificate')
 
 ## Python-ply
 # cpython stuff:

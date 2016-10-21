@@ -1,0 +1,1 @@
+../third_party/subtrees/golang-github-skratchdot-open-golang/golang-github-skratchdot-open-golang.spec

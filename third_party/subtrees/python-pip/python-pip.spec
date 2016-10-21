@@ -1,6 +1,5 @@
 # TODO: re-enable tests.
 %global with_tests 0
-%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 %global build_wheel 1
 
 %global srcname pip
