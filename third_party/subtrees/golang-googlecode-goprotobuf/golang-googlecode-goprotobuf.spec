@@ -45,7 +45,6 @@ and manage protocol buffers.
 
 Install %{name}-devel for the associated support library.
 
-%if 0%{?with_devel}
 %package devel
 Summary:       %{summary}
 BuildArch:     noarch
@@ -87,7 +86,6 @@ Install %{name} for the related protocol compiler plugin.
 This package contains library source intended for
 building other packages which use import path with
 %{import_path} prefix.
-%endif
 
 %if 0%{?with_unit_test}
 %package unit-test
@@ -167,7 +165,6 @@ install -d %{buildroot}%{_bindir}
 install -m 755 bin/protoc-gen-go %{buildroot}/%{_bindir}/protoc-gen-go
 
 # source codes for building projects
-%if 0%{?with_devel}
 install -d -p %{buildroot}/%{gopath}/src/%{import_path}/
 # find all *.go but no *_test.go files and generate devel.file-list
 for file in $(find . -iname "*.go" \! -iname "*_test.go") ; do
@@ -187,7 +184,6 @@ pushd %{buildroot}/%{gopath}/src/%{simport_path}/
 sed -i 's/"github\.com\/golang\/protobuf/"code\.google\.com\/p\/goprotobuf/g' \
         $(find . -name '*.go')
 popd
-%endif
 
 # testing files for this project
 %if 0%{?with_unit_test}

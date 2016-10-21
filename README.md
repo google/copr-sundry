@@ -43,8 +43,9 @@ code that happens to be owned by Google.
  * golang-googlecode-go-crypto / golang-golangorg-crypto 0-0.10.gitc10c31b
  * golang-googlecode-gogoprotobuf
  * golang-googlecode-goprotobuf git6aaa8d4
+ * golang-googlecode-google-api-client
  * golang-googlecode-net git6acef71
- * golang-googlecode-text git6fc2e00
+ * golang-googlecode-text
  * golang-gopkg-check
  * golang-github-AudriusButkevicius-go-nat-pmp
  * golang-github-gobwas-glob
@@ -52,7 +53,7 @@ code that happens to be owned by Google.
  * golang-github-bkaradzic-go-lz4
  * golang-github-calmh-du
  * golang-github-calmh-luhn
- * golang-github-calmh-xdr 2.0.0
+ * golang-github-calmh-xdr
  * golang-github-cznic-b
  * golang-github-cznic-bufs
  * golang-github-cznic-fileutil
@@ -61,7 +62,7 @@ code that happens to be owned by Google.
  * golang-github-cznic-strutil
  * golang-github-cznic-sortutil
  * golang-github-cznic-zappy
- * golang-github-gobwas-glob 0.2.0
+ * golang-github-gobwas-glob
  * golang-github-golang-appengine
  * golang-github-golang-groupcache
  * golang-github-golang-sys
@@ -72,15 +73,18 @@ code that happens to be owned by Google.
  * golang-github-lib-pq git0dad96c
  * golang-github-odeke-em-extractor
  * golang-github-odeke-em-cache
+ * golang-github-odeke-em-command
  * golang-github-odeke-em-go-utils
  * golang-github-odeke-em-go-uuid
  * golang-github-odeke-em-meddler
  * golang-github-odeke-em-semalim
+ * golang-github-odeke-em-pretty-words
  * golang-github-onsi-ginkgo
  * golang-github-onsi-gomega
  * golang-github-oschwald-geoip2-golang
  * golang-github-oschwald-maxminddb-golang
  * golang-github-rcrowley-go-metrics
+ * golang-github-skratchdot-open-golang
  * golang-github-stathat-go
  * golang-github-syndtr-goleveldb
  * golang-github-syndtr-gosnappy / golang-github-golang-snappy
@@ -92,9 +96,9 @@ code that happens to be owned by Google.
  * letsencrypt
  * lafs-backup-tool
  * libev
- * libsolv 0.6.14
- * nginx 1.8.0
- * perl 5.22.1
+ * libsolv
+ * nginx
+ * perl
  * perl-Business-ISBN
  * perl-Business-ISBN-Data
  * perl-Canary-Stability
