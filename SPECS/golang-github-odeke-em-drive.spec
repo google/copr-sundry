@@ -19,8 +19,8 @@
 %global import_path     %{provider_prefix}
 
 Name:           golang-%{provider}-%{project}-%{repo}
-Version:        0.3.7
-Release:        2%{?dist}
+Version:        0.3.8
+Release:        1%{?dist}
 Summary:        Google Drive client for the commandline
 License:        ASL 2.0
 URL:            https://%{provider_prefix}
@@ -250,6 +250,9 @@ go test %{import_path}/src/dcrypto/v1
 %endif
 
 %changelog
+* Fri Oct 21 2016 Vladimir Rusinov <vrusinov@google.com> - 0.3.8-1
+- Update to 0.3.8
+
 * Fri Oct 21 2016 Vladimir Rusinov <vrusinov@google.com> - 0.3.7-2
 - Include drive binary in the rpm.
 
