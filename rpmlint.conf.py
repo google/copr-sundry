@@ -45,6 +45,7 @@ addFilter('script-without-shebang')
 addFilter('pem-certificate .*/test(data|s)/.*')
 
 # Ignore invalid url problems:
+# This is external - will be discovered and fixed on rebiuild.
 addFilter('invalid-url')
 
 # Ignore all lint warnings in submodules:
@@ -212,3 +213,4 @@ addFilter('pyparsing-doc.noarch: W: file-not-utf8')
 
 # golang packages:
 addFilter('golang-googlecode-goprotobuf.x86_64: W: unstripped-binary-or-object')
+addFilter('golang-github-odeke-em-drive.spec:[0-9]+: W: rpm-buildroot-usage')
