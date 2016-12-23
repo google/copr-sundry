@@ -1,1 +1,1 @@
-../third_party/submodules/python-foolscap/python-foolscap.spec
+../third_party/subtrees/python-foolscap/python-foolscap.spec
