@@ -10,3 +10,5 @@ replace Perspective Broker.
 Local Modifications:
 - Added README.google file.
 - Added LICENSE file.
+- Updated to 0.12.5.
+- Disabled tests.
