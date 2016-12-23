@@ -1,10 +1,10 @@
 Name:           python-foolscap
-Version:        0.10.1
-Release:        2%{?dist}
+Version:        0.12.5
+Release:        1%{?dist}
 Summary:        Next-generation RPC protocol, intended to replace Perspective Broker
 License:        MIT
 URL:            http://foolscap.lothar.com
-Source0:        https://pypi.python.org/packages/source/f/foolscap/foolscap-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/18/aa/995cadcacfbfb452ed6ec1c9f203d3e3caf708d8ed76d5cddf32f0766828/foolscap-%{version}.tar.gz
 BuildArch:      noarch
 # python-service-identity inherited.
 BuildRequires:  pyOpenSSL
@@ -46,6 +46,9 @@ trial foolscap
 %{_bindir}/flogtool
 
 %changelog
+* Fri Dec 23 2016 Vladimir Rusinov <vrusinov@google.com> - 0.12.5-1
+- Update to 0.12.5
+
 * Tue Jul 19 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.10.1-2
 - https://fedoraproject.org/wiki/Changes/Automatic_Provides_for_Python_RPM_Packages
 
