@@ -1,0 +1,12 @@
+URL: http://pkgs.fedoraproject.org/cgit/python-foolscap.git/
+Version: 7c4a03ea615cc7d90af157ed0d05d332e0b78cad
+License: MIT
+License File: LICENSE
+
+Description:
+RPM spec files for python-foolscap - Next-generation RPC protocol, intended to
+replace Perspective Broker.
+
+Local Modifications:
+- Added README.google file.
+- Added LICENSE file.
