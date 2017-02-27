@@ -12,3 +12,6 @@ RUN yes YES | etc-update --automode -9
 RUN emerge --update --deep --newuse --verbose world
 
 RUN emerge --depclean
+RUN rm -rf /usr/portage/distfiles/
+RUN rm -rf /usr/lib64/python*/test
+RUN rm -rf /usr/lib64/python*/site-packages/portage/tests
