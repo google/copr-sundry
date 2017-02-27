@@ -8,5 +8,6 @@ COPY locale.gen /etc/locale.gen
 #RUN emaint -a sync
 RUN emerge --sync
 RUN emerge --update --deep --newuse --verbose system
+RUN yes YES | etc-update --automode -9
 
 #RUN emerge --update --deep --newuse --verbose world
