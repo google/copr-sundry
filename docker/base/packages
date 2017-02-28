@@ -10,8 +10,10 @@
 -*sys-apps/net-tools
 -*sys-apps/util-linux
 -*virtual/service-manager
--*sys-apps/gawk
 -*sys-apps/sed
 -*sys-apps/file
 -*virtual/shadow
 -*virtual/modutils
+
+# Needed for builds, may be removed in stripped version:
+# -*sys-apps/gawk
