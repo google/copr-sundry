@@ -1,0 +1,19 @@
+-*virtual/ssh
+-*sys-apps/openrc
+-*virtual/dev-manager
+-*virtual/man
+-*sys-apps/kbd
+-*sys-fs/e2fsprogs
+-*sys-apps/busybox
+-*sys-apps/iproute2
+-*sys-apps/man-pages
+-*sys-apps/net-tools
+-*sys-apps/util-linux
+-*virtual/service-manager
+-*sys-apps/sed
+-*sys-apps/file
+-*virtual/shadow
+-*virtual/modutils
+
+# Needed for builds, may be removed in stripped version:
+# -*sys-apps/gawk
