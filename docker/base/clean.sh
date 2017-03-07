@@ -3,6 +3,8 @@
 rm -rf /usr/portage/distfiles/
 rm -rf /usr/lib64/python*/test
 rm -rf /usr/lib64/python*/site-packages/portage/tests
+rm -rf /usr/lib64/python*/site-packages/twisted/test
+rm -rf /usr/lib64/python*/site-packages/allmydata/test
 rm -rf /usr/share/gtk-doc/
 rm -rf /usr/share/doc/
 rm /usr/share/portage/config/make.conf.example
@@ -15,8 +17,8 @@ rm -rf /var/log/*
 
 rm -rf /etc/udev
 rm -rf /etc/terminfo
-rm /etc/sandbox.conf
-rm /etc/wgetrc
+rm -f /etc/sandbox.conf
+rm -f /etc/wgetrc
 rm -rf /etc/skel
 
 rm /sbin/pivot_root

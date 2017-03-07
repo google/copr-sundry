@@ -17,4 +17,5 @@ RUN emerge -v app-portage/gentoolkit
 RUN revdep-rebuild
 
 COPY clean.sh /usr/local/bin/clean.sh
+COPY strip.sh /usr/local/bin/clean.sh
 RUN /usr/local/bin/clean.sh
