@@ -10,6 +10,8 @@ RUN emerge --update --deep --newuse --verbose world
 RUN emerge -v --noreplace dev-lang/python:2.7
 
 # Cleanup
-#RUN yes YES | etc-update --automode -9
-#RUN emerge --depclean
-#RUN revdep-rebuild
+RUN yes YES | etc-update --automode -9
+RUN emerge --depclean
+RUN revdep-rebuild
+COPY clean.sh /usr/local/bin/clean.sh
+RUN /usr/local/bin/clean.sh
