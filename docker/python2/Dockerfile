@@ -6,6 +6,9 @@ COPY make.conf /etc/portage/make.conf
 RUN emerge --update --deep --newuse --verbose system
 RUN emerge --update --deep --newuse --verbose world
 
+# Make sure python2 is in world file:
+RUN emerge -v --noreplace dev-lang/python:2.7
+
 # Cleanup
 #RUN yes YES | etc-update --automode -9
 #RUN emerge --depclean
