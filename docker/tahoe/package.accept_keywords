@@ -1,0 +1,5 @@
+# required by net-fs/tahoe-lafs-1.10.2::gentoo
+# required by tahoe-lafs (argument)
+=dev-python/foolscap-0.11.0 ~*
+# required by tahoe-lafs (argument)
+=net-fs/tahoe-lafs-1.10.2 ~*

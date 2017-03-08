@@ -16,17 +16,6 @@ RUN emerge --depclean
 RUN emerge -v app-portage/gentoolkit
 RUN revdep-rebuild
 
-RUN rm -rf /usr/portage/distfiles/
-RUN rm -rf /usr/lib64/python*/test
-RUN rm -rf /usr/lib64/python*/site-packages/portage/tests
-RUN rm -rf /usr/share/gtk-doc/
-RUN rm -rf /usr/share/doc/
-RUN rm -rf /var/tmp/portage
-RUN rm -rf /etc/udev
-RUN rm -rf /etc/terminfo
-RUN rm /etc/sandbox.conf
-RUN rm /etc/wgetrc
-RUN rm -rf /boot
-RUN rm -rf /media
-RUN rm -rf /mnt
-RUN rm -rf /opt
+COPY clean.sh /usr/local/bin/clean.sh
+COPY strip.sh /usr/local/bin/clean.sh
+RUN /usr/local/bin/clean.sh
