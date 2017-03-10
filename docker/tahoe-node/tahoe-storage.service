@@ -1,0 +1,16 @@
+[Unit]
+Description=Tahoe-lafs storage
+Requires=docker.service
+After=docker.service
+After=network.target
+DefaultInstance=storage
+
+[Service]
+ExecStartPre=-/usr/bin/docker stop tahoe-storage
+ExecStartPre=-/usr/bin/docker rm tahoe-storage
+ExecStartPre=/usr/bin/docker pull vrusinov/tahoe-node
+ExecStart=/usr/bin/docker run --rm --name tahoe-storage -p 3456:3456 -p 27577:27577 -v /var/lib/tahoe/:/var/lib/tahoe vrusinov/tahoe-node
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
