@@ -29,7 +29,7 @@
 Name:           perl
 Version:        %{perl_version}
 # release number must be even higher, because dual-lived modules will be broken otherwise
-Release:        358%{?dist}
+Release:        359%{?dist}
 Epoch:          %{perl_epoch}
 Summary:        Practical Extraction and Report Language
 Group:          Development/Languages
@@ -122,6 +122,8 @@ BuildRequires:  procps, rsyslog
 Provides: perl(bytes_heavy.pl) = %{version}
 Provides: perl(dumpvar.pl) = %{version}
 Provides: perl(perl5db.pl) = %{version}
+
+Provides: perl-interpreter
 
 # suidperl isn't created by upstream since 5.12.0
 Obsoletes: perl-suidperl <= 4:5.12.2
@@ -4642,6 +4644,9 @@ popd
 
 # Old changelog entries are preserved in CVS.
 %changelog
+* Sun Oct 13 2019 Vladimir Rusinov <vrusinov@google.com> - 4:5.22.1-359
+- Add perl-interpreter provides.
+
 * Tue Dec 29 2015 Vladimir Rusinov <vrusinov@google.com> - 4:5.22.1-358
 - Add provides for MODULE_COMPAT_5.20.0 and MODULE_COMPAT_5.20.1.
 
