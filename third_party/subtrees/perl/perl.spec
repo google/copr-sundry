@@ -2650,6 +2650,9 @@ sed \
 #%%{_fixperms} %%{buildroot}%%{perl5_testdir}
 #
 # lib/perl5db.t will fail if Term::ReadLine::Gnu is available
+
+chmod +x %{buildroot}%{perl5_testdir}/perl-tests/t/op/*.t
+
 %check
 %if %{with test}
 pushd t
