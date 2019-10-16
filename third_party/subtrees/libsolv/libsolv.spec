@@ -3,7 +3,6 @@
 %filter_provides_in %{python2_sitearch}/.*\.so$
 %filter_provides_in %{python3_sitearch}/.*\.so$
 %bcond_without python3
-%if 0%{?fedora}
 %global _cmake_opts \\\
             -DCMAKE_BUILD_TYPE=RelWithDebInfo \\\
             -DENABLE_PERL=1 \\\
@@ -17,15 +16,6 @@
             -DMULTI_SEMANTICS=1 \\\
             -DENABLE_COMPLEX_DEPS=1 \\\
             %{nil}
-%else
-%global _cmake_opts \\\
-            -DCMAKE_BUILD_TYPE=RelWithDebInfo \\\
-            -DENABLE_PYTHON=1 \\\
-            -DFEDORA=1 \\\
-            -DENABLE_ARCHREPO=1 \\\
-            -DENABLE_LZMA_COMPRESSION=1 \\\
-            %{nil}
-%endif
 %filter_provides_in %{ruby_vendorarch}/.*\.so$
 %filter_setup
 
