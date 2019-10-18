@@ -20,8 +20,8 @@
 %filter_setup
 
 Name:       libsolv
-Version:    0.6.14
-Release:    6%{?dist}
+Version:    0.7.7
+Release:    1%{?dist}
 License:    BSD
 Url:        https://github.com/openSUSE/libsolv
 Source:     https://github.com/openSUSE/libsolv/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
@@ -213,6 +213,9 @@ make ARGS="-V" test
 %endif
 
 %changelog
+* Fri Nov 18 2019 Vladimir Rusinov <vrusinov@google.com> - 0.7.7-1
+- Update to 0.7.7
+
 * Thu Nov 26 2015 Adam Williamson <awilliam@redhat.com> - 0.6.14-6
 - revert obsolete, as %%python_provide does it (undocumented)
 
