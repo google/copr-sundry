@@ -33,9 +33,7 @@ Summary:    Package dependency solver
 BuildRequires:  cmake libdb-devel expat-devel rpm-devel zlib-devel
 BuildRequires:  swig
 BuildRequires:  python2-devel
-%if 0%{?fedora}
 BuildRequires:  perl perl-devel ruby ruby-devel
-%endif
 %if %{with python3}
 BuildRequires:  python3-devel
 %endif
@@ -213,7 +211,7 @@ make ARGS="-V" test
 %endif
 
 %changelog
-* Fri Nov 18 2019 Vladimir Rusinov <vrusinov@google.com> - 0.7.7-1
+* Fri Oct 18 2019 Vladimir Rusinov <vrusinov@google.com> - 0.7.7-1
 - Update to 0.7.7
 
 * Thu Nov 26 2015 Adam Williamson <awilliam@redhat.com> - 0.6.14-6
