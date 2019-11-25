@@ -146,6 +146,8 @@ addFilter('perl-Tk.spec:63: W: comparison-operator-in-deptoken')
 # Not sure what version that would be.
 addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides perl\(IO::Uncompress::Bunzip2\)')
 addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides %perl_compat')
+# Ok to depend on perl-devel:
+addFilter('devel-dependency perl-devel')
 
 ## Let's encrypt:
 # Allow some nonstandard permissions
