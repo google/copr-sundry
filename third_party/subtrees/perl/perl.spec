@@ -101,7 +101,7 @@ Patch201:       perl-5.16.3-Link-XS-modules-to-libperl.so-with-EU-MM-on-Linux.pa
 # Update some of the bundled modules
 # see http://fedoraproject.org/wiki/Perl/perl.spec for instructions
 
-# Build-require groff tools for populating %%Config correctly, bug #135101
+# Build-require groff tools for populating Config macro correctly, bug #135101
 BuildRequires:  groff-base
 BuildRequires:  libdb-devel, tcsh, zlib-devel, bzip2-devel
 BuildRequires:  systemtap-sdt-devel
