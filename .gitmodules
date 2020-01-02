@@ -214,3 +214,6 @@
 [submodule "third_party/submodules/golang-googlecode-go-crypto"]
 	path = third_party/submodules/golang-googlecode-go-crypto
 	url = git://pkgs.fedoraproject.org/rpms/golang-googlecode-go-crypto.git
+[submodule "third_party/submodules/libarchive"]
+	path = third_party/submodules/libarchive
+	url = https://src.fedoraproject.org/rpms/libarchive.git
