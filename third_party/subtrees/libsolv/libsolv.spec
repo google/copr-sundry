@@ -76,7 +76,6 @@ Requires:   curl gnupg2
 %description demo
 Applications demoing the libsolv library.
 
-%if 0%{?fedora}
 %package -n ruby-solv
 Summary:    Ruby bindings for the libsolv library
 Group:      Development/Languages
@@ -84,7 +83,6 @@ Requires:   libsolv%{?_isa} = %{version}-%{release}
 
 %description -n ruby-solv
 Ruby bindings for sat solver.
-%endif
 
 %package -n python2-solv
 Summary:    Python bindings for the libsolv library
@@ -108,7 +106,6 @@ Provides:   python3-solv = %{version}
 Python 3 bindings for sat solver.
 %endif
 
-%if 0%{?fedora}
 %package -n perl-solv
 Summary:    Perl bindings for the libsolv library
 Group:      Development/Languages
@@ -117,7 +114,6 @@ Requires:   libsolv%{?_isa} = %{version}-%{release}
 
 %description -n perl-solv
 Perl bindings for sat solver.
-%endif
 
 %prep
 %autosetup -S git
@@ -157,21 +153,19 @@ make ARGS="-V" test
 %postun -p /sbin/ldconfig
 
 %files
-%doc LICENSE* README BUGS
+%doc LICENSE* README
 %_libdir/libsolv.so.*
 %_libdir/libsolvext.so.*
 
 %files tools
 %_bindir/archpkgs2solv
 %_bindir/archrepo2solv
-%if 0%{?fedora}
 %_bindir/deb2solv
-%endif
 %_bindir/deltainfoxml2solv
 %_bindir/dumpsolv
 %_bindir/installcheck
 %_bindir/mergesolv
-%_bindir/repo2solv.sh
+%_bindir/repo2solv
 %_bindir/repomdxml2solv
 %_bindir/rpmdb2solv
 %_bindir/rpmmd2solv
@@ -186,11 +180,11 @@ make ARGS="-V" test
 %_datadir/cmake/Modules/FindLibSolv.cmake
 %{_mandir}/man?/*
 %{_libdir}/pkgconfig/%{name}.pc
+%{_libdir}/pkgconfig/libsolvext.pc
 
 %files demo
 %_bindir/solv
 
-%if 0%{?fedora}
 %files -n perl-solv
 %doc examples/p5solv
 %{perl_vendorarch}/*
@@ -198,7 +192,6 @@ make ARGS="-V" test
 %files -n ruby-solv
 %doc examples/rbsolv
 %{ruby_vendorarch}/*
-%endif
 
 %files -n python2-solv
 %doc examples/pysolv
