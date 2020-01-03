@@ -1,15 +1,12 @@
 %global debug_package %{nil}
 
-%{!?go_arches: %define go_arches %{ix86} x86_64 %{arm}}
-
 Name: syncthing
 Version: 0.14.3
 Release: 2%{?dist}
-Summary: Syncronisation service
+Summary: Synchronization service
 License:MIT
 URL:http://syncthing.net/    
 Source0: https://github.com/syncthing/syncthing/archive/v%{version}.zip
-ExclusiveArch:  %{go_arches}
 BuildRequires:  systemd
 BuildRequires:  golang >= 1.2-7
 Requires(post): systemd

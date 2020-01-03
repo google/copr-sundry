@@ -96,6 +96,7 @@ code that happens to be owned by Google.
  * hawkey
  * letsencrypt
  * lafs-backup-tool
+ * libarchive
  * libev
  * libsolv
  * nginx
