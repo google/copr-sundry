@@ -3,7 +3,6 @@
 %filter_provides_in %{python2_sitearch}/.*\.so$
 %filter_provides_in %{python3_sitearch}/.*\.so$
 %bcond_without python3
-%if 0%{?fedora}
 %global _cmake_opts \\\
             -DCMAKE_BUILD_TYPE=RelWithDebInfo \\\
             -DENABLE_PERL=1 \\\
@@ -17,21 +16,12 @@
             -DMULTI_SEMANTICS=1 \\\
             -DENABLE_COMPLEX_DEPS=1 \\\
             %{nil}
-%else
-%global _cmake_opts \\\
-            -DCMAKE_BUILD_TYPE=RelWithDebInfo \\\
-            -DENABLE_PYTHON=1 \\\
-            -DFEDORA=1 \\\
-            -DENABLE_ARCHREPO=1 \\\
-            -DENABLE_LZMA_COMPRESSION=1 \\\
-            %{nil}
-%endif
 %filter_provides_in %{ruby_vendorarch}/.*\.so$
 %filter_setup
 
 Name:       libsolv
-Version:    0.6.14
-Release:    6%{?dist}
+Version:    0.7.7
+Release:    1%{?dist}
 License:    BSD
 Url:        https://github.com/openSUSE/libsolv
 Source:     https://github.com/openSUSE/libsolv/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
@@ -43,9 +33,7 @@ Summary:    Package dependency solver
 BuildRequires:  cmake libdb-devel expat-devel rpm-devel zlib-devel
 BuildRequires:  swig
 BuildRequires:  python2-devel
-%if 0%{?fedora}
 BuildRequires:  perl perl-devel ruby ruby-devel
-%endif
 %if %{with python3}
 BuildRequires:  python3-devel
 %endif
@@ -88,7 +76,6 @@ Requires:   curl gnupg2
 %description demo
 Applications demoing the libsolv library.
 
-%if 0%{?fedora}
 %package -n ruby-solv
 Summary:    Ruby bindings for the libsolv library
 Group:      Development/Languages
@@ -96,7 +83,6 @@ Requires:   libsolv%{?_isa} = %{version}-%{release}
 
 %description -n ruby-solv
 Ruby bindings for sat solver.
-%endif
 
 %package -n python2-solv
 Summary:    Python bindings for the libsolv library
@@ -120,7 +106,6 @@ Provides:   python3-solv = %{version}
 Python 3 bindings for sat solver.
 %endif
 
-%if 0%{?fedora}
 %package -n perl-solv
 Summary:    Perl bindings for the libsolv library
 Group:      Development/Languages
@@ -129,7 +114,6 @@ Requires:   libsolv%{?_isa} = %{version}-%{release}
 
 %description -n perl-solv
 Perl bindings for sat solver.
-%endif
 
 %prep
 %autosetup -S git
@@ -169,21 +153,19 @@ make ARGS="-V" test
 %postun -p /sbin/ldconfig
 
 %files
-%doc LICENSE* README BUGS
+%doc LICENSE* README
 %_libdir/libsolv.so.*
 %_libdir/libsolvext.so.*
 
 %files tools
 %_bindir/archpkgs2solv
 %_bindir/archrepo2solv
-%if 0%{?fedora}
 %_bindir/deb2solv
-%endif
 %_bindir/deltainfoxml2solv
 %_bindir/dumpsolv
 %_bindir/installcheck
 %_bindir/mergesolv
-%_bindir/repo2solv.sh
+%_bindir/repo2solv
 %_bindir/repomdxml2solv
 %_bindir/rpmdb2solv
 %_bindir/rpmmd2solv
@@ -198,11 +180,11 @@ make ARGS="-V" test
 %_datadir/cmake/Modules/FindLibSolv.cmake
 %{_mandir}/man?/*
 %{_libdir}/pkgconfig/%{name}.pc
+%{_libdir}/pkgconfig/libsolvext.pc
 
 %files demo
 %_bindir/solv
 
-%if 0%{?fedora}
 %files -n perl-solv
 %doc examples/p5solv
 %{perl_vendorarch}/*
@@ -210,7 +192,6 @@ make ARGS="-V" test
 %files -n ruby-solv
 %doc examples/rbsolv
 %{ruby_vendorarch}/*
-%endif
 
 %files -n python2-solv
 %doc examples/pysolv
@@ -223,6 +204,9 @@ make ARGS="-V" test
 %endif
 
 %changelog
+* Fri Oct 18 2019 Vladimir Rusinov <vrusinov@google.com> - 0.7.7-1
+- Update to 0.7.7
+
 * Thu Nov 26 2015 Adam Williamson <awilliam@redhat.com> - 0.6.14-6
 - revert obsolete, as %%python_provide does it (undocumented)
 
