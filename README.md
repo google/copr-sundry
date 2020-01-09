@@ -140,7 +140,7 @@ code that happens to be owned by Google.
  * perl-Text-Template 1.46
  * perl-threads 2.02
  * perl-TimeDate 2.30
- * perl-Time-HiRes 1.9728
+ * perl-Time-HiRes 1.9760
  * perl-Tk 804.033
  * perl-XML-Parser 2.44
  * puppet 4.2.1
