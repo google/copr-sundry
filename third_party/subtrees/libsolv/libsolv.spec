@@ -100,7 +100,6 @@ Summary:    Python 3 bindings for the libsolv library
 Group:      Development/Languages
 Requires:   python3
 Requires:   libsolv%{?_isa} = %{version}-%{release}
-Provides:   python3-solv = %{version}
 
 %description -n python3-solv
 Python 3 bindings for sat solver.
