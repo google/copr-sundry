@@ -81,7 +81,7 @@
 	url = git://pkgs.fedoraproject.org/perl-Compress-Raw-Zlib.git
 [submodule "third_party/submodules/perl-Compress-Raw-Bzip2"]
 	path = third_party/submodules/perl-Compress-Raw-Bzip2
-	url = git://pkgs.fedoraproject.org/perl-Compress-Raw-Bzip2.git
+	url = https://src.fedoraproject.org/rpms/perl-Compress-Raw-Bzip2.git
 [submodule "third_party/submodules/perl-Devel-Symdump"]
 	path = third_party/submodules/perl-Devel-Symdump
 	url = git://pkgs.fedoraproject.org/perl-Devel-Symdump.git
@@ -114,7 +114,7 @@
 	url = git://pkgs.fedoraproject.org/perl-GD-Barcode.git
 [submodule "third_party/submodules/perl-HTML-Tagset"]
 	path = third_party/submodules/perl-HTML-Tagset
-	url = git://pkgs.fedoraproject.org/perl-HTML-Tagset.git
+	url = https://src.fedoraproject.org/rpms/perl-HTML-Tagset.git
 [submodule "third_party/submodules/perl-Test-Pod-Coverage"]
 	path = third_party/submodules/perl-Test-Pod-Coverage
 	url = git://pkgs.fedoraproject.org/perl-Test-Pod-Coverage.git
