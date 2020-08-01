@@ -1,14 +1,26 @@
-# Base docker image
+# Base-build docker image
 
-This is a base docker image.
+The base-build image is based on Gentoo. I use it as an environment to build all
+other images.
 
-Built using gentoo. Contains minimal, but still emerge-capable Gentoo
-installation.
+It is not intented to be used directly but as an environment to build more
+stuff. It is reccomeded to "rebase" real images on top of 'base' using
+multi-stage builds, e.g.
 
-It is recommended to remove /usr/portage, includes and compiler in child images.
-It may be also wise to flatten the end image.
+foo-build Dockerfile:
 
-## Download
+```Dockerfile
+FROM vrusinov/base-build:latest as base-build
 
-Latest version can be downloaded at the
-[Docker Hub](https://hub.docker.com/r/vrusinov/base/).
+emerge -v app-misc/foo
+```
+
+foo Dockerfile:
+
+```Dockerfile
+FROM vrusinov/foo-build as build
+
+FROM vrusinov/base as base
+
+COPY --from build /usr/bin/foo /usr/bin/foo
+```
