@@ -38,6 +38,7 @@ rm -rf /etc/xinetd.d
 rm -rf /etc/conf.d
 rm /etc/fstab
 rm -rf /etc/modprobe.d
+rm /etc/rpc
 
 rm -rf /lib/systemd
 
@@ -54,12 +55,12 @@ rm /sbin/pivot_root
 rm /sbin/mkswap
 rm /sbin/agetty
 rm /sbin/blkid
-rm /sbin/blockdev
-rm /sbin/findfs
-rm /sbin/fsck.minix
-rm /sbin/fstrim
-rm /sbin/installkernel
-rm /sbin/losetup
+rm -f /sbin/blockdev
+rm -f /sbin/findfs
+rm -f /sbin/fsck.minix
+rm -f /sbin/fstrim
+rm -f /sbin/installkernel
+rm -f /sbin/losetup
 rm /sbin/mkfs.bfs
 rm /sbin/raw
 rm /sbin/swaplabel
@@ -92,6 +93,7 @@ rm /usr/lib/cracklib_dict.hwm
 rm /usr/lib/cracklib_dict.pwd
 rm /usr/lib/cracklib_dict.pwi
 rm -rf /usr/lib/systemd
+rm -rf /usr/lib64/locale
 
 rm -rf /usr/share/vim
 rm -rf /usr/share/info
