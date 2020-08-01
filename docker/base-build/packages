@@ -14,6 +14,3 @@
 -*sys-apps/file
 -*virtual/shadow
 -*virtual/modutils
-
-# Needed for builds, may be removed in stripped version:
-# -*sys-apps/gawk
