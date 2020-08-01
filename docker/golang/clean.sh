@@ -60,9 +60,9 @@ rm /usr/sbin/regenworld
 rm /usr/sbin/savelog
 rm /usr/sbin/useradd
 rm /usr/sbin/uuidd
-rm /usr/sbin/addpart
-rm /usr/sbin/delpart
-rm /usr/sbin/groupdel
+rm -f /usr/sbin/addpart
+rm -f /usr/sbin/delpart
+rm -f /usr/sbin/groupdel
 rm /usr/sbin/newusers
 rm /usr/sbin/restore-tar
 rm /usr/sbin/update-ca-certificates
@@ -144,7 +144,6 @@ rm -rf /etc/runlevels
 rm -rf /etc/xml
 
 rm /lib64/libBrokenLocale-*.so
-rm /lib64/libdl-*.so
 rm /lib64/libnss_compat.so.*
 rm /lib64/libresolv-*.so
 
