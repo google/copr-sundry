@@ -35,6 +35,9 @@ rm /etc/gai.conf
 rm -rf /etc/logrotate.d
 rm /etc/rsyncd.conf
 rm -rf /etc/xinetd.d
+rm -rf /etc/conf.d
+rm /etc/fstab
+rm -rf /etc/modprobe.d
 
 rm -rf /lib/systemd
 
@@ -70,10 +73,20 @@ rm /sbin/mkfs
 rm /sbin/setcap
 rm /sbin/sln
 rm /sbin/switch_root
+rm /sbin/blkzone
+rm /sbin/ctrlaltdel
+rm /sbin/fsck
+rm /sbin/getpcaps
+rm /sbin/mkfs.minix
+rm /sbin/sfdisk
+rm /sbin/sulogin
+rm /sbin/zramctl
 rm /usr/sbin/rfkill
 rm /usr/sbin/partx
 rm /usr/sbin/logoutd
 rm /usr/sbin/resizepart
+rm /usr/sbin/addpart
+rm /usr/sbin/delpart
 
 rm /usr/lib/cracklib_dict.hwm
 rm /usr/lib/cracklib_dict.pwd
@@ -87,6 +100,7 @@ rm -rf /usr/share/bash-completion
 rm -rf /usr/share/man
 rm -rf /usr/share/nano
 rm -rf /usr/share/zsh
+rm -rf /usr/share/applications
 
 rm -rf /var/cache
 
