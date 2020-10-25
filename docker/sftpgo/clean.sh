@@ -25,7 +25,8 @@ rm /etc/shadow-
 rm /lib64/libBrokenLocale.so.*
 rm /lib64/libhistory.so.*
 rm /lib64/libnss_compat-*.so
-rm /lib64/libreadline.so.*
+# TODO: re-enable once rebuilt without readline
+#rm /lib64/libreadline.so.*
 rm /sbin/fsfreeze
 rm /usr/bin/meson
 rm /usr/bin/xzcmp
