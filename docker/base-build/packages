@@ -14,3 +14,4 @@
 -*sys-apps/file
 -*virtual/shadow
 -*virtual/modutils
+-*app-editors/nano
