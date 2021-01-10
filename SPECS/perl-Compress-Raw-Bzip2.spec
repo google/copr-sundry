@@ -1,1 +1,0 @@
-../third_party/submodules/perl-Compress-Raw-Bzip2/perl-Compress-Raw-Bzip2.spec
