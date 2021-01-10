@@ -1,3 +1,5 @@
+# TODO: remove this file in favor of .toml one.
+
 from Config import *
 
 # Not sure what this number does, but we need some threshold that we'd like to
@@ -63,7 +65,6 @@ addFilter('nginx\.(spec|x86_64|src)')
 addFilter('SPECS/os-prober.spec')
 addFilter('perl-common-sense.x86_64')
 addFilter('perl-Capture-Tiny.spec')
-addFilter('perl-Compress-Raw-Bzip2.x86_64')
 addFilter('perl-Data-OptList.src')
 addFilter('perl-Data-Section.src')
 addFilter('perl-GD.x86_64')

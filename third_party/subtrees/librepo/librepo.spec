@@ -11,7 +11,7 @@
 %bcond_without tests
 %endif
 
-Name:           librepo
+Name:           %mklibname repo
 Version:        1.7.17
 Release:        1%{?dist}
 Summary:        Repodata downloading library
