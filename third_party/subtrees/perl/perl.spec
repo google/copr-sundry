@@ -2361,9 +2361,7 @@ Perl extension for Version Objects
 %prep
 %setup -q -n perl-%{perl_version}
 %patch1 -p1
-%ifarch %{multilib_64_archs}
 %patch3 -p1
-%endif
 %patch4 -p1
 %patch5 -p1
 %patch7 -p1
