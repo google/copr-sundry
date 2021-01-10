@@ -2,7 +2,7 @@
 
 %{!?__python2: %global __python2 /usr/bin/python2}
 
-Name:           libcomps
+Name:           %mklibname comps
 Version:        0.1.7
 Release:        1%{?dist}
 Summary:        Comps XML file manipulation library
