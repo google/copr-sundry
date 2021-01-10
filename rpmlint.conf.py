@@ -1,3 +1,5 @@
+# TODO: remove this file in favor of .toml one.
+
 from Config import *
 
 # Not sure what this number does, but we need some threshold that we'd like to
