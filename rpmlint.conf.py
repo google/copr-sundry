@@ -144,14 +144,6 @@ addFilter('perl.spec:[0-9]+: W: unversioned-explicit-provides %perl_compat')
 # Ok to depend on perl-devel:
 addFilter('devel-dependency perl-devel')
 
-## Let's encrypt:
-# Allow some nonstandard permissions
-addFilter('letsencrypt.noarch: W: non-standard-dir-perm /var/log/letsencrypt 0')
-addFilter('letsencrypt.noarch: W: non-standard-dir-perm /var/lib/letsencrypt 0')
-addFilter('letsencrypt.noarch: W: non-standard-dir-perm /etc/letsencrypt 0')
-# TODO: fix following
-addFilter('letsencrypt.noarch: W: log-files-without-logrotate')
-
 ## Libcomps
 # URL broken :(
 addFilter('libcomps.spec: W: invalid-url Source0: https://github.com/midnightercz/libcomps/libcomps-0.1.7.tar.gz')

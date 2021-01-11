@@ -28,7 +28,6 @@ code that happens to be owned by Google.
 
 ### Most notable
 
- * letsencrypt built for RHEL/CentOS 7.
  * python3 3.5 backported to CentOS 7 (aka RHEL/EL/EPEL 7) along with many
    libraries.
  * Syncthing.
@@ -94,7 +93,6 @@ code that happens to be owned by Google.
  * gperftools
  * grub2
  * hawkey
- * letsencrypt
  * lafs-backup-tool
  * libarchive
  * libev
