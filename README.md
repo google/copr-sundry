@@ -190,6 +190,5 @@ code that happens to be owned by Google.
  * rubygem-fog-profitbricks 0.0.3
  * rubygem-pathspec 0.0.2
  * rubygem-retriable 1.4.1
- * syncthing 0.12.11
  * tahoe-lafs 1.10.2
  * yum 3.4.3-508
