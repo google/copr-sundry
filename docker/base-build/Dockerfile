@@ -17,6 +17,7 @@ RUN emerge --update --deep --newuse --verbose system
 RUN yes YES | etc-update --automode -9
 
 RUN emerge --update --deep --newuse --verbose world
+RUN yes YES | etc-update --automode -9
 
 RUN emerge --depclean
 RUN emerge -v app-portage/gentoolkit
