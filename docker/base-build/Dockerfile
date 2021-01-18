@@ -1,14 +1,17 @@
 FROM gentoo/portage:latest as portage
 
-FROM gentoo/stage3-amd64-nomultilib:latest as gentoo
+FROM gentoo/stage3:amd64-nomultilib as gentoo
 
 COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
-COPY make.conf /etc/portage/make.conf
-COPY rsync-excludes /etc/portage/rsync-excludes
+RUN rm /etc/portage/make.conf
+RUN mkdir -p /etc/portage/make.conf
+COPY make.conf /etc/portage/make.conf/00-base.conf
 COPY package-use-python /etc/portage/package.use/python
 COPY packages /etc/portage/profile/packages
 COPY locale.gen /etc/locale.gen
+
+RUN emerge --sync
 
 RUN emerge --update --deep --newuse --verbose system
 RUN yes YES | etc-update --automode -9
