@@ -5,7 +5,7 @@ set -x
 
 date_v=$(date '+%Y-%m-%d')
 v=2.7.18
-n="python2-build"
+n="python2"
 
 docker build -t vrusinov/$n:latest -t vrusinov/$n:$date_v -t vrusinov/$n:$v -t vrusinov/$n:$v.$date_v .
 docker run --rm -it vrusinov/$n:latest
