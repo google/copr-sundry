@@ -993,9 +993,7 @@ sed -r -i s/'_PIP_VERSION = "[0-9.]+"'/'_PIP_VERSION = "%{pip_version}"'/ Lib/en
 # 00161: was only needed for Python 3.3.0b1
 # 00162: was only needed for Python 3.3.0b1
 %patch163 -p1
-%ifarch ppc %{power64}
 %patch164 -p1
-%endif
 #00165: TODO
 #00166: TODO
 #00167: TODO
