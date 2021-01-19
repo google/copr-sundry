@@ -1,1 +1,0 @@
-../third_party/submodules/perl-Test-Pod-Coverage/perl-Test-Pod-Coverage.spec
