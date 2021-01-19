@@ -964,10 +964,8 @@ sed -r -i s/'_PIP_VERSION = "[0-9.]+"'/'_PIP_VERSION = "%{pip_version}"'/ Lib/en
 # 00136: not for python3
 %patch137 -p1
 # 00138: not for python3
-%ifarch %{arm}
 %patch139 -p1
 %patch140 -p1
-%endif
 # 00140: not for python3
 %patch141 -p1
 %patch143 -p1 -b .tsc-on-ppc
