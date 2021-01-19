@@ -133,7 +133,6 @@ code that happens to be owned by Google.
  * perl-Pod-Coverage 0.23
  * perl-TermReadKey 2.23
  * perl-Test-Pod 1.51
- * perl-Test-Pod-Coverage 1.10
  * perl-Text-Template 1.46
  * perl-threads 2.02
  * perl-TimeDate 2.30
