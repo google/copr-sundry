@@ -5,6 +5,7 @@ rm -f /bin/lsblk
 rm -f /bin/su
 rm -f /bin/tar
 rm -f /bin/tty
+rm -f /etc/shadow-
 rm -f /sbin/blkzone
 rm -f /sbin/chcpu
 rm -f /sbin/ctrlaltdel
@@ -16,6 +17,8 @@ rm -f /sbin/setcap
 rm -f /sbin/sfdisk
 rm -f /sbin/sln
 rm -f /sbin/swapoff
+rm -f /usr/sbin/addpart
+rm -f /usr/sbin/delpart
 rm -rf /bin/attr
 rm -rf /bin/chown
 rm -rf /bin/chroot
@@ -35,6 +38,7 @@ rm -rf /usr/lib/portage
 rm -rf /usr/lib/python*/site-packages/gentoolkit
 rm -rf /usr/lib/python*/site-packages/mesonbuild
 rm -rf /usr/lib/python*/site-packages/portage
+rm -rf /usr/lib/python*/site-packages/setuptools/_vendor/__pycache__
 rm -rf /usr/lib/python*/test
 rm -rf /usr/lib/tmpfiles.d
 rm -rf /usr/lib64/cmake
@@ -102,10 +106,8 @@ rm /usr/lib/python-exec/python3.*/quickpkg
 rm /usr/lib/python-exec/python3.*/regenworld
 rm /usr/lib/python-exec/python3.*/revdep-rebuild
 rm /usr/sbin/addgnupghome
-rm /usr/sbin/addpart
 rm /usr/sbin/archive-conf
 rm /usr/sbin/chgpasswd
-rm /usr/sbin/delpart
 rm /usr/sbin/dispatch-conf
 rm /usr/sbin/env-update
 rm /usr/sbin/groupadd
