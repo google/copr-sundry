@@ -43,6 +43,7 @@ rm /usr/sbin/perl-cleaner
 rm /usr/sbin/readprofile
 rm /usr/sbin/sysctl
 rm /usr/sbin/vigr
+rm -rf /usr/lib/go/pkg/
 
 rm /bin/clean.sh
 rm /bin/rm
