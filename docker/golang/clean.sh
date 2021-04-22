@@ -1,12 +1,15 @@
 #!/bin/sh
 
+rm -f /bin/awk
 rm -f /bin/chroot
 rm -f /bin/df
+rm -f /bin/egrep
 rm -f /bin/lsblk
 rm -f /bin/su
 rm -f /bin/tar
 rm -f /bin/tty
 rm -f /etc/rpc
+rm -f /lib64/libSetFault.so
 rm -f /sbin/blkzone
 rm -f /sbin/chcpu
 rm -f /sbin/ctrlaltdel
@@ -18,6 +21,21 @@ rm -f /sbin/setcap
 rm -f /sbin/sfdisk
 rm -f /sbin/sln
 rm -f /sbin/swapoff
+rm -f /usr/bin/file
+rm -f /usr/bin/gmsgfmt
+rm -f /usr/bin/gpgscm
+rm -f /usr/bin/idn2
+rm -f /usr/bin/join
+rm -f /usr/bin/look
+rm -f /usr/bin/lzmainfo
+rm -f /usr/bin/msgfilter
+rm -f /usr/bin/passwd
+rm -f /usr/bin/pyvenv*
+rm -f /usr/bin/sg
+rm -f /usr/bin/zcmp
+rm -f /usr/bin/zstd
+rm -f /usr/lib64/libcurl.so*
+rm -f /usr/lib64/libfl.a
 rm -f /usr/sbin/addpart
 rm -f /usr/sbin/delpart
 rm -f /usr/sbin/groupdel
@@ -47,6 +65,7 @@ rm -rf /usr/lib64/libgnutlsxx.so.*
 rm -rf /usr/lib64/libnettle.so.*
 rm -rf /usr/lib64/libtasn1.so
 rm -rf /usr/lib64/locale
+rm -rf /usr/lib64/perl5/
 rm -rf /usr/libexec/coreutils
 rm -rf /usr/libexec/gcc
 rm -rf /usr/libexec/gpg-check-pattern
@@ -55,14 +74,17 @@ rm -rf /usr/libexec/pager
 rm -rf /usr/share/aclocal*
 rm -rf /usr/share/applications
 rm -rf /usr/share/autoconf*
+rm -rf /usr/share/awk
 rm -rf /usr/share/baselayout
 rm -rf /usr/share/binutils-data
 rm -rf /usr/share/bison
 rm -rf /usr/share/elt-patches
 rm -rf /usr/share/eselect
+rm -rf /usr/share/gcc-config
 rm -rf /usr/share/gcc-data
 rm -rf /usr/share/gdb
 rm -rf /usr/share/gettext
+rm -rf /usr/share/gettext-*
 rm -rf /usr/share/gnuconfig
 rm -rf /usr/share/i18n
 rm -rf /usr/share/libgpg-error
@@ -71,6 +93,7 @@ rm -rf /usr/share/nano
 rm -rf /usr/share/openpgp-keys
 rm -rf /usr/share/pixmaps
 rm -rf /usr/share/polkit-1
+rm -rf /usr/share/portage/
 rm -rf /usr/share/sandbox
 rm -rf /usr/share/tabset
 rm -rf /usr/share/terminfo
