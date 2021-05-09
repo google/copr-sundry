@@ -28,10 +28,8 @@ code that happens to be owned by Google.
 
 ### Most notable
 
- * python3 3.5 backported to CentOS 7 (aka RHEL/EL/EPEL 7) along with many
-   libraries.
- * Syncthing.
- * Tahoe-lafs.
+ * Syncthing
+ * Tahoe-lafs
 
 ### Full list
 
@@ -144,7 +142,6 @@ code that happens to be owned by Google.
  * pyOpenSSL 16.0.0
  * pyparsing & python3-pyparsing 2.1.0
  * python 2.7.11
- * python3 3.5.0
  * python-acme 0.1.1
  * python-cffi 1.4.2
  * python-characteristic 14.3.0
