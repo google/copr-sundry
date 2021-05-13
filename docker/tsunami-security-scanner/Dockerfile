@@ -52,8 +52,7 @@ COPY --from=build /usr/lib64/libpcap* /usr/lib64/
 COPY --from=build /usr/share/ncrack/ /usr/share/ncrack/
 COPY --from=build /usr/share/nmap/ /usr/share/nmap/
 
-# Example:
-# cp /opt/tsunami
-# java -cp tsunami.jar:plugins/* -Dtsunami-config.location=tsunami.yaml com.google.tsunami.main.cli.TsunamiCli --ip-v4-target=127.0.0.1
-# java -cp tsunami.jar:plugins/* -Dtsunami-config.location=tsunami.yaml com.google.tsunami.main.cli.TsunamiCli --ip-v4-target=192.168.0.54 --scan-results-local-output-format=JSON --scan-results-local-output-filename=out
-ENTRYPOINT ["/bin/bash"]
+COPY entrypoint.sh /bin/entrypoint.sh
+ENV IP_V4_TARGET ""
+ENV IP_V6_TARGET ""
+ENTRYPOINT ["/bin/entrypoint.sh"]
