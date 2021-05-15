@@ -3,8 +3,8 @@ FROM vrusinov/base-build:latest as base
 COPY openjdk.use /etc/portage/package.use/openjdk
 
 RUN emerge -uDN -v system
-RUN yes YES | etc-update --automode -9
 RUN emerge -uDN -v world
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN yes YES | etc-update --automode -9
 
 RUN emerge -v dev-java/openjdk
