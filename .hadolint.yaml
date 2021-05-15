@@ -1,3 +1,5 @@
 ignored:
-  # "Using latest is prone to errors if the image will ever update."
+   # "Using latest is prone to errors if the image will ever update."
    - DL3007
+   # "Use WORKDIR to switch to a directory"
+   - DL3003
