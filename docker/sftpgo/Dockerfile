@@ -1,17 +1,17 @@
 FROM vrusinov/golang-build:latest as build
 
-RUN emerge -v dev-vcs/git
-RUN mkdir /tmp/build
-RUN cd /tmp/build && \
-  git clone https://github.com/drakkan/sftpgo && \
-  cd sftpgo && \
-  git checkout v1.0.0 && \
-  go build -i && \
-  cp sftpgo /bin && \
-  mkdir -p /usr/share/sftpgo && \
-  cp -r templates static /usr/share/sftpgo
-
-RUN useradd -rm -s /bin/sh sftpgo
+RUN emerge -v dev-vcs/git && \
+    mkdir /tmp/build && \
+    cd /tmp/build && \
+    git clone https://github.com/drakkan/sftpgo && \
+    cd sftpgo && \
+    git checkout v1.0.0 && \
+    go build -i && \
+    cp sftpgo /bin && \
+    mkdir -p /usr/share/sftpgo && \
+    cp -r templates static /usr/share/sftpgo && \
+    \
+    useradd -rm -s /bin/sh sftpgo
 
 FROM vrusinov/golang:latest
 COPY --from=build /bin/sftpgo /bin/sftpgo
