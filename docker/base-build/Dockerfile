@@ -4,27 +4,27 @@ FROM gentoo/stage3:amd64-nomultilib as gentoo
 
 COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
-RUN rm /etc/portage/make.conf
-RUN mkdir -p /etc/portage/make.conf
+RUN rm /etc/portage/make.conf && \
+    mkdir -p /etc/portage/make.conf
 COPY make.conf /etc/portage/make.conf/00-base.conf
 COPY package-use-python /etc/portage/package.use/python
 COPY packages /etc/portage/profile/packages
 COPY locale.gen /etc/locale.gen
 
-RUN emerge --sync
-
-RUN emerge --update --deep --newuse --verbose system
+RUN emerge --sync && \
+    emerge --update --deep --newuse --verbose system && \
+    emerge --update --deep --newuse --verbose world
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+# hadolin\t ignore=DL3059
 RUN yes YES | etc-update --automode -9
 
-RUN emerge --update --deep --newuse --verbose world
-RUN yes YES | etc-update --automode -9
-
-RUN emerge --depclean
-RUN emerge -v app-portage/gentoolkit
-RUN revdep-rebuild
+# hadolin\t ignore=DL3059
+RUN emerge --depclean && \
+    emerge -v app-portage/gentoolkit && \
+    revdep-rebuild
 
 COPY clean.sh /usr/local/bin/clean.sh
-RUN chmod +x /usr/local/bin/clean.sh
-RUN /usr/local/bin/clean.sh
+RUN chmod +x /usr/local/bin/clean.sh && \
+    /usr/local/bin/clean.sh
 
 ENTRYPOINT ["/bin/bash"]
