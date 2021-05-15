@@ -2,8 +2,8 @@ FROM vrusinov/base-build:latest as base
 
 COPY openjdk.use /etc/portage/package.use/openjdk
 
-RUN emerge -uDN -v system
-RUN emerge -uDN -v world
+RUN emerge -uDN -v system && \
+    emerge -uDN -v world
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN yes YES | etc-update --automode -9
 
