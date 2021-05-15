@@ -7,6 +7,7 @@ RUN emerge -uDN -v system && \
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN yes YES | etc-update --automode -9
 
+# hadolint ignore=DL3059
 RUN emerge -v dev-java/openjdk
 
 COPY clean.sh /bin/clean.sh
