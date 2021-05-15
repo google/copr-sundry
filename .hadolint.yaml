@@ -1,0 +1,3 @@
+ignored:
+  # "Using latest is prone to errors if the image will ever update."
+   - DL3007
