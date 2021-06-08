@@ -24,15 +24,16 @@ RUN chmod +x build_all.sh && \
     ./build_all.sh && \
     mkdir /opt/tsunami/plugins && \
     cp build/plugins/*.jar /opt/tsunami/plugins
+# hadolint ignore=DL3059
 
 # Compile the Tsunami scanner
 WORKDIR /tmp
 RUN wget --progress=dot:giga https://github.com/google/tsunami-security-scanner/archive/refs/tags/v0.0.4.tar.gz && \
     tar xf v0.0.4.tar.gz
 WORKDIR /tmp/tsunami-security-scanner-0.0.4/
-RUN ./gradlew shadowJar \
-    && cp "$(find "./" -name 'tsunami-main-*-cli.jar')" /opt/tsunami/tsunami.jar \
-    && cp ./tsunami.yaml /opt/tsunami/
+RUN ./gradlew shadowJar && \
+    cp "$(find . -name 'tsunami-main-*-cli.jar')" /opt/tsunami/tsunami.jar && \
+    cp ./tsunami.yaml /opt/tsunami/
 
 COPY clean.sh /usr/local/bin/clean.sh
 RUN chmod +x /usr/local/bin/clean.sh && \
