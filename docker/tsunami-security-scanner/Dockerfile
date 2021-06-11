@@ -4,12 +4,12 @@ FROM vrusinov/java-build:latest as build
 RUN emerge -v net-analyzer/nmap
 
 # Install ncrack
-RUN USE="-webdav curl" emerge -v dev-vcs/git
-RUN emerge -v app-eselect/eselect-repository
-RUN mkdir -p /etc/portage/repos.conf
-RUN eselect repository enable pentoo
-RUN emaint sync -r pentoo
-RUN mkdir -p /etc/portage/package.accept_keywords/
+RUN USE="-webdav curl" emerge -v dev-vcs/git && \
+    emerge -v app-eselect/eselect-repository && \
+    mkdir -p /etc/portage/repos.conf && \
+    eselect repository enable pentoo && \
+    emaint sync -r pentoo && \
+    mkdir -p /etc/portage/package.accept_keywords/
 COPY ncrack.accept_keywords /etc/portage/package.accept_keywords/ncrack
 RUN emerge -v net-analyzer/ncrack
 
@@ -20,14 +20,14 @@ RUN mkdir -p /opt/tsunami
 WORKDIR /tmp
 RUN git clone --depth 1 "https://github.com/google/tsunami-security-scanner-plugins"
 WORKDIR /tmp/tsunami-security-scanner-plugins/google
-RUN chmod +x build_all.sh \
-    && ./build_all.sh
-RUN mkdir /opt/tsunami/plugins \
-    && cp build/plugins/*.jar /opt/tsunami/plugins
+RUN chmod +x build_all.sh && \
+    ./build_all.sh && \
+    mkdir /opt/tsunami/plugins && \
+    cp build/plugins/*.jar /opt/tsunami/plugins
 
 # Compile the Tsunami scanner
 WORKDIR /tmp
-RUN wget https://github.com/google/tsunami-security-scanner/archive/refs/tags/v0.0.4.tar.gz
+RUN wget --progress=dot:giga https://github.com/google/tsunami-security-scanner/archive/refs/tags/v0.0.4.tar.gz
 RUN tar xf v0.0.4.tar.gz
 WORKDIR /tmp/tsunami-security-scanner-0.0.4/
 RUN ./gradlew shadowJar \
