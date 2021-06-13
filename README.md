@@ -135,7 +135,6 @@ code that happens to be owned by Google.
 *   perl-Test-Pod 1.51
 *   perl-Text-Template 1.46
 *   perl-threads 2.02
-*   perl-TimeDate 2.30
 *   perl-Time-HiRes 1.9760
 *   perl-Tk 804.033
 *   perl-XML-Parser 2.44
