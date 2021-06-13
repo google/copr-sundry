@@ -27,16 +27,16 @@ RUN chmod +x build_all.sh && \
 
 # Compile the Tsunami scanner
 WORKDIR /tmp
-RUN wget --progress=dot:giga https://github.com/google/tsunami-security-scanner/archive/refs/tags/v0.0.4.tar.gz
-RUN tar xf v0.0.4.tar.gz
+RUN wget --progress=dot:giga https://github.com/google/tsunami-security-scanner/archive/refs/tags/v0.0.4.tar.gz && \
+    tar xf v0.0.4.tar.gz
 WORKDIR /tmp/tsunami-security-scanner-0.0.4/
 RUN ./gradlew shadowJar \
-    && cp $(find "./" -name 'tsunami-main-*-cli.jar') /opt/tsunami/tsunami.jar \
+    && cp "$(find "./" -name 'tsunami-main-*-cli.jar')" /opt/tsunami/tsunami.jar \
     && cp ./tsunami.yaml /opt/tsunami/
 
 COPY clean.sh /usr/local/bin/clean.sh
-RUN chmod +x /usr/local/bin/clean.sh
-RUN /usr/local/bin/clean.sh
+RUN chmod +x /usr/local/bin/clean.sh && \
+    /usr/local/bin/clean.sh
 
 FROM vrusinov/java as base
 
