@@ -11,12 +11,11 @@ COPY package-use-python /etc/portage/package.use/python
 COPY packages /etc/portage/profile/packages
 COPY locale.gen /etc/locale.gen
 
-RUN emerge --sync && \
-    emerge --update --deep --newuse --verbose system && \
-    emerge --update --deep --newuse --verbose world
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-# hadolin\t ignore=DL3059
-RUN yes YES | etc-update --automode -9
+RUN emerge --sync
+# hadolint ignore=DL3059
+RUN emerge --update --deep --newuse --verbose system && \
+    emerge --update --deep --newuse --verbose world && \
+    etc-update --automode -5
 
 # hadolin\t ignore=DL3059
 RUN emerge --depclean && \
