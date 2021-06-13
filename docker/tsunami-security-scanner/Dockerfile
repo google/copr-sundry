@@ -38,11 +38,11 @@ COPY clean.sh /usr/local/bin/clean.sh
 RUN chmod +x /usr/local/bin/clean.sh && \
     /usr/local/bin/clean.sh
 
-FROM vrusinov/java as base
+FROM vrusinov/java:latest as base
 
 COPY clean.sh /usr/local/bin/clean.sh
-RUN chmod +x /usr/local/bin/clean.sh
-RUN /usr/local/bin/clean.sh
+RUN chmod +x /usr/local/bin/clean.sh && \
+    /usr/local/bin/clean.sh
 
 COPY --from=build /opt/tsunami/ /opt/tsunami/
 COPY --from=build /usr/bin/ncrack /usr/bin/
