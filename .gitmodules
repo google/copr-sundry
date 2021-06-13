@@ -97,9 +97,6 @@
 [submodule "third_party/submodules/perl-HTTP-Date"]
 	path = third_party/submodules/perl-HTTP-Date
 	url = git://pkgs.fedoraproject.org/perl-HTTP-Date.git
-[submodule "third_party/submodules/perl-TimeDate"]
-	path = third_party/submodules/perl-TimeDate
-	url = git://pkgs.fedoraproject.org/perl-TimeDate.git
 [submodule "third_party/submodules/perl-Business-ISBN-Data"]
 	path = third_party/submodules/perl-Business-ISBN-Data
 	url = git://pkgs.fedoraproject.org/perl-Business-ISBN-Data.git
