@@ -141,7 +141,6 @@ code that happens to be owned by Google.
 *   puppet 4.2.1
 *   pycryptopp 0.6.0
 *   pyOpenSSL 16.0.0
-*   pyparsing & python3-pyparsing 2.1.0
 *   python 2.7.11
 *   python-acme 0.1.1
 *   python-cffi 1.4.2
