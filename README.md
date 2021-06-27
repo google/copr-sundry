@@ -90,7 +90,6 @@ code that happens to be owned by Google.
 *   golang-github-syndtr-gosnappy / golang-github-golang-snappy
 *   golang-github-thejerf-suture
 *   golang-githib-vitrun-qart
-*   gperftools
 *   grub2
 *   hawkey
 *   lafs-backup-tool
