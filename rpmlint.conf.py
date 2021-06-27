@@ -16,7 +16,7 @@ addFilter('name-repeated-in-summary')
 addFilter('spelling-error')
 
 # Ignore unversioned bundled provides.
-addFilter('unversioned-explicit-provides bundled\([a-z\-]+\)')
+addFilter(r'unversioned-explicit-provides bundled\([a-z\-]+\)')
 
 # Don't care about groups.
 addFilter('non-standard-group')
@@ -56,12 +56,11 @@ addFilter('third_party/submodules/')
 addFilter('SPECS/cmake.spec')
 addFilter('cryptopp(-(progs|devel))?.x86_64')
 addFilter('SPECS/gdb.spec')
-addFilter('grub2\.(x86_64|src|spec)')
+addFilter(r'grub2\.(x86_64|src|spec)')
 addFilter('grub2-(tools|debuginfo|efi|efi-modules)\.x86_64')
-addFilter('SPECS/gperftools.spec')
 addFilter('libev-devel.x86_64')
 addFilter('SPECS/libcomps.spec')
-addFilter('nginx\.(spec|x86_64|src)')
+addFilter(r'nginx\.(spec|x86_64|src)')
 addFilter('SPECS/os-prober.spec')
 addFilter('perl-common-sense.x86_64')
 addFilter('perl-Capture-Tiny.spec')
