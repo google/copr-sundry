@@ -37,7 +37,11 @@ else
 fi
 
 # hadolint
-for f in $(find . -name Dockerfile); do
-    echo "=== Running hadolint on $f"
-    docker run --rm -i -v $(pwd)/.hadolint.yaml:/.config/hadolint.yaml ghcr.io/hadolint/hadolint < "${f}"
-done
+if which docker 2> /dev/null ; then
+	for f in $(find . -name Dockerfile); do
+	    echo "=== Running hadolint on $f"
+	    docker run --rm -i -v $(pwd)/.hadolint.yaml:/.config/hadolint.yaml ghcr.io/hadolint/hadolint < "${f}"
+	done
+else
+	echo "WARN: docker is not installed"
+fi
