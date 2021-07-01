@@ -60,8 +60,6 @@ rm -rf /bin/egrep
 rm -rf /bin/nano
 rm -rf /bin/ping4
 rm -rf /bin/su
-rm -rf /dev/
-rm -rf /ect/bash
 rm -rf /etc/env.d
 rm -rf /etc/kernel/
 rm -rf /etc/modprobe.d
@@ -69,13 +67,16 @@ rm -rf /etc/portage
 rm -rf /etc/revdep-rebuild
 rm -rf /etc/sandbox.d
 rm -rf /lib/gentoo
-rm -rf /sys
 rm -rf /usr/bin/chroot
 rm -rf /usr/bin/cpp-*
 rm -rf /usr/include
+rm -rf /usr/lib/gcc/x86_64-pc-linux-gnu/*/include
+rm -rf /usr/lib/gcc/x86_64-pc-linux-gnu/*/plugin/include
 rm -rf /usr/lib/go/api/*.txt
 rm -rf /usr/lib/go/doc/
 rm -rf /usr/lib/portage
+rm -rf /usr/lib/python*/__pycache__/pydoc*
+rm -rf /usr/lib/python*/site-packages/_emerge
 rm -rf /usr/lib/python*/site-packages/gentoolkit
 rm -rf /usr/lib/python*/site-packages/mesonbuild
 rm -rf /usr/lib/python*/site-packages/portage
@@ -166,7 +167,6 @@ rm /usr/sbin/restore-tar
 rm /usr/sbin/savelog
 rm /usr/sbin/update-ca-certificates
 rm /usr/sbin/useradd
-
 
 # Remove this script:
 rm -rf /usr/local

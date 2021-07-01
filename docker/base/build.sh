@@ -4,8 +4,9 @@ set -e
 set -x
 
 date_v=$(date '+%Y-%m-%d')
+n="base"
 
-docker build -t vrusinov/build:latest -t vrusinov/build:$date_v .
-#docker run --rm -it vrusinov/base:latest
-docker push vrusinov/base:latest
-docker push vrusinov/base:$date_v
+docker build -t vrusinov/$n:latest -t vrusinov/$n:$date_v .
+docker run --rm -it vrusinov/$n:latest
+docker push vrusinov/$n:latest
+docker push vrusinov/$n:$date_v
