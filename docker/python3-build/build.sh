@@ -14,3 +14,5 @@ docker push vrusinov/$n:latest
 docker push vrusinov/$n:$date_v
 docker push vrusinov/$n:$v
 docker push vrusinov/$n:$v.$date_v
+docker push vrusinov/$n:$v_short
+docker push vrusinov/$n:$v_short.$date_v
