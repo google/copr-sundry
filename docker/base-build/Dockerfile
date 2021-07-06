@@ -13,11 +13,13 @@ COPY locale.gen /etc/locale.gen
 
 RUN emerge --sync
 # hadolint ignore=DL3059
-RUN emerge --update --deep --newuse --verbose system && \
-    emerge --update --deep --newuse --verbose world && \
-    etc-update --automode -5
+RUN emerge --update --deep --newuse --verbose system
+RUN emerge --update --deep --newuse --verbose world
+RUN etc-update --automode -5
 
-# hadolin\t ignore=DL3059
+RUN emerge -v app-eselect/eselect-repository
+
+# hadolint ignore=DL3059
 RUN emerge --depclean && \
     emerge -v app-portage/gentoolkit && \
     revdep-rebuild
