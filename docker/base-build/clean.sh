@@ -77,6 +77,7 @@ rm /sbin/fstrim
 rm /sbin/getcap
 rm /sbin/getpcaps
 rm /sbin/installkernel
+rm -f /sbin/installkernel
 rm /sbin/losetup
 rm /sbin/mkfs
 rm /sbin/mkfs.bfs
