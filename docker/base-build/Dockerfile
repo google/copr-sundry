@@ -11,6 +11,7 @@ COPY package-use-python /etc/portage/package.use/python
 COPY packages /etc/portage/profile/packages
 COPY locale.gen /etc/locale.gen
 
+# hadolint ignore=DL3059
 RUN emerge --sync
 # hadolint ignore=DL3059
 RUN emerge --update --deep --newuse --verbose system
