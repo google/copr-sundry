@@ -7,4 +7,4 @@ RUN chmod +x /usr/local/bin/clean.sh && \
 FROM scratch
 COPY --from=build / /
 
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/bin/bash"]
