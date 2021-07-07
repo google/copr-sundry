@@ -77,6 +77,7 @@ rm -rf /usr/lib/go/doc/
 rm -rf /usr/lib/portage
 rm -rf /usr/lib/python*/__pycache__/pydoc*
 rm -rf /usr/lib/python*/site-packages/_emerge
+rm -rf /usr/lib/python*/site-packages/Cython
 rm -rf /usr/lib/python*/site-packages/gentoolkit
 rm -rf /usr/lib/python*/site-packages/mesonbuild
 rm -rf /usr/lib/python*/site-packages/portage
