@@ -1,6 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
-rm -f /bin/chroot
 rm -f /bin/df
 rm -f /bin/lsblk
 rm -f /bin/sed
@@ -19,9 +18,16 @@ rm -f /sbin/setcap
 rm -f /sbin/sfdisk
 rm -f /sbin/sln
 rm -f /sbin/swapoff
+rm -f /usr/bin/gpg
+rm -f /usr/lib/gcc/x86_64-pc-linux-gnu/*/libstdc++.a*
+rm -f /usr/sbin/addgnupghome
 rm -f /usr/sbin/addpart
+rm -f /usr/sbin/archive-conf
+rm -f /usr/sbin/chgpasswd
 rm -f /usr/sbin/delpart
+rm -f /usr/sbin/dispatch-conf
 rm -f /usr/sbin/groupdel
+rm -rf /bin/chroot
 rm -rf /ect/bash
 rm -rf /etc/bash
 rm -rf /etc/env.d
@@ -35,6 +41,7 @@ rm -rf /lib/gentoo
 rm -rf /usr/include
 rm -rf /usr/lib/go-bootstrap
 rm -rf /usr/lib/portage
+rm -rf /usr/lib/python-exec/python3.*/pydoc
 rm -rf /usr/lib/python*/site-packages/gentoolkit
 rm -rf /usr/lib/python*/site-packages/mesonbuild
 rm -rf /usr/lib/python*/site-packages/portage
@@ -42,6 +49,7 @@ rm -rf /usr/lib/python*/test
 rm -rf /usr/lib/python3.*
 rm -rf /usr/lib/tmpfiles.d
 rm -rf /usr/lib64/cmake
+rm -rf /usr/lib64/gconv/BIG5HKSCS.so
 rm -rf /usr/lib64/libbz2.so
 rm -rf /usr/lib64/libgnutlsxx.so.*
 rm -rf /usr/lib64/libnettle.so.*
@@ -53,6 +61,7 @@ rm -rf /usr/libexec/gcc
 rm -rf /usr/libexec/gpg-check-pattern
 rm -rf /usr/libexec/gpg-protect-tool
 rm -rf /usr/libexec/pager
+rm -rf /usr/sbin/uuidd
 rm -rf /usr/share/aclocal*
 rm -rf /usr/share/applications
 rm -rf /usr/share/autoconf*
@@ -87,7 +96,6 @@ rm /bin/gunzip
 rm /bin/mknod
 rm /bin/ping4
 rm /bin/rmdir
-rm /bin/sort
 rm /bin/true
 rm /etc/etc-update.conf
 rm /etc/filesystems
@@ -131,19 +139,9 @@ rm /usr/lib/python-exec/python3.*/eshowkw
 rm /usr/lib/python-exec/python3.*/fixpackages
 rm /usr/lib/python-exec/python3.*/glsa-check
 rm /usr/lib/python-exec/python3.*/meson
-rm /usr/lib/python-exec/python3.*/portageq
-rm /usr/lib/python-exec/python3.*/pydoc
-rm /usr/lib/python-exec/python3.*/python-config
 rm /usr/lib/python-exec/python3.*/python3-config
 rm /usr/lib/python-exec/python3.*/quickpkg
-rm /usr/lib/python-exec/python3.*/regenworld
-rm /usr/lib/python-exec/python3.*/revdep-rebuild
-rm /usr/sbin/addgnupghome
 rm /usr/sbin/applygnupgdefaults
-rm /usr/sbin/archive-conf
-rm /usr/sbin/chgpasswd
-rm /usr/sbin/chpasswd
-rm /usr/sbin/dispatch-conf
 rm /usr/sbin/env-update
 rm /usr/sbin/etc-update
 rm /usr/sbin/groupadd
@@ -162,7 +160,7 @@ rm /usr/sbin/savelog
 rm /usr/sbin/update-ca-certificates
 rm /usr/sbin/useradd
 rm /usr/sbin/usermod
-rm /usr/sbin/uuidd
 
 # Remove this script:
-rm -rf /bin/clean.sh
+rm -f /bin/sort
+rm -f /bin/clean.sh

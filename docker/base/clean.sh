@@ -86,6 +86,7 @@ rm -rf /usr/lib/python*/test
 rm -rf /usr/lib/tmpfiles.d
 rm -rf /usr/lib64/binutils/*/*/include/
 rm -rf /usr/lib64/cmake
+rm -rf /usr/lib64/gconv/BIG5HKSCS.so
 rm -rf /usr/lib64/locale
 rm -rf /usr/lib64/pkgconfig/
 rm -rf /usr/libexec/gcc
