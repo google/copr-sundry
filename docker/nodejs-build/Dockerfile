@@ -6,4 +6,4 @@ COPY clean.sh /usr/local/bin/clean.sh
 RUN chmod +x /usr/local/bin/clean.sh && \
     /usr/local/bin/clean.sh
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/usr/bin/node", "--version"]

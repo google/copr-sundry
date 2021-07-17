@@ -20,6 +20,7 @@ RUN emerge --update --deep --newuse --verbose world
 # hadolint ignore=DL3059
 RUN etc-update --automode -5
 
+# hadolint ignore=DL3059
 RUN emerge -v app-eselect/eselect-repository
 
 # hadolint ignore=DL3059
