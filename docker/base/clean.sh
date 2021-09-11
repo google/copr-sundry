@@ -88,6 +88,7 @@ rm -rf /usr/lib64/binutils/*/*/include/
 rm -rf /usr/lib64/cmake
 rm -rf /usr/lib64/gconv/BIG5HKSCS.so
 rm -rf /usr/lib64/locale
+rm -rf /usr/lib64/perl5/*/x86_64-linux/auto/Encode
 rm -rf /usr/lib64/pkgconfig/
 rm -rf /usr/libexec/gcc
 rm -rf /usr/sbin/uuidd
