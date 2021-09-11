@@ -2,6 +2,8 @@
 
 rm -f /etc/sandbox.conf
 rm -f /etc/wgetrc
+rm -f /sbin/installkernel
+rm -rf /bin/arping
 rm -rf /boot
 rm -rf /etc/conf.d
 rm -rf /etc/default
@@ -30,6 +32,7 @@ rm -rf /usr/share/applications
 rm -rf /usr/share/bash-completion
 rm -rf /usr/share/doc/
 rm -rf /usr/share/gtk-doc/
+rm -rf /usr/share/i18n/locales/cns11643_stroke
 rm -rf /usr/share/info
 rm -rf /usr/share/locale
 rm -rf /usr/share/man
@@ -42,7 +45,6 @@ rm -rf /var/cache/*
 rm -rf /var/lib/gentoo/news
 rm -rf /var/log/*
 rm -rf /var/tmp/portage
-rm /bin/arping
 rm /bin/chroot
 rm /bin/dmesg
 rm /bin/findmnt
@@ -77,7 +79,6 @@ rm /sbin/fstrim
 rm /sbin/getcap
 rm /sbin/getpcaps
 rm /sbin/installkernel
-rm -f /sbin/installkernel
 rm /sbin/losetup
 rm /sbin/mkfs
 rm /sbin/mkfs.bfs

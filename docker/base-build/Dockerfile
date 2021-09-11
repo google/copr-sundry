@@ -1,6 +1,6 @@
 FROM gentoo/portage:latest as portage
 
-FROM gentoo/stage3:amd64-nomultilib as gentoo
+FROM gentoo/stage3:amd64-nomultilib-systemd as gentoo
 
 COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
