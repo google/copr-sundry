@@ -4,6 +4,7 @@ COPY openjdk.use /etc/portage/package.use/openjdk
 COPY make.conf /etc/portage/make.conf/01-java.conf
 
 RUN emerge -C sys-apps/systemd
+# hadolint ignore=DL3059
 RUN emerge -uDN -v system && \
     emerge -uDN -v world
 # hadolint ignore=DL3059
