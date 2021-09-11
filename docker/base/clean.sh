@@ -108,6 +108,7 @@ rm -rf /usr/share/nano
 rm -rf /usr/share/openpgp-keys
 rm -rf /usr/share/polkit-1
 rm -rf /usr/share/sandbox
+rm -rf /usr/share/sgml/
 rm -rf /usr/share/terminfo
 rm -rf /usr/x86_64-pc-linux-gnu
 rm -rf /var/db
