@@ -9,6 +9,7 @@ RUN emerge -uDN -v system && \
     emerge -uDN -v world
 # hadolint ignore=DL3059
 RUN etc-update --automode -5
+# hadolint ignore=DL3059
 RUN emerge --depclean
 
 # hadolint ignore=DL3059
