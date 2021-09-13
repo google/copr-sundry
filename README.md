@@ -103,7 +103,6 @@ code that happens to be owned by Google.
 *   perl-Capture-Tiny
 *   perl-Carp
 *   perl-common-sense
-*   perl-Compress-Raw-Zlib 2.069
 *   perl-Data-Section 0.200006
 *   perl-Devel-Symdump 2.15
 *   perl-ExtUtils-MakeMaker / perl-ExtUtils-Command 7.10
