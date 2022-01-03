@@ -14,6 +14,7 @@ RUN emerge --depclean
 
 # hadolint ignore=DL3059
 RUN emerge -v virtual/jre
+# hadolint ignore=DL3059
 RUN eselect java-vm set system 1
 
 COPY clean.sh /bin/clean.sh
