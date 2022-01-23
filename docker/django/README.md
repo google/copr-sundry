@@ -29,3 +29,11 @@ ENTRYPOINT ["/bin/entrypoint.sh"]
 ## Ports
 
 Listens on 0.0.0.0:8000, currently with no ability to override.
+
+## Changelog
+
+### 2022-01-23
+
+* Upgraded to Django 3.2.6
+* Upgraded to Python 3.9
+* Use tag `3.2.6.2022-01-23`
