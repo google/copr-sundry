@@ -1,1 +1,0 @@
-../third_party/submodules/python-service-identity/python-service-identity.spec
