@@ -156,7 +156,6 @@ code that happens to be owned by Google.
 *   python-ndg\_httpsclient 0.4.0
 *   python-parsedatetime 1.5
 *   python-psutil 4.2.0
-*   python-pip & python3-pip 7.1.0
 *   python-pyasn1 0.1.9
 *   python-pycparser 2.14
 *   python-ply 3.6
