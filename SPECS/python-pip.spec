@@ -1,1 +1,0 @@
-../third_party/subtrees/python-pip/python-pip.spec
