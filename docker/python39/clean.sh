@@ -1,6 +1,7 @@
 #!/bin/sh
 
 rm -f /usr/lib/gcc/x86_64-pc-linux-gnu/*/libstdc++.a
+rm -f /usr/lib/gcc/x86_64-pc-linux-gnu/*/libstdc++fs.a
 rm -rf /usr/lib/gcc/x86_64-pc-linux-gnu/*/include
 rm -rf /usr/lib/gcc/x86_64-pc-linux-gnu/*/libgcc.a
 rm -rf /usr/lib/gcc/x86_64-pc-linux-gnu/*/plugin/include

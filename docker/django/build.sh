@@ -13,5 +13,3 @@ docker push vrusinov/$n:latest
 docker push vrusinov/$n:$date_v
 docker push vrusinov/$n:$v
 docker push vrusinov/$n:$v.$date_v
-
-du -s * | sort -n
