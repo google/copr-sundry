@@ -51,7 +51,6 @@ code that happens to be owned by Google.
 *   golang-github-gobwas-glob
 *   golang-github-bkaradzic-go-lz4
 *   golang-github-calmh-du
-*   golang-github-calmh-luhn
 *   golang-github-calmh-xdr
 *   golang-github-cznic-b
 *   golang-github-cznic-bufs
