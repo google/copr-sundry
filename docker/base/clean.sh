@@ -85,11 +85,13 @@ rm -rf /usr/lib/python*/site-packages/setuptools/_vendor/__pycache__
 rm -rf /usr/lib/python*/test
 rm -rf /usr/lib/tmpfiles.d
 rm -rf /usr/lib64/binutils/*/*/include/
+rm -rf /usr/lib64/binutils/x86_64-pc-linux-gnu/*/ldscripts
 rm -rf /usr/lib64/cmake
 rm -rf /usr/lib64/gconv/BIG5HKSCS.so
 rm -rf /usr/lib64/gconv/IBM1390.so
 rm -rf /usr/lib64/gconv/IBM1399.so
 rm -rf /usr/lib64/locale
+rm -rf /usr/lib64/perl5
 rm -rf /usr/lib64/perl5/*/x86_64-linux/auto/Encode
 rm -rf /usr/lib64/pkgconfig/
 rm -rf /usr/libexec/gcc
@@ -173,7 +175,6 @@ rm /usr/sbin/restore-tar
 rm /usr/sbin/savelog
 rm /usr/sbin/update-ca-certificates
 rm /usr/sbin/useradd
-rm -rf /usr/lib64/binutils/x86_64-pc-linux-gnu/*/ldscripts
 
 # Remove this script:
 rm -rf /usr/local
