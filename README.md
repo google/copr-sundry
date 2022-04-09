@@ -131,7 +131,6 @@ code that happens to be owned by Google.
 *   perl-Time-HiRes 1.9760
 *   perl-Tk 804.033
 *   perl-XML-Parser 2.44
-*   puppet 4.2.1
 *   pycryptopp 0.6.0
 *   pyOpenSSL 16.0.0
 *   python 2.7.11
