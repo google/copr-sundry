@@ -3,10 +3,10 @@
 set -e
 set -x
 
-if ! test -d /app ; then
+if ! test -f /app/manage.py ; then
   echo "WARN: no app deployed to /app. Creating a sample."
-  cd /
-  django-admin startproject app
+  cd /app
+  django-admin startproject app .
 fi
 
 cd /app

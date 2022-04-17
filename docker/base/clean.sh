@@ -1,5 +1,6 @@
 #!/bin/sh
 
+rm -f /bin/attr
 rm -f /bin/df
 rm -f /bin/lsblk
 rm -f /bin/mountpoint
@@ -41,11 +42,13 @@ rm -f /usr/bin/whereis
 rm -f /usr/bin/x86_64-pc-linux-gnu-g++*
 rm -f /usr/bin/x86_64-pc-linux-gnu-objcopy
 rm -f /usr/bin/xmllint
+rm -f /usr/lib/gcc/x86_64-pc-linux-gnu/*/libquadmath.a
 rm -f /usr/lib64/gconv/ANSI_X3.110.so
 rm -f /usr/lib64/gconv/CSN_369103.so
 rm -f /usr/lib64/gconv/GBGBK.so
 rm -f /usr/lib64/gconv/IBM1130.so
 rm -f /usr/lib64/gconv/IBM1364.so
+rm -f /usr/lib64/gconv/IBM1399.so
 rm -f /usr/lib64/gconv/IBM803.so
 rm -f /usr/lib64/gconv/IBM904.so
 rm -f /usr/lib64/gconv/ISO8859-10.so
@@ -53,7 +56,6 @@ rm -f /usr/lib64/gconv/KOI8-U.so
 rm -f /usr/lib64/libBrokenLocale.a
 rm -f /usr/sbin/addpart
 rm -f /usr/sbin/delpart
-rm -rf /bin/attr
 rm -rf /bin/chown
 rm -rf /bin/chroot
 rm -rf /bin/egrep
@@ -112,6 +114,7 @@ rm -rf /usr/share/nano
 rm -rf /usr/share/openpgp-keys
 rm -rf /usr/share/polkit-1
 rm -rf /usr/share/sandbox
+rm -rf /usr/share/sgml/
 rm -rf /usr/share/sgml/
 rm -rf /usr/share/terminfo
 rm -rf /usr/x86_64-pc-linux-gnu
