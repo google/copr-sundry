@@ -4,6 +4,7 @@ COPY group /etc/group
 COPY passwd /etc/passwd
 
 RUN mkdir -p /app
+# hadolint ignore=DL3059
 RUN chown django:django /app
 
 COPY clean.sh /bin/clean.sh
