@@ -94,7 +94,6 @@ code that happens to be owned by Google.
 *   libarchive
 *   libev
 *   libsolv
-*   nginx
 *   perl
 *   perl-Business-ISBN
 *   perl-Business-ISBN-Data
