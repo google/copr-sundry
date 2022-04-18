@@ -10,3 +10,4 @@ SOURCES/*.zip
 SOURCES/*.bz2
 SOURCES/README
 .vscode/
+reports/
