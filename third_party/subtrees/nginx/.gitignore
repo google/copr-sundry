@@ -1,8 +1,0 @@
-*~
-nginx*/
-x86_64/
-.*.log
-*swp
-*.rpm
-/nginx-*.tar.gz
-/nginx-*.tar.gz.asc
