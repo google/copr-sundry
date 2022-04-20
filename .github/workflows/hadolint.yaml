@@ -1,0 +1,13 @@
+name: Lint Dockerfiles
+
+on: push
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint python39 Dockerfile
+        uses: hadolint/hadolint-action@master
+        with:
+          dockerfile: "docker/python39/Dockerfile"
