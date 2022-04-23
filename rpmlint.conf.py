@@ -96,7 +96,6 @@ addFilter('python-srpm-macros.noarch')
 addFilter('python-twisted.x86_64')
 addFilter('python-zbase32\.(spec|noarch)')
 addFilter('python3?-zope-event\.(noarch|spec|src)')
-addFilter('python3?-zope-interface\.(src|spec|x86_64)')
 addFilter('pyutil\.(noarch|src|spec)')
 addFilter('yum\.(spec|src)')
 
