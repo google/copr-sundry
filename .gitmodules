@@ -148,9 +148,6 @@
 [submodule "third_party/submodules/python-zope-event"]
 	path = third_party/submodules/python-zope-event
 	url = git://pkgs.fedoraproject.org/python-zope-event.git
-[submodule "third_party/submodules/python-zope-interface"]
-	path = third_party/submodules/python-zope-interface
-	url = git://pkgs.fedoraproject.org/python-zope-interface.git
 [submodule "third_party/submodules/python-zbase32"]
 	path = third_party/submodules/python-zbase32
 	url = http://pkgs.fedoraproject.org/git/rpms/python-zbase32.git
