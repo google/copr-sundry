@@ -167,7 +167,6 @@ code that happens to be owned by Google.
 *   python-zfec 1.4.24
 *   python-zope-event 4.1.0
 *   python-zope-component 4.2.2
-*   python-zope-interface 4.1.3
 *   pyutil 1.9.7
 *   rpm 4.13.0-rc1
 *   rubygem-fog-profitbricks 0.0.3
