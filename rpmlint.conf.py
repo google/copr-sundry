@@ -55,7 +55,6 @@ addFilter('third_party/submodules/')
 # Ignore all lint warnings in symlinks from submodules.
 addFilter('SPECS/cmake.spec')
 addFilter('cryptopp(-(progs|devel))?.x86_64')
-addFilter('SPECS/gdb.spec')
 addFilter(r'grub2\.(x86_64|src|spec)')
 addFilter(r'grub2-(tools|debuginfo|efi|efi-modules)\.x86_64')
 addFilter('libev-devel.x86_64')
@@ -139,23 +138,6 @@ addFilter('devel-dependency perl-devel')
 ## Libcomps
 # URL broken :(
 addFilter('libcomps.spec: W: invalid-url Source0: https://github.com/midnightercz/libcomps/libcomps-0.1.7.tar.gz')
-
-## GDB
-# Following should be ok for debugger.
-addFilter('gdb.x86_64: W: unstripped-binary-or-object /usr/bin/gdb')
-addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/lib64/libinproctrace.so')
-addFilter('gdb-gdbserver.x86_64: W: unstripped-binary-or-object /usr/bin/gdbserver')
-addFilter('gdb-gdbserver.x86_64: W: shared-lib-calls-exit /usr/lib64/libinproctrace.so exit@GLIBC_2.2.5')
-addFilter('gdb.x86_64: W: only-non-binary-in-usr-lib')
-addFilter('gdb-gdbserver.x86_64: W: no-soname /usr/lib64/libinproctrace.so')
-addFilter('gdb.spec:[0-9]+: W: hardcoded-library-path')
-addFilter('gdb.x86_64: W: dangerous-command-in-%pre mv')
-addFilter('gdb.x86_64: W: devel-file-in-non-devel-package /usr/include/gdb/jit-reader.h')
-addFilter('gdb.src:[0-9]+: W: hardcoded-library-path')
-addFilter('gdb.src: W: strange-permission gdbtui')
-# Snapshots dissapear quickly
-addFilter('gdb\.(src|spec): W: invalid-url Source0: ftp://sourceware.org/pub/gdb/snapshots/current/.*')
-addFilter('gdb.src: W: strange-permission gdbtui 775')
 
 ## Python-pip
 addFilter('python(3|2)?-pip.noarch: W: non-executable-script /usr/lib/python.\../site-packages/pip/_vendor/requests/packages/chardet/chardetect.py')
