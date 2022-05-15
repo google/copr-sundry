@@ -1,5 +1,6 @@
 #!/bin/sh
 
+rm -f /bin/attr
 rm -f /bin/awk
 rm -f /bin/chroot
 rm -f /bin/df
@@ -52,6 +53,8 @@ rm -rf /lib/gentoo
 rm -rf /usr/include
 rm -rf /usr/lib/gcc
 rm -rf /usr/lib/go-bootstrap
+rm -rf /usr/lib/go/pkg/
+rm -rf /usr/lib/go/src/
 rm -rf /usr/lib/portage
 rm -rf /usr/lib/python*/site-packages/gentoolkit
 rm -rf /usr/lib/python*/site-packages/mesonbuild
@@ -95,13 +98,13 @@ rm -rf /usr/share/pixmaps
 rm -rf /usr/share/polkit-1
 rm -rf /usr/share/portage/
 rm -rf /usr/share/sandbox
+rm -rf /usr/share/sgml/
 rm -rf /usr/share/tabset
 rm -rf /usr/share/terminfo
 rm -rf /usr/x86_64-pc-linux-gnu
 rm -rf /var/db
 rm -rf /var/lib/gentoo
 rm -rf /var/lib/portage
-rm /bin/attr
 rm /bin/chgrp
 rm /bin/dd
 rm /bin/expr
@@ -109,7 +112,6 @@ rm /bin/gunzip
 rm /bin/mknod
 rm /bin/ping4
 rm /bin/rmdir
-rm /bin/sort
 rm /bin/true
 rm /etc/etc-update.conf
 rm /etc/filesystems
