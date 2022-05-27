@@ -22,6 +22,9 @@ rm -f /sbin/setcap
 rm -f /sbin/sfdisk
 rm -f /sbin/sln
 rm -f /sbin/swapoff
+rm -f /usr/bin/cmake
+rm -f /usr/bin/cpack
+rm -f /usr/bin/ctest
 rm -f /usr/bin/file
 rm -f /usr/bin/gmsgfmt
 rm -f /usr/bin/gpgscm

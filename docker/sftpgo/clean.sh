@@ -1,16 +1,21 @@
 #!/bin/sh
 
+# TODO: re-enable once rebuilt without readline
+#rm /lib64/libreadline.so.*
+rm -f /usr/bin/cmake
+rm -f /usr/bin/cpack
+rm -f /usr/bin/ctest
 rm -rf /etc/kernel
 rm -rf /etc/profile.d
 rm -rf /etc/python-exec
 rm -rf /usr/lib/go/api
+rm -rf /usr/lib/go/pkg/
 rm -rf /usr/share/automake*
 rm -rf /usr/share/gcc-config
 rm -rf /usr/share/gettext-*
 rm -rf /usr/share/libtool
 rm -rf /usr/share/portage
 rm -rf /var/empty
-rm /bin/awk
 rm /bin/chmod
 rm /bin/dirname
 rm /bin/fuser
@@ -25,8 +30,6 @@ rm /etc/shadow-
 rm /lib64/libBrokenLocale.so.*
 rm /lib64/libhistory.so.*
 rm /lib64/libnss_compat-*.so
-# TODO: re-enable once rebuilt without readline
-#rm /lib64/libreadline.so.*
 rm /sbin/fsfreeze
 rm /usr/bin/meson
 rm /usr/bin/xzcmp
@@ -43,7 +46,5 @@ rm /usr/sbin/perl-cleaner
 rm /usr/sbin/readprofile
 rm /usr/sbin/sysctl
 rm /usr/sbin/vigr
-rm -rf /usr/lib/go/pkg/
 
 rm /bin/clean.sh
-rm /bin/rm
