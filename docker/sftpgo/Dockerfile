@@ -1,4 +1,6 @@
-FROM vrusinov/golang-build:latest as build
+FROM vrusinov/golang-build:1.17.0 as build
+
+COPY git.use /etc/portage/package.use/git
 
 RUN emerge -v dev-vcs/git && \
     mkdir /tmp/build && \
@@ -13,14 +15,15 @@ RUN emerge -v dev-vcs/git && \
     \
     useradd -rm -s /bin/sh sftpgo
 
-FROM vrusinov/golang:latest
+FROM vrusinov/golang:1.17.0
 COPY --from=build /bin/sftpgo /bin/sftpgo
-COPY --from=build /usr/share/sftpgo /usr/share/sftpgo
+COPY --from=build /etc/passwd /etc/passwd
+COPY --from=build /usr/bin/git /usr/bin/git
 COPY --from=build /usr/bin/git-receive-pack /usr/bin/git-receive-pack
 COPY --from=build /usr/bin/git-upload-archive /usr/bin/git-upload-archive
 COPY --from=build /usr/bin/git-upload-pack /usr/bin/git-upload-pack
 COPY --from=build /usr/libexec/git-core/ /usr/libexec/git-core
-COPY --from=build /etc/passwd /etc/passwd
+COPY --from=build /usr/share/sftpgo /usr/share/sftpgo
 
 COPY clean.sh /bin/clean.sh
 RUN chmod +x /bin/clean.sh && /bin/clean.sh
