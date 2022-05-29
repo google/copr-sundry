@@ -69,6 +69,7 @@ rm -rf /etc/portage
 rm -rf /etc/revdep-rebuild
 rm -rf /etc/sandbox.d
 rm -rf /lib/gentoo
+rm -rf /tmp/distfiles
 rm -rf /usr/bin/chroot
 rm -rf /usr/bin/cpp-*
 rm -rf /usr/include
@@ -83,8 +84,10 @@ rm -rf /usr/lib/python*/site-packages/Cython
 rm -rf /usr/lib/python*/site-packages/gentoolkit
 rm -rf /usr/lib/python*/site-packages/mesonbuild
 rm -rf /usr/lib/python*/site-packages/portage
+rm -rf /usr/lib/python*/site-packages/setuptools/_distutils/__pycache__
 rm -rf /usr/lib/python*/site-packages/setuptools/_vendor/__pycache__
 rm -rf /usr/lib/python*/test
+rm -rf /usr/lib/python3.9/site-packages/setuptools/_distutils/command/__pycache__
 rm -rf /usr/lib/tmpfiles.d
 rm -rf /usr/lib64/binutils/*/*/include/
 rm -rf /usr/lib64/binutils/x86_64-pc-linux-gnu/*/ldscripts
