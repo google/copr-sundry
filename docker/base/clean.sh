@@ -45,9 +45,12 @@ rm -f /usr/bin/xmllint
 rm -f /usr/lib/gcc/x86_64-pc-linux-gnu/*/libquadmath.a
 rm -f /usr/lib64/gconv/ANSI_X3.110.so
 rm -f /usr/lib64/gconv/CSN_369103.so
+rm -f /usr/lib64/gconv/GB18030.so
 rm -f /usr/lib64/gconv/GBGBK.so
 rm -f /usr/lib64/gconv/IBM1130.so
 rm -f /usr/lib64/gconv/IBM1364.so
+rm -f /usr/lib64/gconv/IBM1371.so
+rm -f /usr/lib64/gconv/IBM1388.so
 rm -f /usr/lib64/gconv/IBM1399.so
 rm -f /usr/lib64/gconv/IBM803.so
 rm -f /usr/lib64/gconv/IBM904.so
