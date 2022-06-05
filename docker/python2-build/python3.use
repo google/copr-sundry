@@ -1,8 +1,9 @@
-app-portage/gemato python_targets_python3_8
-app-portage/gentoolkit python_targets_python3_8
-dev-python/certifi python_targets_python3_8
-dev-python/setuptools python_targets_python3_8
-dev-python/setuptools_scm python_targets_python3_8
-dev-util/meson python_targets_python3_8
-dev-util/meson-format-array python_targets_python3_8
-sys-apps/portage python_targets_python3_8
+app-eselect/eselect-repository python_single_target_python3_9
+app-portage/gemato python_targets_python3_9
+app-portage/gentoolkit python_targets_python3_9
+dev-python/certifi python_targets_python3_9
+dev-python/setuptools python_targets_python3_9
+dev-python/setuptools_scm python_targets_python3_9
+dev-util/meson python_targets_python3_9
+dev-util/meson-format-array python_targets_python3_9
+sys-apps/portage python_targets_python3_9

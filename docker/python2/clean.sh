@@ -4,6 +4,9 @@ rm -f /sbin/fsck.minix
 rm -f /sbin/fstrim
 rm -f /sbin/installkernel
 rm -f /sbin/losetup
+rm -f /usr/lib64/gconv/GB18030.so
+rm -f /usr/lib64/gconv/IBM1371.so
+rm -f /usr/lib64/gconv/IBM1388.so
 rm -rf /bin/arping
 rm -rf /bin/attr
 rm -rf /bin/chown
@@ -61,7 +64,7 @@ rm -rf /tmp/*
 rm -rf /usr/lib/cracklib_dict.hwm
 rm -rf /usr/lib/cracklib_dict.pwd
 rm -rf /usr/lib/cracklib_dict.pwi
-rm -rf /usr/lib/python3*/
+rm -rf /usr/lib/python3*
 rm -rf /usr/lib/systemd
 rm -rf /usr/lib64/locale
 rm -rf /usr/lib64/python*/site-packages/allmydata/test
@@ -98,17 +101,12 @@ rm /bin/wdctl
 rm /sbin/agetty
 rm /sbin/blkdiscard
 rm /sbin/blkid
-rm /sbin/blkzone
-rm /sbin/fsck
 rm /sbin/mkfs.bfs
-rm /sbin/mkfs.minix
 rm /sbin/mkswap
 rm /sbin/pivot_root
-rm /sbin/raw
 rm /sbin/sulogin
 rm /sbin/swaplabel
 rm /sbin/swapon
 rm /sbin/switch_root
 rm /sbin/wipefs
 rm /sbin/zramctl
-rm /usr/sbin/addpart
