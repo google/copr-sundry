@@ -118,9 +118,6 @@ addFilter('python.src: W: strange-permission pythondeps.sh')
 addFilter('SPECS/rpm.spec')
 addFilter('third_party/subtrees/rpm/rpm.spec')
 
-# DNF have a lot of weird stuff:
-addFilter('dnf.spec.*libdir-macro-in-noarch-package')
-
 ## Perl
 # Perl packages are weird and often don't have -devel part.
 addFilter('perl-Tk.x86_64: W: devel-file-in-non-devel-package')

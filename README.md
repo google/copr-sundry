@@ -38,7 +38,6 @@ code that happens to be owned by Google.
 *   cmake 3.15.5
 *   cryptopp 5.6.3
 *   Cython 0.23
-*   dnf 1.1.2
 *   golang-googlecode-go-crypto / golang-golangorg-crypto 0-0.10.gitc10c31b
 *   golang-googlecode-goauth2
 *   golang-googlecode-gogoprotobuf
