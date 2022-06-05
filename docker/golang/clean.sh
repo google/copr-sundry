@@ -38,6 +38,8 @@ rm -f /usr/bin/pyvenv*
 rm -f /usr/bin/sg
 rm -f /usr/bin/zcmp
 rm -f /usr/bin/zstd
+rm -f /usr/lib64/gconv/GB18030.so
+rm -f /usr/lib64/gconv/IBM1388.so
 rm -f /usr/lib64/libcurl.so*
 rm -f /usr/lib64/libfl.a
 rm -f /usr/sbin/addpart
@@ -64,6 +66,7 @@ rm -rf /usr/lib/python*/site-packages/mesonbuild
 rm -rf /usr/lib/python*/site-packages/portage
 rm -rf /usr/lib/python*/test
 rm -rf /usr/lib/python3.*
+rm -rf /usr/lib/python3*
 rm -rf /usr/lib/tmpfiles.d
 rm -rf /usr/lib64/cmake
 rm -rf /usr/lib64/libbz2.so
@@ -126,10 +129,8 @@ rm /etc/passwd-
 rm /etc/profile
 rm /etc/shells
 rm /lib/cpp
-rm /lib64/libBrokenLocale-*.so
 rm /lib64/libfdisk.so.*
 rm /lib64/libnss_compat.so.*
-rm /lib64/libresolv-*.so
 rm /sbin/capsh
 rm /usr/bin/bzcmp
 rm /usr/bin/g++*
@@ -174,12 +175,10 @@ rm /usr/sbin/dispatch-conf
 rm /usr/sbin/env-update
 rm /usr/sbin/etc-update
 rm /usr/sbin/groupadd
-rm /usr/sbin/groupmod
 rm /usr/sbin/grpck
 rm /usr/sbin/grpunconv
 rm /usr/sbin/ldattach
 rm /usr/sbin/locale-gen
-rm /usr/sbin/newusers
 rm /usr/sbin/pwconv
 rm /usr/sbin/pwunconv
 rm /usr/sbin/regenworld
