@@ -1,4 +1,4 @@
-FROM vrusinov/java-build:latest as build
+FROM vrusinov/java-build:11.0.15_p10 as build
 
 # Install nmap
 RUN emerge -v net-analyzer/nmap
@@ -29,9 +29,9 @@ RUN chmod +x build_all.sh && \
 
 # Compile the Tsunami scanner
 WORKDIR /tmp
-RUN wget --progress=dot:giga https://github.com/google/tsunami-security-scanner/archive/refs/tags/v0.0.4.tar.gz && \
-    tar xf v0.0.4.tar.gz
-WORKDIR /tmp/tsunami-security-scanner-0.0.4/
+RUN wget --progress=dot:giga https://github.com/google/tsunami-security-scanner/archive/refs/tags/v0.0.14.tar.gz && \
+    tar xf v0.0.14.tar.gz
+WORKDIR /tmp/tsunami-security-scanner-0.0.14/
 RUN ./gradlew shadowJar && \
     cp "$(find . -name 'tsunami-main-*-cli.jar')" /opt/tsunami/tsunami.jar && \
     cp ./tsunami.yaml /opt/tsunami/
@@ -40,11 +40,7 @@ COPY clean.sh /usr/local/bin/clean.sh
 RUN chmod +x /usr/local/bin/clean.sh && \
     /usr/local/bin/clean.sh
 
-FROM vrusinov/java:latest as base
-
-COPY clean.sh /usr/local/bin/clean.sh
-RUN chmod +x /usr/local/bin/clean.sh && \
-    /usr/local/bin/clean.sh
+FROM vrusinov/java:11.0.15_p10 as base
 
 COPY --from=build /opt/tsunami/ /opt/tsunami/
 COPY --from=build /usr/bin/ncrack /usr/bin/
@@ -58,3 +54,4 @@ COPY entrypoint.sh /bin/entrypoint.sh
 ENV IP_V4_TARGET ""
 ENV IP_V6_TARGET ""
 ENTRYPOINT ["/bin/entrypoint.sh"]
+#ENTRYPOINT ["/bin/bash"]
