@@ -1,6 +1,5 @@
 #!/bin/sh
 
-rm -f /bin/attr
 rm -f /bin/df
 rm -f /bin/lsblk
 rm -f /bin/mountpoint
@@ -51,6 +50,7 @@ rm -f /usr/lib64/gconv/IBM1130.so
 rm -f /usr/lib64/gconv/IBM1364.so
 rm -f /usr/lib64/gconv/IBM1371.so
 rm -f /usr/lib64/gconv/IBM1388.so
+rm -f /usr/lib64/gconv/IBM1390.so
 rm -f /usr/lib64/gconv/IBM1399.so
 rm -f /usr/lib64/gconv/IBM803.so
 rm -f /usr/lib64/gconv/IBM904.so
@@ -59,6 +59,8 @@ rm -f /usr/lib64/gconv/KOI8-U.so
 rm -f /usr/lib64/libBrokenLocale.a
 rm -f /usr/sbin/addpart
 rm -f /usr/sbin/delpart
+rm -r /etc/udev
+rm -r /usr/share/doc
 rm -rf /bin/chown
 rm -rf /bin/chroot
 rm -rf /bin/egrep
@@ -118,6 +120,7 @@ rm -rf /usr/x86_64-pc-linux-gnu
 rm -rf /var/db
 rm -rf /var/lib/gentoo
 rm -rf /var/lib/portage
+rm /bin/attr
 rm /etc/etc-update.conf
 rm /etc/locale.gen
 rm /etc/login.access
@@ -158,6 +161,7 @@ rm /usr/lib/python-exec/python3.*/python3-config
 rm /usr/lib/python-exec/python3.*/quickpkg
 rm /usr/lib/python-exec/python3.*/regenworld
 rm /usr/lib/python-exec/python3.*/revdep-rebuild
+rm /usr/lib64/gconv/libJISX0213.so
 rm /usr/sbin/addgnupghome
 rm /usr/sbin/archive-conf
 rm /usr/sbin/chgpasswd
