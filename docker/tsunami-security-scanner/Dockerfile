@@ -11,7 +11,8 @@ RUN USE="-webdav curl" emerge -v dev-vcs/git && \
     emaint sync -r pentoo && \
     mkdir -p /etc/portage/package.accept_keywords/
 COPY ncrack.accept_keywords /etc/portage/package.accept_keywords/ncrack
-RUN emerge -v net-analyzer/ncrack
+# -fcommon is required To work around https://github.com/pentoo/pentoo-overlay/issues/981
+RUN CFLAGS="$CFLAGS -fcommon" emerge -v net-analyzer/ncrack
 
 # Prep for tsunami install
 RUN mkdir -p /opt/tsunami
