@@ -20,12 +20,24 @@ RUN mkdir -p /opt/tsunami
 # Build plugins
 WORKDIR /tmp
 RUN git clone --depth 1 "https://github.com/google/tsunami-security-scanner-plugins"
+RUN mkdir -p /opt/tsunami/plugins
+WORKDIR /tmp/tsunami-security-scanner-plugins/community
+RUN chmod +x build_all.sh && \
+    ./build_all.sh && \
+    cp build/plugins/*.jar /opt/tsunami/plugins
+# Nothing seems to be there (yet?)
+# WORKDIR /tmp/tsunami-security-scanner-plugins/facebook
+# RUN chmod +x build_all.sh && \
+#     ./build_all.sh && \
+#     cp build/plugins/*.jar /opt/tsunami/plugins
 WORKDIR /tmp/tsunami-security-scanner-plugins/google
 RUN chmod +x build_all.sh && \
     ./build_all.sh && \
-    mkdir /opt/tsunami/plugins && \
     cp build/plugins/*.jar /opt/tsunami/plugins
-# hadolint ignore=DL3059
+WORKDIR /tmp/tsunami-security-scanner-plugins/govtech
+RUN chmod +x build_all.sh && \
+    ./build_all.sh && \
+    cp build/plugins/*.jar /opt/tsunami/plugins
 
 # Compile the Tsunami scanner
 WORKDIR /tmp
