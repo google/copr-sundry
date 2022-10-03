@@ -20,6 +20,7 @@ RUN mkdir -p /opt/tsunami
 # Build plugins
 WORKDIR /tmp
 RUN git clone --depth 1 "https://github.com/google/tsunami-security-scanner-plugins"
+# hadolint ignore=DL3059
 RUN mkdir -p /opt/tsunami/plugins
 WORKDIR /tmp/tsunami-security-scanner-plugins/community
 RUN chmod +x build_all.sh && \
