@@ -137,6 +137,7 @@ rm /usr/bin/pkgconf
 rm /usr/bin/setarch
 rm /usr/bin/x86_64-pc-linux-gnu-ld*
 rm /usr/bin/xzegrep
+rm /usr/lib/gcc/x86_64-pc-linux-gnu/*/libstdc++.a
 rm /usr/lib/python-exec/python3.*/2to3
 rm /usr/lib/python-exec/python3.*/archive-conf
 rm /usr/lib/python-exec/python3.*/dispatch-conf

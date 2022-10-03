@@ -10,7 +10,7 @@ RUN chown django:django /app
 COPY clean.sh /bin/clean.sh
 RUN chmod +x /bin/clean.sh && /bin/clean.sh
 
-FROM vrusinov/python3:3.9.2022-01-03
+FROM vrusinov/python3:3.9.6.2022-01-03
 
 COPY group /etc/group
 COPY passwd /etc/passwd
