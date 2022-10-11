@@ -178,3 +178,6 @@
 [submodule "third_party/submodules/libarchive"]
 	path = third_party/submodules/libarchive
 	url = https://src.fedoraproject.org/rpms/libarchive.git
+[submodule "third_party/submodules/uptimed"]
+	path = third_party/submodules/uptimed
+	url = https://src.fedoraproject.org/rpms/uptimed.git

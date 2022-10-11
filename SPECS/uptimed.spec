@@ -1,0 +1,1 @@
+../third_party/submodules/uptimed/uptimed.spec
