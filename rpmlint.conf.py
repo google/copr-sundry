@@ -164,9 +164,6 @@ addFilter('libsolv.x86_64: W: shared-lib-calls-exit')
 addFilter('python3?-cffi.x86_64: W: devel-file-in-non-devel-package')
 addFilter('python3-cffi.x86_64: W: unstripped-binary-or-object')
 
-# Tahoe
-addFilter('tahoe-lafs.noarch: W: non-executable-script /usr/lib/python2.7/site-packages/allmydata/storage/shares.py')
-
 # golang packages:
 addFilter('golang-googlecode-goprotobuf.x86_64: W: unstripped-binary-or-object')
 addFilter('golang-github-odeke-em-drive.spec:[0-9]+: W: rpm-buildroot-usage')
