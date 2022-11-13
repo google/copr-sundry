@@ -130,7 +130,6 @@ code that happens to be owned by Google.
 *   perl-Tk 804.033
 *   perl-XML-Parser 2.44
 *   pyOpenSSL 16.0.0
-*   python-acme 0.1.1
 *   python-cffi 1.4.2
 *   python-characteristic 14.3.0
 *   python-configargparse 0.9.3
