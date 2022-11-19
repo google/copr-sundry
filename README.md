@@ -157,7 +157,6 @@ code that happens to be owned by Google.
 *   python-simplejson 3.5.3
 *   python-six 1.10.0
 *   python-twisted 15.4.0
-*   python-wheel & python3-wheel 0.24.0
 *   python-zbase32 1.1.5
 *   python-zfec 1.4.24
 *   python-zope-event 4.1.0
