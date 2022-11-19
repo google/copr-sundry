@@ -151,7 +151,6 @@ code that happens to be owned by Google.
 *   python-psutil 4.2.0
 *   python-pyasn1 0.1.9
 *   python-pycparser 2.14
-*   python-ply 3.6
 *   python2-pyrfc3339 1.0
 *   python-rpm-macros
 *   python-simplejson 3.5.3
