@@ -93,7 +93,6 @@ code that happens to be owned by Google.
 *   libarchive
 *   libev
 *   libsolv
-*   perl
 *   perl-Business-ISBN
 *   perl-Business-ISBN-Data
 *   perl-Canary-Stability
