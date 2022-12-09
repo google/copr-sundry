@@ -28,9 +28,6 @@
 [submodule "third_party/submodules/perl-Params-Util"]
 	path = third_party/submodules/perl-Params-Util
 	url = git://pkgs.fedoraproject.org/perl-Params-Util.git
-[submodule "third_party/submodules/perl-Data-Section"]
-	path = third_party/submodules/perl-Data-Section
-	url = git://pkgs.fedoraproject.org/perl-Data-Section.git
 [submodule "third_party/submodules/perl-Test-Pod"]
 	path = third_party/submodules/perl-Test-Pod
 	url = git://pkgs.fedoraproject.org/perl-Test-Pod.git
