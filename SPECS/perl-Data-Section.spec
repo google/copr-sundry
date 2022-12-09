@@ -1,1 +1,0 @@
-../third_party/submodules/perl-Data-Section/perl-Data-Section.spec
