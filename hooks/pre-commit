@@ -45,3 +45,5 @@ if which docker 2> /dev/null ; then
 else
 	echo "WARN: docker is not installed"
 fi
+
+ln -sf ../../hooks/pre-commit .git/hooks/pre-commit
