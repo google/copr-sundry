@@ -155,7 +155,6 @@ code that happens to be owned by Google.
 *   python-six 1.10.0
 *   python-twisted 15.4.0
 *   python-zbase32 1.1.5
-*   python-zfec 1.4.24
 *   python-zope-event 4.1.0
 *   python-zope-component 4.2.2
 *   pyutil 1.9.7
