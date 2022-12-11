@@ -1,4 +1,5 @@
 Filters = [
     "rpm.spec: E: lib-package-without-%mklibname",
-    "nginx.spec:[0-9]+: W: configure-without-libdir-spec"
+    "nginx.spec:[0-9]+: W: configure-without-libdir-spec",
+    "uptimed-debuginfo.x86_64"
 ]
