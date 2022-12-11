@@ -1,5 +1,6 @@
 #!/bin/sh
 
+rm -f /bin/attr
 rm -f /bin/df
 rm -f /bin/lsblk
 rm -f /bin/mountpoint
@@ -46,6 +47,7 @@ rm -f /usr/lib64/gconv/ANSI_X3.110.so
 rm -f /usr/lib64/gconv/CSN_369103.so
 rm -f /usr/lib64/gconv/GB18030.so
 rm -f /usr/lib64/gconv/GBGBK.so
+rm -f /usr/lib64/gconv/GBK.so
 rm -f /usr/lib64/gconv/IBM1130.so
 rm -f /usr/lib64/gconv/IBM1364.so
 rm -f /usr/lib64/gconv/IBM1371.so
@@ -54,8 +56,10 @@ rm -f /usr/lib64/gconv/IBM1390.so
 rm -f /usr/lib64/gconv/IBM1399.so
 rm -f /usr/lib64/gconv/IBM803.so
 rm -f /usr/lib64/gconv/IBM904.so
+rm -f /usr/lib64/gconv/IBM933.so
 rm -f /usr/lib64/gconv/ISO8859-10.so
 rm -f /usr/lib64/gconv/KOI8-U.so
+rm -f /usr/lib64/gconv/libCNS.so
 rm -f /usr/lib64/libBrokenLocale.a
 rm -f /usr/sbin/addpart
 rm -f /usr/sbin/delpart
@@ -120,7 +124,6 @@ rm -rf /usr/x86_64-pc-linux-gnu
 rm -rf /var/db
 rm -rf /var/lib/gentoo
 rm -rf /var/lib/portage
-rm /bin/attr
 rm /etc/etc-update.conf
 rm /etc/locale.gen
 rm /etc/login.access
