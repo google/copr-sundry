@@ -2,6 +2,7 @@
 
 rm -f /bin/attr
 rm -f /bin/df
+rm -f /bin/kmod
 rm -f /bin/lsblk
 rm -f /bin/mountpoint
 rm -f /bin/stty
@@ -57,9 +58,12 @@ rm -f /usr/lib64/gconv/IBM1399.so
 rm -f /usr/lib64/gconv/IBM803.so
 rm -f /usr/lib64/gconv/IBM904.so
 rm -f /usr/lib64/gconv/IBM933.so
+rm -f /usr/lib64/gconv/IBM937.so
 rm -f /usr/lib64/gconv/ISO8859-10.so
 rm -f /usr/lib64/gconv/KOI8-U.so
 rm -f /usr/lib64/gconv/libCNS.so
+rm -f /usr/lib64/gconv/libJIS.so
+rm -f /usr/lib64/gconv/SJIS.so
 rm -f /usr/lib64/libBrokenLocale.a
 rm -f /usr/sbin/addpart
 rm -f /usr/sbin/delpart
@@ -120,7 +124,9 @@ rm -rf /usr/share/sandbox
 rm -rf /usr/share/sgml/
 rm -rf /usr/share/sgml/
 rm -rf /usr/share/terminfo
+rm -rf /usr/share/texinfo
 rm -rf /usr/x86_64-pc-linux-gnu
+rm -rf /var/cache/edb
 rm -rf /var/db
 rm -rf /var/lib/gentoo
 rm -rf /var/lib/portage
@@ -138,6 +144,7 @@ rm /usr/bin/localedef
 rm /usr/bin/msgattrib
 rm /usr/bin/pkgconf
 rm /usr/bin/setarch
+rm /usr/bin/sqlite3
 rm /usr/bin/x86_64-pc-linux-gnu-ld*
 rm /usr/bin/xzegrep
 rm /usr/lib/gcc/x86_64-pc-linux-gnu/*/libstdc++.a

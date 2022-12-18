@@ -1,4 +1,4 @@
-FROM vrusinov/base-build:2022-12-11 as build
+FROM vrusinov/base-build:2022-12-18 as build
 
 COPY clean.sh /usr/local/bin/clean.sh
 RUN chmod +x /usr/local/bin/clean.sh && \
