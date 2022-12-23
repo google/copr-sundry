@@ -50,6 +50,9 @@ rm -rf /usr/lib/python3.*
 rm -rf /usr/lib/tmpfiles.d
 rm -rf /usr/lib64/cmake
 rm -rf /usr/lib64/gconv/BIG5HKSCS.so
+rm -rf /usr/lib64/gconv/CP932.so
+rm -rf /usr/lib64/gconv/IBM930.so
+rm -rf /usr/lib64/gconv/IBM939.so
 rm -rf /usr/lib64/libbz2.so
 rm -rf /usr/lib64/libgnutlsxx.so.*
 rm -rf /usr/lib64/libnettle.so.*
@@ -88,7 +91,6 @@ rm -rf /usr/x86_64-pc-linux-gnu
 rm -rf /var/db
 rm -rf /var/lib/gentoo
 rm -rf /var/lib/portage
-rm /bin/attr
 rm /bin/chgrp
 rm /bin/dd
 rm /bin/expr
@@ -118,10 +120,12 @@ rm /usr/bin/localedef
 rm /usr/bin/mpicalc
 rm /usr/bin/msgattrib
 rm /usr/bin/pkgconf
+rm /usr/bin/pzstd
 rm /usr/bin/setarch
 rm /usr/bin/x86_64-pc-linux-gnu-ld*
 rm /usr/bin/xzdiff
 rm /usr/bin/xzegrep
+rm /usr/bin/zstd
 rm /usr/lib/python-exec/python3.*/2to3
 rm /usr/lib/python-exec/python3.*/archive-conf
 rm /usr/lib/python-exec/python3.*/dispatch-conf

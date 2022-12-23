@@ -97,8 +97,11 @@ rm -rf /usr/lib64/binutils/*/*/include/
 rm -rf /usr/lib64/binutils/x86_64-pc-linux-gnu/*/ldscripts
 rm -rf /usr/lib64/cmake
 rm -rf /usr/lib64/gconv/BIG5HKSCS.so
+rm -rf /usr/lib64/gconv/CP932.so
 rm -rf /usr/lib64/gconv/IBM1390.so
 rm -rf /usr/lib64/gconv/IBM1399.so
+rm -rf /usr/lib64/gconv/IBM930.so
+rm -rf /usr/lib64/gconv/IBM939.so
 rm -rf /usr/lib64/locale
 rm -rf /usr/lib64/perl5
 rm -rf /usr/lib64/perl5/*/x86_64-linux/auto/Encode
@@ -143,10 +146,12 @@ rm /usr/bin/g++*
 rm /usr/bin/localedef
 rm /usr/bin/msgattrib
 rm /usr/bin/pkgconf
+rm /usr/bin/pzstd
 rm /usr/bin/setarch
 rm /usr/bin/sqlite3
 rm /usr/bin/x86_64-pc-linux-gnu-ld*
 rm /usr/bin/xzegrep
+rm /usr/bin/zstd
 rm /usr/lib/gcc/x86_64-pc-linux-gnu/*/libstdc++.a
 rm /usr/lib/python-exec/python3.*/2to3
 rm /usr/lib/python-exec/python3.*/archive-conf
