@@ -1,4 +1,4 @@
-FROM vrusinov/golang-build:1.17.0 as build
+FROM vrusinov/golang-build:1.19.4 as build
 
 COPY git.use /etc/portage/package.use/git
 
@@ -15,7 +15,10 @@ RUN emerge -v dev-vcs/git && \
     \
     useradd -rm -s /bin/sh sftpgo
 
-FROM vrusinov/golang:1.17.0
+COPY clean.sh /bin/clean.sh
+RUN chmod +x /bin/clean.sh && /bin/clean.sh
+
+FROM vrusinov/golang:1.19.4
 COPY --from=build /bin/sftpgo /bin/sftpgo
 COPY --from=build /etc/passwd /etc/passwd
 COPY --from=build /usr/bin/git /usr/bin/git

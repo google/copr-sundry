@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# TODO: re-enable once rebuilt without readline
-#rm /lib64/libreadline.so.*
 rm -f /usr/bin/cmake
 rm -f /usr/bin/cpack
 rm -f /usr/bin/ctest
@@ -19,6 +17,7 @@ rm -rf /var/empty
 rm /bin/chmod
 rm /bin/dirname
 rm /bin/fuser
+rm -f /bin/go
 rm /bin/ls
 rm /bin/passwd
 rm /bin/sleep
@@ -26,13 +25,14 @@ rm /bin/uname
 rm /etc/csh.env
 rm /etc/host.conf
 rm /etc/mtab
-rm /etc/shadow-
 rm /lib64/libBrokenLocale.so.*
 rm /lib64/libhistory.so.*
-rm /lib64/libnss_compat-*.so
 rm /sbin/fsfreeze
 rm /usr/bin/meson
 rm /usr/bin/xzcmp
+rm /usr/lib64/gconv/BIG5.so
+rm /usr/lib64/gconv/EUC-JP-MS.so
+rm /usr/lib64/gconv/IBM935.so
 rm /usr/lib64/libb2.so.*
 rm /usr/lib64/libgnutls.so.*
 rm /usr/lib64/libnettle.so

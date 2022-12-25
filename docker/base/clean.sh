@@ -196,6 +196,9 @@ rm /usr/sbin/restore-tar
 rm /usr/sbin/savelog
 rm /usr/sbin/update-ca-certificates
 rm /usr/sbin/useradd
+rm /usr/lib64/gconv/BIG5.so
+rm /usr/lib64/gconv/EUC-JP-MS.so
+rm /usr/lib64/gconv/IBM935.so
 
 # Remove this script:
 rm -rf /usr/local
