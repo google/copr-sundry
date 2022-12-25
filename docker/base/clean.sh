@@ -57,13 +57,16 @@ rm -f /usr/lib64/gconv/IBM1390.so
 rm -f /usr/lib64/gconv/IBM1399.so
 rm -f /usr/lib64/gconv/IBM803.so
 rm -f /usr/lib64/gconv/IBM904.so
+rm -f /usr/lib64/gconv/IBM932.so
 rm -f /usr/lib64/gconv/IBM933.so
 rm -f /usr/lib64/gconv/IBM937.so
+rm -f /usr/lib64/gconv/IBM943.so
 rm -f /usr/lib64/gconv/ISO8859-10.so
 rm -f /usr/lib64/gconv/KOI8-U.so
 rm -f /usr/lib64/gconv/libCNS.so
 rm -f /usr/lib64/gconv/libJIS.so
 rm -f /usr/lib64/gconv/SJIS.so
+rm -f /usr/lib64/gconv/UHC.so
 rm -f /usr/lib64/libBrokenLocale.a
 rm -f /usr/sbin/addpart
 rm -f /usr/sbin/delpart
@@ -178,7 +181,12 @@ rm /usr/lib/python-exec/python3.*/python3-config
 rm /usr/lib/python-exec/python3.*/quickpkg
 rm /usr/lib/python-exec/python3.*/regenworld
 rm /usr/lib/python-exec/python3.*/revdep-rebuild
+rm /usr/lib64/gconv/BIG5.so
+rm /usr/lib64/gconv/EUC-JP-MS.so
+rm /usr/lib64/gconv/IBM935.so
 rm /usr/lib64/gconv/libJISX0213.so
+rm /usr/lib64/libc.a
+rm /usr/lib64/libpython3.11.so.1.0
 rm /usr/sbin/addgnupghome
 rm /usr/sbin/archive-conf
 rm /usr/sbin/chgpasswd
@@ -196,9 +204,6 @@ rm /usr/sbin/restore-tar
 rm /usr/sbin/savelog
 rm /usr/sbin/update-ca-certificates
 rm /usr/sbin/useradd
-rm /usr/lib64/gconv/BIG5.so
-rm /usr/lib64/gconv/EUC-JP-MS.so
-rm /usr/lib64/gconv/IBM935.so
 
 # Remove this script:
 rm -rf /usr/local
