@@ -133,6 +133,7 @@ rm -rf /var/cache/edb
 rm -rf /var/db
 rm -rf /var/lib/gentoo
 rm -rf /var/lib/portage
+rm /bin/systemd-tmpfiles
 rm /etc/etc-update.conf
 rm /etc/locale.gen
 rm /etc/login.access

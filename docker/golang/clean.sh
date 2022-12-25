@@ -38,8 +38,11 @@ rm -f /usr/bin/pyvenv*
 rm -f /usr/bin/sg
 rm -f /usr/bin/zcmp
 rm -f /usr/bin/zstd
+rm -f /usr/lib64/gconv/CP932.so
 rm -f /usr/lib64/gconv/GB18030.so
 rm -f /usr/lib64/gconv/IBM1388.so
+rm -f /usr/lib64/gconv/IBM930.so
+rm -f /usr/lib64/gconv/IBM939.so
 rm -f /usr/lib64/libcurl.so*
 rm -f /usr/lib64/libfl.a
 rm -f /usr/sbin/addpart
@@ -118,6 +121,7 @@ rm /bin/gunzip
 rm /bin/mknod
 rm /bin/ping4
 rm /bin/rmdir
+rm /bin/systemd-tmpfiles
 rm /bin/true
 rm /etc/etc-update.conf
 rm /etc/filesystems
@@ -185,7 +189,6 @@ rm /usr/sbin/regenworld
 rm /usr/sbin/restore-tar
 rm /usr/sbin/rtcwake
 rm /usr/sbin/savelog
-rm /usr/sbin/update-ca-certificates
 rm /usr/sbin/useradd
 rm /usr/sbin/usermod
 rm /usr/sbin/uuidd
