@@ -204,6 +204,8 @@ rm /usr/sbin/restore-tar
 rm /usr/sbin/savelog
 rm /usr/sbin/update-ca-certificates
 rm /usr/sbin/useradd
+rm -r /usr/lib/gcc/x86_64-pc-linux-gnu/*/plugin
+rm /usr/lib/gcc/x86_64-pc-linux-gnu/*/libsupc++.a
 
 # Remove this script:
 rm -rf /usr/local

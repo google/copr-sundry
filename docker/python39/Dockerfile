@@ -1,9 +1,7 @@
-FROM vrusinov/python3-build:3.9.2022-01-03 as build
+FROM vrusinov/python3-build:3.9.16 as build
 
-COPY clean.sh /bin/clean.sh
-RUN chmod +x /bin/clean.sh && /bin/clean.sh
 
-FROM vrusinov/base:2021-09-11
+FROM vrusinov/base:2022-12-25
 
 COPY --from=build /etc/python-exec/python-exec.conf /etc/python-exec/
 COPY --from=build /usr/bin/python3.9 /usr/bin/python3.9
