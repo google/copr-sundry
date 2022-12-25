@@ -71,6 +71,7 @@ rm -f /usr/lib64/libBrokenLocale.a
 rm -f /usr/sbin/addpart
 rm -f /usr/sbin/delpart
 rm -r /etc/udev
+rm -r /usr/lib/gcc/x86_64-pc-linux-gnu/*/plugin
 rm -r /usr/share/doc
 rm -rf /bin/chown
 rm -rf /bin/chroot
@@ -137,6 +138,7 @@ rm -rf /var/db
 rm -rf /var/lib/gentoo
 rm -rf /var/lib/portage
 rm /bin/systemd-tmpfiles
+rm /bin/vdir
 rm /etc/etc-update.conf
 rm /etc/locale.gen
 rm /etc/login.access
@@ -156,7 +158,9 @@ rm /usr/bin/sqlite3
 rm /usr/bin/x86_64-pc-linux-gnu-ld*
 rm /usr/bin/xzegrep
 rm /usr/bin/zstd
+rm /usr/lib/gcc/x86_64-pc-linux-gnu/*/libitm.a
 rm /usr/lib/gcc/x86_64-pc-linux-gnu/*/libstdc++.a
+rm /usr/lib/gcc/x86_64-pc-linux-gnu/*/libsupc++.a
 rm /usr/lib/python-exec/python3.*/2to3
 rm /usr/lib/python-exec/python3.*/archive-conf
 rm /usr/lib/python-exec/python3.*/dispatch-conf
@@ -204,8 +208,6 @@ rm /usr/sbin/restore-tar
 rm /usr/sbin/savelog
 rm /usr/sbin/update-ca-certificates
 rm /usr/sbin/useradd
-rm -r /usr/lib/gcc/x86_64-pc-linux-gnu/*/plugin
-rm /usr/lib/gcc/x86_64-pc-linux-gnu/*/libsupc++.a
 
 # Remove this script:
 rm -rf /usr/local
