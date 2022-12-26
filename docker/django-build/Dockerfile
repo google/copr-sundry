@@ -1,4 +1,4 @@
-FROM vrusinov/python3-build:3.9.6 as build
+FROM vrusinov/python3-build:3.9.16 as build
 
 RUN emerge -v dev-python/django
 
