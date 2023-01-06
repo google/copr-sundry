@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -f /bin/df
+rm /bin/df
 rm -f /bin/lsblk
 rm -f /bin/sed
 rm -f /bin/su
@@ -52,7 +52,10 @@ rm -rf /usr/lib64/cmake
 rm -rf /usr/lib64/gconv/BIG5HKSCS.so
 rm -rf /usr/lib64/gconv/CP932.so
 rm -rf /usr/lib64/gconv/IBM930.so
-rm -rf /usr/lib64/gconv/IBM939.so
+rm /usr/lib64/gconv/IBM939.so
+rm /usr/lib64/gconv/GBBIG5.so
+rm /usr/lib64/gconv/libISOIR165.so
+rm /usr/lib64/gconv/libGB.so
 rm -rf /usr/lib64/libbz2.so
 rm -rf /usr/lib64/libgnutlsxx.so.*
 rm -rf /usr/lib64/libnettle.so.*
@@ -109,10 +112,8 @@ rm /etc/passwd-
 rm /etc/profile
 rm /etc/shells
 rm /lib/cpp
-rm /lib64/libBrokenLocale-*.so
 rm /lib64/libfdisk.so.*
 rm /lib64/libnss_compat.so.*
-rm /lib64/libresolv-*.so
 rm /sbin/capsh
 rm /usr/bin/bzcmp
 rm /usr/bin/g++*
@@ -154,7 +155,6 @@ rm /usr/sbin/grpck
 rm /usr/sbin/grpunconv
 rm /usr/sbin/ldattach
 rm /usr/sbin/locale-gen
-rm /usr/sbin/newusers
 rm /usr/sbin/pwconv
 rm /usr/sbin/pwunconv
 rm /usr/sbin/regenworld
@@ -164,7 +164,8 @@ rm /usr/sbin/savelog
 rm /usr/sbin/update-ca-certificates
 rm /usr/sbin/useradd
 rm /usr/sbin/usermod
+rm /usr/bin/openssl
+rm /usr/bin/re2go
 
 # Remove this script:
-rm -f /bin/sort
 rm -f /bin/clean.sh
