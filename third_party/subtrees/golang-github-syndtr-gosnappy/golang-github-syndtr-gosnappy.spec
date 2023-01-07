@@ -221,4 +221,3 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}:/usr/inc
 * Sat Feb 07 2015 jchaloup <jchaloup@redhat.com> - 0-0.1.gitce8acff
 - First package for Fedora
   resolves: #1190411
-

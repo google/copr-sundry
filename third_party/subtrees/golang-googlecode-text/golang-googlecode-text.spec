@@ -10,7 +10,7 @@
 %global debug_package   %{nil}
 %endif
 
-%global provider_tld    com 
+%global provider_tld    com
 %global provider        github
 %global project         golang
 %global repo            text

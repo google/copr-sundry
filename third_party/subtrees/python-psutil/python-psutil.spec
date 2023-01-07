@@ -78,7 +78,7 @@ ifconfig, nice, ionice, iostat, iotop, uptime, pidof, tty, who, taskset, pmap.
 make test-memleaks PYTHON=%{__python2}
 make test-memleaks PYTHON=%{__python3}
 
- 
+
 %files -n python2-%{srcname}
 %license LICENSE
 %doc CREDITS HISTORY.rst README.rst

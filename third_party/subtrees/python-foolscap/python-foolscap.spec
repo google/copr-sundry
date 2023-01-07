@@ -118,4 +118,3 @@ find doc/ -name \*.py | xargs chmod 0644
 
 * Tue Sep 16 2008 Ruben Kerkhof <ruben@rubenkerkhof.com> 0.3.1-1
 - Initial import
-

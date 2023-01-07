@@ -169,7 +169,7 @@ Status: Relative to the other Google API clients, this library is labeled alpha.
 Some advanced features may not work. Please file bugs if any problems are found.
 
 Getting started documentation:
-    http://code.google.com/p/google-api-go-client/wiki/GettingStarted 
+    http://code.google.com/p/google-api-go-client/wiki/GettingStarted
 
 %package -n %{gg_name}-devel
 Summary:        Go libraries for "new style" Google APIs
@@ -325,7 +325,7 @@ Status: Relative to the other Google API clients, this library is labeled alpha.
 Some advanced features may not work. Please file bugs if any problems are found.
 
 Getting started documentation:
-    http://code.google.com/p/google-api-go-client/wiki/GettingStarted 
+    http://code.google.com/p/google-api-go-client/wiki/GettingStarted
 %endif
 
 %if 0%{?with_unit_test} && 0%{?with_devel}

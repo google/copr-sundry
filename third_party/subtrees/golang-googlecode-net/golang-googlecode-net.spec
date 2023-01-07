@@ -309,7 +309,7 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
   related: #1009967
 
 * Mon Sep 29 2014 Lokesh Mandvekar <lsm5@fedoraproject.org> - 0-0.16.hg90e232e2462d
-- Resolves: rhbz#1147193 - update to latest upstream revision 
+- Resolves: rhbz#1147193 - update to latest upstream revision
   90e232e2462dedc03bf3c93358da62d54d55dfb6
 - don't redefine gopath, don't own dirs owned by golang
 - use golang >= 1.2.1-3 for golang specific rpm macros

@@ -15,18 +15,18 @@ Obsoletes:      %{name}-gnome < %{version}-%{release}
 The Python keyring lib provides a easy way to access the system keyring
 service from python. It can be used in any application that needs safe
 password storage.
-        
+
 The keyring services supported by the Python keyring lib:
-        
+
 * **OSXKeychain**: supports the Keychain service in Mac OS X.
 * **KDEKWallet**: supports the KDE's Kwallet service.
 * **GnomeKeyring**: for GNOME environment.
 * **SecretServiceKeyring**: for newer GNOME and KDE environments.
 * **WinVaultKeyring**: supports the Windows Credential Vault
-        
+
 Besides these native password storing services provided by operating systems.
 Python keyring lib also provides following build-in keyrings.
-    
+
 * **Win32CryptoKeyring**: for Windows 2k+.
 * **CryptedFileKeyring**: a command line interface keyring base on PyCrypto.
 * **UncryptedFileKeyring**: a keyring which leaves passwords directly in file.
@@ -40,18 +40,18 @@ BuildRequires:  python3-setuptools
 The Python keyring lib provides a easy way to access the system keyring
 service from python. It can be used in any application that needs safe
 password storage.
-        
+
 The keyring services supported by the Python keyring lib:
-        
+
 * **OSXKeychain**: supports the Keychain service in Mac OS X.
 * **KDEKWallet**: supports the KDE's Kwallet service.
 * **GnomeKeyring**: for GNOME environment.
 * **SecretServiceKeyring**: for newer GNOME and KDE environments.
 * **WinVaultKeyring**: supports the Windows Credential Vault
-        
+
 Besides these native password storing services provided by operating systems.
 Python keyring lib also provides following build-in keyrings.
-    
+
 * **Win32CryptoKeyring**: for Windows 2k+.
 * **CryptedFileKeyring**: a command line interface keyring base on PyCrypto.
 * **UncryptedFileKeyring**: a keyring which leaves passwords directly in file.
