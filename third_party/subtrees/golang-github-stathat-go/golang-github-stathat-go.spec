@@ -177,4 +177,3 @@ gotest %{import_path}
 * Mon Oct 27 2014 jchaloup <jchaloup@redhat.com> - 0-0.1.git01d012b
 - First package for Fedora
   resolves: #1158065
-

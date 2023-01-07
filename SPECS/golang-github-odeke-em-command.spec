@@ -123,19 +123,17 @@ go test %{import_path}
 
 %if 0%{?with_devel}
 %files devel -f devel.file-list
-%license 
+%license
 %doc README.md
 %dir %{gopath}/src/%{provider}.%{provider_tld}/%{project}
 %endif
 
 %if 0%{?with_unit_test} && 0%{?with_devel}
 %files unit-test-devel -f unit-test-devel.file-list
-%license 
+%license
 %doc README.md
 %endif
 
 %changelog
 * Fri Sep 30 2016 Vladimir Rusinov <vladimir@greenmice.info> - 0-0.1.git91ca5ec
 - First package for Fedora
-
-

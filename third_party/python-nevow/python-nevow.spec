@@ -140,4 +140,3 @@ rm -r %{buildroot}/usr/doc/old/
 
 * Fri Feb  9 2007 Matthias Saou <http://freshrpms.net/> 0.9.0-1
 - Initial RPM release.
-

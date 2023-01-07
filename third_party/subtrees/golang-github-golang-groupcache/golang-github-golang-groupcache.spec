@@ -180,4 +180,3 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 * Wed Feb 25 2015 jchaloup <jchaloup@redhat.com> - 0-0.1.git604ed57
 - First package for Fedora
   resolves: #1196368
-

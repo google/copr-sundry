@@ -296,7 +296,7 @@ find __demos/ -type f -exec chmod -x {} \;
 
 * Mon Jun 15 2009 Andreas Bierfert <andreas.bierfert[AT]lowlatency.de>
 - 804.028-8
-- fix events (#489228, #491536, #506496) 
+- fix events (#489228, #491536, #506496)
 
 * Thu Mar 19 2009 Stepan Kasal <skasal@redhat.com> - 804.028-7
 - perl-Tk-XIM.patch (#489228)

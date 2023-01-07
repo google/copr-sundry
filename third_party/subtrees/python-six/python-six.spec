@@ -163,5 +163,3 @@ popd
 
 * Thu Mar 24 2011 David Malcolm <dmalcolm@redhat.com> - 1.0.0-1
 - initial packaging
-
-

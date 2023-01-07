@@ -185,7 +185,3 @@ done
 
 * Wed Oct 01 2014 root - 0-0.1.git90d6a47
 - First package for Fedora
-
-
-
-
