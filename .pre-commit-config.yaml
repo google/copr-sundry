@@ -10,3 +10,11 @@ repos:
         exclude: '\.patch$'
     -   id: check-yaml
     -   id: check-added-large-files
+-   repo: local
+    hooks:
+    # TODO: replace this with individual hooks
+    -   id: local-pre-commit
+        name: run old pre-commit script
+        language: system
+        entry: hooks/pre-commit
+        files: ^.*$
