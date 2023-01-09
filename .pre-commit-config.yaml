@@ -18,3 +18,7 @@ repos:
         language: system
         entry: hooks/pre-commit
         files: ^.*$
+-   repo: https://github.com/crate-ci/typos
+    rev: v1.13.6
+    hooks:
+      - id: typos
