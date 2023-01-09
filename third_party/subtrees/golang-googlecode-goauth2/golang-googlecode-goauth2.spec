@@ -253,7 +253,7 @@ gotest %{import_path}/jwt
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
 * Thu Aug 20 2015 jchaloup <jchaloup@redhat.com> - 0-0.12.gitb5adcc2
-- Choose the corret devel subpackage
+- Choose the correct devel subpackage
   related: #1227273
 
 * Wed Aug 19 2015 jchaloup <jchaloup@redhat.com> - 0-0.11.gitb5adcc2
@@ -277,7 +277,7 @@ gotest %{import_path}/jwt
   resolves: #1227273
 
 * Sun Mar 08 2015 jchaloup <jchaloup@redhat.com> - 0-0.6.hg267028f
-- Add the latest commit of depricated code.google.com/o/goauth2 afe77d958c701557ec5dc56f6936fcc194d15520
+- Add the latest commit of deprecated code.google.com/o/goauth2 afe77d958c701557ec5dc56f6936fcc194d15520
   related: #1141822
 
 * Thu Jan 22 2015 jchaloup <jchaloup@redhat.com> - 0-0.5.hgafe77d958c70

@@ -461,12 +461,12 @@ popd
 - tests: move TestSack out of the testing module into tests. (Ales Kozumplik)
 
 * Mon Sep 30 2013 Aleš Kozumplík <ales@redhat.com> - 0.4.2-1.git4c51f65
-- Goal: excluding and then installing results in incomprehenisble problem desc. (RhBug:995459) (Ales Kozumplik)
+- Goal: excluding and then installing results in incomprehensible problem desc. (RhBug:995459) (Ales Kozumplik)
 - added support of cost option in repos (Jan Silhan)
 
 * Mon Sep 16 2013 Aleš Kozumplík <ales@redhat.com> - 0.4.1-1.git6f35513
 - spec file also generates python3-hawkey rpm (Jan Silhan)
-- fixed package object rich comparision (Jan Silhan)
+- fixed package object rich comparison (Jan Silhan)
 - Add libsolv-devel as a hard requires for hawkey-devel (Richard Hughes)
 - Python 3 bindings added (Jan Silhan)
 
@@ -493,7 +493,7 @@ popd
 - Install stringarray.h so client programs can use hy_stringarray_free() (Richard Hughes)
 - py: bindings for package.files. (Ales Kozumplik)
 - add hy_package_get_files. (Ales Kozumplik)
-- Fix three trivial comment mis-spellings (Richard Hughes)
+- Fix three trivial comment miss-spellings (Richard Hughes)
 - Set required python version to 2 (Richard Hughes)
 - Add a HY_VERSION_CHECK macro (Richard Hughes)
 - packaging: add license information to every file. (Ales Kozumplik)
@@ -520,13 +520,13 @@ popd
 - rename: goal: list_obsoletes -> list_obsoleted. (Ales Kozumplik)
 - rename: hy_goal_package_all_obsoletes() -> hy_goal_list_obsoleted_by_package(). (Ales Kozumplik)
 - apichange: remove: hy_goal_package_obsoletes(). (Ales Kozumplik)
-- tests: simplify test_goal_upgrade_all() somehwat. (Ales Kozumplik)
+- tests: simplify test_goal_upgrade_all() somewhat. (Ales Kozumplik)
 - goal: add ability to list all of the package's and transaction's obsoletes. (Ales Kozumplik)
 - py: allow directly comparing NEVRAs by their EVRs. (RhBug:953203) (Ales Kozumplik)
 - add hy_sack_evr_cmp(). (Ales Kozumplik)
 - py: fix SIGSEGV in unchecked hy_goal_describe_problem() call. (Ales Kozumplik)
 - doc: update the Tutorial for the current version of the API. (Ales Kozumplik)
-- subject parsing: recognize "pyton-hawkey" is a name in "python-hawkey-0.3.10". (Ales Kozumplik)
+- subject parsing: recognize "python-hawkey" is a name in "python-hawkey-0.3.10". (Ales Kozumplik)
 
 * Mon Apr 8 2013 Aleš Kozumplík <ales@redhat.com> - 0.3.10-1.git1d51b83
 - hy_goal_write_debugdata() (Ales Kozumplik)
@@ -680,7 +680,7 @@ popd
 
 * Sun Jul 1 2012 Aleš Kozumplík <akozumpl@redhat.com> - 0.2.5-1.git042738b
 - Use libsolv-0.0.0-12.
-- Added hy_package_get_hdr_checkum().
+- Added hy_package_get_hdr_checksum().
 
 * Mon Jun 25 2012 Aleš Kozumplík <akozumpl@redhat.com> - 0.2.4-8.git04ecf00
 - More package review issues.

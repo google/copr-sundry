@@ -349,7 +349,7 @@ make ARGS="-V" test
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
 * Mon Jul 16 2012 Aleš Kozumplik <akozumpl@redhat.com> - 0.0.0-13.git1617994%{?dist}
-- preliminary fix for JOB resons in solver_describe_decision().
+- preliminary fix for JOB reasons in solver_describe_decision().
 
 * Sun Jul 1 2012 Aleš Kozumplik <akozumpl@redhat.com> - 0.0.0-12.git1617994%{?dist}
 - Rebase to upstream 1617994.

@@ -78,7 +78,7 @@ Provides:      golang(%{simport_path}/protoc-gen-go/testdata/my_test) = %{versio
 
 %description devel
 This package provides  a library that implements run-time support for
-encoding (marshaling), decoding (unmarshaling), and accessing protocol
+encoding (marshaling), decoding (unmarshalling), and accessing protocol
 buffers in the Go language.
 
 Install %{name} for the related protocol compiler plugin.

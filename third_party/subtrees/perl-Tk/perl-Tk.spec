@@ -84,7 +84,7 @@ Provides:       perl(Tk::LabRadio) = 4.004
 Provides:       perl(Tk) = %{version}
 
 %{?perl_default_filter}
-# Explicity filter "useless" unversioned provides. For some reason, rpm is
+# Explicitly filter "useless" unversioned provides. For some reason, rpm is
 # detecting these both with and without version.
 %global __provides_exclude %{?__provides_exclude:%__provides_exclude|}perl\\(Tk\\)
 %global __provides_exclude %__provides_exclude|perl\\(Tk::Clipboard\\)$

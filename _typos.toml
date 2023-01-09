@@ -1,0 +1,16 @@
+[files]
+extend-exclude = ["third_party/submodules/*/*"]
+
+[default.extend-words]
+# In python-nevow.spec
+# TODO: remove after removing python-nevow
+noo = "noo"
+# False-positives in some version strings
+# TODO: try removing
+ba = "ba"
+afe = "afe"
+hge = "hge"
+# python-keyring seems to use this.
+# TODO: remove after removing python-keyring
+Uncrypted = "Uncrypted"
+Crypted = "Crypted"
