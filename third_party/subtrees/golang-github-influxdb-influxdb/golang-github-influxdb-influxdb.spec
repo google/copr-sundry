@@ -1,7 +1,7 @@
 %global with_devel 1
 %global with_bundled 0
 %global with_debug 0
-# tests are skiped as there are unresolved dependencies
+# tests are skipped as there are unresolved dependencies
 %global with_check 0
 %global with_unit_test 1
 

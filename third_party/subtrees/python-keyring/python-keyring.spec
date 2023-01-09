@@ -195,7 +195,7 @@ strings passed to it.
 * Mon Jun 21 2010 Felix Schwarz <felix.schwarz@oss.schwarz.eu> 0.2-1.1
 - add build dependencies
 - create subpackage for gnome, disable KWallet for now
-- look for files in arch-dependend site-packages
+- look for files in arch-dependent site-packages
 
 * Tue May 25 2010 Ratnadeep Debnath <rtnpro@gmail.com> 0.2-1
 - Incorporated some changes with reference to http://vcrhonek.fedorapeople.org/python-keyring/python-keyring.spec

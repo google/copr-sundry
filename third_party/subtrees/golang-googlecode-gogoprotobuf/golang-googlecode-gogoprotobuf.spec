@@ -545,7 +545,7 @@ export GOPATH=%{buildroot}/%{gopath}:$(pwd)/Godeps/_workspace:%{gopath}
 - preserve timestamps
 - don't own golang dirs
 - don't redifine gopath
-- ExcluseBuild for goarches
+- ExclusiveBuild for goarches
 
 * Thu Jul 17 2014 Colin Walters <walters@verbum.org> - 0-0.7.gitd228c1a
 - Initial package

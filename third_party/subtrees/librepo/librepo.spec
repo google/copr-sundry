@@ -147,7 +147,7 @@ popd
 * Fri Sep 25 2015 Tomas Mlcoch <tmlcoch@redhat.com> - 1.7.17-1
 - Bump minimal required version of glib to 2.26 because of g_date_time_format()
 - Tests: Fix test_download_with_offline_enabled_04 (Issue #64)
-- Python: Add timestamps into log messages loged to a file set by log_set_file (Issue #62)
+- Python: Add timestamps into log messages logged to a file set by log_set_file (Issue #62)
 - Util: Add a new function lr_log_librepo_summary()
 - Doc: Add log_set_file and log_remove_handler into python doc
 - cleanup: Add _cleanup_date_time_unref_ attribute
@@ -178,9 +178,9 @@ popd
   it is not in the core
 
 * Tue Apr   14 2015 Tomas Mlcoch <tmlcoch at redhat.com> - 1.7.15-1
-- Do not inlude header in the body output (RhBug: 1207685)
+- Do not include header in the body output (RhBug: 1207685)
 - metalink: Proper error handling
-- New LRR_RPMMD_* contants
+- New LRR_RPMMD_* constants
 - Support for client certificates
 - Use 'metadata in the rpm-md format' instead of 'yum metadata' (Issue #51)
 - CMakeLists.txt: do not check for CXX
@@ -195,7 +195,7 @@ popd
 - Python: Handle: Raise ValueError instead of TypeError when an unknown option is specified
 - Python: Result: Use ValueError instead of TypeError when an unknown option value is specified
 - Add LR_VERSION constant with version string
-- python: Import contants from C librepo module in a loop
+- python: Import constants from C librepo module in a loop
 - repoconf: Add support for failover and skip_if_unavailable options
 - handle: Change of LRO_LOCAL causes invalidation of internal mirrorlist (related to RhBug: 1188600)
 - Load local mirrorlists when LRO_LOCAL is on (related to RhBug: 1188600)
@@ -212,7 +212,7 @@ popd
 
 * Fri Jan   16 2015 Tomas Mlcoch <tmlcoch at redhat.com> - 1.7.12-1
 - downloader: Allow max one resume + nicer message if xattr cannot be set (RhBug: 1130685)
-- downloader: Resume only files that were originaly downloaded by Librepo (RhBug: 1130685)
+- downloader: Resume only files that were originally downloaded by Librepo (RhBug: 1130685)
 - downloader: Show also calculated checksums in error message about bad checksum
 - Python: Return all strings in unicode
 
@@ -267,7 +267,7 @@ popd
 * Mon Jun   2 2014 Tomas Mlcoch <tmlcoch at redhat.com> - 1.7.4-1
 - Add LRO_IPRESOLVE option to set a kind of IP addresses to use when resolving host names
 - Relicenced from GPLv2 to LGPLv2+
-- error mesage is in unicode (RhBug:1096452)
+- error message is in unicode (RhBug:1096452)
 
 * Tue May   6 2014 Tomas Mlcoch <tmlcoch at redhat.com> - 1.7.3-1
 - Fix some issues which were found by coverity scan
@@ -365,7 +365,7 @@ popd
 - In python download_packages() changed from method of Handle() to
   librepo module function without handle param.
   Param handle was moved to the PackageTarget class that takes handle
-  as a optional param during constrution.
+  as a optional param during construction.
 - Implements checking size of downloaded files (expectedsize
   param of downloading functions).
 
@@ -418,7 +418,7 @@ popd
 
 * Thu May  2 2013 Tomas Mlcoch <tmlcoch at redhat.com> - 0.0.4-1
 - Fix type conversion long long -> long.(RhBug: 957656)
-- python: Handle.perfrom() could be called without Result().
+- python: Handle.perform() could be called without Result().
 - Add LRI_MAXMIRRORTRIES option. (RhBug: 954736)
 - py: unittests: Add metalink.xml and mirrorlist files. (RhBug: 954294)
 - Fix double free and memory leak. (RhBug: 954294)
@@ -430,7 +430,7 @@ popd
 - Add CURL_GLOBAL_ACK_EINTR flag to curl init.
 - Proper multi handle cleanup. (RhBug: 947388)
 - Support for read 'useragent' attr. (RhBug: 947346)
-- Add valgrind supress files. (RhBug: 923214)
+- Add valgrind suppress files. (RhBug: 923214)
 - Make python bindings interruptible (LRO_INTERRUPTIBLE) (RhBug: 919125)
 - Add LRI_MIRRORS option (RhBug: 923198)
 - Add LRI_METALINK option. (BzBug: 947767)

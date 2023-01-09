@@ -119,7 +119,7 @@ popd
 - Update licences.
 
 * Sat Jul 12 2014 tom.prince@ualberta.net - 0.8-2
-- Be more specfic about .egg-info directories.
+- Be more specific about .egg-info directories.
 - Use python2-devel
 
 * Sat Jul 12 2014 tom.prince@ualberta.net - 0.8-1
