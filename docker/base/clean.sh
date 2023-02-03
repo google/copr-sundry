@@ -188,6 +188,9 @@ rm /usr/lib/python-exec/python3.*/revdep-rebuild
 rm /usr/lib64/gconv/BIG5.so
 rm /usr/lib64/gconv/EUC-JP-MS.so
 rm /usr/lib64/gconv/IBM935.so
+rm /usr/lib64/gconv/ISO-2022-CN-EXT.so
+rm /usr/lib64/gconv/ISO-2022-JP.so
+rm /usr/lib64/gconv/ISO646.so
 rm /usr/lib64/gconv/libJISX0213.so
 rm /usr/lib64/libc.a
 rm /usr/lib64/libpython3.11.so.1.0
