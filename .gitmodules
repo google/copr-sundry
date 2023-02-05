@@ -61,9 +61,6 @@
 [submodule "third_party/submodules/python-acme"]
 	path = third_party/submodules/python-acme
 	url = git://pkgs.fedoraproject.org/python-acme.git
-[submodule "third_party/submodules/perl-Time-HiRes"]
-	path = third_party/submodules/perl-Time-HiRes
-	url = https://src.fedoraproject.org/rpms/perl-Time-HiRes.git
 [submodule "third_party/submodules/perl-Devel-Symdump"]
 	path = third_party/submodules/perl-Devel-Symdump
 	url = git://pkgs.fedoraproject.org/perl-Devel-Symdump.git
